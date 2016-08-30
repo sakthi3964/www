@@ -1,0 +1,32 @@
+body{
+    background-color: #ECF1F5;
+}
+#blockreg2{
+    margin-top: 10px;
+    background-color: white;
+}
+#reviewBody{
+    margin-top: 10px;
+    background-color:white;
+	line-height: 30px;
+	font-family: cursive;
+	font-size: 15px;
+	text-transform: capitalize;
+}
+.timeslider {
+	text-overflow: ellipsis;
+	
+}
+#unranged-value1 {
+	width: 100%;
+}
+#childheading {
+    margin-top: 10px;
+    background-color:white;
+	font-size: 25px;
+	text-transform: uppercase;
+}
+#submit {
+	margin-bottom: 10px;
+	margin-top: 10px;
+}

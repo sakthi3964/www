@@ -1,0 +1,25 @@
+body{
+    background-color: #ECF1F5
+}
+
+#blockreg2{
+   
+    margin-top: 10px;
+    background-color: white;
+}
+
+.rules p {
+    text-align: justify
+}
+.rules ul li{
+    padding: 8px;
+}
+.rules2 p {
+    text-align: justify
+}
+.rules2 ul li{
+    padding: 8px;
+}
+#roles{
+    margin-top: 10px;
+}

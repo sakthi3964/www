@@ -24,8 +24,14 @@ $(document).ready(function () {
                 $('#errormodal').modal();
                     return false;
                 }
-            else if(response.role == 3){
+            else if(response.role == 1){
+                window.location.href = "childrenhome.html"
+            }
+            else if(response.role == 2){
                 window.location.href = "childReviewForm.html"
+            }
+            else if(response.role == 3){
+                window.location.href = "registerfirst.html"
             }
             else if(response.role == 4){
                 window.location.href = "adminhome.html"

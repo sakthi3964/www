@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>N'KaNa Registration Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" href="assert/css/bootstrap.min.css">
+    <script src="assert/js/jquery.min.js"></script>
+    <script src="assert/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/common.css">
+    <link href="css/register.css" rel="stylesheet">
+    <link href="assert/css/formValidation.css" rel="stylesheet" />
+    <script src="assert/js/formValidation.js"></script>
+    <script src="assert/js/framework/bootstrap.min.js"></script>
+    <script src="assert/js/jquery.bootstrap.wizard.min.js"></script>
+    <script src="js/register.js"></script>
+    <script src="js/mentorregistration.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid" id="commonblock">
+        <nav class="navbar navbar-custom">
+            <div class="row">
+                <div class="navbar-header">
+                    <div class="col-xs-10 col-sm-10">
+                        <p id="title1">N'KaNa</p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container" id="blockreg2">
+        <form id="mentorForm" class="form-horizontal" method="POST">
+            <ul class="nav nav-pills">
+                <li class="active"><a href="#firsttab" data-toggle="tab">STEP-1</a></li>
+                <li><a href="#secondtab" data-toggle="tab">STEP-2</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="firsttab">
+                    <center>
+                        <h3> MENTOR REGISTRATION FORM </h3>
+                    </center>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="name">Name:</label>
+                        <div class="col-sm-8">
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Enter your Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">DOB</label>
+                        <div class="col-sm-8">
+                            <input type="date" id="dob" name="dob" class="form-control" placeholder="Enter your Date of birth">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Age</label>
+                        <div class="col-sm-8">
+                            <input type="text" id="age" name="age" class="form-control" placeholder="Enter your Age">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender" class="control-label col-sm-2">Gender</label>
+                        <div class="col-sm-8">
+                            <label class="radio-inline">
+                            <input type="radio" id="male" name="gender" value="male">Male
+                        </label>
+                            <label class="radio-inline">
+                            <input type="radio" id= "female" name="gender" value="Female">Female
+                        </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Mobile Number</label>
+                        <div class="col-sm-8">
+                            <input type="text" id="mobile_no" name="mobile_no" class="form-control" maxlength="12" placeholder="Enter your Mobile Number">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Phone Number</label>
+                        <div class="col-sm-8">
+                            <input type="text" id="phone" name="phone" class="form-control" placeholder="Enter your Phone Number">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Address</label>
+                        <div class="col-sm-8">
+                            <textarea id="address" name="address" class="form-control" placeholder="Enter your address"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Reference</label>
+                        <div class="col-sm-8">
+                            <textarea id="reference" name="reference" class="form-control" placeholder="Enter your point of contact"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="email">Email:</label>
+                        <div class="col-sm-8">
+                            <input type="email" class="form-control" id="email_id" placeholder="Enter email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Password</label>
+                        <div class="col-sm-8">
+                            <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Confirm Password</label>
+                        <div class="col-sm-8">
+                            <input type="password" id="cpassword" name="cpassword" class="form-control" placeholder="Enter your password again">
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="secondtab">
+                    <center>
+                        <h3> PROFESSIONAL DETAILS </h3>
+                    </center>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="name">DESIGNATION:</label>
+                        <div class="col-sm-8">
+                            <input type="text" id="designation" name="designation" class="form-control" placeholder="Enter your Designation">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="name">Organization</label>
+                        <div class="col-sm-8">
+                            <input type="text" id="organization" name="organization" class="form-control" placeholder="Enter your Organization name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="name">Area of expertise</label>
+                        <div class="col-sm-8">
+                            <input type="text" id="expertise" name="expertise" class="form-control" placeholder="Enter your Area of expertise">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="name">Experience</label>
+                        <div class="col-sm-8">
+                            <input type="text" id="experience" name="experience" class="form-control" placeholder="Enter your Area of expertise">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="name">Commitment</label>
+                        <div class="col-sm-8">
+                            <input type="text" id="commitment" name="commitment" class="form-control" placeholder="Enter your commitment">
+                            <label>your commitment in hours for a week</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="name">Upload your CV</label>
+                        <div class="col-sm-8">
+                            <input type="file" id="cv" name="cv" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="name">Upload your Photo</label>
+                        <div class="col-sm-8">
+                            <input type="file" id="photo" name="photo" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="pager wizard">
+                    <li class="previous"><a href="javascript: void(0);">Previous</a></li>
+                    <li class="next" id="submit"><a href="javascript: void(0);">Next</a></li>
+                </ul>
+            </div>
+        </form>
+    </div>
+    <div class="container-fluid" id="commonfooter">
+        <footer id="footer">
+            <center>
+                <p>Trust for Youth and Child Leadership & Mughil Social Welfare Organization</p>
+            </center>
+        </footer>
+    </div>
+</body>
+
+</html>

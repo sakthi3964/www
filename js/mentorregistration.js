@@ -1,30 +1,4 @@
 $(document).ready(function () {
-    $('#role').change(function () {
-        if ($('#role').val() == '1') {
-            $('#volunteer').show();
-            $('#mentor').hide();
-            $('#volunteer1').show();
-            $('#mentor1').hide();
-            $('#mail').show();
-        }
-        if ($('#role').val() == '2') {
-            $('#mentor').show();
-            $('#volunteer').hide();
-            $('#mentor1').show();
-            $('#volunteer1').hide();
-            $('#mail').show();
-        }
-        if ($('#role').val() == '') {
-            $('#mentor').hide();
-            $('#volunteer').hide();
-            $('#mentor1').hide();
-            $('#volunteer1').hide();
-            $('#mail').hide();
-        }
-    });
-
-    // You don't need to care about this function
-    // It is for the specific demo
     function adjustIframeHeight() {
         var $body = $('body'),
             $iframe = $body.data('iframe.fv');
@@ -33,7 +7,7 @@ $(document).ready(function () {
             $iframe.height($body.height());
         }
     }
-    $('#installationForm')
+    $('#mentorForm')
         .formValidation({
             framework: 'bootstrap',
             // icon: {
@@ -44,13 +18,6 @@ $(document).ready(function () {
             // This option will not ignore invisible fields which belong to inactive panels
             excluded: ':disabled',
             fields: {
-                role: {
-                    validators: {
-                        notEmpty: {
-                            message: 'Select your role'
-                        }
-                    }
-                },
                 name: {
                     validators: {
                         notEmpty: {
@@ -58,12 +25,11 @@ $(document).ready(function () {
                         }
                     }
                 },
-
                 dob: {
                     validators: {
                         notEmpty: {
                             message: 'Enter your DOB'
-                        },
+                        }
                         // date: {
                         //     message: 'The date is not valid',
                         //    // format: 'YYYY/MM/DD',
@@ -104,10 +70,6 @@ $(document).ready(function () {
                         },
                         integer: {
                             message: 'Enter valid number'
-                        },
-                        phone: {
-                            country: 'countrySelectBox',
-                            message: 'The value is not valid %s phone number'
                         }
                     }
                 },
@@ -128,7 +90,7 @@ $(document).ready(function () {
                 password: {
                     validators: {
                         notEmpty: {
-                            message: 'Enter you password'
+                            message: 'Enter your password'
                         }
                     }
                 },
@@ -149,70 +111,49 @@ $(document).ready(function () {
                             message: 'Enter your designation'
                         }
                     }
-                }
-                //                organization: {
-                //                    validators: {
-                //                        notEmpty: {
-                //                            message: 'Enter your organization'
-                //                        }
-                //                    }
-                //                },
-                //                expertise: {
-                //                    validators: {
-                //                        notEmpty: {
-                //                            message: 'Enter your expertise'
-                //                        }
-                //                    }
-                //                },
-                //                experience: {
-                //                    validators: {
-                //                        notEmpty: {
-                //                            message: 'Enter your experience'
-                //                        }
-                //                    }
-                //                },
-                //                commitment: {
-                //                    validators: {
-                //                        notEmpty: {
-                //                            message: 'Enter your commitment'
-                //                        }
-                //                    }
-                //                },
-                //                cv: {
-                //                    validators: {
-                //                        notEmpty: {
-                //                            message: 'Upload your cv'
-                //                        }
-                //                    }
-                //                },
-                //                photo: {
-                //                    validators: {
-                //                        notEmpty: {
-                //                            message: 'Upload your photo'
-                //                        }
-                //                    }
-                //                }
-                //                course: {
-                //                    validators: {
-                //                        notEmpty: {
-                //                            message: 'Enter your course'
-                //                        }
-                //                    }
-                //                },
-                //                department: {
-                //                    validators: {
-                //                        notEmpty: {
-                //                            message: 'Enter your department'
-                //                        }
-                //                    }
-                //                },
-                //                institution: {
-                //                    validators: {
-                //                        notEmpty: {
-                //                            message: 'Enter your institution'
-                //                        }
-                //                    }
-                //                }
+                },
+                organization: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Enter your organization'
+                        }
+                    }
+                },
+                expertise: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Enter your expertise'
+                        }
+                    }
+                },
+                experience: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Enter you experience'
+                        }
+                    }
+                },
+                commitment: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Enter your commitment'
+                        }
+                    }
+                },
+                cv: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Upload your cv'
+                        }
+                    }
+                },
+                photo: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Upload your photo'
+                        }
+                    }
+                },
             }
         })
         .bootstrapWizard({
@@ -221,25 +162,23 @@ $(document).ready(function () {
                 return validateTab(index);
             },
             onNext: function (tab, navigation, index) {
-                var numTabs = $('#installationForm').find('.tab-pane').length,
+                var numTabs = $('#mentorForm').find('.tab-pane').length,
                     isValidTab = validateTab(index - 1);
                 if (!isValidTab) {
                     return false;
                 }
                 if (index === numTabs) {
-                    var data={};
-                    data.role = $('#role').val();
+                    var data = {};
+                    var role = 3;
+                    data.role = role;
                     data.name = $('#name').val();
                     data.dob = $('#dob').val();
                     data.age = $('#age').val();
-                    data.gender = $('#gender').val();
-                    data.course = $('#course').val();
-                    data.department = $('#department').val();
-                    data.institution = $('#institution').val();
+                    data.gender = $("input[name='gender']:checked").val();
                     data.address = $('#address').val();
-                    data.country_code = $('#country_code').val();
-                    data.mobile_number = $('#mobile_number').val();
                     data.email_id = $('#email_id').val();
+                    data.mobile_no = $('#mobile_no').val();
+                    data.phone = $('#phone').val();
                     data.password = $('#password').val();
                     data.reference = $('#reference').val();
                     data.commitment = $('#commitment').val();
@@ -249,23 +188,24 @@ $(document).ready(function () {
                     data.experience = $('#experience').val();
                     data.cv = $('#cv').val();
                     data.photo = $('#photo').val();
-                    data.status = $('#status').val();
-                    data.active = $('#active').val();
-
                     var settings = {
-                        "async" : true,
+                        "async": true,
                         "crossDomain": true,
                         "url": "http://localhost:3406/registration",
                         "method": "POST",
                         "headers": {
-                            "content-type" : "application/json",
+                            "content-type": "application/json",
                         },
                         "processData": false,
                         "data": JSON.stringify(data),
                     }
 
-                    $.ajax(settings).done(function(response){
-                        $('#completeModal').modal();
+                    $.ajax(settings).done(function (response) {
+                        if (response == 3) {
+                            alert("success");
+                            // $('#errormodal').modal();
+                            return false;
+                        }
                     });
                 }
                 return true;
@@ -275,8 +215,8 @@ $(document).ready(function () {
             },
             onTabShow: function (tab, navigation, index) {
                 // Update the label of Next button when we are at the last tab
-                var numTabs = $('#installationForm').find('.tab-pane').length;
-                $('#installationForm')
+                var numTabs = $('#mentorForm').find('.tab-pane').length;
+                $('#mentorForm')
                     .find('.next')
                     .removeClass('disabled')    // Enable the Next button
                     .find('a')
@@ -289,9 +229,9 @@ $(document).ready(function () {
         });
 
     function validateTab(index) {
-        var fv = $('#installationForm').data('formValidation'), // FormValidation instance
+        var fv = $('#mentorForm').data('formValidation'), // FormValidation instance
             // The current tab
-            $tab = $('#installationForm').find('.tab-pane').eq(index);
+            $tab = $('#mentorForm').find('.tab-pane').eq(index);
 
         // Validate the container
         fv.validateContainer($tab);

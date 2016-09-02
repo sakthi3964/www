@@ -28,10 +28,10 @@ $(document).ready(function () {
                 window.location.href = "childrenhome.html"
             }
             else if(response.role == 2){
-                window.location.href = "childReviewForm.html"
+                window.location.href = "volunteerhome.html"
             }
             else if(response.role == 3){
-                window.location.href = "registerfirst.html"
+                window.location.href = "mentorhome.html"
             }
             else if(response.role == 4){
                 window.location.href = "adminhome.html"

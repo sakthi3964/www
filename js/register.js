@@ -6,6 +6,7 @@ $(document).ready(function () {
             $('#volunteer1').show();
             $('#mentor1').hide();
             $('#mail').show();
+            $('#mission').hide();
         }
         if ($('#role').val() == '2') {
             $('#mentor').show();
@@ -13,6 +14,7 @@ $(document).ready(function () {
             $('#mentor1').show();
             $('#volunteer1').hide();
             $('#mail').show();
+            $('#mission').hide();
         }
         if ($('#role').val() == '') {
             $('#mentor').hide();
@@ -20,6 +22,7 @@ $(document).ready(function () {
             $('#mentor1').hide();
             $('#volunteer1').hide();
             $('#mail').hide();
+            $('#mission').hide();
         }
     });
 

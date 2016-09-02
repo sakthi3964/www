@@ -1,4 +1,8 @@
 
+$(document).ready(function () {
+    $("#reviewBody").submit(function (e) {
+        e.preventDefault();
+    })
 $("#time").slider();
 $("#time").on("slide", function (time) {
 	console.log("time:" + time.value);
@@ -10,16 +14,6 @@ slider.on("slide", function (time) {
 	//console.log(slideEvt.value);
 	$("#ex6SliderVal").text(time.value);
 });
-var $validator= $("#reviewBody").validate({
-
-	rules:{
-		time:{
-			required:true
-		}
-	}
-});
-
-
 
 $("#care").slider();
 $("#care").on("slide", function (care) {
@@ -149,6 +143,11 @@ slider.on("slide", function (feedback) {
 
 $("#submit").click(function () {
 	var data = {};
+	if((time.value!=0)&&(care.value!=0)&&(behaviour.value!=0)&&(confidentiality.value!=0)&&(mentorship.value!=0)&&(environment.value!=0)&&(feelings.value!=0)&&(willingness.value!=0)&&(learning.value!=0)&&(feedback.value!=0))
+	{
+		console.log("sucess");
+	
+	
 	data.time = time.value;
 	data.care = care.value;
 	data.behaviour = behaviour.value;
@@ -166,7 +165,7 @@ $("#submit").click(function () {
 	console.log("hi");
 	var settings = {
 		"crossDomain": true,
-		"url": "http://localhost:3006/review",
+		"url": "http://localhost:3406/review",
 		"method": "POST",
 		"headers": {
 			"content-type": "application/json",
@@ -178,5 +177,13 @@ $("#submit").click(function () {
 
 	
 
-	});
+	});	
+
+	}
+	else{
+		$('#errormodal').modal();
+        return false;
+	}
+
+});
 });

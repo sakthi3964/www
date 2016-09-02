@@ -6,7 +6,6 @@ $(document).ready(function () {
         var data = {};
         data.email_id = $('#username').val();
         data.password = $('#password').val();
-        data.child_id = $('#child_id').val();
         console.log("getting value form the user");
         var settings = {
             "crossDomain": true,

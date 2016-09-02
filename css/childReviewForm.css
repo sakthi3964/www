@@ -13,6 +13,12 @@ body{
 	font-size: 15px;
 	text-transform: capitalize;
 }
+#childheading h3{
+font-family: Arial, Helvetica, sans-serif;
+text-transform:initial;
+
+}
+
 .timeslider {
 	text-overflow: ellipsis;
 	

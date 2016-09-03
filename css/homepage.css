@@ -2,17 +2,9 @@ body{
     background-color: #ECF1F5
 }
 
-#blockhomechild2{
-    margin-top: 20px;
-    color: #9EA7B3;
-    background-color: white;
-}
-#blockhomechild2 p{
-    font-size: 30px;
-}
 #homeblock1{
-    margin-top: 20px;
-    padding: 10px;
+    padding-top: 30px;
+    background-color: white
 }
 #homeblock1 p{
     text-align: center;
@@ -35,5 +27,17 @@ body{
 .box{
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
+.card{
+  background: #fff;
+  border-radius: 2px;
 
+}
+.card {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.card:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
 

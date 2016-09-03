@@ -40,8 +40,9 @@
                 <p>Time management</p>
             </div>
             <div class="col-sm-7 col-md-7 col-xs-7 col-lg-7">
-                <input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="time" type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1"
-                    data-slider-value="0" style="width: 95%; margin: 20px" /></div>
+                <input id="time" type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1"
+                    data-slider-value="0" style="width: 95%; margin: 20px">
+            </div>
         </div>
         <div class="row">
             <div class="col-sm-5 col-md-5 col-xs-5 col-lg-5">
@@ -115,7 +116,6 @@
                 <input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="feedback" type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1"
                     data-slider-value="0" style="width: 95%; margin: 20px" /></div>
         </div>
-
         <div class="row">
             <div class="col-sm-5 col-md-5 col-xs-5 col-lg-5">
                 <p>Comments</p>
@@ -126,10 +126,8 @@
             <button type="submit" class="btn btn-primary" id="submit">Submit</button>
 
         </div>
-
     </div>
     <div class="container" id="panel2">
-        <script src="js/childReviewForm.js"></script>
         <div class="container-fluid" id="commonfooter">
             <footer id="footer">
                 <center>
@@ -149,7 +147,6 @@
                 <div class="modal-body">
                     <p class="text-center">UserName or Password is Wrong</p>
                 </div>
-
                 <div class="modal-footer">
                     <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
                 </div>

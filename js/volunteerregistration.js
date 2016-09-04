@@ -7,6 +7,7 @@ $(document).ready(function () {
             $iframe.height($body.height());
         }
     }
+   
     $('#volunteerForm')
         .formValidation({
             framework: 'bootstrap',

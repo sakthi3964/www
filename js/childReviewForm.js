@@ -3,11 +3,11 @@ $(document).ready(function () {
     $("#reviewBody").submit(function (e) {
         e.preventDefault();
     })
-$("#time").slider();
-$("#time").on("slide", function (time) {
-	console.log("time:" + time.value);
-	$("#ex6SliderVal").text(time.value);
-});
+// $("#time").slider();
+// $("#time").on("slide", function (time) {
+// 	console.log("time:" + time.value);
+// 	$("#ex6SliderVal").text(time.value);
+// });
 // Without JQuery
 var slider = new Slider("#time");
 slider.on("slide", function (time) {

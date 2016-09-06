@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>N'KaNa Registration Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" href="assert/css/bootstrap.min.css">
+    <script src="assert/js/jquery.min.js"></script>
+    <script src="assert/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/common.css">
+    <link href="css/register.css" rel="stylesheet">
+    <link href="assert/css/formValidation.css" rel="stylesheet" />
+    <script src="assert/js/formValidation.js"></script>
+    <script src="assert/js/framework/bootstrap.min.js"></script>
+    <script src="assert/js/jquery.bootstrap.wizard.min.js"></script>
+    <script src="js/register.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid" id="commonblock">
+        <nav class="navbar navbar-custom">
+            <div class="row">
+                <div class="navbar-header">
+                    <div class="col-xs-10 col-sm-10">
+                        <p id="title1">N'KaNa</p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+        <center>
+            <h3>Preassessment Form</h3>
+        </center>
+        <form id="volunteerForm" class="form-horizontal" method="POST">
+            <ul class="nav nav-pills">
+                <li class="active"><a href="#firsttab" data-toggle="tab">Personal Details</a></li>
+                <li><a href="#secondtab" data-toggle="tab">Career Goal Details</a></li>
+                <li><a href="#thirdtab" data-toggle="tab">Relationship with Family<br>and Neighbours </a></li>
+                <li><a href="#fourthtab" data-toggle="tab">Other Activities</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="firsttab">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="name">Name:</label>
+                        <div class="col-sm-8">
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Enter your Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="age">Age:</label>
+                        <div class="col-sm-8">
+                            <input type="text" id="age" name="age" class="form-control" placeholder="Enter your Age">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender" class="control-label col-sm-2">Gender</label>
+                        <div class="col-sm-8">
+                            <label class="radio-inline">
+                            <input type="radio" id="male" name="gender" value="male">Male
+                        </label>
+                            <label class="radio-inline">
+                            <input type="radio" id= "female" name="gender" value="Female">Female
+                        </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="standard">Standard:</label>
+                        <div class="col-sm-8">
+                            <select class="form-control" name="standard">
+                                <option value="">-select-</option>
+                                <option>VIII</option>
+                                <option>IX</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="schoolname">School Name:</label>
+                        <div class="col-sm-8">
+                            <input type="text" id="schoolname" name="schoolname" class="form-control" placeholder="Enter your school name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="schooltype" class="control-label col-sm-2">School Type</label>
+                        <div class="col-sm-8">
+                            <label class="radio-inline">
+                            <input type="radio" id="private" name="schooltype" value="private">private
+                        </label>
+                            <label class="radio-inline">
+                            <input type="radio" id= "aided" name="schooltype" value="aided">Aided
+                        </label>
+                            <label class="radio-inline">
+                            <input type="radio" id= "government" name="schooltype" value="government">Government
+                        </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="housetype" class="control-label col-sm-2">House Type</label>
+                        <div class="col-sm-8">
+                            <label class="radio-inline">
+                            <input type="radio" id="concrete" name="housetype" value="concrete">Concrete
+                        </label>
+                            <label class="radio-inline">
+                            <input type="radio" id= "rooftop" name="housetype" value="rooftop">Roof Top
+                        </label>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="secondtab">
+
+                    <div class="form-group">
+                        <label class="control-label">what is your Career Goal?</label>
+                        <select class="form-control" required="required" name="Goal">
+                            <option value="">-select-</option>
+                            <option>Doctor</option>
+                            <option>Engineer</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">what your Parents wish to you Become?</label>
+                        <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter your parents wish" />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Do your parents stress/force their wish/goal on you?</label><br>
+
+                        <div class="radio-inline">
+                            <label><input type="radio" name="parentswish" value="yes" >yes</label>
+                        </div>
+                        <div class="radio-inline">
+                            <label><input type="radio" name="parentswish" value="no" >no</label>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Do you have any idea about how to achieve your goal?</label><br>
+
+                        <div class="radio-inline">
+                            <label><input type="radio" name="idea" value="yes" >yes</label>
+                        </div>
+                        <div class="radio-inline">
+                            <label><input type="radio" name="idea" value="no" >no</label>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Are you taking any effort to achieve your goal?</label><br>
+
+                        <div class="radio-inline">
+                            <label><input type="radio" name="effort" value="yes" >yes</label>
+                        </div>
+                        <div class="radio-inline">
+                            <label><input type="radio" name="effort" value="no" >no</label>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Is there anyone to support/encourage to achieve your goal?</label><br>
+                        <label> <input type="checkbox" name="support" value="family">Family</label><br>
+                        <label> <input type="checkbox" name="support" value="friends">Friends</label><br>
+                        <label> <input type="checkbox" name="support" value="neighbours">Neighbours</label><br>
+                        <label> <input type="checkbox" name="support" value="teachers">Teachers</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Is there anyone financialy support you to achieve your goal?</label><br>
+                        <label> <input type="checkbox" name="financial" value="family">Family</label><br>
+                        <label> <input type="checkbox" name="financial" value="friends">Organisation</label><br>
+                        <label> <input type="checkbox" name="financial" value="neighbours">Neighbours</label><br>
+                        <label> <input type="checkbox" name="financial" value="teachers">Teachers</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Who motivated you to set this goal?</label>
+                        <input maxlength="200" type="text" class="form-control" placeholder="Enter who Motivated you" />
+                    </div>
+
+                </div>
+
+                <div class="tab-pane" id="thirdtab">
+                    <div class="form-group">
+                        <label class="control-label">Do the parents/Guardian really listen to the matters relating to you?</label><br>
+                        <div class="radio-inline">
+                            <label><input type="radio" name="listen" value="yes" >yes</label>
+                        </div>
+                        <div class="radio-inline">
+                            <label><input type="radio" name="listen" value="no" >no</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">How often you discuss about your school matters with your parents/Guardian and family members?</label>
+                        <select class="form-control" required="required" name="discuss">
+                                <option value="">-select-</option>
+                                <option>Daily</option>
+                                <option>Weekly</option>
+                                <option>Monthly</option>
+                                <option>Rarely</option>
+                                <option>No Discussion</option>
+                            </select>
+                    </div>
+                   
+                    <div class="form-group">
+                        <label class="control-label">What is your expectation from your parents?</label>
+                        <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter your Expectation" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Are you over burdened with household works? If Yes: What kind of household work?</label><br>
+                        <div class="radio-inline">
+                            <label><input type="radio" name="work" value="yes" >yes</label>
+                        </div>
+                        <div class="radio-inline">
+                            <label><input type="radio" name="work" value="no" >no</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Do your neighbors help in academics/Study? </label><br>
+                        <div class="radio-inline">
+                            <label><input type="radio" name="nhelp" value="yes" >yes</label>
+                        </div>
+                        <div class="radio-inline">
+                            <label><input type="radio" name="nhelp" value="no" >no</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label"> Do you feel safe in your neighborhood?</label><br>
+                        <div class="radio-inline">
+                            <label><input type="radio" name="safe" value="yes" >yes</label>
+                        </div>
+                        <div class="radio-inline">
+                            <label><input type="radio" name="safe" value="no" >no</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="fourthtab">
+                    <div class="form-group">
+                        <label class="control-label">What’s your favorite Subject?
+                             Why?
+                            </label>
+                        <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter your favorite subject" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Which subject do you feel difficult and Why?</label>
+                        <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter your difficult subject" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">What are your favorite sports/activities? </label>
+                        <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter your favorite sports" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Do you like to study with your friends or alone (Apart from school)?</label><br>
+                        <div class="radio-inline">
+                            <label><input type="radio" name="friends" value="yes" >yes</label>
+                        </div>
+                        <div class="radio-inline">
+                            <label><input type="radio" name="friends" value="no" >no</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Are you a member of any club
+    Details:
+    </label><br>
+                        <div class="radio-inline">
+                            <label><input type="radio" name="club" value="yes" >yes</label>
+                        </div>
+                        <div class="radio-inline">
+                            <label><input type="radio" name="club" value="no" >no</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Did you participate in any events in village/school?</label><br>
+                        <div class="radio-inline">
+                            <label><input type="radio" name="events" value="yes" >yes</label>
+                        </div>
+                        <div class="radio-inline">
+                            <label><input type="radio" name="events" value="no" >no</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">What is your talents & skills</label>
+                        <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter your Skills" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Do you need any support from our (TYCL) side to develop your skills?</label>
+                        <input maxlength="200" type="text" required="required" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">What is your expectation towards TYCL and MUGHIL?</label>
+                        <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter your Expectation" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Do you like to continue your     studies? If no Why?</label><br>
+                        <div class="radio-inline">
+                                <label><input type="radio" name="study" value="yes" >yes</label>
+                            </div>
+                            <div class="radio-inline">
+                                <label><input type="radio" name="study" value="no" >no</label>
+                            </div>
+                    </div>
+
+                    <div class="form-group">
+                            <label class="control-label">What are your favorite things in your life?</label>
+                            <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Your favorite thing" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">What you hate the most in your life?</label>
+                            <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter what you hate most" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Do you like to help others in future?</label><br>
+                            <div class="radio-inline">
+                                <label><input type="radio" name="help" value="yes" >yes</label>
+                            </div>
+                            <div class="radio-inline">
+                                <label><input type="radio" name="help" value="no" >no</label>
+                            </div>
+                        </div>
+
+                </div>
+        </form>
+        </div>
+
+        <div class="container-fluid" id="commonfooter">
+            <footer id="footer">
+                <center>
+                    <p>Trust for Youth and Child Leadership & Mughil Social Welfare Organization</p>
+                </center>
+            </footer>
+        </div>
+</body>
+
+</html>

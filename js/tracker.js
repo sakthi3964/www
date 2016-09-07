@@ -67,8 +67,127 @@ $(document).ready(function() {
                 validating: 'glyphicon glyphicon-refresh'
             },
             // This option will not ignore invisible fields which belong to inactive panels
-            excluded: ':disabled',
+            // excluded: ':disabled',
             fields: {
+                date: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Enter your date of meeting'
+                        }
+                    }
+                },
+               placeOfMeeting: {
+                   validators: {
+                       notEmpty: {
+                           message: 'Enter your place of meeting'
+                       }
+                   }
+               },
+               agenda: {
+                   validators: {
+                       notEmpty: {
+                           message: 'Enter your agenda'
+                       }
+                   }
+               },
+               outcome: {
+                   validators: {
+                       notEmpty: {
+                           message: 'Enter your agenda'
+                       }
+                   }
+               },
+               accomplishment: {
+                   validators: {
+                       notEmpty: {
+                           message: 'Enter accomplishment of your child'
+                       }
+                   }
+               },
+                connection: {
+                   validators: {
+                       notEmpty: {
+                           message: 'Check, if there is any new connection'
+                       }
+                   }
+               },
+               connectedTo: {
+                   validators: {
+                       notEmpty: {
+                           message: 'Check, if there is any new connection'
+                       }
+                   }
+               },
+               
+               purpose: {
+                   validators: {
+                       notEmpty: {
+                           message: 'Enter your purpose'
+                       }
+                   }
+               },
+               learnings: {
+                   validators: {
+                       notEmpty: {
+                           message: 'Enter Learnings of your Mentee'
+                       }
+                   }
+               },
+                challengesMentee: {
+                   validators: {
+                       notEmpty: {
+                           message: 'whether your Mentee faced any  Challenges'
+                       }
+                   }
+               },
+               challengesDetailMenteeText: {
+                   validators: {
+                       notEmpty: {
+                           message: 'Enter Challenges of your Mentee'
+                       }
+                   }
+               },
+
+               challengesMentor: {
+                   validators: {
+                       notEmpty: {
+                           message: 'whether your Mentor faced any  Challenges'
+                       }
+                   }
+               },
+               challengesDetailMentorText: {
+                   validators: {
+                       notEmpty: {
+                           message: 'Enter Challenges of your Mentor'
+                       }
+                   }
+               },
+               challengesVolunteer: {
+                   validators: {
+                       notEmpty: {
+                           message: 'whether your Mentor faced any  Challenges'
+                       }
+                   }
+               },
+               challengesDetailVolunteerText: {
+                   validators: {
+                       notEmpty: {
+                           message: 'Enter Challenges of volunteer'
+                       }
+                   }
+               },
+               education: {
+                   validators: {
+                       notEmpty: {
+                           message: 'Rank for Mentee education'
+                       }
+                   }
+               }
+
+
+
+                
+                
             }
         })
         .bootstrapWizard({
@@ -132,11 +251,66 @@ $(document).ready(function() {
     $("#reviewBody").submit(function (e) {
         e.preventDefault();
     })
-$("#educationalPerformance").slider();
-$("#educationalPerformance").on("slide", function (educationalPerformance) {
-	console.log("educationalPerformance:" + educationalPerformance.value);
+$("#education").slider();
+$("#education").on("slide", function (education) {
+	console.log("education:" + education.value);
 	
 });
+$("#health").slider();
+$("#health").on("slide", function (health) {
+	console.log("health:" + health.value);
+	
+});
+$("#familyRelationship").slider();
+$("#familyRelationship").on("slide", function (familyRelationship) {
+	console.log("familyRelationship:" + familyRelationship.value);
+	
+});
+
+$("#friendRelationship").slider();
+$("#friendRelationship").on("slide", function (friendRelationship) {
+	console.log("friendRelationship:" + friendRelationship.value);
+	
+});
+
+$("#positiveAttitude").slider();
+$("#positiveAttitude").on("slide", function (positiveAttitude) {
+	console.log("positiveAttitude:" + positiveAttitude.value);
+	
+});
+
+$("#coCurricular").slider();
+$("#coCurricular").on("slide", function (coCurricular) {
+	console.log("coCurricular:" + coCurricular.value);
+	
+});
+
+$("#socialCommunity").slider();
+$("#socialCommunity").on("slide", function (socialCommunity) {
+	console.log("socialCommunity:" + socialCommunity.value);
+	
+});
+
+$("#safeFeel").slider();
+$("#safeFeel").on("slide", function (safeFeel) {
+	console.log("safeFeel:" + safeFeel.value);
+	
+});
+
+$("#socialInteraction").slider();
+$("#socialInteraction").on("slide", function (socialInteraction) {
+	console.log("socialInteraction:" + socialInteraction.value);
+	
+});
+
+$("#hygiene").slider();
+$("#hygiene").on("slide", function (hygiene) {
+	console.log("hygiene:" + hygiene.value);
+	
+});
+
+
+
 
 
 });

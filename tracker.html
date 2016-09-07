@@ -22,7 +22,8 @@
     <!--<script src="js/childReviewForm.js"  type="text/javascript" ></script>-->
     <script src="assert/js/framework/bootstrap.min.js"></script>
     <script src="assert/js/jquery.bootstrap.wizard.min.js"></script>
-    <script src="js/tracker.js"  type="text/javascript"></script>
+    <script src="js/tracker.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="css/tracker.css">
     <!--<script src="reg.js"></script>-->
     <!--<script src="js/register.js"></script>-->
 
@@ -46,17 +47,18 @@
             </div>
         </nav>
     </div>
-    <div class="container">
+    <div class="container" id="trackerbody">
         <form id="trackerForm" class="form-horizontal">
             <ul class="nav nav-pills">
                 <li class="active"><a href="#tracker" data-toggle="tab">Tracker Form</a></li>
                 <li><a href="#review" data-toggle="tab">Review</a></li>
             </ul>
             <div class="tab-content">
+                <h3 class="text-center">Tracker</h3>
                 <div class="tab-pane active" id="tracker">
                     <div class="form-group">
-                        <label class="col-xs-2 control-label">Date of meeting</label>
-                        <div class="col-xs-8">
+                        <label class="col-sm-2 control-label">Date of meeting</label>
+                        <div class="col-sm-8">
                             <input type="date" class="form-control" id="date" name="date" placeholder="Enter the date of meeting child">
 
                         </div>
@@ -65,12 +67,12 @@
                         <label class="control-label col-sm-2" for="name">Place of Meeting</label>
                         <div class="col-sm-8">
                             <select class="form-control" id="placeOfMeeting" name="placeOfMeeting">
-                            <option>Select...</option>
-                            <option value="1">CC</option>
-                            <option value="2">CDC</option>
-                            <option value="3">BSH</option>
-                            <option value="4">TYCL office</option>
-                            <option value="5">Others</option>                            
+                            <option value="">Select...</option>
+                            <option value="CC">Children Collective</option>
+                            <option value="CDC">Child Development Center</option>
+                            <option value="BSH">Baby Sarah Home</option>
+                            <option value="TYCL office">TYCL office</option>
+                            <option value="Others">Others</option>                            
                         </select>
                         </div>
                     </div>
@@ -82,19 +84,19 @@
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="name">Meeting Agenda</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="agenda" placeholder="enter the agenda of the meet..">
+                            <input type="text" class="form-control" id="agenda" name="agenda" placeholder="enter the agenda of the meet..">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="name">Outcome of the Meeting</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="outcome" placeholder="enter the outcome..">
+                            <input type="text" class="form-control" id="outcome" name="outcome" placeholder="enter the outcome..">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="name">Key Accomplishments</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="accomplishment" placeholder="enter the outcome..">
+                            <input type="text" class="form-control" id="accomplishment" name="accomplishment" placeholder="enter the outcome..">
                         </div>
                     </div>
                     <div class="form-group">
@@ -106,22 +108,22 @@
                         </div>
 
                     </div>
-                    <div class="form-group" id="connectionDetail" style="display: none;">
+                    <div class="form-group" id="connectionDetail" name="connectionDetail" style="display: none;">
 
                         <label class="control-label col-sm-2">Connected To</label>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control" id="connectedTo" placeholder="Mr./Mrs.">
+                            <input type="text" class="form-control" id="connectedTo" name="connectedTo" placeholder="Mr./Mrs.">
                         </div>
                         <label class="control-label col-sm-2">Purpose</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="purpose" placeholder="connection purpose">
+                            <input type="text" class="form-control" id="purpose" name="purpose" placeholder="connection purpose">
                         </div>
 
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="name">Key Learnings </label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="learnings" placeholder="enter the key learnings for the mentee">
+                            <input type="text" class="form-control" id="learnings" name="learnings" placeholder="enter the key learnings for the mentee">
                         </div>
                     </div>
                     <div class="form-group">
@@ -133,11 +135,11 @@
                         </div>
 
                     </div>
-                    <div class="form-group" id="challengesDetailMentee" style="display: none;">
+                    <div class="form-group" id="challengesDetailMentee" name="challengesDetailMentee" style="display: none;">
 
                         <label class="control-label col-sm-2">Key Challenges</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="challengesDetailMenteeText" placeholder="">
+                            <input type="text" class="form-control" name="challengesDetailMenteeText" id="challengesDetailMenteeText" placeholder="">
                         </div>
                     </div>
                     <div class="form-group">
@@ -149,11 +151,11 @@
                         </div>
 
                     </div>
-                    <div class="form-group" id="challengesDetailMentor" style="display: none;">
+                    <div class="form-group" id="challengesDetailMentor" name="challengesDetailMentor" style="display: none;">
 
                         <label class="control-label col-sm-2">Key Challenges</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="challengesDetailMentorText" placeholder="">
+                            <input type="text" class="form-control" name="challengesDetailMentorText" id="challengesDetailMentorText" placeholder="">
                         </div>
                     </div>
 
@@ -166,116 +168,147 @@
                         </div>
 
                     </div>
-                    <div class="form-group" id="challengesDetailVolunteer" style="display: none;">
+                    <div class="form-group" id="challengesDetailVolunteer" name="challengesDetailVolunteer" style="display: none;">
 
                         <label class="control-label col-sm-2">Key Challenges</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="challengesDetailVolunteerText" placeholder="">
+                            <input type="text" class="form-control" name="challengesDetailVolunteerText" id="challengesDetailVolunteerText" placeholder="">
                         </div>
                     </div>
                 </div>
 
                 <div class="tab-pane" id="review">
-                    <div class="container text-center" id="childheading">
-                        <h3>Mark your ratings of how you feel about your child</h3>
-                    </div>
-
-                    <div class="container" id="reviewBody">
+                    <h3 class="text-center">Mark your ratings of how you feel about your child</h3>
+                    <div class="container">
                         <div class="row">
-                            <div class="col-sm-5 col-md-5 col-xs-5 col-lg-5">
-Educational performance at the school                            </div>
-                            <div class="col-sm-7 col-md-7 col-xs-7 col-lg-7">
-                                <input id="education" type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1" data-slider-value="0" style="width: 95%; margin: 20px">
+                            <div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
+                                Educational performance at the school </div>
+                            <div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
+                                <input id="education" name="education" type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1" data-slider-value="0" style="width: 95%; margin: 20px">
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-5 col-md-5 col-xs-5 col-lg-5">
-                                Health (physical and Mental well-
-
-being)condition of the child
+                            <div class="col-sm-6  col-sm-offset-1 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
+                                <input type="text" class="form-control" id="reviewcom1" placeholder="Comments, If any">
                             </div>
-                            <div class="col-sm-7 col-md-7 col-xs-7 col-lg-7">
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
+                                Health condition of the child
+                            </div>
+                            <div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
                                 <input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="health" type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1"
                                     data-slider-value="0" style="width: 95%; margin: 20px" /></div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-5 col-md-5 col-xs-5 col-lg-5">
-                                Child relationship with family
-
-members
+                            <div class="col-sm-6  col-sm-offset-1 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
+                                <input type="text" class="form-control" id="reviewcom2" placeholder="Comments, If any">
                             </div>
-                            <div class="col-sm-7 col-md-7 col-xs-7 col-lg-7">
-                                <input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="familyRelationship" type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1"
-                                    data-slider-value="0" style="width: 95%; margin: 20px" /></div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-5 col-md-5 col-xs-5 col-lg-5">
+                            <div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
+                                Child relationship with family members
+                            </div>
+                            <div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
+                                <input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="familyRelationship" type="text" data-slider-min="0" data-slider-max="10"
+                                    data-slider-step="1" data-slider-value="0" style="width: 95%; margin: 20px" /></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6  col-sm-offset-1 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
+                                <input type="text" class="form-control" id="reviewcom3" placeholder="Comments, If any">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
                                 Child relationship with friends
                             </div>
-                            <div class="col-sm-7 col-md-7 col-xs-7 col-lg-7">
+                            <div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
                                 <input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="friendRelationship" type="text" data-slider-min="0" data-slider-max="10"
                                     data-slider-step="1" data-slider-value="0" style="width: 95%; margin: 20px" /></div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-5 col-md-5 col-xs-5 col-lg-5">
-                               Positive behaviour and attitude of the
-
-child
+                            <div class="col-sm-6  col-sm-offset-1 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
+                                <input type="text" class="form-control" id="reviewcom4" placeholder="Comments, If any">
                             </div>
-                            <div class="col-sm-7 col-md-7 col-xs-7 col-lg-7">
-                                <input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="positiveAttitude" type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1"
-                                    data-slider-value="0" style="width: 95%; margin: 20px" /></div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-5 col-md-5 col-xs-5 col-lg-5">
-                              Participation in co-curricular activities
+                            <div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
+                                Positive behaviour and attitude of the child
                             </div>
-                            <div class="col-sm-7 col-md-7 col-xs-7 col-lg-7">
+                            <div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
+                                <input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="positiveAttitude" type="text" data-slider-min="0" data-slider-max="10"
+                                    data-slider-step="1" data-slider-value="0" style="width: 95%; margin: 20px" /></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6  col-sm-offset-1 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
+                                <input type="text" class="form-control" id="reviewcom5" placeholder="Comments, If any">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
+                                Participation in co-curricular activities
+                            </div>
+                            <div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
                                 <input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="coCurricular" type="text" data-slider-min="0" data-slider-max="10"
                                     data-slider-step="1" data-slider-value="0" style="width: 95%; margin: 20px" /></div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-5 col-md-5 col-xs-5 col-lg-5">
-                               Participation in social/community
-
-events
+                            <div class="col-sm-6  col-sm-offset-1 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
+                                <input type="text" class="form-control" id="reviewcom6" placeholder="Comments, If any">
                             </div>
-                            <div class="col-sm-7 col-md-7 col-xs-7 col-lg-7">
-                                <input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="feelings" type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1"
-                                    data-slider-value="0" style="width: 95%; margin: 20px" /></div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-5 col-md-5 col-xs-5 col-lg-5">
-                             Feeling safe at Home, community
-
-and School
+                            <div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
+                                Participation in social/community events
                             </div>
-                            <div class="col-sm-7 col-md-7 col-xs-7 col-lg-7">
-                                <input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="willingness" type="text" data-slider-min="0" data-slider-max="10"
+                            <div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
+                                <input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="socialCommunity" type="text" data-slider-min="0" data-slider-max="10"
                                     data-slider-step="1" data-slider-value="0" style="width: 95%; margin: 20px" /></div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-5 col-md-5 col-xs-5 col-lg-5">
-                               Social interaction with peers
+                            <div class="col-sm-6  col-sm-offset-1 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
+                                <input type="text" class="form-control" id="reviewcom7" placeholder="Comments, If any">
                             </div>
-                            <div class="col-sm-7 col-md-7 col-xs-7 col-lg-7">
-                                <input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="learning" type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1"
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
+                                Feeling safe at Home, community and School
+                            </div>
+                            <div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
+                                <input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="safeFeel" type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1"
                                     data-slider-value="0" style="width: 95%; margin: 20px" /></div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-5 col-md-5 col-xs-5 col-lg-5">
+                            <div class="col-sm-6  col-sm-offset-1 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
+                                <input type="text" class="form-control" id="reviewcom8" placeholder="Comments, If any">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
+                                Social interaction with peers
+                            </div>
+                            <div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
+                                <input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="socialInteraction" type="text" data-slider-min="0" data-slider-max="10"
+                                    data-slider-step="1" data-slider-value="0" style="width: 95%; margin: 20px" /></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6  col-sm-offset-1 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
+                                <input type="text" class="form-control" id="reviewcom9" placeholder="Comments, If any">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
                                 Personal hygiene of the child
                             </div>
-                            <div class="col-sm-7 col-md-7 col-xs-7 col-lg-7">
-                                <input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="feedback" type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1"
+                            <div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
+                                <input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="hygiene" type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1"
                                     data-slider-value="0" style="width: 95%; margin: 20px" />
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-5 col-md-5 col-xs-5 col-lg-5">
-                                <p>Comments</p>
+                            <div class="col-sm-6  col-sm-offset-1 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
+                                <input type="text" class="form-control" id="reviewcom10" placeholder="Comments, If any">
                             </div>
-                            <textarea class="col-sm-6 col-md-6 col-xs-6 col-lg-6" rows="3" id="comment"></textarea>
                         </div>
                     </div>
                 </div>

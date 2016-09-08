@@ -209,7 +209,109 @@ $(document).ready(function() {
                     // $('#installationForm').formValidation('defaultSubmit');
 
                     // For testing purpose
-                    $('#completeModal').modal();
+
+                   // $('#completeModal').modal();
+                   var data={};
+                data.date=($('#date').val());
+                   data.location=($('#placeOfMeeting').val());
+                   data.agenda=console.log($('#agenda').val());
+                   data.outcome=($('#outcome').val());
+                   data.keyAccomplishment=($('#accomplishment').val());
+                   data.keyLearning=($("input[name='connection']:checked").val());
+                   var connect=$("input[name='connection']:checked").val();
+                   var connection={};
+                   if(connect=='yes')
+                   {                       
+                       connection.connectedTo=$('#connectedTo').val();
+                       connection.purpose=$('#purpose').val();
+                        
+                   }
+                   else{
+                       connection.connectedTo="nil";
+                       connection.purpose="nil";
+                   }
+                   data.newConnection = JSON.stringify(connection);
+            
+                        data.keyLearning=($('#learnings').val());
+                        
+                         var challenge=$("input[name='challengesMentee']:checked").val();
+                   
+                   if(challenge=='yes')
+                   {                       
+                       data.menteeChallenges=$('#challengesDetailMenteeText').val();
+                     
+                   }
+                   else{
+                        data.menteeChallenges="nil";
+                       
+                   }
+                                     
+                         var challenge1=$("input[name='challengesMentor']:checked").val();
+                 
+                   if(challenge1=='yes')
+                   {                       
+                       data.mentorChallenges=$('#challengesDetailMentorText').val();
+                     
+                   }
+                   else
+                   {
+                        data.mentorChallenges="nil";
+                       
+                   }
+                  
+                       var challenge1=$("input[name='challengesVolunteer']:checked").val();
+                   
+                   if(challenge1=='yes')
+                   {                       
+                      data.volunteerChallenges=$('#challengesDetailVolunteerText').val();
+                     
+                   }
+                   else
+                   {
+                        data.volunteerChallenges="nil";
+                       
+                   }
+                   
+                       var review={};
+                       review.education=education.value;
+                       review.educationText=$('#reviewcom1').val();
+                        review.health=health.value;
+                       review.healthText=$('#reviewcom2').val();
+                       review.familyRelationship=familyRelationship.value;
+                       review.familyRelationshipText=$('#reviewcom3').val();
+                       review.friendRelationship=friendRelationship.value;
+                       review.friendRelationshipText=$('#reviewcom4').val();
+                       review.positiveAttitude=positiveAttitude.value;
+                       review.positiveAttitudeText=$('#reviewcom5').val();
+                       review.coCurricular=coCurricular.value;
+                       review.coCurricularText=$('#reviewcom6').val();
+                       review.socialCommunity=socialCommunity.value;
+                        review.socialCommunityText=$('#reviewcom7').val();                    
+                       review.safeFeel=safeFeel.value;
+                        review.safeFeelText=$('#reviewcom8').val();
+                       review.socialInteraction=socialInteraction.value;
+                        review.socialInteractionText=$('#reviewcom9').val();
+                       review.hygiene=hygiene.value;
+                        review.hygieneText=$('#reviewcom10').val();
+                      data.review = JSON.stringify(review);
+
+                      var settings = {
+                            "async": true,
+                            "crossDomain": true,
+                            "url": "http://localhost:3006/tracker",
+                            "method": "POST",
+                            "headers": {
+                                "content-type": "application/json",
+                            },
+                            "processData": false,
+                            "data": data,
+                        }
+                        // "data": JSON.stringify(data),
+                        $.ajax(settings).done(function (response) {
+
+
+                        });
+
                 }
 
                 return true;
@@ -250,11 +352,12 @@ $(document).ready(function() {
     }
     $("#reviewBody").submit(function (e) {
         e.preventDefault();
-    })
+    });
+
 $("#education").slider();
 $("#education").on("slide", function (education) {
 	console.log("education:" + education.value);
-	
+   
 });
 $("#health").slider();
 $("#health").on("slide", function (health) {

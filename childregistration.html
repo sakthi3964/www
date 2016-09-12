@@ -15,7 +15,7 @@
     <script src="assert/js/framework/bootstrap.min.js"></script>
     <script src="assert/js/jquery.bootstrap.wizard.min.js"></script>
     <script src="js/register.js"></script>
-     <script src="js/childregistration.js"></script>
+    <script src="js/childregistration.js"></script>
 </head>
 
 <body>
@@ -31,71 +31,72 @@
         </nav>
     </div>
     <div class="container" id="blockreg2">
-        <form id="childForm" class="form-horizontal" method="POST">     
-                <center>
-                    <h3> CHILDREN REGISTRATION FORM </h3>
-                </center>
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="name">Name:</label>
-                    <div class="col-sm-8">
-                        <input type="text" id="name" name="name" class="form-control" placeholder="Enter child Name">
-                    </div>
+        <form id="childForm" class="form-horizontal" method="POST">
+            <center>
+                <h3> CHILDREN REGISTRATION FORM </h3>
+            </center>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="name">Name:</label>
+                <div class="col-sm-8">
+                    <input type="text" id="name" name="name" class="form-control" placeholder="Enter child Name">
                 </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2">DOB</label>
-                    <div class="col-sm-8">
-                        <input type="date" id="dob" name="dob" class="form-control" placeholder="Enter child Date of birth">
-                    </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">DOB</label>
+                <div class="col-sm-8">
+                    <input type="date" id="dob" name="dob" class="form-control" placeholder="Enter child Date of birth">
                 </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2">Age</label>
-                    <div class="col-sm-8">
-                        <input type="text" id="age" name="age" class="form-control" placeholder="Enter child Age">
-                    </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Age</label>
+                <div class="col-sm-8">
+                    <input type="text" id="age" name="age" class="form-control" placeholder="Enter child Age">
                 </div>
-                <div class="form-group">
-                    <label for="gender" class="control-label col-sm-2">Gender</label>
-                    <div class="col-sm-8">
-                        <label class="radio-inline">
+            </div>
+            <div class="form-group">
+                <label for="gender" class="control-label col-sm-2">Gender</label>
+                <div class="col-sm-8">
+                    <label class="radio-inline">
                             <input type="radio" id="male" name="gender" value="male">Male
                         </label>
-                        <label class="radio-inline">
+                    <label class="radio-inline">
                             <input type="radio" id= "female" name="gender" value="Female">Female
                         </label>
-                    </div>
                 </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2">Center</label>
-                    <div class="col-sm-8">
-                        <select id="center">
-                            <option value="BSH">BSH</option>
-                            <option value="CC">CC</option>
-                            <option value="CDC">CDC</option>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Center</label>
+                <div class="col-sm-8">
+                    <select id="center" class="form-control">
+                            <option value="">Select</option>
+                            <option value="BSH">Baby Sarah Home</option>
+                            <option value="CC">Children's Collective</option>
+                            <option value="CDC">Chid Development Center</option>
                         </select>
-                    </div>
                 </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="email">UserId:</label>
-                    <div class="col-sm-4">
-                        <input type="email" class="form-control" id="email_id" placeholder="Enter UserId">
-                    </div>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control" id="domain" value="@nkana.tycl.org.in" disabled>
-                    </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="email">UserId:</label>
+                <div class="col-sm-4">
+                    <input type="email" class="form-control" id="email_id" placeholder="Enter UserId">
                 </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2">Password</label>
-                    <div class="col-sm-8">
-                        <input type="password" id="password" name="password" class="form-control" placeholder="Enter child password">
-                    </div>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="domain" value="@nkana.tycl.org.in" disabled>
                 </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2">Confirm Password</label>
-                    <div class="col-sm-8">
-                        <input type="password" id="cpassword" name="cpassword" class="form-control" placeholder="Enter password again">
-                    </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Password</label>
+                <div class="col-sm-8">
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Enter child password">
                 </div>
-                <center> <button class="btn btn-success" id="submit">SUBMIT</button></center>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Confirm Password</label>
+                <div class="col-sm-8">
+                    <input type="password" id="cpassword" name="cpassword" class="form-control" placeholder="Enter password again">
+                </div>
+            </div>
+            <center> <button class="btn btn-success" id="submit">SUBMIT</button></center>
         </form>
     </div>
     <div class="container-fluid" id="commonfooter">

@@ -58,3 +58,27 @@ a {
 .form-control{
     width: auto;
 }
+
+ul {
+    border-bottom: solid #06BBB5;
+}
+li{
+    padding: 10px;
+    padding-left: 10px;
+}
+#firsttab{
+    padding-top: 5px;
+    background-color: #f7f7f6;
+}
+#secondtab{
+    padding-top: 5px;
+    background-color: #f7f7f6;
+}
+#code{
+    padding-left: 10px;
+}
+.nav-pills > li > a {
+    border-radius: 4px;
+    background-color: #f7f7f6; 
+    border-radius: 20px;
+}

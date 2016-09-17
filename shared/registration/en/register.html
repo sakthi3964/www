@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>N'KaNa Registration Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" href="../../../assert/css/bootstrap.min.css">
+    <script src="../../../assert/js/jquery.min.js"></script>
+    <script src="../../../assert/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../assert/css/bootstrap.css" />
+    <link rel="stylesheet" href="../../../helperfiles/common.css">
+    <link href="../css/register.css" rel="stylesheet">
+    <link href="../../../assert/css/daterangepicker.css" rel="stylesheet">
+    <link href="../../../assert/css/formValidation.css" rel="stylesheet" />
+    <script src="../../../assert/js/formValidation.js"></script>
+    <script src="../../../assert/js/framework/bootstrap.min.js"></script>
+    <script src="../../../assert/js/jquery.bootstrap.wizard.min.js"></script>
+    <script src="../js/registration.js"></script>
+    <script src="../../../assert/js/moment.min.js"></script>
+    <script src="../../../assert/js/daterangepicker.js"></script>
+
+
+    <!--<script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css">-->
+</head>
+
+<body>
+    <div class="container-fluid" id="commonblock">
+        <nav class="navbar navbar-custom">
+            <div class="row">
+                <div class="navbar-header">
+                    <div class="col-xs-10 col-sm-10">
+                        <p id="title1">N'KaNa</p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container" id="blockreg2">
+        <form id="volunteerForm" class="form-horizontal" method="POST">
+            <ul class="nav nav-pills">
+                <li class="active"><a href="#firsttab" data-toggle="tab">Personal details</a></li>
+                <li><a href="#secondtab" data-toggle="tab">Professional details</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="firsttab">
+                    <center>
+                        <h3>REGISTRATION FORM </h3>
+                    </center>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4 col-xs-3" for="name">Name</label>
+                        <div class="col-sm-8 col-xs-9">
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Name" size="30">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4 col-xs-3">DOB</label>
+                        <div class="col-sm-8 col-xs-9">
+                            <input type="text" id="dob" name="dob" class="form-control" placeholder="Date of birth" data-provide="datepicker"
+                                data-date-end-date="0d">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4 col-xs-3">Age</label>
+                        <div class="col-sm-8 col-xs-9">
+                            <input type="text" id="age" name="age" class="form-control" placeholder="Age" size="4">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender" class="control-label col-sm-4 col-xs-3">Gender</label>
+                        <div class="col-sm-8 col-xs-9">
+                            <label class="radio-inline">
+                            <input type="radio" id="male" name="gender" value="male">Male
+                        </label>
+                            <label class="radio-inline">
+                            <input type="radio" id= "female" name="gender" value="Female">Female
+                        </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4 col-xs-3">Mobile Number</label>
+                        <div class="col-sm-8 col-xs-9">
+                            <input type="text" id="mobile_no" name="mobile_no" class="form-control" minlength="10" maxlength="10" placeholder="Mobile Number"
+                                size="15">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4 col-xs-3">Phone Number</label>
+                        
+                            <div class="col-sm-1 col-xs-3">
+                                <input type="text" id="code" name="code" class="form-control" minlength="4" maxlength="4" placeholder="Pin code" size="5">
+                            </div>
+                            <div class="col-sm-4 col-xs-2">
+                                <input type="text" id="phone" name="phone" class="form-control" minlength="7" maxlength="7" placeholder="Phone Number">
+                            </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4 col-xs-3" for="addressline1">Address Line 1</label>
+                        <div class="col-sm-8 col-xs-9">
+                            <input id="address_line1" name="Address_line1" class="form-control" type="text" placeholder="address line 1" size="30">
+                            <p class="help-block">Street address, P.O. box, company name, c/o </p>
+                        </div>
+                    </div>
+                    <!-- address-line2 input-->
+                    <div class="form-group">
+                        <label class="control-label  col-sm-4 col-xs-3">Address Line 2</label>
+                        <div class="col-sm-8 col-xs-9">
+                            <input id="address_line2" name="Address_line2" type="text" placeholder="address line 2" class="form-control" size="30">
+                            <h6>Apartment, suite , unit, building, floor, etc.</h6>
+                        </div>
+                    </div>
+                    <!-- city input-->
+                    <div class="form-group">
+                        <label class="control-label  col-sm-4 col-xs-3">City / Town</label>
+                        <div class="col-sm-8 col-xs-9">
+                            <input id="city" name="city" type="text" placeholder="city" class="form-control">
+                        </div>
+                    </div>
+                    <!-- region input-->
+                    <div class="form-group">
+                        <label class="control-label  col-sm-4 col-xs-3">State</label>
+                        <div class="col-sm-8 col-xs-9">
+                            <select id="state" name="state" class="form-control">
+                            <option value="">Select</option>
+                            <option value="AP">Andhra Pradesh</option>
+                            <option value="AR">Arunachal Pradesh</option>
+                            <option value="AS">Assam</option>
+                            <option value="BR">Bihar</option>
+                            <option value="CT">Chhattisgarh</option>
+                            <option value="GA">Goa</option>
+                            <option value="GJ">Gujarat</option>
+                            <option value="HR">Haryana</option>
+                            <option value="HP">Himachal Pradesh</option>
+                            <option value="JK">Jammu and Kashmir</option>
+                            <option value="JH">Jharkhand</option>
+                            <option value="KA">Karnataka</option>
+                            <option value="KL">Kerala</option>
+                            <option value="MP">Madhya Pradesh</option>
+                            <option value="MH">Maharashtra</option>
+                            <option value="MN">Manipur</option>
+                            <option value="ML">Meghalaya</option>
+                            <option value="MZ">Mizoram</option>
+                            <option value="NL">Nagaland</option>
+                            <option value="OR">Odisha</option>
+                            <option value="PB">Punjab</option>
+                            <option value="RJ">Rajasthan</option>
+                            <option value="SK">Sikkim</option>
+                            <option value="TN">Tamil Nadu</option>
+                            <option value="TG">Telangana</option>
+                            <option value="TR">Tripura</option>
+                            <option value="UT">Uttarakhand</option>
+                            <option value="UP">Uttar Pradesh</option>
+                            <option value="WB">West Bengal</option>
+                            <option value="AN">Andaman and Nicobar Islands</option>
+                            <option value="CH">Chandigarh</option>
+                            <option value="DN">Dadra and Nagar Haveli</option>
+                            <option value="DD">Daman and Diu</option>
+                            <option value="DL">Delhi</option>
+                            <option value="LD">Lakshadweep</option>
+                            <option value="PY">Puducherry</option>
+                
+                        </select>
+                        </div>
+                    </div>
+                    <!-- postal-code input-->
+                    <div class="form-group">
+                        <label class="control-label  col-sm-4 col-xs-3">Pin Code</label>
+                        <div class="col-sm-8 col-xs-9">
+                            <input id="postal-code" name="postal_code" type="text" placeholder="Pin Code" minlength="6" maxlength="6" class="form-control"
+                                size="10">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <!-- country select -->
+                    <div class="form-group">
+                        <label class="control-label  col-sm-4 col-xs-3">Country</label>
+                        <div class="col-sm-8 col-xs-9">
+                            <select id="country" name="country" class="form-control">
+                            <option value="IN">India</option>
+                        </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-4 col-xs-3" for="email">Email:</label>
+                        <div class="col-sm-8 col-xs-9">
+                            <input type="email" class="form-control" id="email_id" name="email_id" placeholder="Enter email" size="30">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4 col-xs-3">Password</label>
+                        <div class="col-sm-8 col-xs-9">
+                            <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" size="30">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4 col-xs-3">Confirm Password</label>
+                        <div class="col-sm-8 col-xs-9">
+                            <input type="password" id="cpassword" name="cpassword" class="form-control" placeholder="Enter your password again" size="30">
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="secondtab">
+                    <center>
+                        <h3> EDUCATIONAL/WORK DETAILS </h3>
+                    </center>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4 col-xs-3" for="name">Course:</label>
+                        <div class="col-sm-8 col-xs-9">
+                            <input type="text" id="course" name="course" class="form-control" placeholder="Enter your Course" size="20">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4 col-xs-3" for="name">Department:</label>
+                        <div class="col-sm-8 col-xs-9">
+                            <input type="text" id="department" name="department" class="form-control" placeholder="Enter your Department" size="20">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4 col-xs-3" for="name">Institution</label>
+                        <div class="col-sm-8 col-xs-9">
+                            <input type="text" id="institution" name="institution" class="form-control" placeholder="Enter your Institution" size="30">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4 col-xs-3" for="work_type">Work Type:</label>
+                        <div class="col-sm-8 col-xs-9">
+                            <select class="form-control" id="work_type" name="work_type">
+                <option value="">-Select-</option>
+                <option value="student">Student</option>
+                <option value="professional">Professional</option>
+        </select>
+                        </div>
+                    </div>
+                    <div id="proff" name="proff" style="display: none;">
+                        <div class="form-group">
+                            <label class="control-label col-sm-4 col-xs-3" for="designation">Designation:</label>
+                            <div class="col-sm-8 col-xs-9">
+                                <input type="text" class="form-control" id="designation" name="designation" size="30">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4 col-xs-3" for="organization">Organization:</label>
+                            <div class="col-sm-8 col-xs-9">
+                                <input type="text" class="form-control" id="organization" name="organization" size="30">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4 col-xs-3" for="area_of_expertise">Area of Expertise:</label>
+                            <div class="col-sm-8 col-xs-9">
+                                <input type="text" class="form-control" id="area_of_expertise" name="area_of_expertise" size="30">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4 col-xs-3" for="name">Commitment</label>
+                        <div class="col-sm-8 col-xs-9">
+                            <input type="text" id="commitment" name="commitment" class="form-control" placeholder="Enter your commitment" size="4">
+                            <h6>Your Commitment in Hours for a Week</h6>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4 col-xs-3">Reference</label>
+                        <div class="col-sm-8 col-xs-9">
+                            <input type="text" id="reference" name="reference" class="form-control" placeholder="Enter your reference to N'KaNa" size="30">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4 col-xs-3" for="name">Upload your CV</label>
+                        <div class="col-sm-8 col-xs-9">
+                            <input type="file" id="cv" name="cv" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4 col-xs-3" for="name">Upload your Photo</label>
+                        <div class="col-sm-8 col-xs-9">
+                            <input type="file" id="photo" name="photo" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="pager wizard">
+                    <li class="previous"><a href="javascript: void(0);">Previous</a></li>
+                    <li class="next" id="submit"><a href="javascript: void(0);">Next</a></li>
+                </ul>
+            </div>
+        </form>
+    </div>
+    <div class="container-fluid" id="commonfooter">
+        <footer id="footer">
+            <center>
+                <p>Trust for Youth and Child Leadership & Mughil Social Welfare Organization</p>
+            </center>
+        </footer>
+    </div>
+    <script type="text/javascript">
+    $(function() {
+        $('input[name="dob"]').daterangepicker({
+             autoUpdateInput: false,
+            singleDatePicker: true,
+            showDropdowns: true
+        }, 
+        function(start, end, label) {
+            var years = moment().diff(start, 'years');
+            document.getElementById("age").value = years;
+            console.log(years);
+        });
+    });
+</script>
+</body>
+
+</html>

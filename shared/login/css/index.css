@@ -1,0 +1,48 @@
+body{
+    background-color: #06BBB5;
+}
+
+#heading{
+    color: white;
+    font-size: 30px;
+    float: left;  
+}
+#aboutus{
+    text-align: justify;
+    color: white;
+}
+#aboutuscollapse{
+    float: none;
+    font-size: 15px;
+    color: white;
+}
+#block1 {
+    background-color: white;
+    padding: 50px 30px 90px 30px;
+}
+
+.loginbutton {
+    background-color: #F9571A;
+}
+
+#link1 {
+    float: left;
+    color: #06BBB5;
+    text-decoration: none;
+}
+#link2 {
+    float: right;
+    color: #06BBB5;
+    text-decoration: none;
+}
+#panel1 {
+    margin-top:60px; 
+}
+#panel2 {
+    margin-top:20px; 
+
+}
+#footer{
+    color: black;
+}
+

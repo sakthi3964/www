@@ -24,12 +24,11 @@ $(document).ready(function () {
             $('#mail').hide();
             $('#mission').show();
         }
-         var role =$('#role').val();
-     console.log(role);
-    $('#submit').click(function () {
-        window.location.href ="volunteerregistration.html?role:" +role;
-          })
+        var role = $('#role').val();
+        console.log(role);
+        $('#submit').click(function () {
+            console.log(role);
+            window.location.href = "register.html?role:" + role;
+        })
     });
-    
-
 });

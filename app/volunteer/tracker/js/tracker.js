@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $('#placeOfMeeting').change(function () {
-        if ($('#placeOfMeeting').val() == '5') {
+        if ($('#placeOfMeeting').val() == 'Others') {
             $('#others').show();
 
         }
@@ -212,11 +212,20 @@ $(document).ready(function () {
                     // $('#completeModal').modal();
                     var data = {};
                     data.date = ($('#date').val());
-                    data.location = ($('#placeOfMeeting').val());
-                    data.agenda = console.log($('#agenda').val());
+                    var location = ($('#placeOfMeeting').val());
+                    if (location == "Others") {
+                        console.log("others");
+                        data.location = ($('#others').val());
+                    }
+                    else {
+                        console.log("else others");
+                        data.location = ($('#placeOfMeeting').val());
+                    }
+                    //  data.location=($('#placeOfMeeting').val());
+                    data.agenda = ($('#agenda').val());
                     data.outcome = ($('#outcome').val());
                     data.keyAccomplishment = ($('#accomplishment').val());
-                    data.keyLearning = ($("input[name='connection']:checked").val());
+                    //data.keyLearning=($("input[name='connection']:checked").val());
                     var connect = $("input[name='connection']:checked").val();
                     var connection = {};
                     if (connect == 'yes') {
@@ -224,6 +233,7 @@ $(document).ready(function () {
                         connection.purpose = $('#purpose').val();
 
                     }
+
                     else {
                         connection.connectedTo = "nil";
                         connection.purpose = "nil";
@@ -287,24 +297,12 @@ $(document).ready(function () {
                     review.hygiene = hygiene.value;
                     review.hygieneText = $('#reviewcom10').val();
                     data.review = JSON.stringify(review);
-
-                    var settings = {
-                        "async": true,
-                        "crossDomain": true,
-                        "url": "http://localhost:3406/tracker",
-                        "method": "POST",
-                        "headers": {
-                            "content-type": "application/json",
-                        },
-                        "processData": false,
-                        "data": data,
-                    }
-                    // "data": JSON.stringify(data),
-                    $.ajax(settings).done(function (response) {
-
-
+                    data.volunteer_id = 35;
+                    httpPost("/tracker",data,function(response){
+                        $.ajax(settings).done(function (response) {
                     });
 
+                    })                    
                 }
 
                 return true;
@@ -404,4 +402,9 @@ $(document).ready(function () {
         console.log("hygiene:" + hygiene.value);
 
     });
+
+
+
+
+
 });

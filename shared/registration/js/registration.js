@@ -35,6 +35,7 @@ $(document).ready(function () {
             $("#designation").val("");
             $("#organization").val("");
             $("#area_of_expertise").val("");
+            $("#experience").val("");
             $('#proff').hide();
         }
 
@@ -350,7 +351,6 @@ $(document).ready(function () {
                     data.gender = $("input[name='gender']:checked").val();
                     data.course = $('#course').val();
                     data.department = $('#department').val();
-                    data.work_type = $('#work_type').val();
                     data.institution = $('#institution').val();
                     data.address_line1 = $('#address_line1').val();
                     data.address_line2 = $('#address_line2').val();
@@ -362,6 +362,7 @@ $(document).ready(function () {
                     data.mobile_no = $('#mobile_no').val();
                     data.phone = $('#phone').val();
                     data.email_id = $('#email_id').val();
+                    data.work_type = $('#work_type').val();
                     data.designation = $('#designation').val();
                     data.organization = $('#organization').val();
                     data.area_of_expertise = $('#area_of_expertise').val();
@@ -373,6 +374,7 @@ $(document).ready(function () {
                     data.photo = $('#photo').val();
                     httpPost("/registration", data, function (response) {
                         alert(JSON.stringify(response));
+                        alert("Successfully completed");
                     });
                 }
                 return true;

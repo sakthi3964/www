@@ -3,6 +3,19 @@ $(document).ready(function () {
         e.preventDefault();
     })
     var session = localStorage.getItem("user");
+    $('#login')
+        .formValidation({
+            framework: 'bootstrap',
+            fields: {
+                username: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Enter your mail-id'
+                        }
+                    }
+                },
+            }
+        })
     $("#signin").click(function () {
         var data = {};
         data.email_id = $('#username').val();

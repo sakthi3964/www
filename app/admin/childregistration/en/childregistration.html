@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>N'KaNa Registration Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" href="../../../../assert/css/bootstrap.min.css">
+    <script src="../../../../assert/js/jquery.min.js"></script>
+    <script src="../../../../assert/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../../../helperfiles/common.css">
+    <link href="../../../../shared/registration/css/register.css" rel="stylesheet">
+    <link href="../../../../assert/css/formValidation.css" rel="stylesheet" />
+    <script src="../../../../assert/js/formValidation.js"></script>
+    <script src="../../../../assert/js/framework/bootstrap.min.js"></script>
+    <script src="../../../../assert/js/jquery.bootstrap.wizard.min.js"></script>
+    <!--<script src="js/register.js"></script>-->
+    <script src="../../../../config/config.js" ></script>
+    <script src="../../../../helperfiles/helper.js" ></script>
+    <script src="../js/childregistration.js"></script>
+
+</head>
+
+<body>
+    <div class="container-fluid" id="commonblock">
+        <nav class="navbar navbar-custom">
+            <div class="row">
+                <div class="navbar-header">
+                    <div class="col-xs-10 col-sm-10">
+                        <p id="title1">N'KaNa</p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container" id="blockreg2">
+        <form id="childForm" class="form-horizontal" method="POST">
+            <center>
+                <h3> CHILDREN REGISTRATION FORM </h3>
+            </center>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="name">Name:</label>
+                <div class="col-sm-8">
+                    <input type="text" id="name" name="name" class="form-control" placeholder="Enter child Name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">DOB</label>
+                <div class="col-sm-8">
+                    <input type="date" id="dob" name="dob" class="form-control" placeholder="Enter child Date of birth">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Age</label>
+                <div class="col-sm-8">
+                    <input type="text" id="age" name="age" class="form-control" placeholder="Enter child Age">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="gender" class="control-label col-sm-2">Gender</label>
+                <div class="col-sm-8">
+                    <label class="radio-inline">
+                            <input type="radio" id="male" name="gender" value="male">Male
+                        </label>
+                    <label class="radio-inline">
+                            <input type="radio" id= "female" name="gender" value="Female">Female
+                        </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Center</label>
+                <div class="col-sm-8">
+                    <select id="center" class="form-control">
+                            <option value="">Select</option>
+                            <option value="BSH">Baby Sarah Home</option>
+                            <option value="CC">Children's Collective</option>
+                            <option value="CDC">Chid Development Center</option>
+                        </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="email">UserId:</label>
+                <div class="col-sm-4">
+                    <input type="email" class="form-control" id="email_id" placeholder="Enter UserId">
+                </div>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="domain" value="@nkana.tycl.org.in" disabled>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Password</label>
+                <div class="col-sm-8">
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Enter child password">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Confirm Password</label>
+                <div class="col-sm-8">
+                    <input type="password" id="cpassword" name="cpassword" class="form-control" placeholder="Enter password again">
+                </div>
+            </div>
+            <center> <button class="btn btn-success" id="submit">SUBMIT</button></center>
+        </form>
+    </div>
+    <div class="container-fluid" id="commonfooter">
+        <footer id="footer">
+            <center>
+                <p>Trust for Youth and Child Leadership & Mughil Social Welfare Organization</p>
+            </center>
+        </footer>
+    </div>
+</body>
+
+</html>

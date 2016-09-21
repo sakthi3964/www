@@ -274,7 +274,7 @@ $(document).ready(function () {
                         data.volunteerChallenges = "nil";
 
                     }
-
+                    var volunteer_id = localStorage.getItem("user");
                     var review = {};
                     review.education = education.value;
                     review.educationText = $('#reviewcom1').val();
@@ -297,14 +297,14 @@ $(document).ready(function () {
                     review.hygiene = hygiene.value;
                     review.hygieneText = $('#reviewcom10').val();
                     data.review = JSON.stringify(review);
-                    data.volunteer_id = 35;
-                    httpPost("/tracker",data,function(response){
+                    data.volunteer_id = volunteer_id;
+                    httpPost("/tracker", data, function (response) {
                         $.ajax(settings).done(function (response) {
-                    });
+                            alert("Inserted successfully");
+                        });
 
-                    })                    
+                    })
                 }
-
                 return true;
             },
             onPrevious: function (tab, navigation, index) {

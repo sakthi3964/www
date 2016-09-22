@@ -72,37 +72,17 @@ $(document).ready(function () {
     $("#submit").click(function () {
         var data = {};
         var role = 3;
-        var str = $('#email_id').val();
+        var str = $('#user_id').val();
         var domain = $('#domain').val();
-        var email_id = str.concat(domain);
-        alert(email_id);
+        var user_id = str.concat(domain);
         data.role = role;
         data.name = $('#name').val();
         data.dob = $('#dob').val();
         data.age = $('#age').val();
         data.gender = $("input[name='gender']:checked").val();
-        alert(data.gender);
-        data.address = $('#address').val();
-        data.email_id = email_id;
+        data.user_id = user_id;
         data.password = $('#password').val();
         data.center = $('#center').val();
-
-        // var settings = {
-        //     "async": true,
-        //     "crossDomain": true,
-        //     "url": "http://localhost:3406/registration",
-        //     "method": "POST",
-        //     "headers": {
-        //         "content-type": "application/json",
-        //     },
-        //     "processData": false,
-        //     "data": JSON.stringify(data),
-        // }
-
-        // $.ajax(settings).done(function (response) {
-        //     alert("successfully inserted");
-        // });
-
         httpPost("/childrenregistration", data, function (response) {
             alert("successfully registered");
         });

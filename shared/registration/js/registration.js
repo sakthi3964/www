@@ -338,13 +338,14 @@ $(document).ready(function () {
                     return false;
                 }
                 if (index === numTabs) {
-                    var url = window.location.href;
-                    var role = url.substring(url.lastIndexOf(':') + 1);
+                    // var url = window.location.href;
+                    // var role = url.substring(url.lastIndexOf(':') + 1);
                     var data = {};
 
-                    data.role = role;
-                    console.log(data.role);
-                    alert(data.role);
+                    // data.role = role;
+                    // console.log(data.role);
+                    // alert(data.role);
+                    data.role = $('#role').val();
                     data.name = $('#name').val();
                     data.dob = $('#dob').val();
                     data.age = $('#age').val();

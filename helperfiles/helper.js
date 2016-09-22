@@ -40,7 +40,6 @@ function lang() {
     var url = window.location.href;
     var array = url.split('/');
     var lang = array[array.length - 2];
-    alert(lang);
     console.log(lang);
     if(lang=='ta')
     {

@@ -44,7 +44,7 @@ $(document).ready(function () {
                 console.log(response.user_id);
                 localStorage.setItem("user", response.user_id);
                 localStorage.setItem("role", response.role);
-                window.location.href = "app/children/childrenhome/en/childrenhome.html"
+                window.location.href = "app/children/childrenshome/en/childrenhome.html"
             }
             else if (response.role == 'admin') {
                 localStorage.setItem("user", response.user_id);

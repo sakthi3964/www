@@ -17,10 +17,10 @@ var settings = {
 
     "data": JSON.stringify(data),
 }
-$.ajax(settings).done(function (response) {
+httpPost("/viewchildrenownprofile", data, function (response) {
     console.log(response);
 
-   // var res = JSON.parse(response.pre_assessment_data);
+    // var res = JSON.parse(response.pre_assessment_data);
     //console.log(res.standard);
 
     $('#name').html(response.full_name);
@@ -41,19 +41,8 @@ $.ajax(settings).done(function (response) {
         var url = window.location.href;
         dataForRequest.children_id = url.substring(url.lastIndexOf(':') + 1);
 
-        var settings1 = {
-            "async": true,
-            "crossDomain": true,
-            "url": "http://localhost:3406/insertConnectionRequest",
-            "method": "POST",
-            "headers": {
-                "content-type": "application/json",
-            },
-            "processData": false,
+        httpPost("/insertConnectionRequest", data, function (response) {
 
-            "data": JSON.stringify(dataForRequest),
-        }
-        $.ajax(settings1).done(function (response1) {
 
             console.log(response1);
 

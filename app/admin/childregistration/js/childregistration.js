@@ -13,7 +13,7 @@ $(document).ready(function () {
                 name: {
                     validators: {
                         notEmpty: {
-                            message: 'The name should not be empty'
+                            message: localization.name[lang()]
                         }
                     }
                 },
@@ -21,7 +21,7 @@ $(document).ready(function () {
                 dob: {
                     validators: {
                         notEmpty: {
-                            message: 'Enter your DOB'
+                            message: localization.dob[lang()]
                         },
                         // date: {
                         //     message: 'The date is not valid',
@@ -35,31 +35,45 @@ $(document).ready(function () {
                     validators: {
                         greaterThan: {
                             value: 12,
-                            message: 'Your age should be greater than 18'
+                            message: localization.childlesserage[lang()]
                         },
                         lessThan: {
                             value: 18,
-                            message: 'Sorry, The age should be 12 to 18'
+                            message: localization.childgreaterage[lang()]
                         },
                         notEmpty: {
-                            message: 'Enter your age'
+                            message: localization.age[lang()]
                         },
                         integer: {
-                            message: 'Enter valid age'
+                            message: localization.validno[lang()]
                         }
                     }
                 },
                 gender: {
                     validators: {
                         notEmpty: {
-                            message: 'select child gender'
+                            message: localization.gender[lang()]
                         }
                     }
                 },
                 center: {
                     validators: {
                         notEmpty: {
-                            message: 'select child center'
+                            message: localization.name[lang()]
+                        }
+                    }
+                },
+                password: {
+                    validators: {
+                        notEmpty: {
+                            message: localization.password[lang()]
+                        }
+                    }
+                },
+                user_id: {
+                    validators: {
+                        notEmpty: {
+                            message: localization.username[lang()]
                         }
                     }
                 }

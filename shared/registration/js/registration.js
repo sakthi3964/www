@@ -1,30 +1,5 @@
 $(document).ready(function () {
-    // $('#role').change(function () {
-    //     if ($('#role').val() == '1') {
-    //         $('#volunteer').show();
-    //         $('#mentor').hide();
-    //         $('#volunteer1').show();
-    //         $('#mentor1').hide();
-    //         $('#mail').show();
-    //         $('#mission').hide();
-    //     }
-    //     if ($('#role').val() == '2') {
-    //         $('#mentor').show();
-    //         $('#volunteer').hide();
-    //         $('#mentor1').show();
-    //         $('#volunteer1').hide();
-    //         $('#mail').show();
-    //         $('#mission').hide();
-    //     }
-    //     if ($('#role').val() == '') {
-    //         $('#mentor').hide();
-    //         $('#volunteer').hide();
-    //         $('#mentor1').hide();
-    //         $('#volunteer1').hide();
-    //         $('#mail').hide();
-    //         $('#mission').hide();
-    //     }
-    // });
+
 
     $('#work_type').change(function () {
 
@@ -49,7 +24,7 @@ $(document).ready(function () {
         }
     }
 
-    $('#volunteerForm')
+    $('#registrationForm')
         .formValidation({
             framework: 'bootstrap',
             // icon: {
@@ -60,270 +35,277 @@ $(document).ready(function () {
             // This option will not ignore invisible fields which belong to inactive panels
             excluded: ':disabled',
             fields: {
-                //     name: {
-                //         validators: {
-                //             notEmpty: {
-                //                 message: 'The name should not be empty'
-                //             },
-                //             regexp: {
-                //                 regexp: /^[a-z\s]+$/i,
-                //                 message: 'The name can consist of alphabetical characters and spaces only'
-                //             }
-                //         }
+                role: {
+                    validators: {
+                        notEmpty: {
+                            message: localization.name[lang()]
+                        }
+                    }
+                },
+                name: {
+                    validators: {
+                        notEmpty: {
+                            message: localization.name[lang()]
+                        },
+                        regexp: {
+                            regexp: /^[a-z\s]+$/i,
+                            message: localization.validname[lang()]
+                        }
+                    }
 
-                //     },
-                //     dob: {
-                //         validators: {
-                //             notEmpty: {
-                //                 message: 'Enter your DOB'
-                //             }
-                //             // date: {
-                //             //     message: 'The date is not valid',
-                //             //    // format: 'YYYY/MM/DD',
-                //             //     min: '2000/01/01',
-                //             //     max: '2020/12/30'
-                //             // }
-                //         }
-                //     },
-                //     age: {
-                //         validators: {
-                //             greaterThan: {
-                //                 value: 18,
-                //                 message: 'Your age should be greater than 18'
-                //             },
-                //             lessThan: {
-                //                 value: 100,
-                //                 message: 'Still u are alive ??'
-                //             },
-                //             notEmpty: {
-                //                 message: 'Enter your age'
-                //             },
-                //             integer: {
-                //                 message: 'Enter valid age'
-                //             }
-                //         }
-                //     },
-                //     gender: {
-                //         validators: {
-                //             notEmpty: {
-                //                 message: 'select your gender'
-                //             }
-                //         }
-                //     },
-                //     mobile_no: {
-                //         validators: {
-                //             notEmpty: {
-                //                 message: 'Enter your mobile number'
-                //             },
-                //             integer: {
-                //                 message: 'Enter valid number'
-                //             }
-                //         }
-                //     },
-                //    phone: {
-                //         validators: {
-                //             integer: {
-                //                 message: 'Enter valid number'
-                //             }
-                //         }
-                //     },
-                //      code: {
-                //         validators: {
-                //             integer: {
-                //                 message: 'Enter valid number'
-                //             }
-                //         }
-                //     },
-                //     email_id: {
-                //         validators: {
-                //             notEmpty: {
-                //                 message: 'Enter your mail-id'
-                //             }
-                //         }
-                //     },
-                //     address_line1: {
-                //         validators: {
-                //             notEmpty: {
-                //                 message: 'select your address'
-                //             }
-                //         }
-                //     },
-                //     address_line2: {
-                //         validators: {
-                //             notEmpty: {
-                //                 message: 'select your street name'
-                //             }
-                //         }
-                //     },
-                //     city: {
-                //         validators: {
-                //             notEmpty: {
-                //                 message: 'enter your city'
-                //             }
-                //         }
-                //     },
-                //     state: {
-                //         validators: {
-                //             notEmpty: {
-                //                 message: 'select your state'
-                //             }
-                //         }
-                //     },
-                //     postal_code: {
-                //         validators: {
-                //             notEmpty: {
-                //                 message: 'Enter your pin code'
-                //             },
-                //              integer: {
-                //                 message: 'Enter valid number'
-                //             }
-                //         }
-                //     },
+                },
+                dob: {
+                    validators: {
+                        notEmpty: {
+                            message: localization.dob[lang()]
+                        }
+                        // date: {
+                        //     message: localization.validdob[lang()],
+                        //    // format: 'YYYY/MM/DD',
+                        //     min: '2000/01/01',
+                        //     max: '2020/12/30'
+                        // }
+                    }
+                },
+                age: {
+                    validators: {
+                        greaterThan: {
+                            value: 18,
+                            message: localization.lesserage[lang()]
+                        },
+                        lessThan: {
+                            value: 100,
+                            message: localization.greaterage[lang()]
+                        },
+                        notEmpty: {
+                            message: localization.age[lang()]
+                        },
+                        integer: {
+                            message: localization.validno[lang()]
+                        }
+                    }
+                },
+                gender: {
+                    validators: {
+                        notEmpty: {
+                            message: localization.gender[lang()]
+                        }
+                    }
+                },
+                mobile_no: {
+                    validators: {
+                        notEmpty: {
+                            message: localization.mobile_no[lang()]
+                        },
+                        integer: {
+                            message: localization.validno[lang()]
+                        }
+                    }
+                },
+                phone: {
+                    validators: {
+                        integer: {
+                            message: localization.validno[lang()]
+                        }
+                    }
+                },
+                code: {
+                    validators: {
+                        integer: {
+                            message: localization.validno[lang()]
+                        }
+                    }
+                },
+                email_id: {
+                    validators: {
+                        notEmpty: {
+                            message: localization.username[lang()]
+                        }
+                    }
+                },
+                address_line1: {
+                    validators: {
+                        notEmpty: {
+                            message: localization.address_line1[lang()]
+                        }
+                    }
+                },
+                address_line2: {
+                    validators: {
+                        notEmpty: {
+                            message: localization.address_line2[lang()]
+                        }
+                    }
+                },
+                city: {
+                    validators: {
+                        notEmpty: {
+                            message: localization.city[lang()]
+                        }
+                    }
+                },
+                state: {
+                    validators: {
+                        notEmpty: {
+                            message: localization.state[lang()]
+                        }
+                    }
+                },
+                postal_code: {
+                    validators: {
+                        notEmpty: {
+                            message: localization.postal_code[lang()]
+                        },
+                        integer: {
+                            message: localization.validno[lang()]
+                        }
+                    }
+                },
 
-                //     reference: {
-                //         validators: {
-                //             notEmpty: {
-                //                 message: 'select your Point of Contact'
-                //             }
-                //         }
-                //     },
-                //     password: {
-                //         validators: {
-                //             notEmpty: {
-                //                 message: 'Enter you password'
-                //             },
-                //             callback: {
-                //                 message: 'The password is not valid',
-                //                 callback: function (value, validator, $field) {
-                //                     if (value === '') {
-                //                         return true;
-                //                     }
+                reference: {
+                    validators: {
+                        notEmpty: {
+                            message: localization.reference[lang()]
+                        }
+                    }
+                },
+                password: {
+                    validators: {
+                        notEmpty: {
+                            message: localization.password[lang()]
+                        },
+                        callback: {
+                            message: 'The password is not valid',
+                            callback: function (value, validator, $field) {
+                                if (value === '') {
+                                    return true;
+                                }
 
-                //                     // Check the password strength
-                //                     if (value.length < 8) {
-                //                         return {
-                //                             valid: false,
-                //                             message: 'It must be more than 8 characters long'
-                //                         };
-                //                     }
+                                // Check the password strength
+                                if (value.length < 8) {
+                                    return {
+                                        valid: false,
+                                        message: localization.psstr[lang()]
+                                    };
+                                }
 
-                //                     // The password doesn't contain any uppercase character
-                //                     if (value === value.toLowerCase()) {
-                //                         return {
-                //                             valid: false,
-                //                             message: 'It must contain at least one upper case character'
-                //                         }
-                //                     }
+                                // The password doesn't contain any uppercase character
+                                if (value === value.toLowerCase()) {
+                                    return {
+                                        valid: false,
+                                        message: localization.psupper[lang()]
+                                    }
+                                }
 
-                //                     // The password doesn't contain any uppercase character
-                //                     if (value === value.toUpperCase()) {
-                //                         return {
-                //                             valid: false,
-                //                             message: 'It must contain at least one lower case character'
-                //                         }
-                //                     }
+                                // The password doesn't contain any uppercase character
+                                if (value === value.toUpperCase()) {
+                                    return {
+                                        valid: false,
+                                        message: localization.pslower[lang()]
+                                    }
+                                }
 
-                //                     // The password doesn't contain any digit
-                //                     if (value.search(/[0-9]/) < 0) {
-                //                         return {
-                //                             valid: false,
-                //                             message: 'It must contain at least one digit'
-                //                         }
-                //                     }
+                                // The password doesn't contain any digit
+                                if (value.search(/[0-9]/) < 0) {
+                                    return {
+                                        valid: false,
+                                        message: localization.psdigit[lang()]
+                                    }
+                                }
 
-                //                     return true;
-                //                 }
-                //             }
-                //         }
-                //     },
-                //     cpassword: {
-                //         validators: {
-                //             notEmpty: {
-                //                 message: 'Enter your password again'
-                //             },
-                //             identical: {
-                //                 field: 'password',
-                //                 message: 'The password and its confirm are not the same'
-                //             }
-                //         }
-                //     },
-                //     commitment: {
-                //         validators: {
-                //             notEmpty: {
-                //                 message: 'Enter your commitment'
-                //             }
-                //         }
-                //     },
-                //     // cv: {
-                //     //     validators: {
-                //     //         notEmpty: {
-                //     //             message: 'Upload your cv'
-                //     //         }
-                //     //     }
-                //     // },
-                //     // photo: {
-                //     //     validators: {
-                //     //         notEmpty: {
-                //     //             message: 'Upload your photo'
-                //     //         }
-                //     //     }
-                //     // },
-                //     work_type: {
-                //         validators: {
-                //             notEmpty: {
-                //                 message: 'Enter you work type'
-                //             }
-                //         }
-                //     }, designation: {
-                //         validators: {
-                //             notEmpty: {
-                //                 message: 'Enter your designation'
-                //             }
-                //         }
-                //     },
-                //     organization: {
-                //         validators: {
-                //             notEmpty: {
-                //                 message: 'Enter your organization'
-                //             }
-                //         }
-                //     },
-                //     area_of_expertise: {
-                //         validators: {
-                //             notEmpty: {
-                //                 message: 'Enter your expertise'
-                //             }
-                //         }
-                //     },
-                //     experience: {
-                //         validators: {
-                //             notEmpty: {
-                //                 message: 'Enter your experience'
-                //             }
-                //         }
-                //     },
-
-                //     course: {
-                //         validators: {
-                //             notEmpty: {
-                //                 message: 'Enter your course'
-                //             }
-                //         }
-                //     },
-                //     department: {
-                //         validators: {
-                //             notEmpty: {
-                //                 message: 'Enter your department'
-                //             }
-                //         }
-                //     },
-                //     institution: {
-                //         validators: {
-                //             notEmpty: {
-                //                 message: 'Enter your institution'
-                //             }
+                                return true;
+                            }
+                        }
+                    }
+                },
+                cpassword: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Enter your password again'
+                        },
+                        identical: {
+                            field: 'password',
+                            message: 'The password and its confirm are not the same'
+                        }
+                    }
+                },
+                commitment: {
+                    validators: {
+                        notEmpty: {
+                            message: localization.commitment[lang()]
+                        }
+                    }
+                },
+                // cv: {
+                //     validators: {
+                //         notEmpty: {
+                //             message: localization.cv[lang()]
                 //         }
                 //     }
+                // },
+                // photo: {
+                //     validators: {
+                //         notEmpty: {
+                //             message: localization.photo[lang()]
+                //         }
+                //     }
+                // },
+                work_type: {
+                    validators: {
+                        notEmpty: {
+                            message: localization.work_type[lang()]
+                        }
+                    }
+                }, designation: {
+                    validators: {
+                        notEmpty: {
+                            message: localization.designation[lang()]
+                        }
+                    }
+                },
+                organization: {
+                    validators: {
+                        notEmpty: {
+                            message: localization.organization[lang()]
+                        }
+                    }
+                },
+                area_of_expertise: {
+                    validators: {
+                        notEmpty: {
+                            message: localization.area_of_expertise[lang()]
+                        }
+                    }
+                },
+                experience: {
+                    validators: {
+                        notEmpty: {
+                            message: localization.experience[lang()]
+                        }
+                    }
+                },
+
+                course: {
+                    validators: {
+                        notEmpty: {
+                            message: localization.course[lang()]
+                        }
+                    }
+                },
+                department: {
+                    validators: {
+                        notEmpty: {
+                            message: localization.department[lang()]
+                        }
+                    }
+                },
+                institution: {
+                    validators: {
+                        notEmpty: {
+                            message: localization.institution[lang()]
+                        }
+                    }
+                }
             }
         })
         .bootstrapWizard({
@@ -332,21 +314,15 @@ $(document).ready(function () {
                 return validateTab(index);
             },
             onNext: function (tab, navigation, index) {
-                var numTabs = $('#volunteerForm').find('.tab-pane').length,
+                var numTabs = $('#registrationForm').find('.tab-pane').length,
                     isValidTab = validateTab(index - 1);
                 if (!isValidTab) {
                     return false;
                 }
                 if (index === numTabs) {
-                    // var url = window.location.href;
-                    // var role = url.substring(url.lastIndexOf(':') + 1);
                     var data = {};
-
-                    // data.role = role;
-                    // console.log(data.role);
-                    // alert(data.role);
-                    data.role = $('#role').val();
-                    data.name = $('#name').val();
+                    data.role = ($('#role').val()).trim();
+                    data.name = ($('#name').val()).trim();
                     data.dob = $('#dob').val();
                     data.age = $('#age').val();
                     data.gender = $("input[name='gender']:checked").val();
@@ -385,8 +361,8 @@ $(document).ready(function () {
             },
             onTabShow: function (tab, navigation, index) {
                 // Update the label of Next button when we are at the last tab
-                var numTabs = $('#volunteerForm').find('.tab-pane').length;
-                $('#volunteerForm')
+                var numTabs = $('#registrationForm').find('.tab-pane').length;
+                $('#registrationForm')
                     .find('.next')
                     .removeClass('disabled')    // Enable the Next button
                     .find('a')
@@ -399,9 +375,9 @@ $(document).ready(function () {
         });
 
     function validateTab(index) {
-        var fv = $('#volunteerForm').data('formValidation'), // FormValidation instance
+        var fv = $('#registrationForm').data('formValidation'), // FormValidation instance
             // The current tab
-            $tab = $('#volunteerForm').find('.tab-pane').eq(index);
+            $tab = $('#registrationForm').find('.tab-pane').eq(index);
 
         // Validate the container
         fv.validateContainer($tab);

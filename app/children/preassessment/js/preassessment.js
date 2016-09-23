@@ -579,9 +579,9 @@ $(document).ready(function () {
                         data.age[i] = document.getElementsByName(age1)[0].value;
                         data.monthlyincome[i] = document.getElementsByName(monthlyincome1)[0].value;
                         data.occupation[i] = document.getElementsByName(occupation1)[0].value;
-                        data.supporttochild[i] =  ($("input[name='"+supporttochild1+"']:checked").val());
+                        data.supporttochild[i] = ($("input[name='" + supporttochild1 + "']:checked").val());
 
-                         // var continuestudies = ($("input[name='continuestudies']:checked").val());
+                        // var continuestudies = ($("input[name='continuestudies']:checked").val());
 
                         console.log("hi row : " + i);
                         console.log("name " + document.getElementsByName(name1)[0].value);
@@ -615,9 +615,9 @@ $(document).ready(function () {
 
 
                         data.familyRelation[j] = document.getElementsByName(familyRelation1)[0].value;
-                        data.smoking[j] = ($("input[name='"+smoking1+"']:checked").val());
-                        data.liquor[j] = ($("input[name='"+liquor1+"']:checked").val());
-                        data.drug[j] = ($("input[name='"+drug1+"']:checked").val());
+                        data.smoking[j] = ($("input[name='" + smoking1 + "']:checked").val());
+                        data.liquor[j] = ($("input[name='" + liquor1 + "']:checked").val());
+                        data.drug[j] = ($("input[name='" + drug1 + "']:checked").val());
 
                         console.log("hi row : " + j);
                         console.log("familyrelation " + document.getElementsByName(familyRelation1)[0].value);
@@ -642,26 +642,10 @@ $(document).ready(function () {
                     // console.log(obj);
                     // console.log("goal1 :   "+obj.goal1);
                     // console.log("name :   "+obj.name[0]);
-
-                    var settings = {
-                        "crossDomain": true,
-                        "url": "http://localhost:3406/preassess",
-                        "method": "POST",
-                        "headers": {
-                            "content-type": "application/json",
-                        },
-                        "processData": false,
-                        "data": JSON.stringify(data1),
-                    }
-                    $.ajax(settings).done(function (response) {
+                    httpPost("/preassess", data, function (response) {
 
                         alert("successful");
                     });
-
-
-
-
-
                 }
 
                 return true;

@@ -86,17 +86,17 @@ $(document).ready(function () {
     $("#submit").click(function () {
         var data = {};
         var role = 3;
-        var str = $('#user_id').val();
-        var domain = $('#domain').val();
+        var str = ($('#user_id').val()).trim();
+        var domain = ($('#domain').val()).trim();
         var user_id = str.concat(domain);
         data.role = role;
-        data.name = $('#name').val();
-        data.dob = $('#dob').val();
-        data.age = $('#age').val();
-        data.gender = $("input[name='gender']:checked").val();
+        data.name = ($('#name').val()).trim();
+        data.dob = ($('#dob').val()).trim();
+        data.age = ($('#age').val()).trim();
+        data.gender = ($("input[name='gender']:checked").val()).trim();
         data.user_id = user_id;
-        data.password = $('#password').val();
-        data.center = $('#center').val();
+        data.password = ($('#password').val()).trim();
+        data.center = ($('#center').val()).trim();
         httpPost("/childrenregistration", data, function (response) {
             alert("successfully registered");
         });

@@ -33,7 +33,7 @@ $(document).ready(function () {
             //     validating: 'glyphicon glyphicon-refresh'
             // },
             // This option will not ignore invisible fields which belong to inactive panels
-            excluded: ':disabled',
+            // excluded: ':disabled',
             fields: {
                 role: {
                     validators: {

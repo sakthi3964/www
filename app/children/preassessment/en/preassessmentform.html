@@ -31,34 +31,35 @@
             </div>
         </nav>
     </div>
+    <div class="container paticular-header">
+        <h4>Preassessment Form</h4>
+    </div>
     <div class="container" id="body-tag">
-        <center>
-            <h3>Preassessment Form</h3>
-        </center>
         <form id="PreassessmentForm" class="form-horizontal" method="POST">
             <ul class="nav nav-pills" id="header">
-                <li class="active"><a href="#firsttab" data-toggle="tab">Personal Details</a></li>
-                <li><a href="#secondtab" data-toggle="tab">Career Profile</a></li>
-                <li><a href="#thirdtab" data-toggle="tab">Relationships</a></li>
-                <li><a href="#fourthtab" data-toggle="tab">Other Activities</a></li>
+                <li class="active"><a href="#firsttab" data-toggle="tab">Step1</a></li>
+                <li><a href="#secondtab" data-toggle="tab">Step2</a></li>
+                <li><a href="#thirdtab" data-toggle="tab">Step3</a></li>
+                <li><a href="#fourthtab" data-toggle="tab">Step4</a></li>
             </ul>
             <div class="tab-content content">
                 <div class="tab-pane active" id="firsttab">
+                    <h4>Educational Details</h4>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="userid">ID</label>
-                        <div class="col-sm-8">
+                        <label class="control-label col-sm-1 col-xs-1 preassessment" for="userid">ID</label>
+                        <div class="col-sm-7 col-xs-9">
                             <input type="email" name="child_id" class="form-control" placeholder="Enter your id">
                         </div>
                     </div>
 
 
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="standard">Standard:</label>
-                        <div class="col-sm-8">
+                        <label class="control-label col-sm-5 col-xs-3" for="standard">Standard:</label>
+                        <div class="col-sm-7 col-xs-9">
                             <select class="form-control" id="standard" name="Dropdown">
                                 <option value="">-select-</option>
-                                 <option value="VI">VI</option>
-                                  <option value="VII">VII</option>
+                                <option value="VI">VI</option>
+                                <option value="VII">VII</option>
                                 <option value="VIII">VIII</option>
                                 <option value="IX">IX</option>
                                  <option value="X">X</option>
@@ -68,15 +69,15 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="schoolname">School Name:</label>
-                        <div class="col-sm-8">
+                        <label class="control-label col-sm-5 col-xs-3" for="schoolname">School Name:</label>
+                        <div class="col-sm-7 col-xs-9">
                             <input type="text" id="schoolname" name="Text_Only" class="form-control" placeholder="Enter your school name">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="schooltype" class="control-label col-sm-2">school Type</label>
-                        <div class="col-sm-8">
+                        <label for="schooltype" class="control-label col-sm-5 col-xs-3">school Type</label>
+                        <div class="col-sm-7 col-xs-9">
                             <select class="form-control" id="schooltype" name="Dropdown">
                                 <option value="">-select-</option>
                                 <option value="private">Private</option>
@@ -86,10 +87,9 @@
 
                         </div>
                     </div>
-
                     <div class="form-group">
-                        <label for="housetype" class="control-label col-sm-2">House Type</label>
-                        <div class="col-sm-8">
+                        <label for="housetype" class="control-label col-sm-5 col-xs-3">House Type</label>
+                        <div class="col-sm-7 col-xs-9">
                             <select class="form-control" id="housetype" name="Dropdown">
                                 <option value="">-select-</option>
                                 <option>Concrete</option>
@@ -98,9 +98,7 @@
 
                         </div>
                     </div>
-
                     <div class=" addone container form-group col-xs-12 col-md-4 col-sm-4 col-lg-4">
-
                         <div class="col-sm-10">
                             Family Details <button type="button" class="btn btn-default addButton"><i class="fa fa-plus">+</i></button>
                         </div>
@@ -171,29 +169,29 @@
                     <div class="form-group col-xs-12">
 
                         <label class="control-label ">Goal1</label>
-                        <input name="Text_Only" id="goal1" type="text" class="form-control" placeholder="goal 1 which has first priority" />
+                        <input name="Text_Only" id="goal1" type="text" class="form-control" placeholder="Goal 1" />
 
                     </div>
                     <div class="form-group col-xs-12">
 
                         <label class="control-label ">Goal2</label>
-                        <input name="Text_Only" id="goal2" type="text" class="form-control" placeholder="goal 2 which has second priority" />
+                        <input name="Text_Only" id="goal2" type="text" class="form-control" placeholder="Goal 2" />
 
                     </div>
                     <div class="form-group col-xs-12">
 
                         <label class="control-label ">Goal3</label>
-                        <input name="Text_Only" id="goal3" type="text" class="form-control" placeholder="goal 3 which has third priority" />
+                        <input name="Text_Only" id="goal3" type="text" class="form-control" placeholder="Goal 3" />
                     </div>
                     <div class="form-group col-xs-12">
 
                         <label class="control-label ">Goal4</label>
-                        <input name="Text_Only" id="goal4" type="text" class="form-control" placeholder="goal 4 which has third priority" />
+                        <input name="Text_Only" id="goal4" type="text" class="form-control" placeholder="Goal 4" />
                     </div>
                     <div class="form-group col-xs-12">
 
                         <label class="control-label ">Goal5</label>
-                        <input name="Text_Only" id="goal5" type="text" class="form-control" placeholder="goal 5 which has third priority" />
+                        <input name="Text_Only" id="goal5" type="text" class="form-control" placeholder="Goal 5" />
                     </div>
                     <div class="form-group col-xs-12">
                         <label class="control-label ">what your Parents wish to you Become?</label>

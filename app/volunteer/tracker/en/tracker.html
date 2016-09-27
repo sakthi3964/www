@@ -101,21 +101,39 @@
                         <div class="col-sm-2">
                             <label class="radio-inline"><input type="radio" id="yes" name="connection" value="yes">Yes</label>
                             <label class="radio-inline"><input type="radio" id="no" name="connection" value="no">No</label>
-
                         </div>
+                       
 
                     </div>
                     <div class="form-group" id="connectionDetail" name="connectionDetail" style="display: none;">
 
                         <label class="control-label col-sm-2">Connected To</label>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control" id="connectedTo" name="connectedTo" placeholder="Mr./Mrs.">
+                            <input type="text" class="form-control" id="connectedTo" name="connectedTo-[0]" placeholder="Mr./Mrs.">
                         </div>
-                        <label class="control-label col-sm-2">Purpose</label>
+                        <label class="control-label col-sm-1">Purpose</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="purpose" name="purpose" placeholder="connection purpose">
+                            <input type="text" class="form-control" id="purpose" name="purpose-[0]" placeholder="connection purpose">
+                        </div>
+                         <div class=" addone col-sm-2">
+                            <button type="button" class="btn btn-default addButton"><i class="fa fa-plus">+</i></button>
                         </div>
 
+                    </div>
+
+                    <div class=" removeone form-group hide" id="family">
+
+                        <label class="control-label col-sm-2">Connected To</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" name="connectedTo" placeholder="Mr./Mrs.">
+                        </div>
+                        <label class="control-label col-sm-1">Purpose</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" name="purpose" placeholder="connection purpose">
+                        </div>
+                        <div class="col-xs-2">
+                            <button type="button" class="btn btn-default removeButton"><i class="fa fa-minus">-</i></button>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="name">Key Learnings </label>

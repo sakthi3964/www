@@ -404,6 +404,38 @@ $(document).ready(function () {
     });
 
 
+    memberscount = 0;
+
+
+    // Add button click handler
+    $('.addone').on('click', '.addButton', function () {
+        memberscount++;
+
+        var $template = $('#family'),
+            $clone = $template
+                .clone()
+                .removeClass('hide')
+                .removeAttr('id')
+
+                .insertBefore($template);
+
+        // Update the name attributes
+        $clone
+            .find('[name="connectedTo"]').attr('name', 'connectedTo-[' + memberscount + ']').end()
+            .find('[name="purpose"]').attr('name', 'purpose-[' + memberscount + ']').end();
+            
+
+
+    })
+
+    $(document).on('click', '.removeButton', function () {
+        $(this).parents('.removeone').remove();
+        // index = row.attr('data-book-index');
+        memberscount--;
+
+    });
+
+
 
 
 

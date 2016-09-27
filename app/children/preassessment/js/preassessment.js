@@ -357,7 +357,9 @@ $(document).ready(function () {
                     var insert = [];
 
 
-
+                    var id = localStorage.getItem("user");
+                    data.id = id;
+                    alert(id);
                     data.standard = ($('#standard').val());
                     console.log(data.standard);
                     data.schooltype = ($('#schooltype').val());
@@ -636,13 +638,14 @@ $(document).ready(function () {
                     var data1 = {};
                     data1.pre = sample;
                     data1.time = new Date();
+                    data1.id = localStorage.getItem("user");
                     console.log("timeeeeeeeeeeeeeeeeee     " + data1.time);
                     console.log(sample);
                     // var obj = JSON.parse(sample);
                     // console.log(obj);
                     // console.log("goal1 :   "+obj.goal1);
                     // console.log("name :   "+obj.name[0]);
-                    httpPost("/preassess", data, function (response) {
+                    httpPost("/preassess", data1, function (response) {
 
                         alert("successful");
                     });

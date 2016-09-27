@@ -36,15 +36,16 @@ httpPost("/viewchildrenownprofile", data, function (response) {
 
         var dataForRequest = {};
         dataForRequest.volunteer_id = localStorage.getItem("user");
+        console.log("volunteer id" + dataForRequest.volunteer_id);
+        alert(dataForRequest.volunteer_id);
         dataForRequest.role = localStorage.getItem("role");
-
+        alert(dataForRequest.role);
+        console.log("role" + dataForRequest.role);
         var url = window.location.href;
         dataForRequest.children_id = url.substring(url.lastIndexOf(':') + 1);
-
-        httpPost("/insertConnectionRequest", data, function (response) {
-
-
-            console.log(response1);
+        console.log("childrenid0" + dataForRequest.children_id);
+        httpPost("/insertConnectionRequest", dataForRequest, function (response) {
+            console.log(response);
 
         });
     });

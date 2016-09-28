@@ -8,11 +8,26 @@ body{
     height: 50px;
 }
 #commonfooter {
-    padding-top: 5px;
+    position: fixed;
+    /*bottom: 0px;*/
+    /*width: 100%;*/
     margin: auto;
     background-color: #06BBB5;
     color: white;
+    padding-top: 10px;
 }
 #header-profile{
     float: right;
+}
+.logoutbutton{
+    text-decoration: none;
+    color: white;
+}
+.logout{
+    float: right;
+    margin-right: 15px;
+    padding: 10px;
+}
+.brand{
+    padding-top: 5px;
 }

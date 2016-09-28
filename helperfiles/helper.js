@@ -34,17 +34,15 @@ var httpGet = function (url, callback) {
     });
 }
 
-
 function lang() {
-  
+
     var url = window.location.href;
     var array = url.split('/');
     var lang = array[array.length - 2];
     console.log(lang);
-    if(lang=='ta')
-    {
-        return 'ta';   
+    if (lang == 'ta') {
+        return 'ta';
     }
     else
-     return 'en';
+        return 'en';
 }

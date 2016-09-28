@@ -141,11 +141,13 @@ $(document).ready(function () {
 
 
 
-	$("#submit").click(function () {
+	$("#submit1").click(function () {
+		console.log("hei");
 		var data = {};
 		if ((time.value != 0) && (care.value != 0) && (behaviour.value != 0) && (confidentiality.value != 0) && (mentorship.value != 0) && (environment.value != 0) && (feelings.value != 0) && (willingness.value != 0) && (learning.value != 0) && (feedback.value != 0)) {
 			var id = localStorage.getItem("user");
 			data.id = id;
+			console.log("haiiiiiiiiiiiiiiiiiiiiiiiiiiii"+id);
 			data.time = time.value;
 			data.care = care.value;
 			data.behaviour = behaviour.value;

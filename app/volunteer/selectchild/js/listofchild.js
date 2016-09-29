@@ -9,7 +9,7 @@ $(document).ready(function () {
             var id = "#submit" + i;
             console.log(id);
             $(id).click(function () {
-                window.location.href = "../../../../shared/viewchildprofile/en/viewchildprofile.html?id:"+element.id;
+                window.location.href = "../../viewchildprofile/en/viewchildprofile.html?id:"+element.id;
             });
             i++;
         }, this);

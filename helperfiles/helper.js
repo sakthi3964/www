@@ -12,7 +12,6 @@ var httpPost = function (url, data, callback) {
     }
 
     $.ajax(settings).done(function (response) {
-        console.log(response);
         callback(response);
     });
 };
@@ -29,7 +28,6 @@ var httpGet = function (url, callback) {
     }
 
     $.ajax(settings).done(function (response) {
-        console.log(response);
         callback(response);
     });
 }

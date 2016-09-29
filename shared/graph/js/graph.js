@@ -12,10 +12,10 @@ data.date = date3;
 httpPost("/viewReviewDetail", data, function (response) {
 
     console.log(response);
+    console.log(response.review);
     var res = JSON.stringify(response.review);
     var res1 = JSON.parse(res);
     var res2 = JSON.parse(res1);
-    console.log("revie      " + res2);
     var education = parseInt(res2.education);
     var health = parseInt(res2.health);
     var familyRelationship = parseInt(res2.familyRelationship);
@@ -31,19 +31,15 @@ httpPost("/viewReviewDetail", data, function (response) {
 
     var chart = new CanvasJS.Chart("chartContainer",
         {
-
             title: {
-                text: "Review Form"
+                text: "Holistic Indicators"
             },
             animationEnabled: true,
             axisY: {
                 title: "Points"
             },
             axisX: {
-                title: "Holistic Indicators",
-
-                labelAngle: -90
-
+                labelAngle: 180
             },
 
             legend: {
@@ -53,12 +49,10 @@ httpPost("/viewReviewDetail", data, function (response) {
             theme: "theme4",
             backgroundColor: "#ECF1F5",
             data: [
-
                 {
                     type: "column",
-
                     dataPoints: [
-                        { y: education, label: "education" },
+                        { y: education, label: "Education" },
                         { y: health, label: "health" },
                         { y: familyRelationship, label: "familyRelationship" },
                         { y: friendRelationship, label: "friendRelationship" },

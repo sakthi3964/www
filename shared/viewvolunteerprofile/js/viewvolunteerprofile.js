@@ -4,7 +4,6 @@ $(document).ready(function () {
     var data = {};
     data.id = id;
     httpPost("/viewvolunteer", data, function (response) {
-        alert(response[0].profileinfo.work_type);
         $('#name').html(response[0].name);
         $('#course').html(response[0].profileinfo.course);
         $('#department').html(response[0].profileinfo.department);

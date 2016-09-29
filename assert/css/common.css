@@ -8,13 +8,10 @@ body{
     height: 50px;
 }
 #commonfooter {
-    position: fixed;
-    /*bottom: 0px;*/
-    /*width: 100%;*/
+    padding-top: 5px;
     margin: auto;
     background-color: #06BBB5;
     color: white;
-    padding-top: 10px;
 }
 #header-profile{
     float: right;

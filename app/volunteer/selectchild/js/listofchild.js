@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
     httpGet("/selectChild", function (response) {
         var i = 0;

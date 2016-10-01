@@ -1,19 +1,19 @@
 $(document).ready(function () {
-    var url = window.location.href;
-    var id = url.substring(url.lastIndexOf(':') + 1);
+    var id = localStorage.getItem("user");
     var data = {};
     data.id = id;
-    httpPost("/viewvolunteer", data, function (response) {
-        $('#name').html(response[0].name);
-        $('#course').html(response[0].profileinfo.course);
-        $('#department').html(response[0].profileinfo.department);
-        $('#institution').html(response[0].profileinfo.institution);
-        $('#address').html(response[0].state);
-        $('#mobile_no').html(response[0].mobile_no);
-        $('#email_id').html(response[0].email_id);
-        $('#work_type').html(response[0].profileinfo.work_type);
-        $('#reference').html(response[0].profileinfo.reference);
-        $('#designation').html(response[0].profileinfo.designation);
-        $('#organization').html(response[0].profileinfo.organization);
+    httpPost("/viewchildvolunteer", data, function (response) {
+        $('#name').html(response[0].profile.name);
+        $('#address').html(response[0].profile.state);
+        $('#mobile_no').html(response[0].profile.mobile_no);
+        $('#email_id').html(response[0].profile.email_id);
+        console.log(response[0].profile.profileinfo.course);
+        $('#course').html(response[0].profile.profileinfo.course);
+        $('#department').html(response[0].profile.profileinfo.department);
+        $('#institution').html(response[0].profile.profileinfo.institution);
+        $('#work_type').html(response[0].profile.profileinfo.work_type);
+        $('#reference').html(response[0].profile.profileinfo.reference);
+        $('#designation').html(response[0].profile.profileinfo.designation);
+        $('#organization').html(response[0].profile.profileinfo.organization);
     });
 });

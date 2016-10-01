@@ -4,19 +4,7 @@ var data = {};
 var url = window.location.href;
 data.id = url.substring(url.lastIndexOf(':') + 1);
 console.log(data.id);
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost:3406/viewchildrenownprofile",
-    "method": "POST",
-    "headers": {
-        "content-type": "application/json",
 
-    },
-    "processData": false,
-
-    "data": JSON.stringify(data),
-}
 httpPost("/viewchildrenownprofile", data, function (response) {
     console.log(response);
 

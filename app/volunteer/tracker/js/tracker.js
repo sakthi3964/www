@@ -60,13 +60,7 @@ $(document).ready(function () {
     $('#trackerForm')
         .formValidation({
             framework: 'bootstrap',
-            icon: {
-                valid: 'glyphicon glyphicon-ok',
-                invalid: 'glyphicon glyphicon-remove',
-                validating: 'glyphicon glyphicon-refresh'
-            },
-            // This option will not ignore invisible fields which belong to inactive panels
-            // excluded: ':disabled',
+
             fields: {
                 date: {
                     validators: {
@@ -182,6 +176,7 @@ $(document).ready(function () {
                         }
                     }
                 }
+          
 
 
 
@@ -299,9 +294,9 @@ $(document).ready(function () {
                     data.review = JSON.stringify(review);
                     data.volunteer_id = volunteer_id;
                     httpPost("/tracker", data, function (response) {
-                        $.ajax(settings).done(function (response) {
-                            alert("Inserted successfully");
-                        });
+                       console.log(response);
+                             $('#trackerModal').modal();
+                        
 
                     })
                 }

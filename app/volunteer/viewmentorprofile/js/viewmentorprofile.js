@@ -5,25 +5,24 @@ var url = window.location.href;
 data.id = url.substring(url.lastIndexOf(':') + 1);
 console.log(data.id);
 
-httpPost("/viewchildrenownprofile", data, function (response) {
+httpPost("/viewmentor", data, function (response) {
     console.log(response);
 
     // var res = JSON.parse(response.pre_assessment_data);
     //console.log(res.standard);
 
-    $('#name').html(response.full_name);
-    $('#dob').html(response.dob);
-    $('#Gender').html(response.gender);
-    $('#Center').html(response.center);
-    $('#UserId').html(response.user_id);
-    $('#UserId').html(response.user_id);
+    $('#name').html(response[0].name);
+    $('#dob').html(response[0].profileinfo.designation);
+    $('#Gender').html(response[0].profileinfo.work_type);
+    $('#Center').html(response[0].profileinfo.course);
+    $('#UserId').html(response[0].profileinfo.email_id);
+    $('#UserId').html(response[0].profileinfo.city);
 
 
 
     $('#request').click(function () {
-
         var dataForRequest = {};
-        dataForRequest.volunteer_id = localStorage.getItem("user");
+        dataForRequest.mentor_id = localStorage.getItem("user");
         dataForRequest.role = localStorage.getItem("role");
         var url = window.location.href;
         dataForRequest.children_id = url.substring(url.lastIndexOf(':') + 1);

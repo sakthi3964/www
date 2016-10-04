@@ -350,8 +350,7 @@ $(document).ready(function () {
                     data.cv = $('#cv').val();
                     data.photo = $('#photo').val();
                     httpPost("/registration", data, function (response) {
-                        alert(JSON.stringify(response));
-                        alert("Successfully completed");
+                        $('#registerModal').modal();
                     });
                 }
                 return true;

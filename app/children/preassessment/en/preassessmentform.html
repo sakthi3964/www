@@ -28,7 +28,7 @@
                     <p>N'KaNa</p>
                 </div>
                 <div class="col-xs-2 col-sm-2 col-md-2 ">
-                    <a href="../../../../index.html" class="logoutbutton"><span class="glyphicon glyphicon-off logout" id="logoutsession" ></span></a>
+                    <span class="glyphicon glyphicon-off logout "></span>
                 </div>
             </div>
         </nav>
@@ -47,18 +47,16 @@
             <div class="tab-content content">
                 <div class="tab-pane active" id="firsttab">
                     <h4>Educational Details</h4>
-                    <div class="form-group">
+                    <!--<div class="form-group">
                         <label class="control-label col-sm-1 col-xs-1 preassessment" for="userid">ID</label>
                         <div class="col-sm-7 col-xs-9">
                             <input type="email" name="child_id" class="form-control" placeholder="Enter your id">
                         </div>
-                    </div>
-
-
+                    </div>-->
                     <div class="form-group">
                         <label class="control-label col-sm-5 col-xs-3" for="standard">Standard:</label>
                         <div class="col-sm-7 col-xs-9">
-                            <select class="form-control" id="standard" name="Dropdown">
+                            <select class="form-control " id="standard" name="Dropdown">
                                 <option value="">-select-</option>
                                 <option value="VI">VI</option>
                                 <option value="VII">VII</option>
@@ -73,14 +71,14 @@
                     <div class="form-group">
                         <label class="control-label col-sm-5 col-xs-3" for="schoolname">School Name:</label>
                         <div class="col-sm-7 col-xs-9">
-                            <input type="text" id="schoolname" name="Text_Only" class="form-control" placeholder="Enter your school name">
+                            <input type="text" id="schoolname"  class="form-control Text_Only" placeholder="Enter your school name">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="schooltype" class="control-label col-sm-5 col-xs-3">school Type</label>
                         <div class="col-sm-7 col-xs-9">
-                            <select class="form-control" id="schooltype" name="Dropdown">
+                            <select class="form-control " id="schooltype" name="Dropdown">
                                 <option value="">-select-</option>
                                 <option value="private">Private</option>
                                 <option value="Government">Government</option>
@@ -92,7 +90,7 @@
                     <div class="form-group">
                         <label for="housetype" class="control-label col-sm-5 col-xs-3">House Type</label>
                         <div class="col-sm-7 col-xs-9">
-                            <select class="form-control" id="housetype" name="Dropdown">
+                            <select class="form-control " id="housetype" name="Dropdown">
                                 <option value="">-select-</option>
                                 <option>Concrete</option>
                                 <option>Roof-Top</option>
@@ -105,31 +103,32 @@
                             Family Details <button type="button" class="btn btn-default addButton"><i class="fa fa-plus">+</i></button>
                         </div>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="name-[0]" placeholder="Name" />
+                            Name: <input type="text" class="form-control name" id="name" name="name-[0]" />
                         </div>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="relation-[0]" placeholder="Relation" />
+                            Relation: <input type="text" class="form-control relation " name="relation-[0]" />
                         </div>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="age-[0]" placeholder="Age" />
+                            Age: <input type="text" class="form-control age" name="age-[0]" />
                         </div>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="occupation-[0]" placeholder="Occupation" />
+                            Occupation: <input type="text" class="form-control occupation" name="occupation-[0]" />
                         </div>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="monthlyincome-[0]" placeholder="Monthly Income" />
+                            Monthly Income <input type="text" class="form-control monthlyincome" name="monthlyincome-[0]"
+                            />
                         </div>
 
-                        <label for="support" class="control-label col-sm-6">Support to Child</label>
-                        <div class="col-sm-6">
-                            <label class="radio-inline">
-                            <input type="radio"   name="supporttochild-[0]" value="yes">yes
+
+                        <label for="support" class="control-label col-sm-6 ">Support to Child</label>
+                        <div class="col-sm-6 ">
+                            <label class="radio-inline ">
+                            <input type="radio" class="childsupport"  name="supporttochild-[0]" value="yes">yes
                         </label>
-                            <label class="radio-inline">
-                            <input type="radio"  name="supporttochild-[0]" value="no">no
+                            <label class="radio-inline ">
+                            <input type="radio" class="childsupport" name="supporttochild-[0]" value="no">no
                         </label>
                         </div>
-
 
                     </div>
                     <div class=" removeone container form-group col-xs-12 col-md-4 col-sm-4 col-lg-4 hide " id="family">
@@ -137,19 +136,19 @@
                             Family Details<button type="button" class="btn btn-default removeButton"><i class="fa fa-minus">-</i></button>
                         </div>
                         <div class="col-xs-10">
-                            <input type="text" class="form-control" name="name" placeholder="Name" />
+                            Name: <input type="text" class="form-control" name="name" />
                         </div>
                         <div class="col-xs-10">
-                            <input type="text" class="form-control" name="relation" placeholder="Relation" />
+                            Relation: <input type="text" class="form-control" name="relation" />
                         </div>
                         <div class="col-xs-10">
-                            <input type="text" class="form-control" name="age" placeholder="Age" />
+                            Age: <input type="text" class="form-control" name="age" />
                         </div>
                         <div class="col-xs-10">
-                            <input type="text" class="form-control" name="occupation" placeholder="Occupation" />
+                            Occupation: <input type="text" class="form-control" name="occupation" />
                         </div>
                         <div class="col-xs-10">
-                            <input type="text" class="form-control" name="monthlyincome" placeholder="Monthly Income" />
+                            Monthly Income: <input type="text" class="form-control" name="monthlyincome" />
                         </div>
 
                         <label for="support" class="control-label col-sm-6">Support to Child</label>
@@ -241,9 +240,10 @@
                     <div class="form-group col-xs-12">
                         <label class="control-label">Is there anyone to support/encourage to achieve your goal?</label><br>
                         <label> <input type="checkbox" class="supportencourage" name="supportencourage[]" value="family"> Family</label><br>
-                        <label> <input type="checkbox" class="supportencourage" name="supportencourage[]" value="friends"> Friends</label><br>
+                        <label> <input type="checkbox" class="supportencourage" name="suppo   rtencourage[]" value="friends"> Friends</label><br>
                         <label> <input type="checkbox" class="supportencourage" name="supportencourage[]" value="neighbours"> Neighbours</label><br>
                         <label> <input type="checkbox" class="supportencourage" name="supportencourage[]" value="teachers"> Teachers</label>
+                        <label> <input type="checkbox" class="supportencourage" name="supportencourage[]" value="nil"> nil</label>
                     </div>
 
                     <!--
@@ -339,7 +339,7 @@
                         <div class="col-xs-6 form-group jobq" style="display: none">
                             <label class="control-label"> How much income?
                             </label>
-                            <input type="text" id="howmuchincome" name="monthlyincome" class="form-control" placeholder="Enter your job details" />
+                            <input type="text" id="howmuchincome" name="monthlyincomeoooo" class="form-control" placeholder="Enter your job details" />
                         </div>
                         <div class="col-xs-12 form-group jobq" style="display: none">
                             <label class="control-label">Do you think the salary given for the work you have done is enough?</label><br>
@@ -358,7 +358,7 @@
                                 <label><input type="radio" id="safeworkyes" name="safework" value="yes" >yes</label>
                             </div>
                             <div class="radio-inline">
-                                <label><input type="radio" id="#safeworkno"  name="safework" value="no" >no</label>
+                                <label><input type="radio" id="safeworkno"  name="safework" value="no" >no</label>
                             </div>
                             <input type="text" name="Text_All" class=".form-inline moveleft" id="safeworkinp" placeholder="why?" style="display: none"
                             />
@@ -437,8 +437,8 @@
                             Addiction Details <button type="button" class="btn btn-default addButton"><i class="fa fa-plus">+</i></button>
                         </div>
 
-                        <div class="col-xs-10">
-                            <input type="text" class="form-control" name="familyRelation-[0]" placeholder="Relation" />
+                        <div class="col-xs-10 ">
+                            <input type="text" class="form-control addictionrelation" name="familyRelation-[0]" placeholder="Relation" />
                         </div>
 
                         <div class="form-group col-xs-12">
@@ -451,30 +451,30 @@
                             <label for="support" class="control-label col-sm-4">Smoking</label>
                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                                 <label class="radio-inline">
-                            <input type="radio"   name="smoking-[0]" value="yes">yes
+                            <input type="radio" class="addictionsmoke"  name="smoking-[0]" value="yes">yes
                         </label>
                                 <label class="radio-inline">
-                            <input type="radio"  name="smoking-[0]" value="no">no
+                            <input type="radio" class="addictionsmoke" name="smoking-[0]" value="no">no
                         </label>
                             </div><br>
 
                             <label for="support" class="control-label col-sm-4">liquor</label>
                             <div class="col-xs-6">
                                 <label class="radio-inline">
-                            <input type="radio"   name="liquor-[0]" value="yes">yes
+                            <input type="radio" class="addictionliquor"  name="liquor-[0]" value="yes">yes
                         </label>
                                 <label class="radio-inline">
-                            <input type="radio"  name="liquor-[0]" value="no">no
+                            <input type="radio" class="addictionliquor"  name="liquor-[0]" value="no">no
                         </label>
                             </div><br>
 
                             <label for="support" class="control-label col-sm-4">drug</label>
                             <div class="col-xs-6">
                                 <label class="radio-inline">
-                            <input type="radio"   name="drug-[0]" value="yes">yes
+                            <input type="radio"  class="addictiondrug" name="drug-[0]" value="yes">yes
                         </label>
                                 <label class="radio-inline">
-                            <input type="radio"  name="drug-[0]" value="no">no
+                            <input type="radio" class="addictiondrug" name="drug-[0]" value="no">no
                         </label>
                             </div>
 

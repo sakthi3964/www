@@ -13,8 +13,5 @@ $(document).ready(function () {
             i++;
         }, this);
        
-
-
-
     })
 })

@@ -1,3 +1,10 @@
 #blockreg2{
     background-color: white;
+    padding-top: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#rightarrow{
+    font-size: 20px;
+    float: left;
 }

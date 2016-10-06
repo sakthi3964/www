@@ -15,6 +15,11 @@ $(document).ready(function () {
         }
 
     });
+    var url = window.location.href;
+    var edit = url.substring(url.lastIndexOf('?') + 1);
+    if (edit != "edit") {
+
+    }
     function adjustIframeHeight() {
         var $body = $('body'),
             $iframe = $body.data('iframe.fv');

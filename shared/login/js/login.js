@@ -25,7 +25,7 @@ $(document).ready(function () {
 
             console.log(response);
             if ((response == 1) || (response == 2) || (response == 3)) {
-                
+                $('#errormodal').modal();
                 return false;
             }
             else if (response.role == 'volunteer') {

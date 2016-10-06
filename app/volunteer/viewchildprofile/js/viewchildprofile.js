@@ -28,7 +28,12 @@ httpPost("/viewchildrenownprofile", data, function (response) {
         var url = window.location.href;
         dataForRequest.children_id = url.substring(url.lastIndexOf(':') + 1);
         httpPost("/insertConnectionRequest", dataForRequest, function (response) {
-            console.log(response);
+            if (response == "1") {
+                $('#multiplerequest').modal();
+            }
+            else {
+                $('#childrequest').modal();
+            }
 
         });
     });

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>N'KaNa Preassessment</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" href="../../../assert/css/bootstrap.min.css">
+    <script src="../../../assert/js/jquery.min.js"></script>
+    <script src="../../../assert/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../../assert/css/common.css">
+    <link href="../css/viewpreassessment.css" rel="stylesheet">
+    <link href="../../../assert/css/formValidation.css" rel="stylesheet" />
+    <script src="../../../assert/js/formValidation.js"></script>
+    <script src="../../../assert/js/framework/bootstrap.min.js"></script>
+    <script src="../../../assert/js/jquery.bootstrap.wizard.min.js"></script>
+    <script src="../../../helperfiles/js/logout.js" type="text/javascript"></script>
+    <script src="../../../config/config.js" type="text/javascript"></script>
+    <script src="../../../helperfiles/helper.js" type="text/javascript"></script>
+    <script src="../js/viewpreassessment.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid" id="commonblock">
+        <nav class="navbar navbar-custom">
+            <div class="row">
+                <div class="col-xs-10 col-sm-10 col-md-10 brand">
+                    <p>N'KaNa</p>
+                </div>
+                <div class="col-xs-2 col-sm-2 col-md-2 ">
+                    <span class="glyphicon glyphicon-off logout "></span>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container" id="body-tag">
+        <ul class="nav nav-pills" id="header">
+            <li class="active"><a href="#firsttab" data-toggle="tab">Step1</a></li>
+            <li><a href="#secondtab" data-toggle="tab">Step2</a></li>
+            <li><a href="#thirdtab" data-toggle="tab">Step3</a></li>
+            <li><a href="#fourthtab" data-toggle="tab">Step4</a></li>
+        </ul>
+        <div class="tab-content content">
+            <div class="tab-pane fade in active" id="firsttab">
+                <h4>Educational Details</h4>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <td>Id:</td>
+                                <td id="preid"></td>
+                            </tr>
+                            <tr>
+                                <td>Standard:</td>
+                                <td id="prestandard"></td>
+                            </tr>
+                            <tr>
+                                <td>School Type:</td>
+                                <td id="preschooltype"></td>
+                            </tr>
+                            <tr>
+                                <td>School Name:</td>
+                                <td id="preschoolname"></td>
+                            </tr>
+                            <tr>
+                                <td>House Type:</td>
+                                <td id="prehousetype"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="col-sm-3" id="pre_family_name">
+                        <!--<div class="col-sm-6">
+                            <h4>Name</h4>
+                        </div>
+                        <div class="col-sm-6">
+                            <h4>sakthi</h4>
+                        </div>-->
+                    </div>
+
+                </div>
+            </div>
+            <div class="tab-pane" id="secondtab">
+                <div class="table-responsive">
+                    <h4>Details 2</h4>
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <td>Goal 1:</td>
+                                <td id="pregoal1"></td>
+                            </tr>
+                            <tr>
+                                <td>Goal 2:</td>
+                                <td id="pregoal2"></td>
+                            </tr>
+                            <tr>
+                                <td>Goal 3:</td>
+                                <td id="pregoal3"></td>
+                            </tr>
+                            <tr>
+                                <td>Goal 4:</td>
+                                <td id="pregoal4"></td>
+                            </tr>
+                            <tr>
+                                <td>Goal 5:</td>
+                                <td id="pregoal5"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">What your Parents wish to you Become?</td>
+                            </tr>
+                            <tr>
+                                <td id="preparentswish" colspan="2"></td>
+                            </tr>
+                            <tr>
+                                <td>Do your parents stress/force their wish/goal on you?</td>
+
+                            </tr>
+                            <tr>
+                                <td id="preparentsgoal" colspan="2"></td>
+                            </tr>
+                            <tr>
+                                <td>Do you have any idea about how to achieve your goal?</td>
+
+                            </tr>
+                            <tr>
+                                <td id="pregoalidea" colspan="2"></td>
+                            </tr>
+                            <tr>
+                                <td>Are you taking any effort to achieve your goal?</td>
+
+                            </tr>
+                            <tr>
+                                <td id="preeffort" colspan="2"></td>
+                            </tr>
+                            <!--<tr>
+                                <td>Is there anyone to support/encourage to achieve your goal?</td>
+
+                            </tr>
+                            <tr>
+                                <td id="presupport" colspan="2"></td>
+                            </tr>-->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="tab-pane" id="thirdtab">
+
+            </div>
+            <div class="tab-pane" id="fourthtab">
+
+            </div>
+
+
+        </div>
+        <div class="col-xs-12">
+            <ul class="pager wizard">
+                <li class="previous"><a href="javascript: void(0);">Previous</a></li>
+                <li class="next" id="submit"><a href="javascript: void(0);">Next</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

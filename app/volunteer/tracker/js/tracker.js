@@ -269,7 +269,7 @@ $(document).ready(function () {
                         data.volunteerChallenges = "nil";
 
                     }
-                    var volunteer_id = localStorage.getItem("user");
+                    var id = localStorage.getItem("user");
                     var review = {};
                     review.education = education.value;
                     review.educationText = ($('#reviewcom1').val()).trim();
@@ -292,7 +292,7 @@ $(document).ready(function () {
                     review.hygiene = hygiene.value;
                     review.hygieneText = ($('#reviewcom10').val()).trim();
                     data.review = JSON.stringify(review);
-                    data.volunteer_id = volunteer_id;
+                    data.id = id;
                     httpPost("/tracker", data, function (response) {
                        console.log(response);
                              $('#trackerModal').modal();

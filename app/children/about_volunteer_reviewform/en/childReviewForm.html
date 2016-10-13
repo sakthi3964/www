@@ -39,9 +39,16 @@
         </nav>
     </div>
     <div class="container text-center" id="childheading">
-        <h3>Mark your ratings of how you feel about your volunteer</h3>
+        <h3>Mark your ratings of how you feel about your volunteer / mentor</h3>
     </div>
-
+    <div class="form-group col-xs-8 col-md-8" id="reviewabout">
+        <label>Review about</label>
+        <select class="form-control" id="role" name="role">
+            <!--<option value="">Select</option>
+            <option value="volunteer">Volunteer</option>
+            <option value="mentor">Mentor</option>-->
+        </select>
+    </div>
     <div class="container" id="reviewBody">
         <div class="row">
             <div class="col-sm-5 col-md-5 col-xs-5 col-lg-5">
@@ -141,6 +148,23 @@
                     <p>Trust for Youth and Child Leadership & Mughil Social Welfare Organization</p>
                 </center>
             </footer>
+        </div>
+    </div>
+    <div class="modal fade" id="reviewmodal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">N'KaNa</h4>
+                </div>
+
+                <div class="modal-body">
+                    <p class="text-center">Review form submitted successfully</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal" onclick="window.location = '../../childrenshome/en/childrenhome.html'">Close</button>
+                </div>
+            </div>
         </div>
     </div>
 </body>

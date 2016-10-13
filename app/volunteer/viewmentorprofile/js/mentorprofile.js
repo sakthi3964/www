@@ -5,7 +5,7 @@ var data = {};
 data.id =localStorage.getItem("user");
 console.log(data.id);
 
-httpPost("/viewmentorprofile", data, function (response) {
+httpPost("/viewvolunteermentorprofile", data, function (response) {
     $('#name').html(response[0].profile.name);
     $('#role').html(response[0].profile.role);
     $('#dob').html(response[0].profile.dob);

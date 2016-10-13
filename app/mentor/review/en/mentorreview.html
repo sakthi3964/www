@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Essential styles and JS -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <title>N'KaNa</title>
+    <link rel="stylesheet" type="text/css" href="../../../../assert/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assert/css/bootstrap-slider.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../assert/css/jquery-ui.css">
+    <script src="../../../../assert/js/jquery.min.js" type="text/javascript"></script>
+    <script src="../../../../assert/js/jquery-1.11.1.js" type="text/javascript"></script>
+    <script src="../../../../assert/js/bootstrap-slider.js"></script>
+    <script src="../../../../assert/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../../../../assert/js/bootstrap-slider.min.js" type="text/javascript"></script>
+    <!--Importing Custom CSS and JS file-->
+    <link rel="stylesheet" type="text/css" href="../../../../HelperFiles/childReviewForm.css">
+    <link rel="stylesheet" href="../../../../assert/css/common.css">
+    <script src="../../../../assert/js/jquery-ui.js" type="text/javascript"></script>
+    <script src="../../../../config/config.js" type="text/javascript"></script>
+    <script src="../../../../helperfiles/helper.js" type="text/javascript"></script>
+    <script src="../js/mentorreview.js" type="text/javascript"></script>
+    <!--<script src="../../../volunteer/tracker/js/tracker.js" type="text/javascript"></script>-->
+    <script src="../../../../helperfiles/js/logout.js" type="text/javascript"></script>
+    <!-- Latest compiled and minified CSS -->
+</head>
+
+<body>
+    <div class="container-fluid" id="commonblock">
+        <nav class="navbar navbar-custom">
+            <div class="row">
+                <div class="col-xs-10 col-sm-10 col-md-10 brand">
+                    <p>N'KaNa</p>
+                </div>
+                <div class="col-xs-2 col-sm-2 col-md-2 ">
+                    <a href="../../../../index.html" class="logoutbutton"><span class="glyphicon glyphicon-off logout" id="logoutsession" ></span></a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container text-center" id="childheading">
+        <h3 class="text-center">Mark your ratings of how you feel about your child</h3>
+    </div>
+
+    <div class="container" id="reviewBody">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Date of meeting</label>
+            <div class="col-sm-8">
+                <input type="date" class="form-control" id="date" name="date" placeholder="Enter the date of meeting child">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
+                Educational performance at the school </div>
+            <div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
+                <input id="education" name="education" type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1" data-slider-value="0"
+                    style="width: 95%; margin: 20px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6  col-sm-offset-5 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
+                <input type="text" class="form-control" id="reviewcom1" placeholder="Comments, If any">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
+                Health condition of the child
+            </div>
+            <div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
+                <input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="health" type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1"
+                    data-slider-value="0" style="width: 95%; margin: 20px" /></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6  col-sm-offset-5 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
+                <input type="text" class="form-control" id="reviewcom2" placeholder="Comments, If any">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
+                Child relationship with family members
+            </div>
+            <div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
+                <input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="familyRelationship" type="text" data-slider-min="0" data-slider-max="10"
+                    data-slider-step="1" data-slider-value="0" style="width: 95%; margin: 20px" /></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6  col-sm-offset-5 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
+                <input type="text" class="form-control" id="reviewcom3" placeholder="Comments, If any">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
+                Child relationship with friends
+            </div>
+            <div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
+                <input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="friendRelationship" type="text" data-slider-min="0" data-slider-max="10"
+                    data-slider-step="1" data-slider-value="0" style="width: 95%; margin: 20px" /></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6  col-sm-offset-5 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
+                <input type="text" class="form-control" id="reviewcom4" placeholder="Comments, If any">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
+                Positive behaviour and attitude of the child
+            </div>
+            <div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
+                <input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="positiveAttitude" type="text" data-slider-min="0" data-slider-max="10"
+                    data-slider-step="1" data-slider-value="0" style="width: 95%; margin: 20px" /></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6  col-sm-offset-5 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
+                <input type="text" class="form-control" id="reviewcom5" placeholder="Comments, If any">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
+                Participation in co-curricular activities
+            </div>
+            <div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
+                <input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="coCurricular" type="text" data-slider-min="0" data-slider-max="10"
+                    data-slider-step="1" data-slider-value="0" style="width: 95%; margin: 20px" /></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6  col-sm-offset-5 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
+                <input type="text" class="form-control" id="reviewcom6" placeholder="Comments, If any">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
+                Participation in social/community events
+            </div>
+            <div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
+                <input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="socialCommunity" type="text" data-slider-min="0" data-slider-max="10"
+                    data-slider-step="1" data-slider-value="0" style="width: 95%; margin: 20px" /></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6  col-sm-offset-5 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
+                <input type="text" class="form-control" id="reviewcom7" placeholder="Comments, If any">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
+                Feeling safe at Home, community and School
+            </div>
+            <div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
+                <input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="safeFeel" type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1"
+                    data-slider-value="0" style="width: 95%; margin: 20px" /></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6  col-sm-offset-5 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
+                <input type="text" class="form-control" id="reviewcom8" placeholder="Comments, If any">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
+                Social interaction with peers
+            </div>
+            <div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
+                <input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="socialInteraction" type="text" data-slider-min="0" data-slider-max="10"
+                    data-slider-step="1" data-slider-value="0" style="width: 95%; margin: 20px" /></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6  col-sm-offset-5 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
+                <input type="text" class="form-control" id="reviewcom9" placeholder="Comments, If any">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
+                Personal hygiene of the child
+            </div>
+            <div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
+                <input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="hygiene" type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1"
+                    data-slider-value="0" style="width: 95%; margin: 20px" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6  col-sm-offset-5 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
+                <input type="text" class="form-control" id="reviewcom10" placeholder="Comments, If any">
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 text-right">
+            <button type="submit" class="btn btn-primary" id="submit1">Submit</button>
+        </div>
+
+    </div>
+    <div class="container" id="panel2">
+        <div class="container-fluid" id="commonfooter">
+            <footer id="footer">
+                <center>
+                    <p>Trust for Youth and Child Leadership & Mughil Social Welfare Organization</p>
+                </center>
+            </footer>
+        </div>
+    </div>
+    <div class="modal fade" id="reviewmodal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">N'KaNa</h4>
+                </div>
+
+                <div class="modal-body">
+                    <p class="text-center">Review form submitted successfully</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal" onclick="window.location = '../../childrenshome/en/childrenhome.html'">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

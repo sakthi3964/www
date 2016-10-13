@@ -138,8 +138,16 @@ $(document).ready(function () {
 		//console.log(slideEvt.value);
 		$("#ex6SliderVal").text(feedback.value);
 	});
+	var localvalue = {};
+	var id = localStorage.getItem("user");
+	localvalue.id = id;
 
+	httpPost("/childvolunteermentorid", localvalue, function (response) {
+		response.forEach(function (element) {
+			$('#role').append('<option value=' + element.profile_id + '>' + element.role + '</option>');
+		}, this);
 
+	})
 
 	$("#submit1").click(function () {
 		console.log("hei");
@@ -147,25 +155,33 @@ $(document).ready(function () {
 		if ((time.value != 0) && (care.value != 0) && (behaviour.value != 0) && (confidentiality.value != 0) && (mentorship.value != 0) && (environment.value != 0) && (feelings.value != 0) && (willingness.value != 0) && (learning.value != 0) && (feedback.value != 0)) {
 			var id = localStorage.getItem("user");
 			data.id = id;
-			console.log("haiiiiiiiiiiiiiiiiiiiiiiiiiiii"+id);
-			data.time = time.value;
-			data.care = care.value;
-			data.behaviour = behaviour.value;
-			data.confidentiality = confidentiality.value;
-			data.mentorship = mentorship.value;
-			data.environment = environment.value;
-			data.feelings = feelings.value;
-			data.willingness = willingness.value;
-			data.learning = learning.value;
-			data.feedback = feedback.value;
+			console.log("haiiiiiiiiiiiiiiiiiiiiiiiiiiii" + id);
+			data.role = role.value;
+			var data1 = {};
+			data1.time = time.value;
+			data1.care = care.value;
+			data1.behaviour = behaviour.value;
+			data1.confidentiality = confidentiality.value;
+			data1.mentorship = mentorship.value;
+			data1.environment = environment.value;
+			data1.feelings = feelings.value;
+			data1.willingness = willingness.value;
+			data1.learning = learning.value;
+			data1.feedback = feedback.value;
+			data1.comment = ($('#comment').val());
+			var review = JSON.stringify(data1);
+			data.reviews = review;
 			httpPost("/review", data, function (response) {
-				alert("Successfully completed");
+				$('#reviewmodal').modal();
+				// alert("Successfully completed");
+
+
 			});
 		}
-		else {
-			$('#errormodal').modal();
-			return false;
-		}
+		// else {
+		// 	$('#errormodal').modal();
+		// 	return false;
+		// }
 
 	});
 });

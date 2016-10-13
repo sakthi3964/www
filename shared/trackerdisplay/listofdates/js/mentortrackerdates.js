@@ -1,8 +1,8 @@
 
 var data = {};
-var id = localStorage.getItem("user");
-data.id = id;
-httpPost("/trackerDates", data, function (response) {
+var mentor_id = localStorage.getItem("user");
+data.mentor_id = mentor_id;
+httpPost("/trackerDatesMentor", data, function (response) {
     console.log(response);
     if (response == "") {
         $('#norecords').show();

@@ -52,9 +52,17 @@ a {
 .tab-center{
     margin: auto;
     width: 100%;
-    
 }
 .addone{
     margin-right: -15px;
     margin-left: -15px;
+}
+.preassessmentdata{
+    padding: 5px;
+}
+.prefamilydatas{
+    padding: 7px;
+}
+h5{
+    font-weight: bold;
 }

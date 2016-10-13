@@ -458,7 +458,7 @@ $(document).ready(function () {
                     data.id = id;
                     alert(id);
                     data.standard = ($('#standard').val());
-                    console.log(data.standard);
+                        console.log(data.standard);
                     data.schooltype = ($('#schooltype').val());
                     console.log(data.schooltype);
                     data.schoolname = ($('#schoolname').val());
@@ -542,11 +542,11 @@ $(document).ready(function () {
                     data.whomotivated = ($('#whomotivated').val());
 
                     data.job = ($("input[name='job']:checked").val());
+                     
 
-                    data.whyjob = ($('#whyjob').val());
-
+                          data.whyjob = ($('#whyjob').val());
                     data.kindofjob = ($('#kindofjob').val());
-                    data.whyjob = ($('#howmuchincome').val());
+                    data.jobincome = ($('#howmuchincome').val());
 
                     data.salary = ($("input[name='salary']:checked").val());
                     data.work = ($("input[name='work']:checked").val());
@@ -555,8 +555,21 @@ $(document).ready(function () {
                     data.discussion = ($('#discussion').val());
                     data.expectationparents = ($('#expectationparents').val());
 
+
+ var safeinworkplace = ($("input[name='safework']:checked").val());
+                   
+                    if (safeinworkplace == 'no') {
+                        data.safeinwork = $('#safeworkinp').val();
+
+
+                    }
+
+                    else {
+                        data.safeinwork = "no";
+
+                    }
                     var housework = ($("input[name='housework']:checked").val());
-                    //var effortobj = {};
+                   
                     if (housework == 'yes') {
                         data.houseworkinp = $('#houseworkinp').val();
 

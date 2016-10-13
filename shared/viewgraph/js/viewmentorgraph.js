@@ -1,7 +1,7 @@
 
 var data = {};
-var id = localStorage.getItem("user");
-data.id = id;
+var volunteer_id = localStorage.getItem("user");
+data.volunteer_id = volunteer_id;
 httpPost("/trackerDates", data, function (response) {
     response.forEach(function (element) {
         var dateObj = new Date(element.date);

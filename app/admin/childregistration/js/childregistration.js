@@ -67,13 +67,66 @@ $(document).ready(function () {
                     validators: {
                         notEmpty: {
                             message: localization.password[lang()]
+                        },
+                        callback: {
+                            message: 'The password is not valid',
+                            callback: function (value, validator, $field) {
+                                if (value === '') {
+                                    return true;
+                                }
+
+                                // Check the password strength
+                                if (value.length < 8) {
+                                    return {
+                                        valid: false,
+                                        message: localization.psstr[lang()]
+                                    };
+                                }
+
+                                // The password doesn't contain any uppercase character
+                                if (value === value.toLowerCase()) {
+                                    return {
+                                        valid: false,
+                                        message: localization.psupper[lang()]
+                                    }
+                                }
+
+                                // The password doesn't contain any uppercase character
+                                if (value === value.toUpperCase()) {
+                                    return {
+                                        valid: false,
+                                        message: localization.pslower[lang()]
+                                    }
+                                }
+
+                                // The password doesn't contain any digit
+                                if (value.search(/[0-9]/) < 0) {
+                                    return {
+                                        valid: false,
+                                        message: localization.psdigit[lang()]
+                                    }
+                                }
+
+                                return true;
+                            }
                         }
                     }
                 },
                 user_id: {
                     validators: {
                         notEmpty: {
-                            message: localization.username[lang()]
+                            message: localization.name[lang()]
+                        }
+                    }
+                },
+                cpassword: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Enter your password again'
+                        },
+                        identical: {
+                            field: 'password',
+                            message: 'The password and its confirm are not the same'
                         }
                     }
                 }

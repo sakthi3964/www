@@ -24,7 +24,6 @@ $(document).ready(function () {
             var id = $(this).attr("id");
             var data = {}
             if (this.checked) {
-                alert("heloooOOOOOO");
                 data.id = id;
                 data.active = 1;
                 data.time = new Date();
@@ -33,7 +32,6 @@ $(document).ready(function () {
 
             }
             else {
-                alert("not checked");
                 data.id = id;
                 data.active = 0;
                 data.time = new Date();

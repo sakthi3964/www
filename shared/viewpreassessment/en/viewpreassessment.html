@@ -2,498 +2,500 @@
 <html lang="en">
 
 <head>
-    <title>N'KaNa Preassessment</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-    <link rel="stylesheet" href="../../../assert/css/bootstrap.min.css">
-    <script src="../../../assert/js/jquery.min.js"></script>
-    <script src="../../../assert/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../../../assert/css/common.css">
-    <link href="../css/viewpreassessment.css" rel="stylesheet">
-    <link href="../../../assert/css/formValidation.css" rel="stylesheet" />
-    <script src="../../../assert/js/formValidation.js"></script>
-    <script src="../../../assert/js/framework/bootstrap.min.js"></script>
-    <script src="../../../assert/js/jquery.bootstrap.wizard.min.js"></script>
-    <script src="../../../helperfiles/js/logout.js" type="text/javascript"></script>
-    <script src="../../../config/config.js" type="text/javascript"></script>
-    <script src="../../../helperfiles/helper.js" type="text/javascript"></script>
-    <script src="../js/viewpreassessment.js"></script>
+	<title>N'KaNa Preassessment</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+	<link rel="stylesheet" href="../../../assert/css/bootstrap.min.css">
+	<script src="../../../assert/js/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../../assert/css/font-awesome.min.css">
+	<script src="../../../assert/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../../../assert/css/common.css">
+	<link href="../css/viewpreassessment.css" rel="stylesheet">
+	<link href="../../../assert/css/formValidation.css" rel="stylesheet" />
+	<script src="../../../assert/js/formValidation.js"></script>
+	<script src="../../../assert/js/framework/bootstrap.min.js"></script>
+	<script src="../../../assert/js/jquery.bootstrap.wizard.min.js"></script>
+	<script src="../../../helperfiles/js/logout.js" type="text/javascript"></script>
+	<script src="../../../config/config.js" type="text/javascript"></script>
+	<script src="../../../helperfiles/helper.js" type="text/javascript"></script>
+	<script src="../js/viewpreassessment.js"></script>
 </head>
 
 <body>
-    <div class="container-fluid" id="commonblock">
-        <nav class="navbar navbar-custom">
-            <div class="row">
-                <div class="col-xs-10 col-sm-10 col-md-10 brand">
-                    <p>N'KaNa</p>
-                </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 ">
-                    <span class="glyphicon glyphicon-off logout "></span>
-                </div>
-            </div>
-        </nav>
-    </div>
-    <div class="container" id="body-tag">
-        <ul class="nav nav-pills" id="header">
-            <li class="active"><a href="#firsttab" data-toggle="tab">Step1</a></li>
-            <li><a href="#secondtab" data-toggle="tab">Step2</a></li>
-            <li><a href="#thirdtab" data-toggle="tab">Step3</a></li>
-            <li><a href="#fourthtab" data-toggle="tab">Step4</a></li>
-        </ul>
-        <div class="tab-content content">
-            <div class="tab-pane fade in active" id="firsttab">
-                <h4>Educational Details</h4>
-                <div class="col-sm-8 col-xs-8 col-md-8 preassessmentdata">
-                    <div class="col-sm-2 col-xs-6 col-md-2 ">
-                        <h5>Standard</h5>
-                    </div>
-                    <div class="col-sm-3 col-xs-6 col-md-3">
-                        <p id="prestandard" class="prefamilydatas"></p>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-8 col-md-8 preassessmentdata">
-                    <div class="col-sm-2 col-xs-6 col-md-2">
-                        <h5>School Name</h5>
-                    </div>
-                    <div class="col-sm-6 col-xs-6 col-md-6">
-                        <p id="preschoolname" class="prefamilydatas"></p>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-8 col-md-8 preassessmentdata">
-                    <div class="col-sm-2 col-xs-6 col-md-2">
-                        <h5>School Type</h5>
-                    </div>
-                    <div class="col-sm-3 col-xs-6 col-md-3">
-                        <p id="preschooltype" class="prefamilydatas"></p>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-8 col-md-8 preassessmentdata">
-                    <div class="col-sm-2 col-xs-6 col-md-2">
-                        <h5>House Type</h5>
-                    </div>
-                    <div class="col-sm-3 col-xs-6 col-md-3">
-                        <p id="prehousetype" class="prefamilydatas"></p>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-xs-12 col-md-12 preassessmentdata" id="pre_family_name">
-                    <h4>Family Details </h4>
-                    <div class="col-sm-4" id="pre_family_details">
-                        <!--<div class="col-sm-6 col-xs-6 col-md-6">
+	<div class="container-fluid" id="commonblock">
+		<nav class="navbar navbar-custom">
+			<div class="row">
+				<div class="col-xs-6 col-sm-8 col-md-10 brand">
+					<p>N'KaNa</p>
+				</div>
+				<div class="col-xs-6 col-sm-4 col-md-2 homeicons">
+					<a href="../../../index.html"><i class="fa fa-power-off logout" aria-hidden="true" id="logoutsession"></i></a>
+					<a href="../../../app/volunteer/volunteerhome/en/volunteerhome.html"><i class="fa fa-home homebutton" aria-hidden="true"></i></a>
+				</div>
+			</div>
+		</nav>
+	</div>
+	<div class="container" id="body-tag">
+		<ul class="nav nav-pills" id="header">
+			<li class="active"><a href="#firsttab" data-toggle="tab">Step1</a></li>
+			<li><a href="#secondtab" data-toggle="tab">Step2</a></li>
+			<li><a href="#thirdtab" data-toggle="tab">Step3</a></li>
+			<li><a href="#fourthtab" data-toggle="tab">Step4</a></li>
+		</ul>
+		<div class="tab-content content">
+			<div class="tab-pane fade in active" id="firsttab">
+				<h4>Educational Details</h4>
+				<div class="col-sm-8 col-xs-8 col-md-8 preassessmentdata">
+					<div class="col-sm-2 col-xs-6 col-md-2 ">
+						<h5>Standard</h5>
+					</div>
+					<div class="col-sm-3 col-xs-6 col-md-3">
+						<p id="prestandard" class="prefamilydatas"></p>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-8 col-md-8 preassessmentdata">
+					<div class="col-sm-2 col-xs-6 col-md-2">
+						<h5>School Name</h5>
+					</div>
+					<div class="col-sm-6 col-xs-6 col-md-6">
+						<p id="preschoolname" class="prefamilydatas"></p>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-8 col-md-8 preassessmentdata">
+					<div class="col-sm-2 col-xs-6 col-md-2">
+						<h5>School Type</h5>
+					</div>
+					<div class="col-sm-3 col-xs-6 col-md-3">
+						<p id="preschooltype" class="prefamilydatas"></p>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-8 col-md-8 preassessmentdata">
+					<div class="col-sm-2 col-xs-6 col-md-2">
+						<h5>House Type</h5>
+					</div>
+					<div class="col-sm-3 col-xs-6 col-md-3">
+						<p id="prehousetype" class="prefamilydatas"></p>
+					</div>
+				</div>
+				<div class="col-sm-12 col-xs-12 col-md-12 preassessmentdata" id="pre_family_name">
+					<h4>Family Details </h4>
+					<div class="col-sm-4" id="pre_family_details">
+						<!--<div class="col-sm-6 col-xs-6 col-md-6">
                             <h5>Name</h5>
                         </div>
                         <div class="col-sm-6 col-xs-6 col-md-6">
                             <p id="prefamilyname" class="prefamilydatas">dfdsfsdf</p>
                         </div>-->
-                        <!--<div class="col-sm-6 col-xs-6 col-md-6">
+						<!--<div class="col-sm-6 col-xs-6 col-md-6">
                             <h5>Relation</h5>
                         </div>
                         <div class="col-sm-6 col-xs-6 col-md-6">
                             <p id="prefamilyrelation" class="prefamilydatas">dfsdf</p>
                         </div>-->
-                        <!--<div class="col-sm-6 col-xs-6 col-md-6">
+						<!--<div class="col-sm-6 col-xs-6 col-md-6">
                             <h5>Age</h5>
                         </div>
                         <div class="col-sm-6 col-xs-6 col-md-6">
                             <p id="prefamilyage" class="prefamilydatas">fdsdf</p>
                         </div>-->
-                        <!--<div class="col-sm-6 col-xs-6 col-md-6">
+						<!--<div class="col-sm-6 col-xs-6 col-md-6">
                             <h5>Occupation</h5>
                         </div>
                         <div class="col-sm-6 col-xs-6 col-md-6">
                             <p id="prefamilyoccupation" class="prefamilydatas">dsf</p>
                         </div>-->
-                        <!--<div class="col-sm-6 col-xs-6 col-md-6">
+						<!--<div class="col-sm-6 col-xs-6 col-md-6">
                             <h5>Monthly Income</h5>
                         </div>
                         <div class="col-sm-6 col-xs-6 col-md-6">
                             <p id="prefamilymMonthlyincome" class="prefamilydatas">dsf</p>
                         </div>-->
-                        <!--<div class="col-sm-5 col-xs-6 col-md-6">
+						<!--<div class="col-sm-5 col-xs-6 col-md-6">
                             <h5>Occupation</h5>
                         </div>
                         <div class="col-sm-5 col-xs-6 col-md-6">
                             <p id="prefamilyoccupation" class="prefamilydatas">dsf</p>
                         </div>-->
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane" id="secondtab">
-                <h4>Career Goals</h4>
-                <div class="col-sm-8 col-xs-8 col-md-8 preassessmentdata">
-                    <div class="col-sm-2 col-xs-6 col-md-2">
-                        <h5>Goal 1</h5>
-                    </div>
-                    <div class="col-sm-3 col-xs-6 col-md-3">
-                        <p id="pregoal1" class="prefamilydatas">dsfds</p>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-8 col-md-8 preassessmentdata">
-                    <div class="col-sm-2 col-xs-6 col-md-2">
-                        <h5>Goal 2</h5>
-                    </div>
-                    <div class="col-sm-3 col-xs-6 col-md-3">
-                        <p id="pregoal2" class="prefamilydatas">sdasd</p>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-8 col-md-8 preassessmentdata">
-                    <div class="col-sm-2 col-xs-6 col-md-2">
-                        <h5>Goal 3</h5>
-                    </div>
-                    <div class="col-sm-3 col-xs-6 col-md-3">
-                        <p id="pregoal3" class="prefamilydatas">sdasd</p>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-8 col-md-8 preassessmentdata">
-                    <div class="col-sm-2 col-xs-6 col-md-2">
-                        <h5>Goal 4</h5>
-                    </div>
-                    <div class="col-sm-3 col-xs-6 col-md-3">
-                        <p id="pregoal4" class="prefamilydatas">sdasd</p>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-8 col-md-8 preassessmentdata">
-                    <div class="col-sm-2 col-xs-6 col-md-2">
-                        <h5>Goal 5</h5>
-                    </div>
-                    <div class="col-sm-3 col-xs-6 col-md-3">
-                        <p id="pregoal5" class="prefamilydatas">sdasd</p>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <h5>What your Parents wish to you Become?</h5>
-                    </div>
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <p id="preparentwish" class="prefamilydatas"></p>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <h5>Do your parents stress/force their wish/goal on you?</h5>
-                    </div>
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <p id="preparentsgoal" class="prefamilydatas"></p>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <h5>Do you have any idea about how to achieve your goal?</h5>
-                    </div>
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <p id="pregoalidea" class="prefamilydatas"></p>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <h5>Are you taking any effort to achieve your goal?</h5>
-                    </div>
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <p id="pregoaleffort" class="prefamilydatas"></p>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <h5>Is there anyone to support/encourage to achieve your goal?</h5>
-                    </div>
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <p id="pre_support_goal" class="prefamilydatas"></p>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <h5>Is there anyone financialy support you to achieve your goal?</h5>
-                    </div>
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <div class="col-sm-3 col-xs-3 col-md-4">
-                            <h5>Family</h5>
-                        </div>
-                        <div class="col-sm-4 col-xs-4 col-md-4">
-                            <p id="pre_financial_family" class="prefamilydatas"></p>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <div class="col-sm-3 col-xs-3 col-md-4">
-                            <h5>Organisation</h5>
-                        </div>
-                        <div class="col-sm-4 col-xs-4 col-md-4">
-                            <p id="pre_financial_organisation" class="prefamilydatas"></p>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <div class="col-sm-3 col-xs-3 col-md-4">
-                            <h5>Neighbours</h5>
-                        </div>
-                        <div class="col-sm-4 col-xs-4 col-md-4">
-                            <p id="pre_financial_neighbours" class="prefamilydatas"></p>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <div class="col-sm-3 col-xs-3 col-md-4">
-                            <h5>Teachers</h5>
-                        </div>
-                        <div class="col-sm-4 col-xs-4 col-md-4">
-                            <p id="pre_financial_teachers" class="prefamilydatas"></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <h5>Who motivated you to set this goal?</h5>
-                    </div>
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <p id="pre_motivated_goal" class="prefamilydatas"></p>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <h5>Have you gone for any part time job?</h5>
-                    </div>
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <p id="pre_parttime_job" class="prefamilydatas"></p>
-                    </div>
-                </div>
-                <div id="parttimejob" style="display: none;">
-                    <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                        <div class="col-sm-12 col-xs-12 col-md-12">
-                            <h5>Why are going to job?</h5>
-                        </div>
-                        <div class="col-sm-12 col-xs-12 col-md-12">
-                            <p id="pre_why_job" class="prefamilydatas"></p>
-                        </div>
-                    </div>
-                    <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                        <div class="col-sm-12 col-xs-12 col-md-12">
-                            <h5>What kind of work?</h5>
-                        </div>
-                        <div class="col-sm-12 col-xs-12 col-md-12">
-                            <p id="pre_kindofjob" class="prefamilydatas"></p>
-                        </div>
-                    </div>
-                    <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                        <div class="col-sm-12 col-xs-12 col-md-12">
-                            <h5>How much income in your Partime Job?</h5>
-                        </div>
-                        <div class="col-sm-12 col-xs-12 col-md-12">
-                            <p id="pre_parttime_income" class="prefamilydatas"></p>
-                        </div>
-                    </div>
-                    <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                        <div class="col-sm-12 col-xs-12 col-md-12">
-                            <h5>Do you think the salary given for the work you have done is enough?</h5>
-                        </div>
-                        <div class="col-sm-12 col-xs-12 col-md-12">
-                            <p id="pre_parttime_salary" class="prefamilydatas"></p>
-                        </div>
-                    </div>
-                    <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                        <div class="col-sm-12 col-xs-12 col-md-12">
-                            <h5>Do you feel safe in your work place?</h5>
-                        </div>
-                        <div class="col-sm-12 col-xs-12 col-md-12">
-                            <p id="pre_parttime_safe" class="prefamilydatas"></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+					</div>
+				</div>
+			</div>
+			<div class="tab-pane" id="secondtab">
+				<h4>Career Goals</h4>
+				<div class="col-sm-8 col-xs-8 col-md-8 preassessmentdata">
+					<div class="col-sm-2 col-xs-6 col-md-2">
+						<h5>Goal 1</h5>
+					</div>
+					<div class="col-sm-3 col-xs-6 col-md-3">
+						<p id="pregoal1" class="prefamilydatas">dsfds</p>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-8 col-md-8 preassessmentdata">
+					<div class="col-sm-2 col-xs-6 col-md-2">
+						<h5>Goal 2</h5>
+					</div>
+					<div class="col-sm-3 col-xs-6 col-md-3">
+						<p id="pregoal2" class="prefamilydatas">sdasd</p>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-8 col-md-8 preassessmentdata">
+					<div class="col-sm-2 col-xs-6 col-md-2">
+						<h5>Goal 3</h5>
+					</div>
+					<div class="col-sm-3 col-xs-6 col-md-3">
+						<p id="pregoal3" class="prefamilydatas">sdasd</p>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-8 col-md-8 preassessmentdata">
+					<div class="col-sm-2 col-xs-6 col-md-2">
+						<h5>Goal 4</h5>
+					</div>
+					<div class="col-sm-3 col-xs-6 col-md-3">
+						<p id="pregoal4" class="prefamilydatas">sdasd</p>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-8 col-md-8 preassessmentdata">
+					<div class="col-sm-2 col-xs-6 col-md-2">
+						<h5>Goal 5</h5>
+					</div>
+					<div class="col-sm-3 col-xs-6 col-md-3">
+						<p id="pregoal5" class="prefamilydatas">sdasd</p>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<h5>What your Parents wish to you Become?</h5>
+					</div>
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<p id="preparentwish" class="prefamilydatas"></p>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<h5>Do your parents stress/force their wish/goal on you?</h5>
+					</div>
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<p id="preparentsgoal" class="prefamilydatas"></p>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<h5>Do you have any idea about how to achieve your goal?</h5>
+					</div>
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<p id="pregoalidea" class="prefamilydatas"></p>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<h5>Are you taking any effort to achieve your goal?</h5>
+					</div>
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<p id="pregoaleffort" class="prefamilydatas"></p>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<h5>Is there anyone to support/encourage to achieve your goal?</h5>
+					</div>
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<p id="pre_support_goal" class="prefamilydatas"></p>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<h5>Is there anyone financialy support you to achieve your goal?</h5>
+					</div>
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<div class="col-sm-3 col-xs-3 col-md-4">
+							<h5>Family</h5>
+						</div>
+						<div class="col-sm-4 col-xs-4 col-md-4">
+							<p id="pre_financial_family" class="prefamilydatas"></p>
+						</div>
+					</div>
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<div class="col-sm-3 col-xs-3 col-md-4">
+							<h5>Organisation</h5>
+						</div>
+						<div class="col-sm-4 col-xs-4 col-md-4">
+							<p id="pre_financial_organisation" class="prefamilydatas"></p>
+						</div>
+					</div>
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<div class="col-sm-3 col-xs-3 col-md-4">
+							<h5>Neighbours</h5>
+						</div>
+						<div class="col-sm-4 col-xs-4 col-md-4">
+							<p id="pre_financial_neighbours" class="prefamilydatas"></p>
+						</div>
+					</div>
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<div class="col-sm-3 col-xs-3 col-md-4">
+							<h5>Teachers</h5>
+						</div>
+						<div class="col-sm-4 col-xs-4 col-md-4">
+							<p id="pre_financial_teachers" class="prefamilydatas"></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<h5>Who motivated you to set this goal?</h5>
+					</div>
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<p id="pre_motivated_goal" class="prefamilydatas"></p>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<h5>Have you gone for any part time job?</h5>
+					</div>
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<p id="pre_parttime_job" class="prefamilydatas"></p>
+					</div>
+				</div>
+				<div id="parttimejob" style="display: none;">
+					<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+						<div class="col-sm-12 col-xs-12 col-md-12">
+							<h5>Why are going to job?</h5>
+						</div>
+						<div class="col-sm-12 col-xs-12 col-md-12">
+							<p id="pre_why_job" class="prefamilydatas"></p>
+						</div>
+					</div>
+					<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+						<div class="col-sm-12 col-xs-12 col-md-12">
+							<h5>What kind of work?</h5>
+						</div>
+						<div class="col-sm-12 col-xs-12 col-md-12">
+							<p id="pre_kindofjob" class="prefamilydatas"></p>
+						</div>
+					</div>
+					<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+						<div class="col-sm-12 col-xs-12 col-md-12">
+							<h5>How much income in your Partime Job?</h5>
+						</div>
+						<div class="col-sm-12 col-xs-12 col-md-12">
+							<p id="pre_parttime_income" class="prefamilydatas"></p>
+						</div>
+					</div>
+					<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+						<div class="col-sm-12 col-xs-12 col-md-12">
+							<h5>Do you think the salary given for the work you have done is enough?</h5>
+						</div>
+						<div class="col-sm-12 col-xs-12 col-md-12">
+							<p id="pre_parttime_salary" class="prefamilydatas"></p>
+						</div>
+					</div>
+					<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+						<div class="col-sm-12 col-xs-12 col-md-12">
+							<h5>Do you feel safe in your work place?</h5>
+						</div>
+						<div class="col-sm-12 col-xs-12 col-md-12">
+							<p id="pre_parttime_safe" class="prefamilydatas"></p>
+						</div>
+					</div>
+				</div>
+			</div>
 
-            <div class="tab-pane" id="thirdtab">
-                <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <h5>Do the parents/Guardian really listen to the matters relating to you?</h5>
-                    </div>
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <p id="pre_listen" class="prefamilydatas"></p>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <h5>How often you discuss about your school matters with your parents/Guardian and family members?</h5>
-                    </div>
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <p id="pre_discussion" class="prefamilydatas"></p>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <h5>What is your expectation from your parents?</h5>
-                    </div>
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <p id="pre_parents_expectation" class="prefamilydatas"></p>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <h5>Are you over burdened with household works?</h5>
-                    </div>
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <p id="pre_burdened" class="prefamilydatas"></p>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <h5>Does anyone in your family addicted to smoking/ liquor/ drug?</h5>
-                    </div>
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <p id="pre_addicted" class="prefamilydatas"></p>
-                    </div>
-                    <div class="col-sm-4" id="pre_addicted_details">
-                        <!--<div class="col-sm-6 col-xs-6 col-md-6">
+			<div class="tab-pane" id="thirdtab">
+				<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<h5>Do the parents/Guardian really listen to the matters relating to you?</h5>
+					</div>
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<p id="pre_listen" class="prefamilydatas"></p>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<h5>How often you discuss about your school matters with your parents/Guardian and family members?</h5>
+					</div>
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<p id="pre_discussion" class="prefamilydatas"></p>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<h5>What is your expectation from your parents?</h5>
+					</div>
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<p id="pre_parents_expectation" class="prefamilydatas"></p>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<h5>Are you over burdened with household works?</h5>
+					</div>
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<p id="pre_burdened" class="prefamilydatas"></p>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<h5>Does anyone in your family addicted to smoking/ liquor/ drug?</h5>
+					</div>
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<p id="pre_addicted" class="prefamilydatas"></p>
+					</div>
+					<div class="col-sm-4" id="pre_addicted_details">
+						<!--<div class="col-sm-6 col-xs-6 col-md-6">
                             <h5>Relation</h5>
                         </div>
                         <div class="col-sm-6 col-xs-6 col-md-6">
                             <p id="pre_addicted_relation" class="prefamilydatas">dfdsfsdf</p>
                         </div>-->
-                        <div class="col-sm-6 col-xs-6 col-md-6">
-                            <h5>Smoking</h5>
-                        </div>
-                        <div class="col-sm-6 col-xs-6 col-md-6">
-                            <p id="pre_addicted_smoking" class="prefamilydatas">dfsdf</p>
-                        </div>
-                        <div class="col-sm-6 col-xs-6 col-md-6">
-                            <h5>Liquor</h5>
-                        </div>
-                        <div class="col-sm-6 col-xs-6 col-md-6">
-                            <p id="pre_addicted_liquor" class="prefamilydatas">fdsdf</p>
-                        </div>
-                        <div class="col-sm-6 col-xs-6 col-md-6">
-                            <h5>Drug</h5>
-                        </div>
-                        <div class="col-sm-6 col-xs-6 col-md-6">
-                            <p id="pre_addicted_drug" class="prefamilydatas">fdsdf</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <h5>Do your neighbors help in academics/Study?</h5>
-                    </div>
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <p id="pre_neighbours_help" class="prefamilydatas"></p>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <h5>Do you feel safe in your neighborhood?</h5>
-                    </div>
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <p id="pre_neighbourhood_safe" class="prefamilydatas"></p>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane" id="fourthtab">
-                <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <h5>What’s your favorite Subject? Why?</h5>
-                    </div>
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <p id="pre_favorite_subject" class="prefamilydatas"></p>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <h5>Which subject do you feel difficult and Why?</h5>
-                    </div>
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <p id="pre_difficult_subject" class="prefamilydatas"></p>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <h5>What are your favorite sports/activities?</h5>
-                    </div>
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <p id="pre_favorite_sports" class="prefamilydatas"></p>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <h5>Do you like to study with your friends?</h5>
-                    </div>
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <p id="pre_friends" class="prefamilydatas"></p>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <h5>Are you a member of any club?</h5>
-                    </div>
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <p id="pre_club" class="prefamilydatas"></p>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <h5>Did you participate in any events in village/school?</h5>
-                    </div>
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <p id="pre_events" class="prefamilydatas"></p>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <h5>What is your talents & skills</h5>
-                    </div>
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <p id="pre_talents" class="prefamilydatas"></p>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <h5>Do you need any support from our (TYCL) side to develop your skills?</h5>
-                    </div>
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <p id="pre_org_support" class="prefamilydatas"></p>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <h5>What is your expectation towards TYCL and MUGHIL?</h5>
-                    </div>
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <p id="pre_expectation" class="prefamilydatas"></p>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <h5>Do you like to continue your studies?</h5>
-                    </div>
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <p id="pre_studies" class="prefamilydatas"></p>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <h5>What are your favorite things in your life?</h5>
-                    </div>
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <p id="pre_favorite_things" class="prefamilydatas"></p>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <h5>What you hate the most in your life?</h5>
-                    </div>
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <p id="pre_hate_things" class="prefamilydatas"></p>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <h5>Do you like to help others in future?</h5>
-                    </div>
-                    <div class="col-sm-12 col-xs-12 col-md-12">
-                        <p id="pre_future_help" class="prefamilydatas"></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-12">
-            <ul class="pager wizard">
-                <li class="previous"><a href="javascript: void(0);">Previous</a></li>
-                <li class="next" id="submit"><a href="javascript: void(0);">Next</a></li>
-            </ul>
-        </div>
-    </div>
+						<div class="col-sm-6 col-xs-6 col-md-6">
+							<h5>Smoking</h5>
+						</div>
+						<div class="col-sm-6 col-xs-6 col-md-6">
+							<p id="pre_addicted_smoking" class="prefamilydatas">dfsdf</p>
+						</div>
+						<div class="col-sm-6 col-xs-6 col-md-6">
+							<h5>Liquor</h5>
+						</div>
+						<div class="col-sm-6 col-xs-6 col-md-6">
+							<p id="pre_addicted_liquor" class="prefamilydatas">fdsdf</p>
+						</div>
+						<div class="col-sm-6 col-xs-6 col-md-6">
+							<h5>Drug</h5>
+						</div>
+						<div class="col-sm-6 col-xs-6 col-md-6">
+							<p id="pre_addicted_drug" class="prefamilydatas">fdsdf</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<h5>Do your neighbors help in academics/Study?</h5>
+					</div>
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<p id="pre_neighbours_help" class="prefamilydatas"></p>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<h5>Do you feel safe in your neighborhood?</h5>
+					</div>
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<p id="pre_neighbourhood_safe" class="prefamilydatas"></p>
+					</div>
+				</div>
+			</div>
+			<div class="tab-pane" id="fourthtab">
+				<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<h5>What’s your favorite Subject? Why?</h5>
+					</div>
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<p id="pre_favorite_subject" class="prefamilydatas"></p>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<h5>Which subject do you feel difficult and Why?</h5>
+					</div>
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<p id="pre_difficult_subject" class="prefamilydatas"></p>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<h5>What are your favorite sports/activities?</h5>
+					</div>
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<p id="pre_favorite_sports" class="prefamilydatas"></p>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<h5>Do you like to study with your friends?</h5>
+					</div>
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<p id="pre_friends" class="prefamilydatas"></p>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<h5>Are you a member of any club?</h5>
+					</div>
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<p id="pre_club" class="prefamilydatas"></p>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<h5>Did you participate in any events in village/school?</h5>
+					</div>
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<p id="pre_events" class="prefamilydatas"></p>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<h5>What is your talents & skills</h5>
+					</div>
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<p id="pre_talents" class="prefamilydatas"></p>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<h5>Do you need any support from our (TYCL) side to develop your skills?</h5>
+					</div>
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<p id="pre_org_support" class="prefamilydatas"></p>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<h5>What is your expectation towards TYCL and MUGHIL?</h5>
+					</div>
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<p id="pre_expectation" class="prefamilydatas"></p>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<h5>Do you like to continue your studies?</h5>
+					</div>
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<p id="pre_studies" class="prefamilydatas"></p>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<h5>What are your favorite things in your life?</h5>
+					</div>
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<p id="pre_favorite_things" class="prefamilydatas"></p>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<h5>What you hate the most in your life?</h5>
+					</div>
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<p id="pre_hate_things" class="prefamilydatas"></p>
+					</div>
+				</div>
+				<div class="col-sm-8 col-xs-12 col-md-8 preassessmentdata">
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<h5>Do you like to help others in future?</h5>
+					</div>
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<p id="pre_future_help" class="prefamilydatas"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12">
+			<ul class="pager wizard">
+				<li class="previous"><a href="javascript: void(0);">Previous</a></li>
+				<li class="next" id="submit"><a href="javascript: void(0);">Next</a></li>
+			</ul>
+		</div>
+	</div>
 
 
 </body>

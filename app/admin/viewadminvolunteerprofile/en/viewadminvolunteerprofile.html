@@ -2,116 +2,118 @@
 <html lang="en">
 
 <head>
-  <title>N'KaNa</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-  <link rel="stylesheet" href="../../../../assert/css/bootstrap.min.css">
-  <script src="../../../../assert/js/jquery.min.js"></script>
-  <script src="../../../../assert/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="../../../../assert/css/common.css">
-  <script src="../../../../assert/js/jquery.bootstrap.wizard.min.js"></script>
-  <script src="../js/viewadminvolunteerprofile.js"></script>
-  <script src="../../../../helperfiles/helper.js"></script>
-  <script src="../../../../config/config.js"></script>
-  <script src="../../../../helperfiles/js/logout.js" type="text/javascript"></script>
+	<title>N'KaNa</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+	<link rel="stylesheet" href="../../../../assert/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../../../assert/css/font-awesome.min.css">
+	<script src="../../../../assert/js/jquery.min.js"></script>
+	<script src="../../../../assert/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../../../../assert/css/common.css">
+	<script src="../../../../assert/js/jquery.bootstrap.wizard.min.js"></script>
+	<script src="../js/viewadminvolunteerprofile.js"></script>
+	<script src="../../../../helperfiles/helper.js"></script>
+	<script src="../../../../config/config.js"></script>
+	<script src="../../../../helperfiles/js/logout.js" type="text/javascript"></script>
 </head>
 
 <body>
-  <div class="container-fluid" id="commonblock">
-    <nav class="navbar navbar-custom">
-      <div class="row">
-        <div class="col-xs-10 col-sm-10 col-md-10 brand">
-          <p>N'KaNa</p>
-        </div>
-        <div class="col-xs-2 col-sm-2 col-md-2 ">
-          <a href="../../../index.html" class="logoutbutton"><span class="glyphicon glyphicon-off logout" id="logoutsession" ></span></a>
-        </div>
-      </div>
-    </nav>
-  </div>
-  <div class="container" id="blockreg2">
-    <div class=" col-sm-8 col-md-8 col-md-offset-2 col-sm-offset-2">
-      <h3>
-        <center> Volunteer Detail</center>
-      </h3>
-      <center><img src="img/sakthi.jpg" width="150" height="150"></center>
-      <table class="table borderless">
-        <tbody>
-          <tr>
-            <td>Name:</td>
-            <td id="name"></td>
-          </tr>
-          <tr>
-            <td>Date of Birth:</td>
-            <td>
-              <p id="dob"></p>
-            </td>
-          </tr>
-          <tr>
-            <td>Course:</td>
-            <td>
-              <p id="course"></p>
-            </td>
-          </tr>
-          <tr>
-            <td>Department:</td>
-            <td>
-              <p id="department"></p>
-            </td>
-          </tr>
-          <tr>
-            <td>Institution:</td>
-            <td>
-              <p id="institution"></p>
-            </td>
-          </tr>
-          <tr>
-            <td>Address:</td>
-            <td>
-              <p id="address"></p>
-            </td>
-          </tr>
-          <tr>
-            <td>Mobile Number:</td>
-            <td>
-              <p id="mobile_number"></p>
-            </td>
-          </tr>
-          <tr>
-            <td>Emailid:</td>
-            <td>
-              <p id="email_id"></p>
-            </td>
-          </tr>
-          <tr>
-            <td>Work Type:</td>
-            <td>
-              <p id="work_type"></p>
-            </td>
-          </tr>
-          <tr>
-            <td>Reference:</td>
-            <td>
-              <p id="reference"></p>
-            </td>
-          </tr>
-          <tr>
-            <td>Designation:</td>
-            <td>
-              <p id="designation"></p>
-            </td>
-          </tr>
-          <tr>
-            <td>Organization:</td>
-            <td>
-              <p id="organization"></p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+	<div class="container-fluid" id="commonblock">
+		<nav class="navbar navbar-custom">
+			<div class="row">
+				<div class="col-xs-6 col-sm-8 col-md-10 brand">
+					<p>N'KaNa</p>
+				</div>
+				<div class="col-xs-6 col-sm-4 col-md-2 homeicons">
+					<a href="../../../../index.html"><i class="fa fa-power-off logout" aria-hidden="true" id="logoutsession"></i></a>
+					<a href="../../../volunteer/volunteerhome/en/volunteerhome.html"><i class="fa fa-home homebutton" aria-hidden="true"></i></a>
+				</div>
+			</div>
+		</nav>
+	</div>
+	<div class="container" id="blockreg2">
+		<div class=" col-sm-8 col-md-8 col-md-offset-2 col-sm-offset-2">
+			<h3>
+				<center> Volunteer Detail</center>
+			</h3>
+			<center><img src="img/sakthi.jpg" width="150" height="150"></center>
+			<table class="table borderless">
+				<tbody>
+					<tr>
+						<td>Name:</td>
+						<td id="name"></td>
+					</tr>
+					<tr>
+						<td>Date of Birth:</td>
+						<td>
+							<p id="dob"></p>
+						</td>
+					</tr>
+					<tr>
+						<td>Course:</td>
+						<td>
+							<p id="course"></p>
+						</td>
+					</tr>
+					<tr>
+						<td>Department:</td>
+						<td>
+							<p id="department"></p>
+						</td>
+					</tr>
+					<tr>
+						<td>Institution:</td>
+						<td>
+							<p id="institution"></p>
+						</td>
+					</tr>
+					<tr>
+						<td>Address:</td>
+						<td>
+							<p id="address"></p>
+						</td>
+					</tr>
+					<tr>
+						<td>Mobile Number:</td>
+						<td>
+							<p id="mobile_number"></p>
+						</td>
+					</tr>
+					<tr>
+						<td>Emailid:</td>
+						<td>
+							<p id="email_id"></p>
+						</td>
+					</tr>
+					<tr>
+						<td>Work Type:</td>
+						<td>
+							<p id="work_type"></p>
+						</td>
+					</tr>
+					<tr>
+						<td>Reference:</td>
+						<td>
+							<p id="reference"></p>
+						</td>
+					</tr>
+					<tr>
+						<td>Designation:</td>
+						<td>
+							<p id="designation"></p>
+						</td>
+					</tr>
+					<tr>
+						<td>Organization:</td>
+						<td>
+							<p id="organization"></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 
-    </div>
-  </div>
+		</div>
+	</div>
 
 </body>
 

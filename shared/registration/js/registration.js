@@ -325,6 +325,27 @@ $(document).ready(function () {
                     return false;
                 }
                 if (index === numTabs) {
+                    var formData = new FormData();
+                    formData.append('file', $('#file')[0].files[0]);
+                    // formData.append('file', $('#cv')[1].files[1]);
+                    var settings = {
+                        "async": true,
+                        "crossDomain": true,
+                        "url": "http://localhost:3406/addfiles",
+                        "method": "POST",
+                        "headers": {
+                            "cache-control": "no-cache"
+                        },
+                        "processData": false,
+                        "contentType": false,
+                        "mimeType": "multipart/form-data",
+                        "data": formData
+                    }
+
+                    $.ajax(settings).done(function (response) {
+                        alert("inserted successfully");
+                    });
+
                     var data = {};
                     data.role = ($('#role').val()).trim();
                     data.name = ($('#name').val()).trim();

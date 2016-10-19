@@ -20,5 +20,12 @@ $(document).ready(function () {
 
             }
             console.log(response[0].approve_status);
-        })
-});
+        }),
+     httpPost("/volunteerhomeviewmentor", data, function (response) {
+     if (response == 0) {
+         $('#selectmentor').append('<a href="../../viewmentorprofile/en/mentorprofile.html"><div class="col-sm-4 col-xs-4"><p>Mentor Profile	<img src="../../../../helperfiles/img/professional.png" class="img-responsive" alt="View Mentor Profile" width="120" height="236"></p></div>	</a>');
+     }
+     else {
+         $('#selectmentor').append('<a href="../../selectmentor/en/listofmentor.html"><div class="col-sm-4 col-xs-4"><p>Select Mentor<img src="../../../../helperfiles/img/addmentor.png" class="img-responsive " alt="Mentor Assignment" width="120" height="236"></p></div></a>');
+     }
+    })});

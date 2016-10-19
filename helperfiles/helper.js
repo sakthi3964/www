@@ -31,13 +31,30 @@ var httpGet = function (url, callback) {
         callback(response);
     });
 }
+var fileUpload = function (url, data, callback) {
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": BASEURL + url,
+        "method": "POST",
+        "headers": {
+            "cache-control": "no-cache"
+        },
+        "processData": false,
+        "contentType": false,
+        "mimeType": "multipart/form-data",
+        "data": data
+    }
+    $.ajax(settings).done(function (response) {
+        callback(response);
+    });
+}
 
 function lang() {
 
     var url = window.location.href;
     var array = url.split('/');
     var lang = array[array.length - 2];
-    console.log(lang);
     if (lang == 'ta') {
         return 'ta';
     }

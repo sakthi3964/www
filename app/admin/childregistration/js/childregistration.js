@@ -154,4 +154,13 @@ $(document).ready(function () {
             alert("successfully registered");
         });
     })
+    $(function () {
+        $(function () {
+            $("#dob").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                maxDate: "+0D"
+            });
+        });
+    });
 });

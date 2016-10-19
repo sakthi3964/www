@@ -128,7 +128,7 @@ $(document).ready(function () {
 
             // fields: {
 
-               
+
             //     //individual validation textbox
             //     // monthlyincome: {
             //     //     validators: {
@@ -223,7 +223,7 @@ $(document).ready(function () {
 
 
             //     //individual validation radiobutton
-                
+
             //     //   addictionsmoke: {
             //     //     selector:'.addictionsmoke',
             //     //     validators: {
@@ -458,7 +458,7 @@ $(document).ready(function () {
                     data.id = id;
                     alert(id);
                     data.standard = ($('#standard').val());
-                        console.log(data.standard);
+                    console.log(data.standard);
                     data.schooltype = ($('#schooltype').val());
                     console.log(data.schooltype);
                     data.schoolname = ($('#schoolname').val());
@@ -542,9 +542,9 @@ $(document).ready(function () {
                     data.whomotivated = ($('#whomotivated').val());
 
                     data.job = ($("input[name='job']:checked").val());
-                     
 
-                          data.whyjob = ($('#whyjob').val());
+
+                    data.whyjob = ($('#whyjob').val());
                     data.kindofjob = ($('#kindofjob').val());
                     data.jobincome = ($('#howmuchincome').val());
 
@@ -556,8 +556,8 @@ $(document).ready(function () {
                     data.expectationparents = ($('#expectationparents').val());
 
 
- var safeinworkplace = ($("input[name='safework']:checked").val());
-                   
+                    var safeinworkplace = ($("input[name='safework']:checked").val());
+
                     if (safeinworkplace == 'no') {
                         data.safeinwork = $('#safeworkinp').val();
 
@@ -569,7 +569,7 @@ $(document).ready(function () {
 
                     }
                     var housework = ($("input[name='housework']:checked").val());
-                   
+
                     if (housework == 'yes') {
                         data.houseworkinp = $('#houseworkinp').val();
 

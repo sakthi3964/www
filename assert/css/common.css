@@ -39,3 +39,29 @@ body{
     padding: 10px;
     font-size: 25px;
 }
+#headerblock{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    background-color: #06BBB5;
+    font-size: 25px;
+    color: white;
+    height: 50px;
+}
+#bodyblock{
+    position: static;
+    /*top: 55px;*/
+    height: calc(100% - 100px);
+    margin-top: 53px;
+    background-color: white;
+    /*overflow: scroll;*/
+}
+#footerblock {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: #06BBB5;
+    height: 50px;
+    padding: 10px;
+     text-align: center;
+}

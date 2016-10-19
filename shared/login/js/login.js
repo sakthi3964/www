@@ -28,6 +28,9 @@ $(document).ready(function () {
                 $('#errormodal').modal();
                 return false;
             }
+            else if (response.status == 0) {
+                $('#errormodal2').modal();
+            }
             else if (response.role == 'volunteer') {
                 console.log(response.user_id);
                 localStorage.setItem("user", response.user_id);

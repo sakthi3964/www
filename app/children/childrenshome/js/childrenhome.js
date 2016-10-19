@@ -33,10 +33,12 @@ $(document).ready(function () {
     httpPost("/childrenhome", data, function (response) {
         console.log(response);
         if (response == 1) {
-            $('#preassessmenticon').append('<a href="../../../../shared/viewpreassessment/en/viewpreassessment.html"><div class="col-sm-4 col-xs-4 col-md-4 card"></div><p> View Pre Assessment form<img src="../../../../helperfiles/img/viewpreassessmentform.png" class="img-responsive " alt="PRE ASSESSMENT FORM" width="120" height="236"></p></div></a>');
+            // $('#preassessmenticon').append('<a href="../../../../shared/viewpreassessment/en/viewpreassessment.html"><div class="col-sm-4 col-xs-4 col-md-4 card"></div><p> View Pre Assessment form<img src="../../../../helperfiles/img/viewpreassessmentform.png" class="img-responsive " alt="PRE ASSESSMENT FORM" width="120" height="236"></p></div></a>');
+            $('#viewpreassessmenticon').removeClass('hide');
         }
         else {
-            $('#preassessmenticon').append('<a href="../../preassessment/en/preassessmentform.html" id="inserpreassment"><div class="col-sm-4 col-xs-4 col-md-4 card"><p> sample<img src="../../../../helperfiles/img/viewpreassessmentform.png" class="img-responsive " alt="PRE ASSESSMENT FORM" width="120" height="236"></p></div></a>');
+            // $('#preassessmenticon').append('<a href="../../preassessment/en/preassessmentform.html" id="inserpreassment"><div class="col-sm-4 col-xs-4 col-md-4 card"><p> sample<img src="../../../../helperfiles/img/viewpreassessmentform.png" class="img-responsive " alt="PRE ASSESSMENT FORM" width="120" height="236"></p></div></a>');
+            $('#inserpreassmenticon').removeClass('hide');
         }
     });
 });

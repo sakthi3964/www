@@ -1,6 +1,16 @@
 
 var data = {};
-var id = localStorage.getItem("user");
+var url = window.location.href;
+var id;
+// var ids = url.substring(url.lastIndexOf("l") + 1);
+// alert(ids);
+if (url.substring(url.lastIndexOf('html') + 1) == "tml") {
+     id = localStorage.getItem("user");
+}
+else {
+     id = url.substring(url.lastIndexOf(':') + 1);
+}
+console.log(id);
 data.id = id;
 httpPost("/trackerDates", data, function (response) {
     console.log(response);

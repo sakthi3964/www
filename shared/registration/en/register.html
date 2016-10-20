@@ -34,9 +34,9 @@
 	<div class="container" id="blockreg2">
 		<form id="registrationForm" class="form-horizontal" method="POST" enctype="multipart/form-data">
 			<ul class="nav nav-pills">
-				<li class="active"><a href="#firsttab" data-toggle="tab">INTRO</a></li>
-				<li><a href="#secondtab" data-toggle="tab">Personal details</a></li>
-				<li><a href="#thirdtab" data-toggle="tab">Professional details</a></li>
+				<li class="active"><a href="#firsttab" data-toggle="tab">1</a></li>
+				<li><a href="#secondtab" data-toggle="tab">2</a></li>
+				<li><a href="#thirdtab" data-toggle="tab">3</a></li>
 			</ul>
 
 			<div class="tab-content">
@@ -45,8 +45,8 @@
 						<label>Register as a</label>
 						<select class="form-control" id="role" name="role">
                             <option value="">Select</option>
-                            <option value="1">Volunteer</option>
-                            <option value="2">Mentor</option>
+                            <option value="volunteer">Volunteer</option>
+                            <option value="mentor">Mentor</option>
                         </select>
 					</div>
 
@@ -60,41 +60,30 @@
 						<p>You can be a volunteer, mentor or supporter who can find us a needy child and professional mentors. Please do join
 							us in our review and planning meeting on 3rd Sunday of every month to learn about N'KaNa.
 						</p>
-						<table style="overflow-x:auto;">
+						<table class="table">
 							<tr>
-								<th>Name</th>
-								<th>Role</th>
-								<th>Email</th>
-							</tr>
-							<tr>
-								<td>Mugilan</td>
-								<td>Mentor</td>
+								<td>Mugilan(Mentor)</td>
 								<td>board@tycl.org.in</td>
 							</tr>
 							<tr>
-								<td>Suresh Krishna</td>
-								<td>Co-Ordinator</td>
+								<td>Suresh Krishna (Co.ordinator)</td>
 								<td>nkana@tycl.org.in</td>
 							</tr>
 							<tr>
-								<td>Nandhini</td>
-								<td>Co-Ordinator</td>
+								<td>Nandhini (Co.ordinator)</td>
 								<td>nkana@tycl.org.in</td>
 							</tr>
 							<tr>
-								<td>Sivaramakrishnan</td>
-								<td>Co-Ordinator</td>
+								<td>Sivaramakrishnan (Co.ordinator)</td>
 								<td>nkana@tycl.org.in</td>
 							</tr>
 							<tr>
-								<td>Sivasankari</td>
-								<td>Co-Ordinator</td>
+								<td>Sivasankari (Co.ordinator)</td>
 								<td>nkana@tycl.org.in</td>
 							</tr>
 							<tr>
-								<td>Padmini</td>
-								<td>Co-Ordinator</td>
-								<td>nkana@tycl.org.in</td>
+								<td>Padmini (Co.ordinator)</td>
+								<td>nkana@tycl.org.in </td>
 							</tr>
 						</table>
 					</div>
@@ -168,7 +157,7 @@
 					<div class="form-group">
 						<label class="control-label col-sm-4 col-xs-3">DOB</label>
 						<div class="col-sm-8 col-xs-9">
-							<input type="text" id="dob" name="dob" class="form-control" placeholder="Date of birth" data-provide="datepicker" data-date-end-date="0d">
+							<input type="date" id="dob" name="dob" class="form-control" placeholder="Date of birth" data-provide="datepicker" data-date-end-date="0d">
 						</div>
 					</div>
 					<div class="form-group">
@@ -411,7 +400,7 @@
 		</footer>
 	</div>
 
-	<div class="modal fade" id="registerModal" role="dialog">
+	<!--<div class="modal fade" id="registerModal" role="dialog">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -425,6 +414,23 @@
 				</div>
 			</div>
 
+		</div>
+	</div>-->
+	<div class="modal fade" id="registerModal" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">N'KaNa</h4>
+				</div>
+
+				<div class="modal-body">
+					<p class="text-center">Register Successfully You will be called for training shortly</p>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-success" data-dismiss="modal" onclick="window.location = '../../../index.html '">Close</button>
+				</div>
+			</div>
 		</div>
 	</div>
 </body>

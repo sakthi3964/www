@@ -1,0 +1,80 @@
+#container3{
+    background-color:white;
+    
+    
+}
+#demos{
+    background-color:white;
+   
+    
+}
+.container4{
+    background-color:white;
+}
+.calendor{
+    margin-top: 10px;
+    margin-bottom:10px; 
+    width: 150px;
+    background-color: #F4F4F4 ;
+    margin-left: 10px;
+    float: left;
+    border-radius: 10px;
+}
+.month{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+    background-color: #06BBB5;
+    color: white;
+    padding: 2px;
+    border-radius: 10px;
+}
+.date{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 800;
+    color: black;
+    padding: 3px;
+}
+.year{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    color: black;
+    padding: 3px;
+}
+ul {
+    border-bottom: solid #06BBB5;
+}
+li{
+    padding: 10px;
+    padding-left: 10px;
+}
+#firsttab{
+    padding-top: 5px;
+    background-color: #f7f7f6;
+}
+#secondtab{
+    padding-top: 5px;
+    background-color: #f7f7f6;
+}
+.nav-pills > li > a {
+    border-radius: 4px;
+    background-color: #f7f7f6; 
+    border-radius: 20px;
+}
+.nav-pills>li.active>a {
+    background-color: #06BBB5;
+    border-radius: 20px;
+    color: white;
+}
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+    background-color: #06BBB5;
+    border-radius: 20px;
+    color: white;
+}
+a {
+    color: #06bbb5;
+    text-decoration: none;
+}

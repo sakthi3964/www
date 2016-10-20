@@ -1,6 +1,14 @@
 $(document).ready(function () {
     var data = {};
-    var id = localStorage.getItem("user");
+    var id;
+    var url = window.location.href;
+    var child_id;
+    if (url.substring(url.lastIndexOf('html') + 1) == "tml") {
+        id = localStorage.getItem("user");
+    }
+    else {
+        id = url.substring(url.lastIndexOf(':') + 1);
+    }
     data.id = id;
     httpPost("/viewchildrenownprofile", data, function (response) {
         console.log(response);

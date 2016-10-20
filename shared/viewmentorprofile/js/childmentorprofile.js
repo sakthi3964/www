@@ -9,7 +9,7 @@ $(document).ready(function () {
             $('#dob').html(response[0].profile.dob);
             $('#age').html(response[0].profile.age);
             $('#gender').html(response[0].profile.gender);
-            $('#address_line0').html(response[0].profile.address_line0);
+            $('#address_line1').html(response[0].profile.address_line1);
             $('#address_line2').html(response[0].profile.address_line2);
             $('#city').html(response[0].profile.city);
             $('#email_id').html(response[0].profile.email_id);

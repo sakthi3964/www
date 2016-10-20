@@ -2,10 +2,12 @@
 var data = {};
 
 
-data.id =localStorage.getItem("user");
+data.id = localStorage.getItem("user");
 console.log(data.id);
 
 httpPost("/viewvolunteermentorprofile", data, function (response) {
+$('#roles').append('<center> '+response[0].profile.role+' Detial</center>')
+
     $('#name').html(response[0].profile.name);
     $('#role').html(response[0].profile.role);
     $('#dob').html(response[0].profile.dob);
@@ -26,9 +28,33 @@ httpPost("/viewvolunteermentorprofile", data, function (response) {
     $('#institution').html(response[0].profile.profileinfo.institution);
     $('#reference').html(response[0].profile.profileinfo.reference);
     $('#commitment').html(response[0].profile.profileinfo.commitment);
-    $('#designation').html(response[0].profile.profileinfo.designation);
-    $('#organization').html(response[0].profile.profileinfo.organization);
-    $('#area_of_expertise').html(response[0].profile.profileinfo.area_of_expertise);
-    $('#experience').html(response[0].profile.profileinfo.experience);
-    return false;
+    if (response[0].profile.profileinfo.designation == "") {
+        $('#designationrow').hide();
+    }
+    else {
+        $('#designationrow').show();
+        $('#designation').html(response[0].profile.profileinfo.designation);
+    }
+    if (response[0].profile.profileinfo.organization == "") {
+        $('#organizationrow').hide();
+    }
+    else {
+        $('#organizationrow').show();
+        $('#organization').html(response[0].profile.profileinfo.organization);
+    }
+    if (response[0].profileinfo.profile.area_of_expertise == "") {
+        $('#area_of_expertiserow').hide();
+    }
+    else {
+        $('#area_of_expertiserow').show();
+        $('#area_of_expertise').html(response[0].profile.profileinfo.area_of_expertise);
+    }
+    if (response[0].profile.profileinfo.experience == "") {
+        $('#experiencerow').hide();
+    }
+    else {
+        $('#experiencerow').show();
+        $('#experience').html(response[0].profile.profileinfo.experience);
+    }
+
 });

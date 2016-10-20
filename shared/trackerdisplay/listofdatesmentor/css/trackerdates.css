@@ -1,0 +1,37 @@
+#container3{
+    background-color:white;
+    height: 100%;
+}
+.calendor{
+    margin-top: 10px;
+    margin-bottom:10px; 
+    width: 150px;
+    background-color: #F4F4F4 ;
+    margin-left: 10px;
+    float: left;
+    border-radius: 10px;
+}
+.month{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+    background-color: #06BBB5;
+    color: white;
+    padding: 2px;
+    border-radius: 10px;
+}
+.date{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 800;
+    color: black;
+    padding: 3px;
+}
+.year{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    color: black;
+    padding: 3px;
+}

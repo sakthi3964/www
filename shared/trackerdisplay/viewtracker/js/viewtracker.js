@@ -11,7 +11,14 @@ httpPost("/viewReviewDetail", data, function (response) {
     $('#place').html(response.location);
     $('#meetingagenda').html(response.agenda);
     $('#outcome').html(response.outcome);
-    $('#newConnection').html(response.newConnection);
+    var newconnection = JSON.parse(response.newConnection);
+    if (newconnection.connectedTo == "nil") {
+        $('#newConnection').html(newconnection.connectedTo);
+    }
+    else {
+        $('#newConnection').html("Yes");
+    }
+
     $('#keyaccomplishments').html(response.keyAccomplishment);
     $('#keylearnings').html(response.keyLearning);
     $('#menteeChallenges').html(response.menteeChallenges);

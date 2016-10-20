@@ -1,6 +1,21 @@
 $(document).ready(function () {
-
-
+    $('#role').change(function () {
+        if ($('#role').val() == '') {
+            $('#mission').show();
+            $('#volunteer').hide();
+            $('#mentor').hide();
+        }
+        else if ($('#role').val() == 'volunteer') {
+            $('#mission').hide();
+            $('#volunteer').show();
+            $('#mentor').hide();
+        }
+        else if ($('#role').val() == 'mentor') {
+            $('#mission').hide();
+            $('#volunteer').hide();
+            $('#mentor').show();
+        }
+    });
     $('#work_type').change(function () {
 
         if ($('#work_type').val() == 'professional') {

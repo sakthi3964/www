@@ -5,6 +5,20 @@ $(document).ready(function () {
     data.id = id;
     httpPost("/viewvolunteer", data, function (response) {
         $('#name').html(response[0].name);
+        $('#role').html(response[0].role);
+        $('#dob').html(response[0].dob);
+        $('#age').html(response[0].age);
+        $('#gender').html(response[0].gender);
+        $('#address_line1').html(response[0].address_line1);
+        $('#address_line2').html(response[0].address_line2);
+        $('#city').html(response[0].city);
+        $('#email_id').html(response[0].email_id);
+        $('#state').html(response[0].state);
+        $('#country').html(response[0].country);
+        $('#postal_code').html(response[0].postal_code);
+        $('#mobile_no').html(response[0].mobile_no);
+        $('#phone').html(response[0].phone);
+        $('#work_type').html(response[0].profileinfo.work_type);
         $('#course').html(response[0].profileinfo.course);
         $('#department').html(response[0].profileinfo.department);
         $('#institution').html(response[0].profileinfo.institution);
@@ -13,6 +27,7 @@ $(document).ready(function () {
         $('#email_id').html(response[0].email_id);
         $('#work_type').html(response[0].profileinfo.work_type);
         $('#reference').html(response[0].profileinfo.reference);
+        $('#commitment').html(response[0].profileinfo.commitment);
         $('#designation').html(response[0].profileinfo.designation);
         $('#organization').html(response[0].profileinfo.organization);
     });

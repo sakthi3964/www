@@ -3,7 +3,15 @@ var data = {};
 
 var id = localStorage.getItem("user");
 data.id = id;
+var role = localStorage.getItem("role");
+
 httpPost("/viewvolunteer", data, function (response) {
+    if (role == "volunteer") {
+        $('#profileimage').append('<img src="http://localhost:3406/uploads/volunteer/photo/' + response[0].profileinfo.photo + '" width="150" height="150">');
+    }
+    else{
+        $('#profileimage').append('<img src="http://localhost:3406/uploads/mentor/photo/' + response[0].profileinfo.photo + '" width="150" height="150">');        
+    }
     $('#name').html(response[0].name);
     $('#role').html(response[0].role);
     $('#dob').html(response[0].dob);
@@ -52,9 +60,5 @@ httpPost("/viewvolunteer", data, function (response) {
         $('#experiencerow').show();
         $('#experience').html(response[0].profileinfo.experience);
     }
-
-
-
-
     return false;
 });

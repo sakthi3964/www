@@ -6,8 +6,8 @@ data.id = localStorage.getItem("user");
 console.log(data.id);
 
 httpPost("/viewvolunteermentorprofile", data, function (response) {
-$('#roles').append('<center> '+response[0].profile.role+' Detial</center>')
-
+    $('#roles').append('<center> ' + response[0].profile.role + ' Detial</center>')
+    $('#profileimage').append('<img src="http://localhost:3406/uploads/mentor/photo/' + response[0].profile.profileinfo.photo + '" width="150" height="150">');
     $('#name').html(response[0].profile.name);
     $('#role').html(response[0].profile.role);
     $('#dob').html(response[0].profile.dob);
@@ -42,7 +42,7 @@ $('#roles').append('<center> '+response[0].profile.role+' Detial</center>')
         $('#organizationrow').show();
         $('#organization').html(response[0].profile.profileinfo.organization);
     }
-    if (response[0].profileinfo.profile.area_of_expertise == "") {
+    if (response[0].profile.profileinfo.area_of_expertise == "") {
         $('#area_of_expertiserow').hide();
     }
     else {

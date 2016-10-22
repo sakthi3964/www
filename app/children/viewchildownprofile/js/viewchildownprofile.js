@@ -7,13 +7,11 @@ data.id = id;
 console.log(data.id);
 
 httpPost("/viewchildrenownprofile", data, function (response) {
-    console.log(response);
+    $('#profileimage').append('<img src = "http://localhost:3406/uploads/children/photos/' + response.photos + '" width="150" height="150">');
     $('#name').html(response.full_name);
-    console.log()
     $('#dob').html(response.dob);
     $('#Gender').html(response.gender);
     $('#Center').html(response.center);
-    $('#UserId').html(response.user_id);
     $('#UserId').html(response.user_id);
     return false;
 });

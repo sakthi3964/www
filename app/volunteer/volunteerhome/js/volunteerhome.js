@@ -13,25 +13,29 @@ $(document).ready(function () {
         }
     }),
         httpPost("/viewchild", data, function (response) {
-            if (response[0].approve_status == 1) {
+            if (response == "") {
+                $('#tracker').append('<div class="col-sm-4 col-xs-4"><p>Tracker<img src="../../../../helperfiles/img/tracker.png" class="img-responsive " alt="CHILD SELECTION" width="120" height="236"></p></div>');
+
+            }
+            else if (response[0].approve_status == 1) {
                 $('#tracker').append('<a href="../../tracker/en/tracker.html"><div class="col-sm-4 col-xs-4"><p>Tracker<img src="../../../../helperfiles/img/tracker.png" class="img-responsive " alt="CHILD SELECTION" width="120" height="236"></p></div></a>');
             }
             else if (response[0].approve_status == 0) {
                 $('#tracker').append('<div class="col-sm-4 col-xs-4"><p>Tracker<img src="../../../../helperfiles/img/tracker.png" class="img-responsive " alt="CHILD SELECTION" width="120" height="236"></p></div>');
+            }
 
-            }
-            else {
-                $('#tracker').append('<div class="col-sm-4 col-xs-4"><p>Tracker<img src="../../../../helperfiles/img/tracker.png" class="img-responsive " alt="CHILD SELECTION" width="120" height="236"></p></div>');
-            }
-        }),
-        httpPost("/volunteerhomeviewmentor", data, function (response) {
-            if (response == 0) {
-                $('#view_mentor').removeClass('hide');
-                // $('#selectmentor').append('<a href="../../viewmentorprofile/en/mentorprofile.html"><div class="col-sm-4 col-xs-4"><p>Mentor Profile	<img src="../../../../helperfiles/img/professional.png" class="img-responsive" alt="View Mentor Profile" width="120" height="236"></p></div>	</a>');
-            }
-            else {
-                $('#select_mentor').removeClass('hide');
-                // $('#selectmentor').append('<a href="../../selectmentor/en/listofmentor.html"><div class="col-sm-4 col-xs-4"><p>Select Mentor<img src="../../../../helperfiles/img/addmentor.png" class="img-responsive " alt="Mentor Assignment" width="120" height="236"></p></div></a>');
-            }
         })
+    httpPost("/volunteerhomeviewmentor", data, function (response) {
+        if (response == 0) {
+            $('#view_mentor').removeClass('hide');
+            // $('#selectmentor').append('<a href="../../viewmentorprofile/en/mentorprofile.html"><div class="col-sm-4 col-xs-4"><p>Mentor Profile	<img src="../../../../helperfiles/img/professional.png" class="img-responsive" alt="View Mentor Profile" width="120" height="236"></p></div>	</a>');
+        }
+        else if (response == 3) {
+            $('#select_mentor_before_child').removeClass('hide');
+        }
+        else if (response == 1) {
+            $('#select_mentor').removeClass('hide');
+            // $('#selectmentor').append('<a href="../../selectmentor/en/listofmentor.html"><div class="col-sm-4 col-xs-4"><p>Select Mentor<img src="../../../../helperfiles/img/addmentor.png" class="img-responsive " alt="Mentor Assignment" width="120" height="236"></p></div></a>');
+        }
+    })
 });

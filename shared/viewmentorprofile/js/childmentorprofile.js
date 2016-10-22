@@ -3,7 +3,7 @@ $(document).ready(function () {
     data.id = localStorage.getItem("user");
     httpPost("/viewchildvolunteer", data, function (response) {
         if (response[0].profile.role == "mentor") {
-            console.log(response);
+            $('#profileimage').append('<img src="http://localhost:3406/uploads/mentor/photo/' + response[0].profile.profileinfo.photo + '" width="150" height="150">');
             $('#name').html(response[0].profile.name);
             $('#role').html(response[0].profile.role);
             $('#dob').html(response[0].profile.dob);
@@ -54,7 +54,7 @@ $(document).ready(function () {
             }
         }
         else {
-            console.log(response);
+            $('#profileimage').append('<img src="http://localhost:3406/uploads/mentor/photo/' + response[1].profile.profileinfo.photo + '" width="150" height="150">');            
             $('#name').html(response[1].profile.name);
             $('#role').html(response[1].profile.role);
             $('#dob').html(response[1].profile.dob);

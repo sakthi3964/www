@@ -6,9 +6,7 @@ $(document).ready(function () {
     console.log(data.id);
     var child_id;
     httpPost("/viewchild", data, function (response) {
-        console.log(response);
         child_id = response[0].childrenprofile.id;
-        console.log(response[0].childrenprofile.full_name);
         $('#name').html(response[0].childrenprofile.full_name);
         $('#dob').html(response[0].childrenprofile.dob);
         $('#Gender').html(response[0].childrenprofile.gender);

@@ -4,6 +4,7 @@ $(document).ready(function () {
     var data = {};
     data.id = id;
     httpPost("/viewmentor", data, function (response) {
+        $('#profileimage').append('<img src="http://localhost:3406/uploads/mentor/photo/' + response[0].profileinfo.photo + '" width="150" height="150">');
         $('#name').html(response[0].name);
         $('#role').html(response[0].role);
         $('#dob').html(response[0].dob);

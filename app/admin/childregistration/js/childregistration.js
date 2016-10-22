@@ -137,23 +137,31 @@ $(document).ready(function () {
         e.preventDefault();
     });
     $("#submit").click(function () {
-        var data = {};
-        var role = 3;
-        var str = ($('#user_id').val()).trim();
-        var domain = ($('#domain').val()).trim();
-        var user_id = str.concat(domain);
-        data.role = role;
-        data.name = ($('#name').val()).trim();
-        data.dob = ($('#dob').val()).trim();
-        data.age = ($('#age').val()).trim();
-        data.gender = ($("input[name='gender']:checked").val()).trim();
-        data.user_id = user_id;
-        data.password = ($('#password').val()).trim();
-        data.center = ($('#center').val()).trim();
-        httpPost("/childrenregistration", data, function (response) {
-            alert("successfully registered");
+        var formData = new FormData();
+        formData.append('file', $('#file')[0].files[0]);
+        fileUpload("/childphoto", formData, function (response) {
+            var data = {};
+            var role = 3;
+            var str = ($('#user_id').val()).trim();
+            var domain = ($('#domain').val()).trim();
+            var user_id = str.concat(domain);
+            data.role = role;
+            data.name = ($('#name').val()).trim();
+            data.dob = ($('#dob').val()).trim();
+            data.age = ($('#age').val()).trim();
+            data.gender = ($("input[name='gender']:checked").val()).trim();
+            data.user_id = user_id;
+            data.password = ($('#password').val()).trim();
+            data.center = ($('#center').val()).trim();
+            data.photos = response;
+            httpPost("/childrenregistration", data, function (response) {
+                $('#registerModal').modal();
+            });
         });
-    })
+    });
+
+
+
     $(function () {
         $(function () {
             $("#dob").datepicker({

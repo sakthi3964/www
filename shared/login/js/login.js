@@ -31,6 +31,9 @@ $(document).ready(function () {
             else if (response.status == 0) {
                 $('#errormodal2').modal();
             }
+            else if (response.active == 0) {
+                $('#errormodal3').modal();
+            }
             else if (response.role == 'volunteer') {
                 console.log(response.user_id);
                 localStorage.setItem("user", response.user_id);

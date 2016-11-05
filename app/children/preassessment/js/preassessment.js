@@ -126,314 +126,279 @@ $(document).ready(function () {
             // This option will not ignore invisible fields which belong to inactive panels
 
 
-            // fields: {
+            fields: {
 
 
-            //     //individual validation textbox
-            //     // monthlyincome: {
-            //     //     validators: {
-            //     //         notEmpty: {
-            //     //             message: 'The monthlyincome should not be empty'
-            //     //         },
-            //     //         regexp: {
-            //     //             regexp: /^[0-9,]+$/i,
-            //     //         }
-            //     //     }
-            //     // },
-            //     Text_Only: {
-            //         selector: '.Text_Only',
-            //          validators: {
-            //             notEmpty: {
-            //                 message: 'This field should not be empty'
-            //             },
-            //             regexp: {
-            //                 regexp: /^[a-z\s]+$/i,
-            //                 message: 'The field can consist of alphabetical characters and spaces only'
-            //             }
-            //         }
-            //     },
-            //     // relation: {
-            //     //     selector: '.relation',
-            //     //     validators: {
-            //     //         notEmpty: {
-            //     //             message: 'required'
-            //     //         }
-            //     //     }
-            //     // },
-            //     age: {
-            //         selector: '.age',
-            //         validators: {
-            //             notEmpty: {
-            //                 message: 'required'
-            //             }
-            //         }
-            //     },
-            //     occupation: {
-            //         selector: '.occupation',
-            //         validators: {
-            //             notEmpty: {
-            //                 message: 'required'
-            //             }
-            //         }
-            //     },
-            //     monthlyincome: {
-            //         selector: '.monthlyincome',
-            //         validators: {
-            //             notEmpty: {
-            //                 message: 'required'
-            //             }
-            //         }
-            //     },
-            //       addictionrelation: {
-            //         selector: '.addictionrelation',
-            //         validators: {
-            //             notEmpty: {
-            //                 message: 'required'
-            //             }
-            //         }
-            //     },
+                //individual validation textbox
 
 
 
-            //      //individual validation checkbox
-            //     'financial[]': {
-            //         validators: {
-            //             choice: {
-            //                 min: 1,
-            //                 message: 'select this field'
-            //             }
-            //         }
-            //     },
-            //     'supportencourage[]': {
-            //         validators: {
-            //             choice: {
-            //                 min: 1,
-            //                 message: 'select this field'
-            //             }
-            //         }
-            //     },
-            //     'addictedto[]': {
-            //         validators: {
-            //             choice: {
-            //                 min: 1,
-            //                 message: 'select this field'
-            //             }
-            //         }
-            //     },
+                age: {
+                    selector: '.age',
+                    validators: {
+                        notEmpty: {
+                            message: 'required'
+                        }
+                    }
+                },
 
 
-            //     //individual validation radiobutton
-
-            //     //   addictionsmoke: {
-            //     //     selector:'.addictionsmoke',
-            //     //     validators: {
-            //     //         notEmpty: {
-            //     //             message: 'This field should not be empty'
-            //     //         }
-            //     //     }
-            //     // },
-            //     //   addictionliquor: {
-            //     //     selector:'.addictionliquor',
-            //     //     validators: {
-            //     //         notEmpty: {
-            //     //             message: 'This field should not be empty'
-            //     //         }
-            //     //     }
-            //     // },
-            //     //   childsupport: {
-            //     //     selector:'.childsupport',
-            //     //     validators: {
-            //     //         notEmpty: {
-            //     //             message: 'This field should not be empty'
-            //     //         }
-            //     //     }
-            //     // },
-            //     // parentsgoal: {
-            //     //     validators: {
-            //     //         notEmpty: {
-            //     //             message: 'This field should not be empty'
-            //     //         }
-            //     //     }
-            //     // },
-            //     // addicted: {
-            //     //     validators: {
-            //     //         notEmpty: {
-            //     //             message: 'This field should not be empty'
-            //     //         }
-            //     //     }
-            //     // },
-            //     // familyfin: {
-            //     //     validators: {
-            //     //         notEmpty: {
-            //     //             message: 'This field should not be empty'
-            //     //         }
-            //     //     }
-            //     // },
-
-            //     // orgfin: {
-            //     //     validators: {
-            //     //         notEmpty: {
-            //     //             message: 'This field should not be empty'
-            //     //         }
-            //     //     }
-            //     // },
-
-            //     // neighbourfin: {
-            //     //     validators: {
-            //     //         notEmpty: {
-            //     //             message: 'This field should not be empty'
-            //     //         }
-            //     //     }
-            //     // },
-            //     // teacherfin: {
-            //     //     validators: {
-            //     //         notEmpty: {
-            //     //             message: 'This field should not be empty'
-            //     //         }
-            //     //     }
-            //     // },
-            //     // continuestudies: {
-            //     //     validators: {
-            //     //         notEmpty: {
-            //     //             message: 'This field should not be empty'
-            //     //         }
-            //     //     }
-            //     // },
-            //     // idea: {
-            //     //     validators: {
-            //     //         notEmpty: {
-            //     //             message: 'This field should not be empty'
-            //     //         }
-            //     //     }
-            //     // },
-            //     // effort: {
-            //     //     validators: {
-            //     //         notEmpty: {
-            //     //             message: 'This field should not be empty'
-            //     //         }
-            //     //     }
-            //     // },
-
-            //     // job: {
-            //     //     validators: {
-            //     //         notEmpty: {
-            //     //             message: 'This field should not be empty'
-            //     //         }
-            //     //     }
-            //     // },
-
-            //     // salary: {
-            //     //     validators: {
-            //     //         notEmpty: {
-            //     //             message: 'This field should not be empty'
-            //     //         }
-            //     //     }
-            //     // },
-            //     // work: {
-            //     //     validators: {
-            //     //         notEmpty: {
-            //     //             message: 'This field should not be empty'
-            //     //         }
-            //     //     }
-            //     // },
-            //     // listen: {
-            //     //     validators: {
-            //     //         notEmpty: {
-            //     //             message: 'This field should not be empty'
-            //     //         }
-            //     //     }
-            //     // },
-            //     // housework: {
-            //     //     validators: {
-            //     //         notEmpty: {
-            //     //             message: 'This field should not be empty'
-            //     //         }
-            //     //     }
-            //     // },
-
-            //     // nhelp: {
-            //     //     validators: {
-            //     //         notEmpty: {
-            //     //             message: 'This field should not be empty'
-            //     //         }
-            //     //     }
-            //     // },
-            //     // safe: {
-            //     //     validators: {
-            //     //         notEmpty: {
-            //     //             message: 'This field should not be empty'
-            //     //         }
-            //     //     }
-            //     // },
-            //     // friends: {
-            //     //     validators: {
-            //     //         notEmpty: {
-            //     //             message: 'This field should not be empty'
-            //     //         }
-            //     //     }
-            //     // },
-            //     // clubmember: {
-            //     //     validators: {
-            //     //         notEmpty: {
-            //     //             message: 'This field should not be empty'
-            //     //         }
-            //     //     }
-            //     // },
-            //     // events: {
-            //     //     validators: {
-            //     //         notEmpty: {
-            //     //             message: 'This field should not be empty'
-            //     //         }
-            //     //     }
-            //     // },
-            //     // continue: {
-            //     //     validators: {
-            //     //         notEmpty: {
-            //     //             message: 'This field should not be empty'
-            //     //         }
-            //     //     }
-            //     // },
 
 
-            //     // supporttochild: {
-            //     //     validators: {
-            //     //         notEmpty: {
-            //     //             message: 'select this field'
-            //     //         }
-            //     //     }
-            //     // },
+                //individual validation checkbox
+
+                'supportencourage[]': {
+                    validators: {
+                        choice: {
+                            min: 1,
+                            message: 'select this field'
+                        }
+                    }
+                },
 
 
-            //     //common validation textbox
-            //     // Text_All: {
-            //     //     validators: {
-            //     //         notEmpty:  {
-            //     //             message: 'This field should not be empty'
-            //     //         }
-            //     //     }
-            //     // },
-            //     // Text_Only: {
-            //     //     validators: {
-            //     //         notEmpty: {
-            //     //             message: 'This field should not be empty'
-            //     //         },
-            //     //         regexp: {
-            //     //             regexp: /^[a-z\s]+$/i,
-            //     //             message: 'The field can consist of alphabetical characters and spaces only'
-            //     //         }
-            //     //     }
-            //     // },
 
-            //     //common validation dropdown
-            //     Dropdown: {
-            //         validators: {
-            //             notEmpty: {
-            //                 message: 'select this field'
-            //             }
-            //         }
-            //     },
+                //individual validation radiobutton
 
-            // }
+                addictionsmoke: {
+                    selector: '.addictionsmoke',
+                    validators: {
+                        notEmpty: {
+                            message: 'This field should not be empty'
+                        }
+                    }
+                },
+                addictionliquor: {
+                    selector: '.addictionliquor',
+                    validators: {
+                        notEmpty: {
+                            message: 'This field should not be empty'
+                        }
+                    }
+                },
+                addictiondrug: {
+                    selector: '.addictiondrug',
+                    validators: {
+                        notEmpty: {
+                            message: 'This field should not be empty'
+                        }
+                    }
+                },
+                childsupport: {
+                    selector: '.childsupport',
+                    validators: {
+                        notEmpty: {
+                            message: 'This field should not be empty'
+                        }
+                    }
+                },
+                safework: {
+                    validators: {
+                        notEmpty: {
+                            message: 'This field should not be empty'
+                        }
+                    }
+                },
+                parentsgoal: {
+                    validators: {
+                        notEmpty: {
+                            message: 'This field should not be empty'
+                        }
+                    }
+                },
+                addicted: {
+                    validators: {
+                        notEmpty: {
+                            message: 'This field should not be empty'
+                        }
+                    }
+                },
+                familyfin: {
+                    validators: {
+                        notEmpty: {
+                            message: 'This field should not be empty'
+                        }
+                    }
+                },
+
+                orgfin: {
+                    validators: {
+                        notEmpty: {
+                            message: 'This field should not be empty'
+                        }
+                    }
+                },
+
+                neighbourfin: {
+                    validators: {
+                        notEmpty: {
+                            message: 'This field should not be empty'
+                        }
+                    }
+                },
+                teacherfin: {
+                    validators: {
+                        notEmpty: {
+                            message: 'This field should not be empty'
+                        }
+                    }
+                },
+                continuestudies: {
+                    validators: {
+                        notEmpty: {
+                            message: 'This field should not be empty'
+                        }
+                    }
+                },
+                idea: {
+                    validators: {
+                        notEmpty: {
+                            message: 'This field should not be empty'
+                        }
+                    }
+                },
+                effort: {
+                    validators: {
+                        notEmpty: {
+                            message: 'This field should not be empty'
+                        }
+                    }
+                },
+
+                job: {
+                    validators: {
+                        notEmpty: {
+                            message: 'This field should not be empty'
+                        }
+                    }
+                },
+
+                salary: {
+                    validators: {
+                        notEmpty: {
+                            message: 'This field should not be empty'
+                        }
+                    }
+                },
+                work: {
+                    validators: {
+                        notEmpty: {
+                            message: 'This field should not be empty'
+                        }
+                    }
+                },
+                listen: {
+                    validators: {
+                        notEmpty: {
+                            message: 'This field should not be empty'
+                        }
+                    }
+                },
+                housework: {
+                    validators: {
+                        notEmpty: {
+                            message: 'This field should not be empty'
+                        }
+                    }
+                },
+
+                nhelp: {
+                    validators: {
+                        notEmpty: {
+                            message: 'This field should not be empty'
+                        }
+                    }
+                },
+                safe: {
+                    validators: {
+                        notEmpty: {
+                            message: 'This field should not be empty'
+                        }
+                    }
+                },
+                friends: {
+                    validators: {
+                        notEmpty: {
+                            message: 'This field should not be empty'
+                        }
+                    }
+                },
+                clubmember: {
+                    validators: {
+                        notEmpty: {
+                            message: 'This field should not be empty'
+                        }
+                    }
+                },
+                events: {
+                    validators: {
+                        notEmpty: {
+                            message: 'This field should not be empty'
+                        }
+                    }
+                },
+                continue: {
+                    validators: {
+                        notEmpty: {
+                            message: 'This field should not be empty'
+                        }
+                    }
+                },
+
+
+                supporttochild: {
+                    validators: {
+                        notEmpty: {
+                            message: 'select this field'
+                        }
+                    }
+                },
+
+
+                //common validation textbox
+                Text_All: {
+                    selector: '.Text_All',
+                    validators: {
+                        notEmpty: {
+                            message: 'This field should not be empty'
+                        }
+                    }
+                },
+                monthlyincome: {
+                    selector: '.monthlyincome',
+                    validators: {
+                        notEmpty: {
+                            message: 'The monthlyincome should not be empty'
+                        },
+                        regexp: {
+                            regexp: /^[0-9,]+$/i,
+                        }
+                    }
+                },
+
+
+                Text_Only: {
+                    selector: '.Text_Only',
+                    validators: {
+                        notEmpty: {
+                            message: 'This field should not be empty'
+                        },
+                        regexp: {
+                            regexp: /^[a-z\s]+$/i,
+                            message: 'The field can consist of alphabetical characters and spaces only'
+                        }
+                    }
+                },
+                //common validation dropdown
+                Dropdown: {
+                    validators: {
+                        notEmpty: {
+                            message: 'select this field'
+                        }
+                    }
+                },
+
+            }
         })
         .bootstrapWizard({
             tabClass: 'nav nav-pills',
@@ -738,6 +703,9 @@ $(document).ready(function () {
                         console.log("drug " + document.getElementsByName(drug1)[0].value);
 
                     }
+
+
+                
                     // data.name = name;
                     // data.relation = relation;
                     // data.age = age;

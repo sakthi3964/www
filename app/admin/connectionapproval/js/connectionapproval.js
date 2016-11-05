@@ -13,6 +13,7 @@ $(document).ready(function () {
                 var data = {};
                 data.status = "true";
                 data.id = element.id;
+                data.profile_id = element.profile_id;
                 httpPost("/changeapproval", data, function (response) {
                     console.log(response);
                 });

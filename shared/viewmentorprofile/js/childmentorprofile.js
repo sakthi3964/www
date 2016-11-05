@@ -2,9 +2,9 @@ $(document).ready(function () {
     var data = {};
     data.id = localStorage.getItem("user");
     httpPost("/viewchildvolunteer", data, function (response) {
-        if ((response[0] && response[1]) == null) {
-            $('#mentor_record').modal();
-        }
+        // if ((response[0] && response[1]) == null) {
+        //     $('#mentor_record').modal();
+        // }
         if (response[0].profile.role == "mentor") {
             $('#profileimage').append('<img src="http://localhost:3406/uploads/mentor/photo/' + response[0].profile.profileinfo.photo + '" width="150" height="150">');
             $('#name').html(response[0].profile.name);

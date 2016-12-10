@@ -2,15 +2,19 @@
 var data = {};
 var url = window.location.href;
 var id;
+var role = localStorage.getItem("role");
 // var ids = url.substring(url.lastIndexOf("l") + 1);
 // alert(ids);
+$("#home_redirect").click(function () {
+    alert("hi"+role);
+});
 if (url.substring(url.lastIndexOf('html') + 1) == "tml") {
      id = localStorage.getItem("user");
 }
 else {
      id = url.substring(url.lastIndexOf(':') + 1);
 }
-console.log(id);
+
 data.id = id;
 httpPost("/trackerDates", data, function (response) {
     console.log(response);

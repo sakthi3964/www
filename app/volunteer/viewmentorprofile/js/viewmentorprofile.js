@@ -10,7 +10,7 @@ httpPost("/viewmentor", data, function (response) {
 
     // var res = JSON.parse(response.pre_assessment_data);
     //console.log(res.standard);
-    $('#profileimage').append('<img src="http://localhost:3406/uploads/mentor/photo/' + response[0].profileinfo.photo + '" width="150" height="150">');
+    $('#profileimage').append('<img src="'+BASEURL+'/uploads/mentor/photo/' + response[0].profileinfo.photo + '" width="150" height="150">');
     $('#name').html(response[0].name);
     $('#role').html(response[0].role);
     $('#dob').html(response[0].dob);

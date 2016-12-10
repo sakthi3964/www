@@ -4,8 +4,8 @@ $(document).ready(function () {
         var j = 0;
         response.forEach(function (element) {
             console.log(element.childrenprofile.full_name);
-             console.log(element.role);
-            $('#listofmemberss').append('<div class="cards-view"><div class="profile-card col-xs-6 col-sm-3 col-md-3 col-lg-3"><div><table class="table"><tr><td>'+element.childrenprofile.full_name+'</td><td>'+element.profile.name+'</td></tr><tr><td>children</td><td>'+element.role+'</td></tr></table></div><div class="col-xs-6 col-sm-6"><button class="profile-card-btn" type="submit" id="submit' + i + '">Accept</button></div><div class="col-sm-6 col-xs-6"><button class="profile-card-btn" type="submit" id="submit1' + i + '">Deny</button></div></div></div>');
+            console.log(element.role);
+            $('#listofmemberss').append('<div class="cards-view"><div class="profile-card col-xs-6 col-sm-3 col-md-3 col-lg-3"><div><table class="table"><tr><td>' + element.childrenprofile.full_name + '</td><td>' + element.profile.name + '</td></tr><tr><td>children</td><td>' + element.role + '</td></tr></table></div><div class="col-xs-6 col-sm-6"><button class="profile-card-btn" type="submit" id="submit' + i + '">Accept</button></div><div class="col-sm-6 col-xs-6"><button class="profile-card-btn" type="submit" id="submit1' + i + '">Deny</button></div></div></div>');
             // $("#listofmemberss").load(childReviewForm.html);
             var id = "#submit" + i;
             $(id).click(function () {
@@ -20,7 +20,7 @@ $(document).ready(function () {
 
             });
             i++;
-           var id1 = "#submit1" + j;
+            var id1 = "#submit1" + j;
             $(id1).click(function () {
                 // window.location.href = "../../../../shared/viewvolunteerprofile/en/viewvolunteerprofile.html?id:" + element.id;
                 var data = {};

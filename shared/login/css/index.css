@@ -2,11 +2,21 @@ body{
     background-color: #06BBB5;
 }
 
-#heading{
+/*#heading{
+     
+}*/
+#heading p{
     color: white;
     font-size: 30px;
-    float: left;  
+    float: left;
+ }
+@media only screen and (max-width: 767px) {
+    #heading p{
+        float: none;
+        text-align: center;
+    }
 }
+
 #aboutus{
     text-align: justify;
     color: white;

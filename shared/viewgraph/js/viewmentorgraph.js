@@ -9,7 +9,7 @@ else {
 }
 
 var role = localStorage.getItem("role");
-console.log(role);
+
 data.id = id;
 if (role != "admin") {
     httpPost("/trackerDatesMentor", data, function (response) {

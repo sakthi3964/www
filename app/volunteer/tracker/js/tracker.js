@@ -176,12 +176,6 @@ $(document).ready(function () {
                         }
                     }
                 }
-          
-
-
-
-
-
             }
         })
         .bootstrapWizard({
@@ -294,7 +288,7 @@ $(document).ready(function () {
                     data.review = JSON.stringify(review);
                     data.id = id;
                     httpPost("/tracker", data, function (response) {
-                       console.log(response);
+                       
                              $('#trackerModal').modal();
                         
 

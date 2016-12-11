@@ -421,7 +421,6 @@ $(document).ready(function () {
 
                     var id = localStorage.getItem("user");
                     data.id = id;
-                    alert(id);
                     data.standard = ($('#standard').val());
                     console.log(data.standard);
                     data.schooltype = ($('#schooltype').val());
@@ -705,7 +704,7 @@ $(document).ready(function () {
                     }
 
 
-                
+
                     // data.name = name;
                     // data.relation = relation;
                     // data.age = age;
@@ -725,7 +724,7 @@ $(document).ready(function () {
                     // console.log("name :   "+obj.name[0]);
                     httpPost("/preassess", data1, function (response) {
 
-                        alert("successful");
+                        $('#preassessment_Modal').modal();
                     });
                 }
 

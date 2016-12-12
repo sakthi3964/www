@@ -68,3 +68,10 @@ body{
 .profileimg{
     text-align: center;
 }
+.loading{
+    clear: both;
+    right: 50%;
+}
+.loading_img{
+    margin: 0 auto;
+}

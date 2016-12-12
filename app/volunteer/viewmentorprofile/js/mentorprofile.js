@@ -6,8 +6,10 @@ data.id = localStorage.getItem("user");
 console.log(data.id);
 
 httpPost("/viewvolunteermentorprofile", data, function (response) {
+    $("#blockreg2").removeClass("hide");
+    $(".loading").addClass("hide");
     $('#roles').append('<center> ' + response[0].profile.role + ' Detial</center>')
-    $('#profileimage').append('<img src="'+BASEURL+'/uploads/mentor/photo/' + response[0].profile.profileinfo.photo + '" width="150" height="150">');
+    $('#profileimage').append('<img src="' + BASEURL + '/uploads/volunteer/photo/' + response[0].profile.profileinfo.photo + '" width="150" height="150">');
     $('#name').html(response[0].profile.name);
     $('#role').html(response[0].profile.role);
     $('#dob').html(response[0].profile.dob);

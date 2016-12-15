@@ -4,7 +4,9 @@ $(document).ready(function () {
     var data = {};
     data.id = id;
     httpPost("/viewvolunteer", data, function (response) {
-        $('#profileimage').append('<img src="'+BASEURL+'/uploads/volunteer/photo/' + response[0].profileinfo.photo + '" width="150" height="150">');
+        $("#blockreg2").removeClass("hide");
+        $(".loading").addClass("hide");
+        $('#profileimage').append('<img src="' + BASEURL + '/uploads/volunteer/photo/' + response[0].profileinfo.photo + '" width="150" height="150">');
         $('#name').html(response[0].name);
         $('#role').html(response[0].role);
         $('#dob').html(response[0].dob);

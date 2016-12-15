@@ -70,8 +70,22 @@ body{
 }
 .loading{
     clear: both;
-    right: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: auto;
 }
 .loading_img{
     margin: 0 auto;
+}
+.no_record{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -75px;
+    width: auto;
+    /*text-align: center;*/
 }

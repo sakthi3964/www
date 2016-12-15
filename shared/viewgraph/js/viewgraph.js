@@ -1,8 +1,16 @@
 $(document).ready(function () {
     var data = {};
     var url = window.location.href;
+    if (url.substring(url.lastIndexOf('html') + 1) == "tml") {
+        var id = localStorage.getItem("user");
+    }
+    else {
+        var id = url.substring(url.lastIndexOf(':') + 1);
+    }
     data.id = id;
     httpPost("/trackerDates", data, function (response) {
+        $("#details").removeClass("hide");
+        $(".loading").addClass("hide");
         response.forEach(function (element) {
             var dateObj = new Date(element.date);
             var day = dateObj.getUTCDate();

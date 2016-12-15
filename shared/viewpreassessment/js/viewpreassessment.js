@@ -11,7 +11,8 @@ $(document).ready(function () {
     }
     data.id = id;
     httpPost("/viewchildrenownprofile", data, function (response) {
-        console.log(response);
+        $("#body-tag").removeClass("hide");
+        $(".loading").addClass("hide");
         var pressmentobject = JSON.parse(response.pre_assessment_data);
         $('#preid').html(pressmentobject.id);
         $('#prestandard').html(pressmentobject.standard);

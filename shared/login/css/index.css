@@ -39,11 +39,14 @@ body{
     float: left;
     color: #06BBB5;
     text-decoration: none;
+    text-align: center;
 }
 #link2 {
     float: right;
     color: #06BBB5;
     text-decoration: none;
+    text-align: center;
+    
 }
 #panel1 {
     margin-top:60px; 

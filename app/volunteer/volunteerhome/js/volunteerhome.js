@@ -2,7 +2,9 @@ $(document).ready(function () {
     var id = localStorage.getItem("user");
     var data = {}
     data.id = id;
+
     httpPost("/volunteerhome", data, function (response) {
+        $(".loading_icon").addClass("hide");
         if (response == 0) {
             $('#child_profile').removeClass('hide');
             // $('#selectchild').append('<a href="../../../../shared/viewchildprofile/en/viewchildprofile.html"><div class="col-sm-4 col-xs-4"><p>Child Profile<img src="../../../../helperfiles/img/childrenprofile.png" class="img-responsive " alt="View Children Profile" width="120"height="236"> </p></div></a>');
@@ -13,19 +15,18 @@ $(document).ready(function () {
         }
     }),
         httpPost("/viewchild", data, function (response) {
-            if (response == "") {
-                $('#tracker').append('<div class="col-sm-4 col-xs-4"><p>Tracker<img src="../../../../helperfiles/img/tracker.png" class="img-responsive " alt="CHILD SELECTION" width="120" height="236"></p></div>');
-
+            $(".loading_icon").addClass("hide");
+            if ((response == "") || (response[0].approve_status == 0)) {
+                // $('#tracker').append('<div class="col-sm-4 col-xs-4"><p>Tracker<img src="../../../../helperfiles/img/tracker.png" class="img-responsive " alt="CHILD SELECTION" width="120" height="236"></p></div>');
+                $('#view_tracker').removeClass('hide');
             }
-            else if (response[0].approve_status == 1) {
-                $('#tracker').append('<a href="../../tracker/en/tracker.html"><div class="col-sm-4 col-xs-4"><p>Tracker<img src="../../../../helperfiles/img/tracker.png" class="img-responsive " alt="CHILD SELECTION" width="120" height="236"></p></div></a>');
+            else {
+                // $('#tracker').append('<a href="../../tracker/en/tracker.html"><div class="col-sm-4 col-xs-4"><p>Tracker<img src="../../../../helperfiles/img/tracker.png" class="img-responsive " alt="CHILD SELECTION" width="120" height="236"></p></div></a>');
+                $('#tracker').removeClass('hide');
             }
-            else if (response[0].approve_status == 0) {
-                $('#tracker').append('<div class="col-sm-4 col-xs-4"><p>Tracker<img src="../../../../helperfiles/img/tracker.png" class="img-responsive " alt="CHILD SELECTION" width="120" height="236"></p></div>');
-            }
-
         })
     httpPost("/volunteerhomeviewmentor", data, function (response) {
+        $(".loading_icon").addClass("hide");
         if (response == 0) {
             $('#view_mentor').removeClass('hide');
             // $('#selectmentor').append('<a href="../../viewmentorprofile/en/mentorprofile.html"><div class="col-sm-4 col-xs-4"><p>Mentor Profile	<img src="../../../../helperfiles/img/professional.png" class="img-responsive" alt="View Mentor Profile" width="120" height="236"></p></div>	</a>');

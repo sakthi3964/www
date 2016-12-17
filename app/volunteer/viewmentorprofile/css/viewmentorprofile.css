@@ -1,3 +1,6 @@
 #blockreg2{
     background-color: white;
 }
+#roles{
+    text-transform: capitalize;
+}

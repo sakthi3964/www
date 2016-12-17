@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
     $("#login").submit(function (e) {
         e.preventDefault();
@@ -22,8 +23,6 @@ $(document).ready(function () {
         data.password = $('#password').val();
 
         httpPost("/validateuser", data, function (response) {
-
-            console.log(response);
             if ((response == 1) || (response == 2) || (response == 3)) {
                 $('#errormodal').modal();
                 return false;
@@ -35,7 +34,7 @@ $(document).ready(function () {
                 $('#errormodal3').modal();
             }
             else if (response.role == 'volunteer') {
-                console.log(response.user_id);
+
                 localStorage.setItem("user", response.user_id);
                 localStorage.setItem("role", response.role);
                 window.location.href = "app/volunteer/volunteerhome/en/volunteerhome.html"

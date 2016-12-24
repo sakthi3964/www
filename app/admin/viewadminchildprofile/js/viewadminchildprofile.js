@@ -20,6 +20,7 @@ $(document).ready(function () {
     httpPost("/viewchildrenownprofile", data, function (response) {
         $("#blockreg2").removeClass("hide");
         $(".loading").addClass("hide");
+        
         // var res = JSON.parse(response.pre_assessment_data);
         //console.log(res.standard);
         $('#profileimage').append('<img src = "' + BASEURL + '/uploads/children/photos/' + response.photos + '" width="150" height="150">');

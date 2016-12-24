@@ -19,7 +19,7 @@ var localization = {
         en: "Enter your age"
     },
     greaterage: {
-        en: "Still u are alive ??"
+        en: "Enter proper age"
     },
     lesserage: {
         en: "Your age should be greater than 18"
@@ -106,4 +106,5 @@ var localization = {
     childgreaterage: {
         en: "Sorry, The age should be 12 to 18"
     }
+    
 }

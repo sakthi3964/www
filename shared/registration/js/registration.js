@@ -30,6 +30,17 @@ $(document).ready(function () {
         }
 
     });
+
+    $("#dob").change(function () {
+        var str = $('#dob').val();
+        var dateObj = new Date(str);
+        var cur = new Date();
+        var diff = cur - dateObj;
+        var age = Math.floor(diff / 31536000000);
+        $('#age').val(age);
+    });
+
+
     var url = window.location.href;
     var edit = url.substring(url.lastIndexOf('?') + 1);
     if (edit != "edit") {
@@ -41,7 +52,6 @@ $(document).ready(function () {
                 $iframe.height($body.height());
             }
         }
-
         $('#registrationForm')
             .formValidation({
                 framework: 'bootstrap',
@@ -122,15 +132,15 @@ $(document).ready(function () {
                     },
                     phone: {
                         validators: {
-                            integer: {
+                            numeric: {
                                 message: localization.validno[lang()]
                             }
                         }
                     },
                     code: {
                         validators: {
-                            integer: {
-                                message: localization.validno[lang()]
+                            numeric: {
+                                message: 'Invalid number'
                             }
                         }
                     },
@@ -159,6 +169,10 @@ $(document).ready(function () {
                         validators: {
                             notEmpty: {
                                 message: localization.city[lang()]
+                            },
+                            regexp: {
+                                regexp: /^[a-z\s]+$/i,
+                                message: localization.validname[lang()]
                             }
                         }
                     },
@@ -255,16 +269,30 @@ $(document).ready(function () {
                         }
                     },
                     cv: {
+                        selector: '.cv',
                         validators: {
                             notEmpty: {
                                 message: localization.cv[lang()]
+                            },
+                            file: {
+                                extension: 'doc,pdf',
+                                type: 'application/msword,application/pdf',
+                                maxSize: 5 * 1024 * 1024,   // 5 MB
+                                message: 'The selected file is not valid'
                             }
                         }
                     },
                     photo: {
+                        selector: '.photo',
                         validators: {
                             notEmpty: {
                                 message: localization.photo[lang()]
+                            },
+                            file: {
+                                extension: 'jpeg,png,jpg',
+                                type: 'image/jpeg,image/jpg,image/png',
+                                maxSize: 2048 * 1024,   // 2 MB
+                                message: 'The selected file is not valid'
                             }
                         }
                     },
@@ -422,28 +450,14 @@ $(document).ready(function () {
 
             return true;
         }
-        $(function () {
-            $(function () {
-                $("#dob").datepicker({
-                    changeMonth: true,
-                    changeYear: true,
-                    maxDate: "+0D"
-                });
-            });
-        });
+
     }
     else {
-        alert("hello");
         var data = {};
         var id = localStorage.getItem("user");
 
         data.id = id;
         httpPost("/editreturn", data, function (response) {
-            alert("editreturn");
-            console.log(response[0].role);
-            $('#role').html(response[0].role);
-
-
             radiobtn = response[0].gender;
             if (radiobtn == 'male') {
                 document.forms["registrationForm"]["male"].checked = true;
@@ -451,12 +465,16 @@ $(document).ready(function () {
             else {
                 document.forms["registrationForm"]["female"].checked = true;
             }
-            role = response[0].role;
-            document.getElementById("role").value = role;
             document.getElementById("name").value = response[0].name;
             document.getElementById("role").value = response[0].role;
+            console.log(response[0].role);
             document.getElementById("age").value = response[0].age;
-            document.getElementById("dob").value = response[0].dob;
+            var dob = response[0].dob;
+            console.log(response[0].dob);
+
+            var str = dob.Now.ToString("yyyy-MM-dd'T'HH:mm:ss.fffffff'Z'");
+            console.log("ssssssssssssssssssssssssssssss"+str);
+            document.getElementById("dob").value = dob1;
             document.getElementById("mobile_no").value = response[0].mobile_no;
             document.getElementById("code").value = response[0].code;
             document.getElementById("phone").value = response[0].phone;
@@ -466,6 +484,7 @@ $(document).ready(function () {
             document.getElementById("state").value = response[0].state;
             document.getElementById("postal_code").value = response[0].postal_code;
             document.getElementById("country").value = response[0].country;
+            console.log(response[0].country);
             document.getElementById("email_id").value = response[0].email_id;
             document.getElementById("password").value = response[0].password;
             document.getElementById("cpassword").value = response[0].cpassword;
@@ -583,7 +602,7 @@ $(document).ready(function () {
                     },
                     code: {
                         validators: {
-                            integer: {
+                            numeric: {
                                 message: localization.validno[lang()]
                             }
                         }
@@ -803,9 +822,13 @@ $(document).ready(function () {
                         // fileUpload("/addfiles", formData, function (response) {
                         // var res = JSON.parse(response);
                         var data = {};
+                        var id = localStorage.getItem("user");
+                        data.id = id;
+                        console.log(data.id);
                         data.role = $('#role').val();
                         data.name = ($('#name').val()).trim();
                         data.dob = ($('#dob').val()).trim();
+                        console.log(data.dob);
                         data.age = ($('#age').val()).trim();
                         data.gender = ($("input[name='gender']:checked").val()).trim();
                         data.course = ($('#course').val()).trim();
@@ -832,7 +855,7 @@ $(document).ready(function () {
                         // data.cv = res.cv;
                         // data.photo = res.photo;
                         httpPost("/editupdate", data, function (response) {
-                            $('#registerModal').modal();
+                            $('#editmodal').modal();
                         });
                         // });
 

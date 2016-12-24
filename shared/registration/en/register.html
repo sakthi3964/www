@@ -31,7 +31,6 @@
 			</div>
 		</nav>
 	</div>
-	
 	<div class="container" id="blockreg2">
 		<form id="registrationForm" class="form-horizontal" method="POST" enctype="multipart/form-data">
 			<ul class="nav nav-pills">
@@ -46,8 +45,8 @@
 						<label>Register as a</label>
 						<select class="form-control" id="role" name="role">
                             <option value="">Select</option>
-                            <option value="volunteer">Volunteer</option>
-                            <option value="mentor">Mentor</option>
+                            <option value="volunteer">volunteer</option>
+                            <option value="mentor">mentor</option>
                         </select>
 					</div>
 
@@ -188,16 +187,16 @@
 						<label class="control-label col-sm-4 col-xs-3">Land-Line</label>
 
 						<div class="col-sm-1 col-xs-2">
-							<input type="text" id="code" name="code" class="form-control" minlength="3" maxlength="6" placeholder="code" size="1">
+							<input type="number" id="code" name="code"  class="form-control" minlength="3" maxlength="6" placeholder="code" size="1">
 						</div>
 						<div class="col-sm-4 col-xs-3">
-							<input type="text" id="phone" name="phone" class="form-control" minlength="7" maxlength="7" placeholder="Land line" size="11">
+							<input type="number" id="phone" name="phone" class="form-control" minlength="7" maxlength="7" placeholder="Land line" size="11">
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="control-label col-sm-4 col-xs-3" for="addressline1">Address Line 1</label>
 						<div class="col-sm-8 col-xs-9">
-							<input id="address_line1" name="Address_line1" class="form-control" type="text" placeholder="Address line 1">
+							<input id="address_line1" name="address_line1" class="form-control" type="text" placeholder="Address line 1">
 							<p class="help-block">Street address, P.O. box, company name, c/o </p>
 						</div>
 					</div>
@@ -205,7 +204,7 @@
 					<div class="form-group">
 						<label class="control-label  col-sm-4 col-xs-3">Address Line 2</label>
 						<div class="col-sm-8 col-xs-9">
-							<input id="address_line2" name="Address_line2" type="text" placeholder="Address line 2" class="form-control">
+							<input id="address_line2" name="address_line2" type="text" placeholder="Address line 2" class="form-control">
 							<h6>Apartment, suite , unit, building, floor, etc.</h6>
 						</div>
 					</div>
@@ -326,8 +325,8 @@
 						<div class="col-sm-8 col-xs-9">
 							<select class="form-control" id="work_type" name="work_type">
 								<option value="">-Select-</option>
-								<option value="student">Student</option>
-								<option value="professional">Professional</option>
+								<option value="student">student</option>
+								<option value="professional">professional</option>
 							</select>
 						</div>
 					</div>
@@ -374,13 +373,13 @@
 					<div class="form-group" id = "cv1">
 						<label class="control-label col-sm-4 col-xs-6" for="name">Upload your CV</label>
 						<div class="col-sm-8 col-xs-12">
-							<input type="file" id="cv" name="photo[]" class="form-control upfile" size="15">
+							<input type="file" id="cv" name="photo[]" class="cv form-control upfile" size="15">
 						</div>
 					</div>
 					<div class="form-group" id = "file1">
 						<label class="control-label col-sm-4 col-xs-6" for="name">Upload your Photo</label>
 						<div class="col-sm-8 col-xs-12">
-							<input type="file" id="file" name="photo[]" class="form-control upfile" size="11">
+							<input type="file" id="file" name="photo[]" class="photo form-control upfile" size="11">
 						</div>
 					</div>
 				</div>
@@ -429,6 +428,24 @@
 
 				<div class="modal-footer">
 					<button type="button" class="btn btn-success" data-dismiss="modal" onclick="window.location = '../../../index.html '">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="editmodal" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">N'KaNa</h4>
+				</div>
+
+				<div class="modal-body">
+					<p class="text-center">Details are updated</p>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-success" data-dismiss="modal" onclick="window.location = '../../viewprofile/en/viewprofile.html'">Close</button>
 				</div>
 			</div>
 		</div>

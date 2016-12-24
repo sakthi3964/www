@@ -1,4 +1,15 @@
 $(document).ready(function () {
+    $("#dob").change(function () {
+        var str = $('#dob').val();
+        var dateObj = new Date(str);
+        var cur = new Date();
+        var diff = cur - dateObj;
+        var age = Math.floor(diff / 31536000000);
+        $('#age').val(age);
+    });
+
+
+
     $('#childForm')
         .formValidation({
             framework: 'bootstrap',
@@ -156,18 +167,6 @@ $(document).ready(function () {
             data.photos = response;
             httpPost("/childrenregistration", data, function (response) {
                 $('#registerModal').modal();
-            });
-        });
-    });
-
-
-
-    $(function () {
-        $(function () {
-            $("#dob").datepicker({
-                changeMonth: true,
-                changeYear: true,
-                maxDate: "+0D"
             });
         });
     });

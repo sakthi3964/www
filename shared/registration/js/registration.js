@@ -471,10 +471,7 @@ $(document).ready(function () {
             document.getElementById("age").value = response[0].age;
             var dob = response[0].dob;
             console.log(response[0].dob);
-
-            var str = dob.Now.ToString("yyyy-MM-dd'T'HH:mm:ss.fffffff'Z'");
-            console.log("ssssssssssssssssssssssssssssss"+str);
-            document.getElementById("dob").value = dob1;
+            document.getElementById("dob").value = dob;
             document.getElementById("mobile_no").value = response[0].mobile_no;
             document.getElementById("code").value = response[0].code;
             document.getElementById("phone").value = response[0].phone;

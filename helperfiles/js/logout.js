@@ -18,20 +18,58 @@ $(document).ready(function () {
     // // else {
     // //     alert("not present url");
     // // }
-
-
+    var url = window.location.href;
+    var urlstring = url.toString();
+    var key = urlstring.includes("shared");
+    var key2 = urlstring.includes("trackerdisplay");
     $("#home_button").click(function () {
         if (role == "children") {
-            window.location.href = "../../../../app/children/childrenshome/en/childrenhome.html";
+            if (key2) {
+                window.location.href = "../../../app/children/childrenshome/en/childrenhome.html";
+            }
+            else if (key) {
+                window.location.href = "../../../app/children/childrenshome/en/childrenhome.html";
+            }
+            else {
+                window.location.href = "../../../../app/children/childrenshome/en/childrenhome.html";
+            }
+
         }
         else if (role == "volunteer") {
-            window.location.href = "../../../../app/volunteer/volunteerhome/en/volunteerhome.html";
+            if (key2) {
+                window.location.href = "../../../../app/volunteer/volunteerhome/en/volunteerhome.html";
+            }
+            else if (key) {
+                window.location.href = "../../../app/volunteer/volunteerhome/en/volunteerhome.html";
+            }
+            else {
+                window.location.href = "../../../../app/volunteer/volunteerhome/en/volunteerhome.html";
+            }
+
         }
         else if (role == "mentor") {
-            window.location.href = "../../../../app/mentor/mentorhome/en/mentorhome.html";
+            if (key2) {
+                window.location.href = "../../../../app/mentor/mentorhome/en/mentorhome.html";
+            }
+            else if (key) {
+                window.location.href = "../../../app/mentor/mentorhome/en/mentorhome.html";
+            }
+            else {
+                window.location.href = "../../../../app/mentor/mentorhome/en/mentorhome.html";
+            }
+
         }
         else if (role == "admin") {
-            window.location.href = "../../../../app/admin/adminhome/en/adminhome.html";
+            if (key2) {
+                window.location.href = "../../../../app/admin/adminhome/en/adminhome.html";
+            }
+            else if (key) {
+                window.location.href = "../../../app/admin/adminhome/en/adminhome.html";
+            }
+            else {
+                window.location.href = "../../../../app/admin/adminhome/en/adminhome.html";
+            }
+
         }
     });
 });

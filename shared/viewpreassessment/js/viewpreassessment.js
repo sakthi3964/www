@@ -100,6 +100,78 @@ $(document).ready(function () {
 
 
     });
+
+    function adjustIframeHeight() {
+            var $body = $('body'),
+                $iframe = $body.data('iframe.fv');
+            if ($iframe) {
+                // Adjust the height of iframe
+                $iframe.height($body.height());
+            }
+        }
+        $('#preassessform')
+            .formValidation({
+                framework: 'bootstrap',
+                // icon: {
+                //     valid: 'glyphicon glyphicon-ok',
+                //     invalid: 'glyphicon glyphicon-remove',
+                //     validating: 'glyphicon glyphicon-refresh'
+                // },
+                // This option will not ignore invisible fields which belong to inactive panels
+                // excluded: ':disabled',
+               
+            })
+            .bootstrapWizard({
+                tabClass: 'nav nav-pills',
+                onTabClick: function (tab, navigation, index) {
+                    return validateTab(index);
+                },
+                onNext: function (tab, navigation, index) {
+                    var numTabs = $('#preassessform').find('.tab-pane').length,
+                        isValidTab = validateTab(index - 1);
+                    if (!isValidTab) {
+                        return false;
+                    }
+                    if (index === numTabs) {
+                        
+                        
+
+
+                    }
+                    return true;
+                },
+                onPrevious: function (tab, navigation, index) {
+                    return validateTab(index + 1);
+                },
+                onTabShow: function (tab, navigation, index) {
+                    // Update the label of Next button when we are at the last tab
+                    var numTabs = $('#preassessform').find('.tab-pane').length;
+
+                    // You don't need to care about it
+                    // It is for the specific demo
+                    adjustIframeHeight();
+                }
+            });
+
+        function validateTab(index) {
+            var fv = $('#preassessform').data('formValidation'), // FormValidation instance
+                // The current tab
+                $tab = $('#preassessform').find('.tab-pane').eq(index);
+
+            // Validate the container
+            fv.validateContainer($tab);
+
+            var isValidStep = fv.isValidContainer($tab);
+            // alert(isValidStep);
+            // alert(index);
+            if (isValidStep === false || isValidStep === null) {
+                // Do not jump to the target tab
+                return false;
+            }
+
+            return true;
+        }
+
 });
 
 

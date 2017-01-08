@@ -95,3 +95,7 @@ body{
 #header_role{
     text-transform: capitalize;
 }
+
+.responsecapitalize{
+   text-transform: capitalize;  
+}

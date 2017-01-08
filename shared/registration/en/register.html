@@ -157,7 +157,7 @@
 					<div class="form-group">
 						<label class="control-label col-sm-4 col-xs-3">DOB</label>
 						<div class="col-sm-8 col-xs-9">
-							<input type="date" id="dob" name="dob" class="form-control" placeholder="Date of birth" data-provide="datepicker" data-date-end-date="0d">
+							<input type="text" id="dob" name="dob" class="form-control" placeholder="Date of birth" data-provide="datepicker" data-date-end-date="0d">
 						</div>
 					</div>
 					<div class="form-group">
@@ -181,6 +181,7 @@
 						<label class="control-label col-sm-4 col-xs-3">Mobile Number</label>
 						<div class="col-sm-8 col-xs-9">
 							<input type="text" id="mobile_no" name="mobile_no" class="form-control" minlength="10" maxlength="10" placeholder="Mobile Number">
+							<p class="has-error" id="mobilepresent"></p>
 						</div>
 					</div>
 					<div class="form-group">
@@ -283,6 +284,7 @@
 						<label class="control-label col-sm-4 col-xs-3" for="email">Email:</label>
 						<div class="col-sm-8 col-xs-9">
 							<input type="email" class="form-control" id="email_id" name="email_id" placeholder="Email ID">
+							<p class="has-error" id="emailidpresent"></p>
 						</div>
 					</div>
 					<div class="form-group">
@@ -391,13 +393,13 @@
 			</div>
 		</form>
 	</div>
-	<div class="container-fluid" id="commonfooter">
+	<!--<div class="container-fluid" id="commonfooter">
 		<footer id="footer">
 			<center>
 				<p>Trust for Youth and Child Leadership & Mughil Social Welfare Organization</p>
 			</center>
 		</footer>
-	</div>
+	</div>-->
 
 	<!--<div class="modal fade" id="registerModal" role="dialog">
 		<div class="modal-dialog">
@@ -441,7 +443,7 @@
 				</div>
 
 				<div class="modal-body">
-					<p class="text-center">Details are updated</p>
+					<p class="text-center">Your profile has been updated Successfully</p>
 				</div>
 
 				<div class="modal-footer">

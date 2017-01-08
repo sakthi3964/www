@@ -85,7 +85,7 @@ $(document).ready(function () {
         alert(data.id);
         httpPost("/tracker", data, function (response) {
             console.log(response);
-            $('#reviewmodal').modal();
+            $('#reviewmodal').modal({backdrop: 'static', keyboard: false});
         })
 
     });

@@ -24,14 +24,14 @@ $(document).ready(function () {
 
         httpPost("/validateuser", data, function (response) {
             if ((response == 1) || (response == 2) || (response == 3)) {
-                $('#errormodal').modal();
+                $('#errormodal').modal({backdrop: 'static', keyboard: false});
                 return false;
             }
             else if (response.status == 0) {
-                $('#errormodal2').modal();
+                $('#errormodal2').modal({backdrop: 'static', keyboard: false});
             }
             else if (response.active == 0) {
-                $('#errormodal3').modal();
+                $('#errormodal3').modal({backdrop: 'static', keyboard: false});
             }
             else if (response.role == 'volunteer') {
 

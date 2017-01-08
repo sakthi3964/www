@@ -1,8 +1,8 @@
 
 $(document).ready(function () {
-    $("#reviewBody").submit(function (e) {
-        e.preventDefault();
-    })
+	$("#reviewBody").submit(function (e) {
+		e.preventDefault();
+	})
 	// $("#time").slider();
 	// $("#time").on("slide", function (time) {
 	// 	console.log("time:" + time.value);
@@ -143,19 +143,26 @@ $(document).ready(function () {
 	localvalue.id = id;
 
 	httpPost("/childvolunteermentorid", localvalue, function (response) {
-		response.forEach(function (element) {
-			$('#role').append('<option value=' + element.profile_id + '>' + element.role + '</option>');
-		}, this);
+		$(".loading").addClass("hide");
+		var res_length = response.length;
+		if (res_length == 0) {
+			$(".no_record").removeClass("hide");
+		} else {
+			$(".child_review_form").removeClass("hide");
+			response.forEach(function (element) {
+				$('#role').append('<option value=' + element.profile_id + '>' + element.role + '</option>');
+			}, this);
+		}
+
 
 	})
 
 	$("#submit1").click(function () {
-		console.log("hei");
+
 		var data = {};
 		if ((time.value != 0) && (care.value != 0) && (behaviour.value != 0) && (confidentiality.value != 0) && (mentorship.value != 0) && (environment.value != 0) && (feelings.value != 0) && (willingness.value != 0) && (learning.value != 0) && (feedback.value != 0)) {
 			var id = localStorage.getItem("user");
 			data.id = id;
-			console.log("haiiiiiiiiiiiiiiiiiiiiiiiiiiii" + id);
 			data.role = role.value;
 			var data1 = {};
 			data1.time = time.value;
@@ -172,16 +179,9 @@ $(document).ready(function () {
 			var review = JSON.stringify(data1);
 			data.reviews = review;
 			httpPost("/review", data, function (response) {
-				$('#reviewmodal').modal();
-				// alert("Successfully completed");
-
-
+				$('#reviewmodal').modal({ backdrop: 'static', keyboard: false });
 			});
 		}
-		// else {
-		// 	$('#errormodal').modal();
-		// 	return false;
-		// }
 
 	});
 });

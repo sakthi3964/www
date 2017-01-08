@@ -11,10 +11,13 @@ $(document).ready(function () {
     var role = localStorage.getItem("role");
 
     data.id = id;
+   
     if (role != "admin") {
         httpPost("/trackerDatesMentor", data, function (response) {
+             $(".loading").addClass("hide");
+            console.log(response);
             $("#details").removeClass("hide");
-            $(".loading").addClass("hide");
+
             response.forEach(function (element) {
                 var dateObj = new Date(element.date);
                 var day = dateObj.getUTCDate();
@@ -30,6 +33,7 @@ $(document).ready(function () {
     }
     else {
         httpPost("/adminmentorgraphDates", data, function (response) {
+
             $("#details").removeClass("hide");
             $(".loading").addClass("hide");
             response.forEach(function (element) {

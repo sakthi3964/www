@@ -79,3 +79,9 @@ li{
     background-color: #f7f7f6; 
     border-radius: 20px;
 }
+#emailidpresent{
+    color:red;
+}
+#mobilepresent{
+    color:red;
+}

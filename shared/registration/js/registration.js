@@ -405,9 +405,36 @@ $(document).ready(function () {
                             data.commitment = ($('#commitment').val()).trim();
                             data.cv = res.cv;
                             data.photo = res.photo;
+                            $("#emailidpresent").hide();
+                            $("#mobilepresent").hide();
                             httpPost("/registration", data, function (response) {
-                                $('#registerModal').modal();
+                                console.log("responsewithzero" + response[0]);
+                                console.log("kdhfskdhf" + response.emailidpresent);
+                                if (response.emailidpresent == 1 && response.mobileidpresent == 1) {
+                                    $("#emailidpresent").show();
+                                    $("#mobilepresent").show();
+                                    $("#emailidpresent").html("email id already exit");
+                                    $("#mobilepresent").html("mobile no already exit");
+                                    return $('#myTab a[href="#secondtab"]').tab('show');
+                                }
+                                else if (response.emailidpresent == 1) {
+                                    $("#emailidpresent").show();
+                                    $("#mobilepresent").hide();
+                                    $("#emailidpresent").html("email id already exit");
+                                    return $('#myTab a[href="#secondtab"]').tab('show');
+                                }
+                                else if (response.mobilenopresent == 1) {
+                                    $("#emailidpresent").hide();
+                                    $("#mobilepresent").show();
+                                    $("#mobilepresent").html("mobile no already exit");
+                                    return $('#myTab a[href="#secondtab"]').tab('show');
+                                }
+                                else
+                                    // $('#registerModal').modal();
+                                    $('#registerModal').modal({ backdrop: 'static', keyboard: false });
                             });
+
+
                         });
 
 
@@ -471,7 +498,30 @@ $(document).ready(function () {
             document.getElementById("age").value = response[0].age;
             var dob = response[0].dob;
             console.log(response[0].dob);
-            document.getElementById("dob").value = dob;
+            // function changeDateFormat(inputDate) {  // expects Y-m-d
+            //     var splitDate = inputDate.split('-');
+            //     if (splitDate.count == 0) {
+            //         return null;
+            //     }
+
+            //     var year = splitDate[0];
+            //     var month = splitDate[1];
+            //     var day = splitDate[2];
+
+            //     return day[0] + '\\' + month + '\\' + year;
+            // }
+            function format(inputDate) {
+                var date = new Date(inputDate);
+                if (!isNaN(date.getTime())) {
+                    // Months use 0 index.
+                    return date.getDate() + '-' + date.getMonth() + 1 + '-' + date.getFullYear();
+                }
+            }
+
+            var inputDate = dob;
+            var newDate = format(inputDate);
+            console.log(newDate);
+            document.getElementById("dob").value = newDate;
             document.getElementById("mobile_no").value = response[0].mobile_no;
             document.getElementById("code").value = response[0].code;
             document.getElementById("phone").value = response[0].phone;
@@ -490,6 +540,7 @@ $(document).ready(function () {
             document.getElementById("institution").value = response[0].profileinfo.institution;
             document.getElementById("designation").value = response[0].profileinfo.designation;
             document.getElementById("organization").value = response[0].profileinfo.organization;
+            document.getElementById("work_type").value = response[0].profileinfo.work_type;
             document.getElementById("area_of_expertise").value = response[0].profileinfo.area_of_expertise;
             document.getElementById("experience").value = response[0].profileinfo.experience;
             document.getElementById("commitment").value = response[0].profileinfo.commitment;
@@ -826,6 +877,7 @@ $(document).ready(function () {
                         data.name = ($('#name').val()).trim();
                         data.dob = ($('#dob').val()).trim();
                         console.log(data.dob);
+                        console.log(new Date(data.dob));
                         data.age = ($('#age').val()).trim();
                         data.gender = ($("input[name='gender']:checked").val()).trim();
                         data.course = ($('#course').val()).trim();
@@ -852,7 +904,7 @@ $(document).ready(function () {
                         // data.cv = res.cv;
                         // data.photo = res.photo;
                         httpPost("/editupdate", data, function (response) {
-                            $('#editmodal').modal();
+                            $('#editmodal').modal({ backdrop: 'static', keyboard: false });
                         });
                         // });
 

@@ -198,7 +198,7 @@ $(document).ready(function () {
 
                     // For testing purpose
 
-                    // $('#completeModal').modal();
+                    // $('#completeModal').modal({backdrop: 'static', keyboard: false});
                     var data = {};
                     data.date = ($('#date').val());
                     var location = ($('#placeOfMeeting').val());
@@ -289,7 +289,7 @@ $(document).ready(function () {
                     data.id = id;
                     httpPost("/tracker", data, function (response) {
                        
-                             $('#trackerModal').modal();
+                             $('#trackerModal').modal({backdrop: 'static', keyboard: false});
                         
 
                     })

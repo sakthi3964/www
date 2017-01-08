@@ -25,10 +25,10 @@ $(document).ready(function () {
             dataForRequest.children_id = url.substring(url.lastIndexOf(':') + 1);
             httpPost("/insertConnectionRequest", dataForRequest, function (response) {
                 if (response == "1") {
-                    $('#multiplerequest').modal();
+                    $('#multiplerequest').modal({backdrop: 'static', keyboard: false});
                 }
                 else {
-                    $('#childrequest').modal();
+                    $('#childrequest').modal({backdrop: 'static', keyboard: false});
                 }
 
             });

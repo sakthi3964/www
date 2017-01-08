@@ -133,7 +133,7 @@ $(document).ready(function () {
 
 
 
-                age: {
+                age1: {
                     selector: '.age',
                     validators: {
                         notEmpty: {
@@ -346,13 +346,13 @@ $(document).ready(function () {
                 },
 
 
-                supporttochild: {
-                    validators: {
-                        notEmpty: {
-                            message: 'select this field'
-                        }
-                    }
-                },
+                // supporttochild: {
+                //     validators: {
+                //         notEmpty: {
+                //             message: 'select this field'
+                //         }
+                //     }
+                // },
 
 
                 //common validation textbox
@@ -364,7 +364,7 @@ $(document).ready(function () {
                         }
                     }
                 },
-                monthlyincome: {
+                monthlyincome1: {
                     selector: '.monthlyincome',
                     validators: {
                         notEmpty: {
@@ -723,8 +723,8 @@ $(document).ready(function () {
                     // console.log("goal1 :   "+obj.goal1);
                     // console.log("name :   "+obj.name[0]);
                     httpPost("/preassess", data1, function (response) {
-
-                        $('#preassessment_Modal').modal();
+                        alert(response);
+                        $('#preassessment_Modal').modal({ backdrop: 'static', keyboard: false });
                     });
                 }
 

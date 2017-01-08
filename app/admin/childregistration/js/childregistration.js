@@ -166,7 +166,7 @@ $(document).ready(function () {
             data.center = ($('#center').val()).trim();
             data.photos = response;
             httpPost("/childrenregistration", data, function (response) {
-                $('#registerModal').modal();
+                $('#registerModal').modal({backdrop: 'static', keyboard: false});
             });
         });
     });

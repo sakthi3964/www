@@ -34,12 +34,19 @@
 //             j++;
 //         }, this);
 //     })
-// })
+// });
 
 
 $(document).ready(function () {
-    connectionDisplay();
+    var session = localStorage.getItem("user");
+    if (session == null) {
+        window.location.href = "../../../../index.html";
+    }
+    else {
 
+        connectionDisplay();
+
+    }
 });
 function connectionDisplay() {
     httpGet("/connectionapproval", function (response) {

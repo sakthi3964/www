@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     $('#role').change(function () {
         if ($('#role').val() == '') {
             $('#mission').show();
@@ -374,6 +375,9 @@ $(document).ready(function () {
                                 formData.append('photo', file, file.name);
                             })
                         });
+                        
+                        $(".loading").removeClass("hide");
+                        $("#blockreg2").addClass("hide");
                         fileUpload("/addfiles", formData, function (response) {
                             var res = JSON.parse(response);
                             var data = {};
@@ -903,7 +907,9 @@ $(document).ready(function () {
                         data.commitment = ($('#commitment').val()).trim();
                         // data.cv = res.cv;
                         // data.photo = res.photo;
-                        httpPost("/editupdate", data, function (response) {
+                        $(".loading").removeClass("hide");
+                        $("#blockreg2").addClass("hide");
+                        httpPost("/editupdate", data, function (response) {                        
                             $('#editmodal').modal({ backdrop: 'static', keyboard: false });
                         });
                         // });

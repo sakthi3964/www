@@ -31,9 +31,14 @@
 			</div>
 		</nav>
 	</div>
+	<div class="loading hide">
+		<div class="loading_img">
+			<img src="../../../helperfiles/img/loading.gif" alt="loading">
+		</div>
+	</div>
 	<div class="container" id="blockreg2">
 		<form id="registrationForm" class="form-horizontal" method="POST" enctype="multipart/form-data">
-			<ul class="nav nav-pills">
+			<ul class="nav nav-pills" id="myTab">
 				<li class="active"><a href="#firsttab" data-toggle="tab">1</a></li>
 				<li><a href="#secondtab" data-toggle="tab">2</a></li>
 				<li><a href="#thirdtab" data-toggle="tab">3</a></li>
@@ -157,7 +162,7 @@
 					<div class="form-group">
 						<label class="control-label col-sm-4 col-xs-3">DOB</label>
 						<div class="col-sm-8 col-xs-9">
-							<input type="text" id="dob" name="dob" class="form-control" placeholder="Date of birth" data-provide="datepicker" data-date-end-date="0d">
+							<input type="date" id="dob" name="dob" class="form-control" placeholder="Date of birth" data-provide="datepicker" data-date-end-date="0d">
 						</div>
 					</div>
 					<div class="form-group">

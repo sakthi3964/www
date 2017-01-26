@@ -1,47 +1,53 @@
 $(document).ready(function () {
-    $('#placeOfMeeting').change(function () {
-        if ($('#placeOfMeeting').val() == 'Others') {
-            $('#others').show();
+    var session = localStorage.getItem("user");
+    if (session == null) {
+        window.location.href = "../../../../index.html";
+    }
+    else {
+        $('#placeOfMeeting').change(function () {
+            if ($('#placeOfMeeting').val() == 'Others') {
+                $('#others').show();
 
-        }
-        else {
-            $('#others').hide();
-        }
+            }
+            else {
+                $('#others').hide();
+            }
 
-    });
+        });
 
-    $("input[name='connection']").click(function () {
-        if ($("#yes").is(":checked")) {
-            $("#connectionDetail").show();
-        } else {
-            $("#connectionDetail").hide();
-        }
-    });
+        $("input[name='connection']").click(function () {
+            if ($("#yes").is(":checked")) {
+                $("#connectionDetail").show();
+            } else {
+                $("#connectionDetail").hide();
+            }
+        });
 
 
-    $("input[name='challengesMentee']").click(function () {
-        if ($("#Menteeyes").is(":checked")) {
-            $("#challengesDetailMentee").show();
-        } else {
-            $("#challengesDetailMentee").hide();
-        }
-    });
+        $("input[name='challengesMentee']").click(function () {
+            if ($("#Menteeyes").is(":checked")) {
+                $("#challengesDetailMentee").show();
+            } else {
+                $("#challengesDetailMentee").hide();
+            }
+        });
 
-    $("input[name='challengesMentor']").click(function () {
-        if ($("#Mentoryes").is(":checked")) {
-            $("#challengesDetailMentor").show();
-        } else {
-            $("#challengesDetailMentor").hide();
-        }
-    });
+        $("input[name='challengesMentor']").click(function () {
+            if ($("#Mentoryes").is(":checked")) {
+                $("#challengesDetailMentor").show();
+            } else {
+                $("#challengesDetailMentor").hide();
+            }
+        });
 
-    $("input[name='challengesVolunteer']").click(function () {
-        if ($("#Volunteeryes").is(":checked")) {
-            $("#challengesDetailVolunteer").show();
-        } else {
-            $("#challengesDetailVolunteer").hide();
-        }
-    });
+        $("input[name='challengesVolunteer']").click(function () {
+            if ($("#Volunteeryes").is(":checked")) {
+                $("#challengesDetailVolunteer").show();
+            } else {
+                $("#challengesDetailVolunteer").hide();
+            }
+        });
+    }
 
 });
 
@@ -288,9 +294,9 @@ $(document).ready(function () {
                     data.review = JSON.stringify(review);
                     data.id = id;
                     httpPost("/tracker", data, function (response) {
-                       
-                             $('#trackerModal').modal({backdrop: 'static', keyboard: false});
-                        
+
+                        $('#trackerModal').modal({ backdrop: 'static', keyboard: false });
+
 
                     })
                 }
@@ -412,7 +418,7 @@ $(document).ready(function () {
         $clone
             .find('[name="connectedTo"]').attr('name', 'connectedTo-[' + memberscount + ']').end()
             .find('[name="purpose"]').attr('name', 'purpose-[' + memberscount + ']').end();
-            
+
 
 
     })

@@ -99,3 +99,10 @@ body{
 .responsecapitalize{
    text-transform: capitalize;  
 }
+.preassessment_btn{
+    padding: 10px;
+    border-right: 3px;
+    background-color: #06BBB5;
+    color: white;
+    margin-bottom: 10px;
+}

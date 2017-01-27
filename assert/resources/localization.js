@@ -3,6 +3,9 @@ var localization = {
         en: "Enter your mail-id",
         ta: "உங்கள் மின்னஞ்சல் ஐடி"
     },
+    role: {
+        en: "The role should not be empty"
+    },
     name: {
         en: "The name should not be empty"
     },

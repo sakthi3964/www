@@ -16,6 +16,7 @@ $(document).ready(function () {
         httpPost("/trackerDatesMentor", data, function (response) {
             $("#blockreg2").removeClass("hide");
             $(".loading").addClass("hide");
+            var res_length = response.length;
             if (res_length == 0) {
                 $(".no_record").removeClass("hide");
             }

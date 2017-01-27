@@ -28,6 +28,7 @@ $(document).ready(function () {
                 dataForRequest.role = localStorage.getItem("role");
                 var url = window.location.href;
                 dataForRequest.children_id = url.substring(url.lastIndexOf(':') + 1);
+                dataForRequest.time=new Date();
                 httpPost("/insertConnectionRequest", dataForRequest, function (response) {
                     if (response == "1") {
                         $('#multiplerequest').modal({ backdrop: 'static', keyboard: false });

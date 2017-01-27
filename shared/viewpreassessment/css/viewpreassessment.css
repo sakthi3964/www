@@ -3,7 +3,8 @@ body{
 }
 
 #body-tag{
-        background-color: white
+    background-color: white;
+    text-align: left
 }
 .moveleft{
         margin-left:10px;
@@ -58,14 +59,19 @@ a {
     margin-left: -15px;
 }
 .preassessmentdata{
-    padding: 5px;
+    padding: 8px;
 }
 .prefamilydatas{
-    padding: 7px;
+    display: inline;
+    padding: 8px;
+    font-size: 15px;
 }
 h5{
     font-weight: bold;
 }
 .heading{
     text-align: center;
+}
+.preassessmentdata span p{
+    margin-left: 10px;
 }

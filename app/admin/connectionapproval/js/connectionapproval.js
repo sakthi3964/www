@@ -78,6 +78,7 @@ function accept(elementId, elementPrfileId, elementStatus) {
 
     data.id = elementId;
     data.profile_id = elementPrfileId;
+    data.time=new Date();
     httpPost("/changeapproval", data, function (response) {
         console.log(response);
         if (response != null) {

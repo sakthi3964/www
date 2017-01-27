@@ -1,5 +1,6 @@
 
 $(document).ready(function () {
+	data = {};
 	var id = localStorage.getItem("user");
 	data.id = id;
 

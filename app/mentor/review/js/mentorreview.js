@@ -87,8 +87,12 @@ $(document).ready(function () {
             data.date = ($('#date').val()).trim();
             console.log("hekl;dfh;lsadf" + data.date);
             data.id = id;
-            alert(data.id);
+
+            $(".loading").removeClass("hide");
+            $("#reviewBody").addClass("hide");
+            $("#childheading").addClass("hide");
             httpPost("/tracker", data, function (response) {
+                $(".loading").addClass("hide");
                 console.log(response);
                 $('#reviewmodal').modal({ backdrop: 'static', keyboard: false });
             })

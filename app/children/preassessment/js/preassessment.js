@@ -729,8 +729,11 @@ $(document).ready(function () {
                         // console.log("goal1 :   "+obj.goal1);
                         // console.log("name :   "+obj.name[0]);
                         httpPost("/preassess", data1, function (response) {
-                            alert(response);
-                            $('#preassessment_Modal').modal({ backdrop: 'static', keyboard: false });
+                           if(response==1)
+                           {
+                                $('#preassessment_Modal').modal({ backdrop: 'static', keyboard: false });
+                           }
+                           
                         });
                     }
 

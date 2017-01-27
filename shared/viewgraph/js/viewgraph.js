@@ -19,7 +19,8 @@ $(document).ready(function () {
             $(".loading").addClass("hide");
             var res_length = response.length;
             if (res_length == 0) {
-                $(".no_record").removeClass("hide");
+                // $(".no_record").removeClass("hide");
+                $('#listOfDates').append('<div class="no_record"> <h3>No Record Found</h3></div>');
             }
             else {
                 response.forEach(function (element) {
@@ -33,7 +34,7 @@ $(document).ready(function () {
                     var month = monthNames[monthna.getMonth()];
                     var elementid = window.btoa(element.id);
 
-                    
+
                     $('#listOfDates').append('<a href="../../graph/en/graph.html?date:' + element.date + '" id=' + elementid + '><div class="calendor"><div class="month"><p>' + month + '</p></div><div class="date"><p>' + day + '</p></div><div class="year"><p>' + year + '</p></div></div></a>');
                 }, this);
             }

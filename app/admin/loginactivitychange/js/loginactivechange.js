@@ -7,14 +7,16 @@ $(document).ready(function () {
 
 
         httpGet("/loginactivechange", function (response) {
-            $("#details").removeClass("hide");
             $(".loading").addClass("hide");
             var i = 0;
+            console.log(response);
             var res_length = response.length;
             if (res_length == 0) {
                 $(".no_record").removeClass("hide");
             }
             else {
+               
+            $("#details").removeClass("hide");
                 response.forEach(function (element) {
                     if (element.childrenprofile) {
                         // $('#display').append('<div class="col-sm-3 col-xs-3"><p>' + element.childrenprofile.full_name + '</p></div><div class="col-sm-3 col-xs-3"><p>' + element.childrenprofile.user_id + '</p></div><div class="col-sm-3 col-xs-3"><p>' + element.childrenprofile.role + '</p></div><div class="col-sm-3 col-xs-3"><label class="switch"><input class="request" id =' + element.childrenprofile.id + ' type="checkbox" value=' + element.childrenprofile.active_ind + '><div class="slider round"></div></label></div>');

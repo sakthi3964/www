@@ -25,7 +25,8 @@ $(document).ready(function () {
                 $("#details").removeClass("hide");
                 var res_length = response.length;
                 if (res_length == 0) {
-                    $(".no_record").removeClass("hide");
+                    // $(".no_record").removeClass("hide");
+                     $('#listOfMentorDates').append('<div class="no_record"> <h3>No Record Found</h3></div>');
                 }
                 else {
                     response.forEach(function (element) {

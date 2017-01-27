@@ -110,7 +110,8 @@ $(document).ready(function () {
                         }
                     }
                 },
-                connectedTo: {
+                connectedTo1: {
+                    selector: '.connectedTo1',
                     validators: {
                         notEmpty: {
                             message: 'Check, if there is any new connection'
@@ -118,7 +119,8 @@ $(document).ready(function () {
                     }
                 },
 
-                purpose: {
+                purpose1: {
+                    selector: '.purpose1',
                     validators: {
                         notEmpty: {
                             message: 'Enter your purpose'
@@ -197,6 +199,8 @@ $(document).ready(function () {
                 }
 
                 if (index === numTabs) {
+                    $(".loading").removeClass("hide");
+                    $("#trackerbody").addClass("hide");
                     // We are at the last tab
 
                     // Uncomment the following line to submit the form using the defaultSubmit() method
@@ -206,6 +210,22 @@ $(document).ready(function () {
 
                     // $('#completeModal').modal({backdrop: 'static', keyboard: false});
                     var data = {};
+                    var data1 = {};
+                    data1.connectedTo = [];
+                    data1.purpose = [];
+                    var connectedTo1;
+                    var purpose1;
+                    // alert(memberscount);
+                    for (var i = 0; i <= memberscount; i++) {
+                        connectedTo1 = "connectedTo-[" + i + "]";
+                        purpose1 = "purpose-[" + i + "]";
+                        data1.connectedTo[i] = document.getElementsByName(connectedTo1)[0].value;
+                        data1.purpose[i] = document.getElementsByName(purpose1)[0].value;
+                        console.log("name " + document.getElementsByName(connectedTo1)[0].value);
+                        //   console.log("relation " + document.getElementsByName(purpose1)[0].value);
+                    }
+                    var sample = JSON.stringify(data1);
+                    data.newcon = sample;
                     data.date = ($('#date').val());
                     var location = ($('#placeOfMeeting').val());
                     if (location == "Others") {
@@ -294,7 +314,7 @@ $(document).ready(function () {
                     data.review = JSON.stringify(review);
                     data.id = id;
                     httpPost("/tracker", data, function (response) {
-
+                        $(".loading").addClass("hide");
                         $('#trackerModal').modal({ backdrop: 'static', keyboard: false });
 
 

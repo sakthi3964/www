@@ -68,6 +68,7 @@ function accept(elementId, profileId) {
     var data = {};
     data.id = elementId;
     data.profileId = profileId;
+    data.time=new Date();
     console.log(data.profileId);
     httpPost("/changestatus", data, function (response) {
         

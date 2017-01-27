@@ -67,7 +67,7 @@ $(document).ready(function () {
                     role: {
                         validators: {
                             notEmpty: {
-                                message: localization.name[lang()]
+                                message: localization.role[lang()]
                             }
                         }
                     },
@@ -486,7 +486,7 @@ $(document).ready(function () {
     else {
         var data = {};
         var id = localStorage.getItem("user");
-
+        var time=new Date();
         data.id = id;
         httpPost("/editreturn", data, function (response) {
             radiobtn = response[0].gender;

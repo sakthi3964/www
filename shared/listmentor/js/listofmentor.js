@@ -5,6 +5,7 @@ $(document).ready(function () {
     }
     else {
         httpGet("/listofmentor", function (response) {
+            $(".loading").addClass("hide");
             var i = 0;
             var res_length = response.length;
             if (res_length == 0) {

@@ -8,12 +8,8 @@ $(document).ready(function () {
         var url = window.location.href;
         var date1 = url.substring(url.indexOf(':') + 1, url.length);
         var date2 = date1.substring(date1.indexOf(':') + 1, date1.length);
-
         var date3 = date2.substring(date2.indexOf(':') + 1, date2.length);
         data.date = date3;
-
-
-
         httpPost("/viewChildrenReview", data, function (response) {
             $("#chartContainer").removeClass("hide");
             $(".loading").addClass("hide");

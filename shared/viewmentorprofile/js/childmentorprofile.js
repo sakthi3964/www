@@ -27,15 +27,17 @@ $(document).ready(function () {
                 // }
                 // else {
                 //date display code
-                // var dateObj = new Date(response[0].profile.dob);
-                // var day = dateObj.getUTCDate();
-                // var year = dateObj.getUTCFullYear();
-                // var monthNames = ["January", "February", "March", "April", "May", "June",
-                //     "July", "August", "September", "October", "November", "December"
-                // ];
-                // var monthna = new Date(response[0].profile.dob);
-                // var month = monthNames[monthna.getMonth()];
+
                 else {
+                    var dateObj = new Date(response[1].profile.dob);
+                    var day = dateObj.getUTCDate();
+                    var year = dateObj.getUTCFullYear();
+                    var monthNames = ["January", "February", "March", "April", "May", "June",
+                        "July", "August", "September", "October", "November", "December"
+                    ];
+                    var monthna = new Date(response[1].profile.dob);
+                    var month = monthNames[monthna.getMonth()];
+                    console.log(month);
                     $("#blockreg2").removeClass("hide");
                     if (response[0].profile.role == "mentor") {
                         $('#profileimage').append('<img src="' + BASEURL + '/uploads/mentor/photo/' + response[0].profile.profileinfo.photo + '" width="150" height="150">');
@@ -93,7 +95,7 @@ $(document).ready(function () {
                         $('#profileimage').append('<img src="' + BASEURL + '/uploads/mentor/photo/' + response[1].profile.profileinfo.photo + '" width="150" height="150">');
                         $('#name').html(response[1].profile.name);
                         $('#role').html(response[1].profile.role);
-                        $('#dob').html(response[1].profile.dob);
+                        $('#dob').html(day + "-" + month + "-" + year);
                         $('#age').html(response[1].profile.age);
                         $('#gender').html(response[1].profile.gender);
                         $('#address_line1').html(response[1].profile.address_line1);

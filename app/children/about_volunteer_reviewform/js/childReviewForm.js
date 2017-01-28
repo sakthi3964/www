@@ -172,7 +172,7 @@ $(document).ready(function () {
 			if ((time.value != 0) && (care.value != 0) && (behaviour.value != 0) && (confidentiality.value != 0) && (mentorship.value != 0) && (environment.value != 0) && (feelings.value != 0) && (willingness.value != 0) && (learning.value != 0) && (feedback.value != 0)) {
 				var id = localStorage.getItem("user");
 				data.id = id;
-				data.role = role.value;
+				data.profile_id = role.value;
 				var data1 = {};
 				data1.time = time.value;
 				data1.care = care.value;

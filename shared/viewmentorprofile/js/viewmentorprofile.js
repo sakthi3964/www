@@ -30,6 +30,7 @@ $(document).ready(function () {
                 ];
                 var monthna = new Date(response[0].dob);
                 var month = monthNames[monthna.getMonth()];
+                
                 $("#blockreg2").removeClass("hide");
                 $(".loading").addClass("hide");
                 $('#profileimage').append('<img src="' + BASEURL + '/uploads/mentor/photo/' + response[0].profileinfo.photo + '" width="150" height="150">');

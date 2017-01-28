@@ -19,17 +19,20 @@ $(document).ready(function () {
         data.id = id;
 
         if (role != "admin") {
+            console.log("fjdsa;ja;lsf");
             httpPost("/childReviewDatesMentor", data, function (response) {
                 $(".loading").addClass("hide");
                 console.log(response);
-                $("#details").removeClass("hide");
+                console.log("fjdsa;ja;lsf");
                 var res_length = response.length;
                 if (res_length == 0) {
-                    $(".no_record").removeClass("hide");
+                    // $(".no_record").removeClass("hide");
+                     $('#listOfMentorDates').append('<div class="no_record"> <h3>No Record Found</h3></div>');
                 }
                 else {
+                    $("#details").removeClass("hide");
                     response.forEach(function (element) {
-                          var dateObj = new Date(element.created_at);
+                        var dateObj = new Date(element.created_at);
                         console.log(dateObj);
                         var day = dateObj.getUTCDate();
                         var monthna = dateObj.getUTCMonth();
@@ -47,12 +50,15 @@ $(document).ready(function () {
             console.log("erlaldfjl;dsjkdlsjalikatu");
             httpPost("/childReviewDatesMentor", data, function (response) {
                 console.log("erlaldfjl;dsjkdlsjalikatu");
-                $("#details").removeClass("hide");
+                var res_length = response.length;
                 $(".loading").addClass("hide");
                 if (res_length == 0) {
-                    $(".no_record").removeClass("hide");
+                    // $(".no_record").removeClass("hide");
+                     $('#listOfMentorDates').append('<div class="no_record"> <h3>No Record Found</h3></div>');
                 }
                 else {
+                    
+                $("#details").removeClass("hide");
                     response.forEach(function (element) {
                         var dateObj = new Date(element.created_at);
                         console.log(dateObj);

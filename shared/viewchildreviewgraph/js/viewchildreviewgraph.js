@@ -15,14 +15,19 @@ $(document).ready(function () {
             console.log(id);
         }
         data.id = id;
+        console.log(data.id);
         httpPost("/childReviewDates", data, function (response) {
-            $("#details").removeClass("hide");
+          console.log(response);
             $(".loading").addClass("hide");
+            $("#details").removeClass("hide");
             var res_length = response.length;
+            console.log(res_length);
             if (res_length == 0) {
-                $(".no_record").removeClass("hide");
+                // $(".no_record").removeClass("hide");
+                  $('#listOfDates').append('<div class="no_record"> <h3>No Record Found</h3></div>');
             }
             else {
+                  
                 response.forEach(function (element) {
                     console.log(element.children_id);
                     var dateObj = new Date(element.created_at);

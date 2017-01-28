@@ -14,13 +14,14 @@ $(document).ready(function () {
         }
         data.id = id;
         httpPost("/trackerDatesMentor", data, function (response) {
-            $("#blockreg2").removeClass("hide");
             $(".loading").addClass("hide");
             var res_length = response.length;
             if (res_length == 0) {
-                $(".no_record").removeClass("hide");
+                // $(".no_record").removeClass("hide");
+                 $('#listOfDates').append('<div class="no_record"> <h3>No Record Found</h3></div>');
             }
             else {
+            $("#details").removeClass("hide");
                 response.forEach(function (element) {
                     var dateObj = new Date(element.date);
                     var day = dateObj.getUTCDate();

@@ -26,7 +26,7 @@ $(document).ready(function () {
                 var res_length = response.length;
                 if (res_length == 0) {
                     // $(".no_record").removeClass("hide");
-                     $('#listOfMentorDates').append('<div class="no_record"> <h3>No Record Found</h3></div>');
+                    $('#listOfMentorDates').append('<div class="no_record"> <h3>No Record Found</h3></div>');
                 }
                 else {
                     response.forEach(function (element) {
@@ -48,18 +48,25 @@ $(document).ready(function () {
 
                 $("#details").removeClass("hide");
                 $(".loading").addClass("hide");
-                response.forEach(function (element) {
-                    var elementid = window.btoa(element.id);
-                    var dateObj = new Date(element.date);
-                    var day = dateObj.getUTCDate();
-                    var year = dateObj.getUTCFullYear();
-                    var monthNames = ["January", "February", "March", "April", "May", "June",
-                        "July", "August", "September", "October", "November", "December"
-                    ];
-                    var monthna = new Date(element.date);
-                    var month = monthNames[monthna.getMonth()];
-                    $('#listOfMentorDates').append('<a href="../../graph/en/graph.html?date:' + element.date + '" id=' + elementid + '><div class="calendor"><div class="month"><p>' + month + '</p></div><div class="date"><p>' + day + '</p></div><div class="year"><p>' + year + '</p></div></div></a>');
-                }, this);
+                var res_length = response.length;
+                if (res_length == 0) {
+                    // $(".no_record").removeClass("hide");
+                    $('#listOfMentorDates').append('<div class="no_record"> <h3>No Record Found</h3></div>');
+                }
+                else {
+                    response.forEach(function (element) {
+                        var elementid = window.btoa(element.id);
+                        var dateObj = new Date(element.date);
+                        var day = dateObj.getUTCDate();
+                        var year = dateObj.getUTCFullYear();
+                        var monthNames = ["January", "February", "March", "April", "May", "June",
+                            "July", "August", "September", "October", "November", "December"
+                        ];
+                        var monthna = new Date(element.date);
+                        var month = monthNames[monthna.getMonth()];
+                        $('#listOfMentorDates').append('<a href="../../graph/en/graph.html?date:' + element.date + '" id=' + elementid + '><div class="calendor"><div class="month"><p>' + month + '</p></div><div class="date"><p>' + day + '</p></div><div class="year"><p>' + year + '</p></div></div></a>');
+                    }, this);
+                }
             })
         }
     }

@@ -211,17 +211,25 @@ $(document).ready(function () {
                     // $('#completeModal').modal({backdrop: 'static', keyboard: false});
                     var data = {};
                     var data1 = {};
-                    data1.connectedTo = [];
-                    data1.purpose = [];
+                    data1.connectedToJsonArray = [];
+                
                     var connectedTo1;
                     var purpose1;
                     // alert(memberscount);
                     for (var i = 0; i <= memberscount; i++) {
                         connectedTo1 = "connectedTo-[" + i + "]";
                         purpose1 = "purpose-[" + i + "]";
-                        data1.connectedTo[i] = document.getElementsByName(connectedTo1)[0].value;
-                        data1.purpose[i] = document.getElementsByName(purpose1)[0].value;
-                        console.log("name " + document.getElementsByName(connectedTo1)[0].value);
+                        var connection = {
+                            "connectedTo": document.getElementsByName(connectedTo1)[0].value,
+                            "purpose": document.getElementsByName(purpose1)[0].value
+                           
+                        };
+                        data1.connectedToJsonArray.push(connection);
+
+
+                        // data1.connectedTo[i] = document.getElementsByName(connectedTo1)[0].value;
+                        // data1.purpose[i] = document.getElementsByName(purpose1)[0].value;
+                        // console.log("name " + document.getElementsByName(connectedTo1)[0].value);
                         //   console.log("relation " + document.getElementsByName(purpose1)[0].value);
                     }
                     var sample = JSON.stringify(data1);
@@ -289,6 +297,9 @@ $(document).ready(function () {
                         data.volunteerChallenges = "nil";
 
                     }
+                    if ((education.value > 8) || (education.value < 3)) {
+
+                    }
                     var id = localStorage.getItem("user");
                     var review = {};
                     review.education = education.value;
@@ -315,6 +326,8 @@ $(document).ready(function () {
                     data.id = id;
                     httpPost("/tracker", data, function (response) {
                         $(".loading").addClass("hide");
+                        console.log($('#date').val());
+                        $('#modalbody').append("Your Tracker details has been submitted for " + $('#date').val())
                         $('#trackerModal').modal({ backdrop: 'static', keyboard: false });
 
 

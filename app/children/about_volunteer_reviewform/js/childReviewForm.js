@@ -150,7 +150,15 @@ $(document).ready(function () {
 		var localvalue = {};
 		var id = localStorage.getItem("user");
 		localvalue.id = id;
+		httpPost("/childreviewcheck", localvalue, function (response) {
+			console.log("hfsdlkf;");
+			console.log(response);
+			if (response < 90) {
+				$('#childreview').modal({ backdrop: 'static', keyboard: false });
 
+			}
+
+		});
 		httpPost("/childvolunteermentorid", localvalue, function (response) {
 			$(".loading").addClass("hide");
 			var res_length = response.length;

@@ -33,6 +33,9 @@ $(document).ready(function () {
                 else if (response.active == 0) {
                     $('#errormodal3').modal({ backdrop: 'static', keyboard: false });
                 }
+                 else if (response.status == 2) {
+                   $('#approvaldenyModal').modal({ backdrop: 'static', keyboard: false });
+                }
                 else if (response.role == 'volunteer') {
 
                     localStorage.setItem("user", response.user_id);

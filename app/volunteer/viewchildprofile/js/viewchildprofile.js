@@ -22,16 +22,39 @@ $(document).ready(function () {
             });
 
             $('#request').click(function () {
-
+                var datas = {};
+                var datass = {};
+                datas.id = localStorage.getItem("user");
                 var dataForRequest = {};
                 dataForRequest.volunteer_id = localStorage.getItem("user");
                 dataForRequest.role = localStorage.getItem("role");
                 var url = window.location.href;
                 dataForRequest.children_id = url.substring(url.lastIndexOf(':') + 1);
-                dataForRequest.time=new Date();
+                dataForRequest.time = new Date();
                 httpPost("/insertConnectionRequest", dataForRequest, function (response) {
                     if (response == "1") {
-                        $('#multiplerequest').modal({ backdrop: 'static', keyboard: false });
+                        httpPost("/viewchild", datas, function (response) {
+                            console.log(response);
+                            console.log(response[0].approve_status);
+                            if (response[0].approve_status == 1) {
+                                $('#multiplerequest').modal({ backdrop: 'static', keyboard: false });
+                            }
+                            else {
+                                console.log("insertConnectionRequest");
+                                datass.approve_status = 1
+                                datass.volunteer_id = localStorage.getItem("user");
+                                datass.role = localStorage.getItem("role");
+                                var url = window.location.href;
+                                datass.children_id = url.substring(url.lastIndexOf(':') + 1);
+                                datass.time = new Date();
+                                httpPost("/deniedvolunteernextchild", datass, function (response) {
+                                    $('#childrequest').modal({ backdrop: 'static', keyboard: false });
+
+                                });
+                            }
+
+                        });
+
                     }
                     else {
                         $('#childrequest').modal({ backdrop: 'static', keyboard: false });

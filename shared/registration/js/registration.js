@@ -1,5 +1,8 @@
 $(document).ready(function () {
-
+ $( "#dob" ).datepicker({  
+    
+     dateFormat: 'dd-mm-yy',
+ maxDate: new Date, minDate: new Date(1960, 1, 12) });
     $('#role').change(function () {
         if ($('#role').val() == '') {
             $('#mission').show();
@@ -64,6 +67,20 @@ $(document).ready(function () {
                 // This option will not ignore invisible fields which belong to inactive panels
                 // excluded: ':disabled',
                 fields: {
+                     checkcv: {
+                        validators: {
+                            notEmpty: {
+                                message: localization.name[lang()]
+                            }
+                        }
+                    },
+                     checkphoto: {
+                        validators: {
+                            notEmpty: {
+                                message: localization.name[lang()]
+                            }
+                        }
+                    },
                     role: {
                         validators: {
                             notEmpty: {
@@ -83,19 +100,20 @@ $(document).ready(function () {
                         }
 
                     },
-                    dob: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.dob[lang()]
-                            }
-                            // date: {
-                            //     message: localization.validdob[lang()],
-                            //    // format: 'YYYY/MM/DD',
-                            //     min: '2000/01/01',
-                            //     max: '2020/12/30'
-                            // }
-                        }
-                    },
+                    
+                    // dob: {
+                    //     validators: {
+                    //         notEmpty: {
+                    //             message: localization.dob[lang()]
+                    //         }
+                    //         // date: {
+                    //         //     message: localization.validdob[lang()],
+                    //         //    // format: 'YYYY/MM/DD',
+                    //         //     min: '2000/01/01',
+                    //         //     max: '2020/12/30'
+                    //         // }
+                    //     }
+                    // },
                     age: {
                         validators: {
                             greaterThan: {

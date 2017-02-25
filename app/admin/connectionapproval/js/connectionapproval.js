@@ -62,7 +62,7 @@ function connectionDisplay() {
                 $("#listofmemberss").removeClass("hide");
                 console.log(element.childrenprofile.full_name);
                 console.log(element.role);
-                $('#listofmemberss').append('<div class="cards-view"><div class="profile-card  col-xs-6 col-sm-3 col-md-3 col-lg-3"><div><table class="table"><tr><td>' + element.childrenprofile.full_name + '</td><td>' + element.profile.name + '</td></tr><tr><td>children</td><td>' + element.role + '</td></tr></table></div><div class="col-xs-6 col-sm-6"><button onclick="accept(' + element.id + "," + element.profile_id + "," + true + ')"class="profile-card-btn accept-button " type="submit" id="submit' + i + '">Accept</button></div><div class="col-sm-6 col-xs-6"><button class="profile-card-btn" type="submit" id="submit1' + i + '">Deny</button></div></div></div>');
+                $('#listofmemberss').append('<div class="cards-view"><div class="profile-card  col-xs-6 col-sm-3 col-md-3 col-lg-3"><div><table class="table"><tr><td>' + element.childrenprofile.full_name + '</td><td>' + element.profile.name + '</td></tr><tr><td>children</td><td>' + element.role + '</td></tr></table></div><div class="col-xs-6 col-sm-6"><button onclick="accept(' + element.id + "," + element.profile_id + "," + true + ')"class="profile-card-btn accept-button " type="submit" id="submit' + i + '">Accept</button></div><div class="col-sm-6 col-xs-6"><button onclick="deny(' + element.id + "," + element.profile_id + "," + true + ')" class="profile-card-btn" type="submit" id="submit1' + i + '">Deny</button></div></div></div>');
 
             }, this);
         }
@@ -88,3 +88,18 @@ function accept(elementId, elementPrfileId, elementStatus) {
     });
 }
 
+function deny(elementId, elementPrfileId, elementStatus) {
+    var data = {};
+    data.status = elementStatus;
+    data.id = elementId;
+    data.profile_id = elementPrfileId;
+    data.time=new Date();
+    httpPost("/denyapprovalconnection", data, function (response) {
+        console.log(response);
+        if (response != null) {
+            $('#listofmemberss').empty();
+            connectionDisplay();
+        }
+    });
+
+}

@@ -36,14 +36,15 @@ $(document).ready(function () {
         // });
         var data = {}
         data.id = id;
-        httpPost("/childreviewcheck", data, function (response) {
-            console.log("hfsdlkf;");
-            console.log(response);
-            if(response == 1){
+        // httpPost("/childreviewcheck", data, function (response) {
+        //     console.log("hfsdlkf;");
+        //     console.log(response);
+        //     if(response <90){
+        //          $('#childreview').modal({ backdrop: 'static', keyboard: false });
 
-            }
+        //     }
 
-        });
+        // });
         httpPost("/childrenhome", data, function (response) {
             console.log(response);
             if (response == 1) {

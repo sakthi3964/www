@@ -26,6 +26,7 @@
 //             }, this);
 //         }
 //     })
+
 // })
 $(document).ready(function () {
     var session = localStorage.getItem("user");
@@ -40,7 +41,8 @@ $(document).ready(function () {
 
 function connectionDisplay() {
 
-    httpGet("/approvevolunteer", function (response) {
+    httpGet("/approve_preassess", function (response) {
+        console.log(response);
         $(".loading").addClass("hide");
         var i = 0;
         var j = 0;
@@ -51,13 +53,12 @@ function connectionDisplay() {
         else {
             response.forEach(function (element) {
                 $("#listofmemberss").removeClass("hide");
-                var role = element.role;
-                $('#listofmemberss').append('<div class="cards-view"> <div class="profile-card col-xs-6 col-sm-3 col-md-3 col-lg-3"> <div>  <img src="' + BASEURL + '/uploads/' + role + '/photo/' + element.profileinfo.photo + '" class="profile-card-img" id="img' + j + '" name= "img">  <h4 class="profile-card-title">' + element.profile.name + '</h4> <h5 class="profile-card-title">' + element.role + '</h5> <h5 class="profile-card-title">' + element.profileinfo.work_type + '</h5> </div> <div><button onclick="accept(' + element.id + "," + element.user_id + ')"class="profile-card-btn" type="submit" id="submit' + i + '">Accept</button></div><div><button onclick="deny(' + element.id + "," + element.user_id + ')" class="profile-card-btn" type="submit" id="deny' + j + '">Deny</button></div></div></div>');
+                $('#listofmemberss').append('<div class="cards-view"> <div class="profile-card col-xs-6 col-sm-3 col-md-3 col-lg-3"> <div>  <img src="' + BASEURL + '/uploads/children/photos/' + element.photos + '" class="profile-card-img" id="img' + j + '" name= "img">  <h4 class="profile-card-title">' + element.full_name + '</h4>   </div> <div><button onclick="accept(' + element.id  + ')" class="profile-card-btn" type="submit" id="submit' + i + '">Accept</button></div><div><button onclick="deny(' + element.id  + ')" class="profile-card-btn" type="submit">Deny</button></div></div></div>');
                 // $("#listofmemberss").load(childReviewForm.html);
                 var id = "#submit" + i;
                 var id1 = "#img" + j;
                 $(id1).click(function () {
-                    window.location.href = "../../viewadminvolunteerprofile/en/viewadminvolunteerprofile.html?id:" + element.profile.id;
+                    window.location.href = "../../../../shared/viewpreassessment/en/viewpreassessment.html?id:" + element.id;
                 });
                 i++;
             }, this);
@@ -68,13 +69,10 @@ function connectionDisplay() {
 }
 
 
-function accept(elementId, profileId) {
+function accept(elementId) {
     var data = {};
     data.id = elementId;
-    data.profileId = profileId;
-    data.time = new Date();
-    console.log(data.profileId);
-    httpPost("/changestatus", data, function (response) {
+    httpPost("/accept_preassess", data, function (response) {
 
         //window.location = "#listofmemberss";
         console.log(response);
@@ -84,14 +82,10 @@ function accept(elementId, profileId) {
         // }
     });
 }
-
-function deny(elementId, profileId) {
+function deny(elementId) {
     var data = {};
     data.id = elementId;
-    data.profileId = profileId;
-    data.time = new Date();
-    console.log(data.profileId);
-    httpPost("/denyloginstatus", data, function (response) {
+    httpPost("/deny_preassess", data, function (response) {
 
         //window.location = "#listofmemberss";
         console.log(response);

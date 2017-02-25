@@ -32,22 +32,27 @@ $(document).ready(function () {
                 $('#preschoolname').html(pressmentobject.schoolname);
                 $('#prehousetype').html(pressmentobject.housetype);
                 // $('#presupport').html(pressmentobject.goal5);
-                pressmentobject.name.forEach(function (element) {
-                    $("#pre_family_details").append('<div class="col-sm-6 col-xs-6 col-md-6"><h5>Name</h5></div><div class="col-sm-6 col-xs-6 col-md-6"><p id="prefamilyname" class="prefamilydatas">' + element + '</p></div>');
+                console.log(pressmentobject);
+                pressmentobject.details.forEach(function (element) {
+                    $("#pre_family_details").append('<div class="row"><div  class="col-sm-6 col-xs-6 col-md-6"><h5>Name</h5></div><div class="col-sm-6 col-xs-6 col-md-6"><p id="prefamilyname" class="prefamilydatas">' + element.name + '</p></div></div>');
+                    $("#pre_family_details").append('<div class="row"><div class="col-sm-6 col-xs-6 col-md-6"><h5>Relation</h5></div><div class="col-sm-6 col-xs-6 col-md-6"><p id="prefamilyrelation" class="prefamilydatas">' + element.relation + '</p></div></div>');
+                    $("#pre_family_details").append('<div class="row"><div class="col-sm-6 col-xs-6 col-md-6"><h5>Age</h5></div><div class="col-sm-6 col-xs-6 col-md-6"><p id="prefamilyage" class="prefamilydatas">' + element.age + '</p></div></div>');
+                    $("#pre_family_details").append('<div class="row"><div class="col-sm-6 col-xs-6 col-md-6"><h5>Occupation</h5></div><div class="col-sm-6 col-xs-6 col-md-6"><p id="prefamilyoccupation" class="prefamilydatas">' + element.occupation + '</p></div></div>');
+                    $("#pre_family_details").append('<div class="row"><div class="col-sm-6 col-xs-6 col-md-6"><h5>Monthly Income</h5></div><div class="col-sm-6 col-xs-6 col-md-6"><p id="prefamilymMonthlyincome" class="prefamilydatas">' + element.monthlyincome + '</p></div></div>');
                 });
-                pressmentobject.relation.forEach(function (element) {
-                    $("#pre_family_details").append('<div class="col-sm-6 col-xs-6 col-md-6"><h5>Relation</h5></div><div class="col-sm-6 col-xs-6 col-md-6"><p id="prefamilyrelation" class="prefamilydatas">' + element + '</p></div>');
-                });
-                pressmentobject.age.forEach(function (element) {
-                    $("#pre_family_details").append('<div class="col-sm-6 col-xs-6 col-md-6"><h5>Age</h5></div><div class="col-sm-6 col-xs-6 col-md-6"><p id="prefamilyage" class="prefamilydatas">' + element + '</p></div>');
-                });
-                pressmentobject.monthlyincome.forEach(function (element) {
-                    $("#pre_family_details").append('<div class="col-sm-6 col-xs-6 col-md-6"><h5>Occupation</h5></div><div class="col-sm-6 col-xs-6 col-md-6"><p id="prefamilyoccupation" class="prefamilydatas">' + element + '</p></div>');
-                });
-                pressmentobject.occupation.forEach(function (element) {
-                    $("#pre_family_details").append('<div class="col-sm-6 col-xs-6 col-md-6"><h5>Monthly Income</h5></div><div class="col-sm-6 col-xs-6 col-md-6"><p id="prefamilymMonthlyincome" class="prefamilydatas">' + element + '</p></div>');
-                });
-                // pressmentobject.supporttochild.forEach(function (element) {
+                // pressmentobject.relation.forEach(function (element) {
+                //     $("#pre_family_details").append('<div class="col-sm-6 col-xs-6 col-md-6"><h5>Relation</h5></div><div class="col-sm-6 col-xs-6 col-md-6"><p id="prefamilyrelation" class="prefamilydatas">' + element + '</p></div>');
+                // });
+                // pressmentobject.age.forEach(function (element) {
+                //     $("#pre_family_details").append('<div class="col-sm-6 col-xs-6 col-md-6"><h5>Age</h5></div><div class="col-sm-6 col-xs-6 col-md-6"><p id="prefamilyage" class="prefamilydatas">' + element + '</p></div>');
+                // });
+                // pressmentobject.monthlyincome.forEach(function (element) {
+                //     $("#pre_family_details").append('<div class="col-sm-6 col-xs-6 col-md-6"><h5>Occupation</h5></div><div class="col-sm-6 col-xs-6 col-md-6"><p id="prefamilyoccupation" class="prefamilydatas">' + element + '</p></div>');
+                // });
+                // pressmentobject.occupation.forEach(function (element) {
+                //     $("#pre_family_details").append('<div class="col-sm-6 col-xs-6 col-md-6"><h5>Monthly Income</h5></div><div class="col-sm-6 col-xs-6 col-md-6"><p id="prefamilymMonthlyincome" class="prefamilydatas">' + element + '</p></div>');
+                // });
+                // // pressmentobject.supporttochild.forEach(function (element) {
                 //     $("#pre_family_details").append('<div class="col-sm-5 col-xs-6 col-md-6"><h5>Occupation</h5></div><div class="col-sm-5 col-xs-6 col-md-6"><p id="prefamilyoccupation" class="prefamilydatas">'+element+'</p></div>');
                 //     // alert(element);
                 // });
@@ -85,7 +90,10 @@ $(document).ready(function () {
                 $('#pre_addicted').html(pressmentobject.effortval);
 
                 pressmentobject.familyRelation.forEach(function (element) {
-                    $("#pre_addicted_details").append('<div class="col-sm-6 col-xs-6 col-md-6"><h5>Relation</h5></div><div class="col-sm-6 col-xs-6 col-md-6"><p id="pre_addicted_relation" class="prefamilydatas">' + element + '</p></div>');
+                     $("#addicted_details").append('<div class="row"><div class="col-sm-6 col-xs-6 col-md-6"><h5>Relation</h5></div><div class="col-sm-6 col-xs-6 col-md-6"><p id="pre_addicted_relation" class="prefamilydatas">' + element.familyrelation + '</p></div></div>');
+                     $("#addicted_details").append('<div class="row"><div class="col-sm-6 col-xs-6 col-md-6"><h5>Smoking</h5></div><div class="col-sm-6 col-xs-6 col-md-6"><p id="pre_addicted_relation" class="prefamilydatas">' + element.smoking + '</p></div></div>');
+                      $("#addicted_details").append('<div class="row"><div class="col-sm-6 col-xs-6 col-md-6"><h5>Liquor</h5></div><div class="col-sm-6 col-xs-6 col-md-6"><p id="pre_addicted_relation" class="prefamilydatas">' + element.liquor + '</p></div></div>');
+                       $("#addicted_details").append('<div class="row"><div class="col-sm-6 col-xs-6 col-md-6"><h5>Drug</h5></div><div class="col-sm-6 col-xs-6 col-md-6"><p id="pre_addicted_relation" class="prefamilydatas">' + element.drug + '</p></div></div>');
                 });
 
                 // $('#pre_addicted_relation').html(pressmentobject.effortval);

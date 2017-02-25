@@ -95,7 +95,8 @@
                             <select class="form-control " id="housetype" name="Dropdown">
                                 <option value="">-select-</option>
                                 <option>Concrete</option>
-                                <option>Roof-Top</option>
+                                <option>Tile</option>
+                                <option>Hut</option>
                             </select>
 
                         </div>
@@ -242,11 +243,11 @@
                     </div>
                     <div class="form-group col-xs-12">
                         <label class="control-label">Is there anyone to support/encourage to achieve your goal?</label><br>
-                        <label> <input type="checkbox" class="supportencourage" name="supportencourage[]" value="family"> Family</label><br>
-                        <label> <input type="checkbox" class="supportencourage" name="suppo   rtencourage[]" value="friends"> Friends</label><br>
-                        <label> <input type="checkbox" class="supportencourage" name="supportencourage[]" value="neighbours"> Neighbours</label><br>
-                        <label> <input type="checkbox" class="supportencourage" name="supportencourage[]" value="teachers"> Teachers</label>
-                        <label> <input type="checkbox" class="supportencourage" name="supportencourage[]" value="nil"> nil</label>
+                        <label> <input type="checkbox" id = "supportencouragefamily" class="supportencourage" name="supportencourage[]" value="family"> Family</label><br>
+                        <label> <input type="checkbox" id = "supportencouragefriends" class="supportencourage" name="supportencourage[]" value="friends"> Friends</label><br>
+                        <label> <input type="checkbox" id = "supportencourageneighbour" class="supportencourage" name="supportencourage[]" value="neighbours"> Neighbours</label><br>
+                        <label> <input type="checkbox" id = "supportencourageteachers" class="supportencourage" name="supportencourage[]" value="teachers"> Teachers</label>
+                        <label> <input type="checkbox" id = "supportencouragenil" class="supportencourage" name="supportencourage[]" value="nil"> nil</label>
                     </div>
 
                     <!--
@@ -270,7 +271,7 @@
                             <div class="radio-inline">
                                 <label><input type="radio"   name="familyfin" value="no" >no</label>
                             </div>
-                            <input type="text" id="familyfininp" class=".form-inline moveleft Text_All" placeholder="Enter amount?" style="display: none"
+                            <input type="text" id="familyfininp" class=".form-inline moveleft Text_All" placeholder="Enter Person Relationship?" style="display: none"
                             /><br>
                             <label>Organisation</label>
 
@@ -281,7 +282,7 @@
                             <div class="radio-inline">
                                 <label><input type="radio"   name="orgfin" value="no" >no</label>
                             </div>
-                            <input type="text" id="orgfininp" class=".form-inline moveleft Text_All" placeholder="Enter amount?" style="display: none"
+                            <input type="text" id="orgfininp" class=".form-inline moveleft Text_All" placeholder="Enter Name of Organization?" style="display: none"
                             />
                             <br>
                             <label>Neighbours</label>
@@ -293,7 +294,7 @@
                             <div class="radio-inline">
                                 <label><input type="radio"   name="neighbourfin" value="no" >no</label>
                             </div>
-                            <input type="text" id="neighbourfininp" class=".form-inline moveleft Text_All" placeholder="Enter amount?" style="display: none"
+                            <input type="text" id="neighbourfininp" class=".form-inline moveleft Text_All" placeholder="Enter Name of Neighbour?" style="display: none"
                             />
                             <br>
                             <label>Teachers</label>
@@ -305,7 +306,7 @@
                             <div class="radio-inline">
                                 <label><input type="radio"   name="teacherfin" value="no" >no</label>
                             </div>
-                            <input type="text" id="teacherfininp" class=".form-inline moveleft Text_All" placeholder="Enter amount?" style="display: none"
+                            <input type="text" id="teacherfininp" class=".form-inline moveleft Text_All" placeholder="Enter Name of Teacher?" style="display: none"
                             />
                         </div>
                     </div>
@@ -340,7 +341,7 @@
                             <input type="text" id="kindofjob" class="form-control Text_Only" placeholder="Enter your job details" />
                         </div>
                         <div class="col-xs-6 form-group jobq" style="display: none">
-                            <label class="control-label"> How much income?
+                            <label class="control-label"> How much do you earn?
                             </label>
                             <input type="text" id="howmuchincome" class="form-control monthlyincome" placeholder="Enter your job details" />
                         </div>

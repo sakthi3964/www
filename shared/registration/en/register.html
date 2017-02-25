@@ -21,6 +21,9 @@
 	<script src="../../../helperfiles/helper.js" type="text/javascript"></script>
 	<script src="../../../assert/resources/localization.js"></script>
 	<script src="../js/registration.js"></script>
+	  <script type="text/javascript" src="../../../assert/js/bootstrap-datepicker.js"></script>
+  <link rel="stylesheet" href="../../../assert/css/bootstrap-datepicker.css" />
+
 </head>
 
 <body>
@@ -46,6 +49,11 @@
 
 			<div class="tab-content">
 				<div class="tab-pane active" id="firsttab">
+					<div class="form-group col-xs-8 col-md-8" >
+					<h5> Check List to be Ready for Registering </h5>
+						 <label> <input type="checkbox" id = "checkcv" class="checkcv" name="checkcv" value="checkcv"> CV in PDF format with maximum of 5 MB</label><br>
+                        <label> <input type="checkbox" id = "checkphoto" class="checkphoto" name="checkphoto" value="checkphoto"> Photo in JPG/PNG format with maximum of 2 MB</label><br>
+					</div>	
 					<div class="form-group col-xs-8 col-md-8" id="roles">
 						<label>Register as a</label>
 						<select class="form-control" id="role" name="role">
@@ -56,16 +64,9 @@
 					</div>
 
 					<div class="col-xs-12" id="mission">
-
-						<h4>N'KaNa - MISSION </h4>
-						<p> Our mission is to establish a strong relationship between a youth and mentor that becomes a critical guiding force
-							in the youth's development. Mentors act as role models for commitment to education, career decisions and social behavior.
-							The identities and dreams of our youth are affirmed by the consistent support of mentors, volunteers and donors.</p>
-						<h4>Support</h4>
-						<p>You can be a volunteer, mentor or supporter who can find us a needy child and professional mentors. Please do join
-							us in our review and planning meeting on 3rd Sunday of every month to learn about N'KaNa.
-						</p>
+						
 						<table class="table">
+						<th> Coordinator Details</th>
 							<tr>
 								<td>Mugilan(Mentor)</td>
 								<td>board@tycl.org.in</td>
@@ -162,7 +163,7 @@
 					<div class="form-group">
 						<label class="control-label col-sm-4 col-xs-3">DOB</label>
 						<div class="col-sm-8 col-xs-9">
-							<input type="date" id="dob" name="dob" class="form-control" placeholder="Date of birth" data-provide="datepicker" data-date-end-date="0d">
+							<input type="text" id="dob" name="dob" class="form-control" placeholder="Date of birth" data-provide="datepicker" data-date-end-date="0d">
 						</div>
 					</div>
 					<div class="form-group">
@@ -196,7 +197,7 @@
 							<input type="number" id="code" name="code"  class="form-control" minlength="3" maxlength="6" placeholder="code" size="1">
 						</div>
 						<div class="col-sm-4 col-xs-3">
-							<input type="number" id="phone" name="phone" class="form-control" minlength="7" maxlength="7" placeholder="Land line" size="11">
+							<input type="text" id="phone" name="phone" class="form-control" minlength="7" maxlength="7" placeholder="Land line" size="11">
 						</div>
 					</div>
 					<div class="form-group">
@@ -367,8 +368,16 @@
 					<div class="form-group">
 						<label class="control-label col-sm-4 col-xs-3" for="name">Commitment</label>
 						<div class="col-sm-8 col-xs-9">
-							<input type="text" id="commitment" name="commitment" class="form-control" placeholder="commitment">
-							<h6>Your Commitment in Hours for a Week</h6>
+							<!--<input type="text" id="commitment" name="commitment" class="form-control" placeholder="commitment">-->
+							<select class="form-control" id="commitment" name="commitment">
+								<option value="">-Select-</option>
+								<option value="4">4</option>
+								<option value="8">8</option>
+								<option value="16">16</option>
+								<option value="20">20</option>
+								<option value="above">20 & above</option>
+							</select>
+							<h6>Your Commitment in Hours for a month</h6>
 						</div>
 					</div>
 					<div class="form-group">

@@ -21,12 +21,11 @@ $(document).ready(function () {
             $('#meetingagenda').html(response.agenda);
             $('#outcome').html(response.outcome);
             var newconnection = JSON.parse(response.newConnection);
-            newconnection.connectedTo.forEach(function (element) {
-                $("#connection_details").append('<div class="col-sm-6 col-xs-6 col-md-6"><h5>ConnectedTo</h5></div><div class="col-sm-6 col-xs-6 col-md-6"><p id="prefamilyname" class="prefamilydatas">' + element + '</p></div>');
+            newconnection.connectedToJsonArray.forEach(function (element) {
+                $("#connection_details").append('<div class="row"><div class="col-sm-6 col-xs-6 col-md-6"><h5>ConnectedTo</h5></div><div class="col-sm-6 col-xs-6 col-md-6"><p id="prefamilyname" class="prefamilydatas">' + element.connectedTo + '</p></div></div>');
+                 $("#connection_details").append('<div class="row"><div class="col-sm-6 col-xs-6 col-md-6"><h5>Purpose</h5></div><div class="col-sm-6 col-xs-6 col-md-6"><p id="prefamilyname" class="prefamilydatas">' + element.purpose + '</p></div></div>');
             });
-            newconnection.purpose.forEach(function (element) {
-                $("#connection_details").append('<div class="col-sm-6 col-xs-6 col-md-6"><h5>Purpose of Connection</h5></div><div class="col-sm-6 col-xs-6 col-md-6"><p id="prefamilyrelation" class="prefamilydatas">' + element + '</p></div>');
-            });
+           
             if (newconnection.connectedTo == "") {
                 $('#newConnection').html("No");
             }

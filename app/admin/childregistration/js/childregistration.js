@@ -110,7 +110,7 @@ $(document).ready(function () {
                                         }
                                     }
 
-                                    // The password doesn't contain any uppercase character
+                                    // The password doesn't contain any lowercase character
                                     if (value === value.toUpperCase()) {
                                         return {
                                             valid: false,

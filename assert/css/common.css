@@ -106,3 +106,12 @@ body{
     color: white;
     margin-bottom: 10px;
 }
+.edit-btn {
+    width: 100%;
+    background-color: #06BBB5;
+    color: white;
+    border-radius: 5px;
+    margin-top: 5px;
+    padding: 3px;
+    height: auto;
+}

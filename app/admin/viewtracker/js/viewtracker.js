@@ -39,7 +39,7 @@ $(document).ready(function () {
                         }
 
                     }
-                    $('#bodycontent').append('<div class="row "><div class="col-sm-2 col-xs-2"><h5>' + element.full_name + '</h5></div><div class="col-sm-2 col-xs-2"><h5>' + volunteer + '</h5></div><div class="col-sm-2 col-xs-2"><h5>' + mentor + '</h5></div><div class="col-sm-3 col-xs-3 tracker-button"><center><button class="btn" id="submittracker' + i + '">Tacker</button></center></div><div class="col-sm-3 col-xs-3 tracker-button"><center><button class="btn" id="submitgraph' + j + '">Graph</button></center></div>');
+                    $('#bodycontent').append('<div class="row "><div class="col-sm-2 col-xs-2"><h5>' + element.full_name + '</h5></div><div class="col-sm-2 col-xs-2"><h5>' + volunteer + '</h5></div><div class="col-sm-2 col-xs-2"><h5>' + mentor + '</h5></div><div class="col-sm-3 col-xs-3 tracker-button"><center><button class="btn" id="submittracker' + i + '">Tracker</button></center></div><div class="col-sm-3 col-xs-3 tracker-button"><center><button class="btn" id="submitgraph' + j + '">Graph</button></center></div>');
                     // $('#bodycontent').append('<tr><td>' + element.full_name + '</td><td>' + volunteer + '</td><td>' + mentor + '</td><td><button class="btn" id="submittracker' + i + '">Tracker</button></td><td><button class="btn" id="submitgraph' + j + '">Graph</button></td></tr>');
                     // $("#listofmemberss").load(childReviewForm.html);
                     var elementid = window.btoa(element.id);

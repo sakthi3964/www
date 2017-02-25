@@ -19,6 +19,8 @@
         }
         .profile-card{
             background-color:white;
+            border: solid 0.1px #c9d1c8;
+
         }
         #panel1{
             margin-top: 15px;

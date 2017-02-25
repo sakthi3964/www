@@ -11,6 +11,7 @@ $(document).ready(function () {
 
             $(".loading").addClass("hide");
             var i = 0;
+            var j = 0;
             var res_length = response.length;
             if (res_length == 0) {
                 $(".no_record").removeClass("hide");
@@ -28,12 +29,17 @@ $(document).ready(function () {
                     // console.log("hashed id" + hashedid);
                     // console.log(temp);
                     $("#listofmembers").removeClass("hide");
-                    $('#listofmembers').append('<div class="cards-view"> <div class="profile-card col-xs-6 col-sm-3 col-md-3 col-lg-3"> <div>  <img src="' + BASEURL + '/uploads/children/photos/' + element.photos + '" class="profile-card-img">  <h4 class="profile-card-title">' + element.full_name + '</h4> <h5 class="profile-card-title">' + element.center + '</h5>  </div>  <button class="profile-card-btn submit" name="submit" type="submit" id="submit' + i + '">View Review</button> </div></div>');
+                    $('#listofmembers').append('<div class="cards-view"> <div class="profile-card col-xs-6 col-sm-3 col-md-3 col-lg-3"> <div>  <img id="submit' + i + '" src="' + BASEURL + '/uploads/children/photos/' + element.photos + '" class="profile-card-img">  <h4 class="profile-card-title">' + element.full_name + '</h4> <h5 class="profile-card-title">' + element.center + '</h5>  </div>  <button class="profile-card-btn submit" name="submit" type="submit" id="submit' + i + '">View Review</button> </div></div>');
                     var id = "#submit" + i;
                     $(id).click(function () {
                         window.location.href = "../../../../shared/viewchildreviewgraph/en/viewchildreviewgraph.html?id:" + enc;
                     });
                     i++;
+                    var id1 = "#img" + j;
+                    $(id1).click(function () {
+                        window.location.href = "../../../../shared/viewchildreviewgraph/en/viewchildreviewgraph.html?id:" + enc;
+                    });
+                    j++;
                 }, this);
             }
         })

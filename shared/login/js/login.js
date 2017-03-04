@@ -23,9 +23,13 @@ $(document).ready(function () {
             data.password = $('#password').val();
 
             httpPost("/validateuser", data, function (response) {
+                console.log(response);
                 if ((response == 1) || (response == 2) || (response == 3)) {
                     $('#errormodal').modal({ backdrop: 'static', keyboard: false });
                     return false;
+                }
+                else if (response.verification_status == 0) {
+                   $('#verification_status').modal({ backdrop: 'static', keyboard: false });
                 }
                 else if (response.status == 0) {
                     $('#errormodal2').modal({ backdrop: 'static', keyboard: false });
@@ -36,6 +40,7 @@ $(document).ready(function () {
                  else if (response.status == 2) {
                    $('#approvaldenyModal').modal({ backdrop: 'static', keyboard: false });
                 }
+                
                 else if (response.role == 'volunteer') {
 
                     localStorage.setItem("user", response.user_id);

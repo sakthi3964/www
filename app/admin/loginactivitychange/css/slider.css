@@ -55,4 +55,18 @@ input:checked + .slider:before {
 }
 #display{
   text-overflow: ellipsis;
+  margin: 0 auto;
+}
+.user-role{
+  text-transform: capitalize;
+}
+.table>tbody>tr>td{
+  border: 0
+}
+#indicator-table{
+  margin: 0 auto;
+  width: 80%;
+}
+#details{
+  margin: 0 auto !important;
 }

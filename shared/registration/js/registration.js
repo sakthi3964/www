@@ -1,8 +1,9 @@
 $(document).ready(function () {
- $( "#dob" ).datepicker({  
-    
-     dateFormat: 'dd-mm-yy',
- maxDate: new Date, minDate: new Date(1960, 1, 12) });
+    $("#dob").datepicker({
+
+        dateFormat: 'dd-mm-yy',
+        maxDate: new Date, minDate: new Date(1960, 1, 12)
+    });
     $('#role').change(function () {
         if ($('#role').val() == '') {
             $('#mission').show();
@@ -67,14 +68,14 @@ $(document).ready(function () {
                 // This option will not ignore invisible fields which belong to inactive panels
                 // excluded: ':disabled',
                 fields: {
-                     checkcv: {
+                    checkcv: {
                         validators: {
                             notEmpty: {
                                 message: localization.name[lang()]
                             }
                         }
                     },
-                     checkphoto: {
+                    checkphoto: {
                         validators: {
                             notEmpty: {
                                 message: localization.name[lang()]
@@ -100,7 +101,7 @@ $(document).ready(function () {
                         }
 
                     },
-                    
+
                     // dob: {
                     //     validators: {
                     //         notEmpty: {
@@ -393,7 +394,7 @@ $(document).ready(function () {
                                 formData.append('photo', file, file.name);
                             })
                         });
-                        
+
                         $(".loading").removeClass("hide");
                         $("#blockreg2").addClass("hide");
                         fileUpload("/addfiles", formData, function (response) {
@@ -504,7 +505,7 @@ $(document).ready(function () {
     else {
         var data = {};
         var id = localStorage.getItem("user");
-        var time=new Date();
+        var time = new Date();
         data.id = id;
         httpPost("/editreturn", data, function (response) {
             radiobtn = response[0].gender;
@@ -927,7 +928,7 @@ $(document).ready(function () {
                         // data.photo = res.photo;
                         $(".loading").removeClass("hide");
                         $("#blockreg2").addClass("hide");
-                        httpPost("/editupdate", data, function (response) {                        
+                        httpPost("/editupdate", data, function (response) {
                             $('#editmodal').modal({ backdrop: 'static', keyboard: false });
                         });
                         // });

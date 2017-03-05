@@ -115,3 +115,6 @@ body{
     padding: 3px;
     height: auto;
 }
+.disabled_field{
+    background-color: white !important;
+}

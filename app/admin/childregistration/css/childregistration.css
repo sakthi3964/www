@@ -11,3 +11,10 @@
 #blockreg2 h3{
     text-align: center;
 }
+.child_submit_btn{
+    margin-bottom: 20px;
+    color: #06BBB5; 
+    border-radius: 7px;
+    background-color: white;
+    border: 1px solid #ddd;
+}

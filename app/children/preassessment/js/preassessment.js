@@ -667,56 +667,28 @@ $(document).ready(function () {
                                 "occupation": document.getElementsByName(occupation1)[0].value,
                                 "supporttochild1": document.getElementsByName(supporttochild1)[0].value
                             };
-                            data.details.push(temp);
-                            
-
+                            if(document.getElementsByName(name1)[0].value!="" && document.getElementsByName(relation1)[0].value!="")
+                            {       if(document.getElementsByName(age1)[0].value=="")
+                                    {
+                                         temp.age='Nil';
+                                    }
+                                    if(document.getElementsByName(monthlyincome1)[0].value=="")
+                                    {
+                                         temp.monthlyincome='Nil';
+                                    }
+                                    if(document.getElementsByName(occupation1)[0].value=="")
+                                    {
+                                         temp.occupation='Nil';
+                                    }
+                                    if(document.getElementsByName(supporttochild1)[0].value=="")
+                                    {
+                                         temp.supporttochild1='Nil';
+                                    }  
+                                  data.details.push(temp);
+                            }
                         }
 
                         console.log(data.details);
-
-                        // data.relation = [];
-                        // data.age = [];
-                        // data.monthlyincome = [];
-                        // data.occupation = [];
-                        // data.supporttochild = [];
-                        // var name1;
-                        // var relation1;
-                        // var age1;
-                        // var occupation1;
-                        // var monthlyincome1;
-                        // var supporttochild1;
-                        // console.log(memberscount);
-                        // for (var i = 0; i <= memberscount; i++) {
-                        //     name1 = "name-[" + i + "]";
-                        //     relation1 = "relation-[" + i + "]";
-                        //     console.log(name1);
-                        //     age1 = "age-[" + i + "]";
-                        //     monthlyincome1 = "monthlyincome-[" + i + "]";
-                        //     occupation1 = "occupation-[" + i + "]";
-                        //     supporttochild1 = "supporttochild-[" + i + "]";
-                        //     data.name[i] = document.getElementsByName(name1)[0].value;
-                        //     data.relation[i] = document.getElementsByName(relation1)[0].value;
-                        //     data.age[i] = document.getElementsByName(age1)[0].value;
-                        //     data.monthlyincome[i] = document.getElementsByName(monthlyincome1)[0].value;
-                        //     data.occupation[i] = document.getElementsByName(occupation1)[0].value;
-                        //     data.supporttochild[i] = ($("input[name='" + supporttochild1 + "']:checked").val());
-
-                        //     // var continuestudies = ($("input[name='continuestudies']:checked").val());
-
-                        //     console.log("hi row : " + i);
-                        //     console.log("name " + document.getElementsByName(name1)[0].value);
-                        //     console.log("relation " + document.getElementsByName(relation1)[0].value);
-                        //     console.log("age " + document.getElementsByName(age1)[0].value);
-                        //     console.log("occupation " + document.getElementsByName(occupation1)[0].value);
-                        //     console.log("monthlyincome " + document.getElementsByName(monthlyincome1)[0].value);
-                        //     console.log("support " + document.getElementsByName(supporttochild1)[0].value);
-
-                        // }
-
-
-
-
-
                         data.familyRelation = [];
                         // data.smoking = [];
                         // data.liquor = [];
@@ -732,37 +704,34 @@ $(document).ready(function () {
                             smoking1 = "smoking-[" + j + "]";
                             liquor1 = "liquor-[" + j + "]";
                             drug1 = "drug-[" + j + "]";
+                            familyrelation=document.getElementsByName(familyRelation1)[0].value;
+                            smoking=document.getElementsByName(smoking1)[0].value;
+                            liquor=document.getElementsByName(liquor1)[0].value;
+                            drug=document.getElementsByName(drug1)[0].value;
 
-
-                            var temp1 = {
-                                "familyrelation": document.getElementsByName(familyRelation1)[0].value,
-                                "smoking": document.getElementsByName(smoking1)[0].value,
-                                "liquor": document.getElementsByName(liquor1)[0].value,
-                                "drug": document.getElementsByName(drug1)[0].value
+                            var addictionObject = {
+                                "familyrelation": familyrelation,
+                                "smoking": smoking,
+                                "liquor":liquor ,
+                                "drug": drug
                                                            };
-                            data.familyRelation.push(temp1);
-
-                            // data.familyRelation[j] = document.getElementsByName(familyRelation1)[0].value;
-                            // data.smoking[j] = ($("input[name='" + smoking1 + "']:checked").val());
-                            // data.liquor[j] = ($("input[name='" + liquor1 + "']:checked").val());
-                            // data.drug[j] = ($("input[name='" + drug1 + "']:checked").val());
-
-                            // console.log("hi row : " + j);
-                            // console.log("familyrelation " + document.getElementsByName(familyRelation1)[0].value);
-                            // console.log("smoking " + document.getElementsByName(smoking1)[0].value);
-                            // console.log("liquor " + document.getElementsByName(liquor1)[0].value);
-                            // console.log("drug " + document.getElementsByName(drug1)[0].value);
-
-                        }
-
-
-
-                        // data.name = name;
-                        // data.relation = relation;
-                        // data.age = age;
-                        // data.monthlyincome = monthlyincome;
-                        // data.occupation = occupation;
-                        // data.supporttochild = supporttochild;
+                            if(familyrelation!=""&&(smoking!=""||liquor!=""||drug!=""))
+                            {
+                                 if(smoking=="")
+                                    {
+                                         addictionObject.smoking='Nil';
+                                    }
+                                    if(liquor=="")
+                                    {
+                                         addictionObject.liquor='Nil';
+                                    }
+                                    if(drug=="")
+                                    {
+                                         addictionObject.drug='Nil';
+                                    }
+                                     data.familyRelation.push(addictionObject);
+                            }
+                        }                     
                         var sample = JSON.stringify(data);
                         var data1 = {};
                         data1.pre = sample;
@@ -770,10 +739,7 @@ $(document).ready(function () {
                         data1.id = localStorage.getItem("user");
                         console.log("timeeeeeeeeeeeeeeeeee     " + data1.time);
                         console.log(sample);
-                        // var obj = JSON.parse(sample);
-                        // console.log(obj);
-                        // console.log("goal1 :   "+obj.goal1);
-                        // console.log("name :   "+obj.name[0]);
+                       
                         httpPost("/preassess", data1, function (response) {
                             if (response == 1) {
                                 $('#preassessment_Modal').modal({ backdrop: 'static', keyboard: false });

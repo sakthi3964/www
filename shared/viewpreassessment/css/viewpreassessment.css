@@ -4,6 +4,7 @@ body{
 
 #body-tag{
     background-color: white;
+    text-transform: capitalize;
     text-align: left
 }
 .moveleft{
@@ -21,7 +22,6 @@ li{
     padding: 10px;
     padding-left: 5px;
 }
-
 .nav-pills > li > a {
     border-radius: 4px;
     background-color: #f7f7f6; 

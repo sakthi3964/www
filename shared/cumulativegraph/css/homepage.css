@@ -1,0 +1,28 @@
+body{
+    background-color: #ECF1F5
+}
+
+#homeblock1{
+    padding-top: 30px;
+    background-color: white
+}
+#homeblock1 p{
+    text-align: center;
+    padding-top: 5px;
+    font-size: 15px; 
+}
+#homeblock1  a:hover, a:focus{
+    color: #06BBB5;
+}
+#homeblock1  a{
+    color: black;
+    text-decoration: none;
+}
+#homeblock1 img{
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+

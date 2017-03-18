@@ -5,7 +5,11 @@ $(document).ready(function () {
         window.location.href = "../../../../index.html";
     }
     else {
+        $("#dob").datepicker({
 
+            dateFormat: 'dd-mm-yy',
+            maxDate: new Date, minDate: new Date(1960, 1, 12)
+        });
 
         $("#dob").change(function () {
             var str = $('#dob').val();

@@ -9,8 +9,8 @@ $(document).ready(function () {
         data.id = id;
         httpPost("/viewchildrenownprofile", data, function (response) {
             var dateObj = new Date(response.dob);
-            var day = dateObj.getUTCDate();
-            var year = dateObj.getUTCFullYear();
+            var day = dateObj.getDate();
+            var year = dateObj.getFullYear();
             var monthNames = ["January", "February", "March", "April", "May", "June",
                 "July", "August", "September", "October", "November", "December"
             ];

@@ -15,8 +15,16 @@ $(document).ready(function () {
             $("#blockreg2").removeClass("hide");
             $(".loading").addClass("hide");
             var date = new Date(response.date);
-            var localdate = date.toLocaleDateString();
-            $('#date').html(localdate);
+             var day = date.getDate();
+             var year = date.getFullYear();
+             var monthNames = ["January", "February", "March", "April", "May", "June",
+                    "July", "August", "September", "October", "November", "December"
+                ];
+                var monthna = new Date(response.date);
+                var month = monthNames[monthna.getMonth()];
+
+            // var localdate = date.toLocaleDateString();
+            $('#date').html(day + "-" + month + "-" + year);
             $('#place').html(response.location);
             $('#meetingagenda').html(response.agenda);
             $('#outcome').html(response.outcome);
@@ -25,8 +33,8 @@ $(document).ready(function () {
                 $("#connection_details").append('<div class="row"><div class="col-sm-6 col-xs-6 col-md-6"><h5>ConnectedTo</h5></div><div class="col-sm-6 col-xs-6 col-md-6"><p id="prefamilyname" class="prefamilydatas">' + element.connectedTo + '</p></div></div>');
                  $("#connection_details").append('<div class="row"><div class="col-sm-6 col-xs-6 col-md-6"><h5>Purpose</h5></div><div class="col-sm-6 col-xs-6 col-md-6"><p id="prefamilyname" class="prefamilydatas">' + element.purpose + '</p></div></div>');
             });
-           
-            if (newconnection.connectedTo == "") {
+           console.log(newconnection.connectedTo);
+            if (newconnection.connectedToJsonArray.length == 0) {
                 $('#newConnection').html("No");
             }
             else {
@@ -34,6 +42,7 @@ $(document).ready(function () {
 
                 $("#connectionrow").removeClass("hide");
             }
+          
 
             // if (newconnection.connectedTo == "nil") {
             //     $('#newConnection').html(newconnection.connectedTo);

@@ -68,20 +68,20 @@ $(document).ready(function () {
                 // This option will not ignore invisible fields which belong to inactive panels
                 // excluded: ':disabled',
                 fields: {
-                    checkcv: {
+                    checkcv, checkphoto : {
                         validators: {
                             notEmpty: {
-                                message: localization.name[lang()]
+                                message: localization.checkcv[lang()]
                             }
                         }
                     },
-                    checkphoto: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.name[lang()]
-                            }
-                        }
-                    },
+                    // checkphoto: {
+                    //     validators: {
+                    //         notEmpty: {
+                    //             message: localization.name[lang()]
+                    //         }
+                    //     }
+                    // },
                     role: {
                         validators: {
                             notEmpty: {
@@ -474,7 +474,7 @@ $(document).ready(function () {
                         .find('.next')
                         .removeClass('disabled')    // Enable the Next button
                         .find('a')
-                        .html(index === numTabs - 1 ? 'submit' : 'Next');
+                        .html(index === numTabs - 1 ? 'Submit' : 'Next');
 
                     // You don't need to care about it
                     // It is for the specific demo
@@ -947,7 +947,7 @@ $(document).ready(function () {
                         .find('.next')
                         .removeClass('disabled')    // Enable the Next button
                         .find('a')
-                        .html(index === numTabs - 1 ? 'submit' : 'Next');
+                        .html(index === numTabs - 1 ? 'Submit' : 'Next');
 
                     // You don't need to care about it
                     // It is for the specific demo

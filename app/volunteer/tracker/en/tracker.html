@@ -25,6 +25,9 @@
 	<script src="../../../../helperfiles/js/logout.js" type="text/javascript"></script>
 	<script src="../js/tracker.js" type="text/javascript"></script>
 	<link rel="stylesheet" type="text/css" href="../css/tracker.css">
+	<script type="text/javascript" src="../../../../assert/js/bootstrap-datepicker.js"></script>
+	<link rel="stylesheet" href="../../../../assert/css/bootstrap-datepicker.css" />
+
 
 
 </head>
@@ -60,7 +63,7 @@
 					<div class="form-group">
 						<label class="col-sm-2 control-label">Date of meeting</label>
 						<div class="col-sm-8">
-							<input type="date" class="form-control" id="date" name="date" placeholder="Enter the date of meeting child">
+							<input type="text" class="form-control" id="date" name="date" data-provide="datepicker" data-date-end-date="0d" placeholder="Enter the date of meeting child">
 
 						</div>
 					</div>
@@ -79,285 +82,297 @@
 					</div>
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-8">
-							<input type="text" class="form-control" id="others" style="display: none;" placeholder="enter the location...">
-</div>
-</div>
-<div class="form-group">
-	<label class="control-label col-sm-2" for="name">Meeting Agenda</label>
-	<div class="col-sm-8">
-		<input type="text" class="form-control" id="agenda" name="agenda" placeholder="enter the agenda of the meet..">
-	</div>
-</div>
-<div class="form-group">
-	<label class="control-label col-sm-2" for="name">Outcome of the Meeting</label>
-	<div class="col-sm-8">
-		<input type="text" class="form-control" id="outcome" name="outcome" placeholder="enter the outcome..">
-	</div>
-</div>
-<div class="form-group">
-	<label class="control-label col-sm-2" for="name">Key Accomplishments</label>
-	<div class="col-sm-8">
-		<input type="text" class="form-control" id="accomplishment" name="accomplishment" placeholder="enter the outcome..">
-	</div>
-</div>
-<div class="form-group">
-	<label class=" control-label col-sm-2" for="name">Any new connections</label>
-	<div class="col-sm-2">
-		<label class="radio-inline"><input type="radio" id="yes" name="connection" value="yes">Yes</label>
-		<label class="radio-inline"><input type="radio" id="no" name="connection" value="no">No</label>
-	</div>
+							<input type="text" class="form-control" id="others" style="display: none;" placeholder="Enter The Location...">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="name">Meeting Agenda</label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control" id="agenda" name="agenda" placeholder="Enter The Agenda Of The Meet..">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="name">Outcome of the Meeting</label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control" id="outcome" name="outcome" placeholder="Enter The Outcome..">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="name">Key Accomplishments</label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control" id="accomplishment" name="accomplishment" placeholder="Enter The Accomplishments..">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class=" control-label col-sm-2" for="name">Any new connections</label>
+						<div class="col-sm-2">
+							<label class="radio-inline"><input type="radio" id="yes" name="connection" value="yes">Yes</label>
+							<label class="radio-inline"><input type="radio" id="no" name="connection" value="no">No</label>
+						</div>
 
 
-</div>
-<div class="form-group" id="connectionDetail" name="connectionDetail" style="display: none;">
+					</div>
+					<div class="form-group" id="connectionDetail" name="connectionDetail" style="display: none;">
 
-<label class="control-label col-sm-2">Connected To</label>
-<div class="col-sm-2">
-	<input type="text" class="form-control connectedTo1" id="connectedTo" name="connectedTo-[0]" placeholder="Mr./Mrs.">
-</div>
-<label class="control-label col-sm-1">Purpose</label>
-<div class="col-sm-4">
-	<input type="text" class="form-control purpose1" id="purpose" name="purpose-[0]" placeholder="connection purpose">
-</div>
-<div class=" addone col-sm-2">
-	<button type="button" class="btn btn-default addButton"><i class="fa fa-plus">+</i></button>
-</div>
+						<label class="control-label col-sm-2">Connected To</label>
+						<div class="col-sm-2">
+							<input type="text" class="form-control connectedTo1" id="connectedTo" name="connectedTo-[0]" placeholder="Mr./Mrs.">
+						</div>
+						<label class="control-label col-sm-1">Purpose</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control purpose1" id="purpose" name="purpose-[0]" placeholder="Connection Purpose">
+						</div>
+						<div class=" addone col-sm-2">
+							<button type="button" class="btn btn-default addButton"><i class="fa fa-plus"></i></button>
 
-</div>
+						</div>
 
-<div class=" removeone form-group hide" id="family">
+					</div>
 
-	<label class="control-label col-sm-2">Connected To</label>
-	<div class="col-sm-2">
-		<input type="text" class="form-control" name="connectedTo" placeholder="Mr./Mrs.">
-	</div>
-	<label class="control-label col-sm-1">Purpose</label>
-	<div class="col-sm-4">
-		<input type="text" class="form-control" name="purpose" placeholder="connection purpose">
-	</div>
-	<div class="col-xs-2">
-		<button type="button" class="btn btn-default removeButton"><i class="fa fa-minus">-</i></button>
-	</div>
-</div>
-<div class="form-group">
-	<label class="control-label col-sm-2" for="name">Key Learnings </label>
-	<div class="col-sm-8">
-		<input type="text" class="form-control" id="learnings" name="learnings" placeholder="enter the key learnings for the mentee">
-	</div>
-</div>
-<div class="form-group">
-	<label class=" control-label col-sm-2" for="name">Any Challenges for Mentee</label>
-	<div class="col-sm-2">
-		<label class="radio-inline"><input type="radio" id="Menteeyes" name="challengesMentee" value="yes">Yes</label>
-		<label class="radio-inline"><input type="radio" id="Menteeno" name="challengesMentee" value="no">No</label>
+					<div class=" removeone form-group hide" id="family">
 
-	</div>
+						<label class="control-label col-sm-2">Connected To</label>
+						<div class="col-sm-2">
+							<input type="text" class="form-control" name="connectedTo" placeholder="Mr./Mrs.">
+						</div>
+						<label class="control-label col-sm-1">Purpose</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" name="purpose" placeholder="connection purpose">
+						</div>
+						<div class="col-xs-2">
+							<button type="button" class="btn btn-default removeButton"><i class="fa fa-minus"></i></button>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="name">Key Learnings </label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control" id="learnings" name="learnings" placeholder="Enter The Key Learnings For The Mentee">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class=" control-label col-sm-2" for="name">Any Challenges for Mentee</label>
+						<div class="col-sm-2">
+							<label class="radio-inline"><input type="radio" id="Menteeyes" name="challengesMentee" value="yes">Yes</label>
+							<label class="radio-inline"><input type="radio" id="Menteeno" name="challengesMentee" value="no">No</label>
 
-</div>
-<div class="form-group" id="challengesDetailMentee" name="challengesDetailMentee" style="display: none;">
+						</div>
 
-<label class="control-label col-sm-2">Key Challenges</label>
-<div class="col-sm-8">
-	<input type="text" class="form-control" name="challengesDetailMenteeText" id="challengesDetailMenteeText" placeholder="">
-</div>
-</div>
-<div class="form-group">
-	<label class=" control-label col-sm-2" for="name">Any Challenges for Mentor</label>
-	<div class="col-sm-2">
-		<label class="radio-inline"><input type="radio" id="Mentoryes" name="challengesMentor" value="yes">Yes</label>
-		<label class="radio-inline"><input type="radio" id="Mentorno" name="challengesMentor" value="no">No</label>
+					</div>
+					<div class="form-group" id="challengesDetailMentee" name="challengesDetailMentee" style="display: none;">
 
-	</div>
+						<label class="control-label col-sm-2">Key Challenges</label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control" name="challengesDetailMenteeText" id="challengesDetailMenteeText" placeholder="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class=" control-label col-sm-2" for="name">Any Challenges for Mentor</label>
+						<div class="col-sm-2">
+							<label class="radio-inline"><input type="radio" id="Mentoryes" name="challengesMentor" value="yes">Yes</label>
+							<label class="radio-inline"><input type="radio" id="Mentorno" name="challengesMentor" value="no">No</label>
 
-</div>
-<div class="form-group" id="challengesDetailMentor" name="challengesDetailMentor" style="display: none;">
+						</div>
 
-<label class="control-label col-sm-2">Key Challenges</label>
-<div class="col-sm-8">
-	<input type="text" class="form-control" name="challengesDetailMentorText" id="challengesDetailMentorText" placeholder="">
-</div>
-</div>
+					</div>
+					<div class="form-group" id="challengesDetailMentor" name="challengesDetailMentor" style="display: none;">
 
-<div class="form-group">
-	<label class=" control-label col-sm-2" for="name">Any Challenges for Volunteer</label>
-	<div class="col-sm-2">
-		<label class="radio-inline"><input type="radio" id="Volunteeryes" name="challengesVolunteer" value="yes">Yes</label>
-		<label class="radio-inline"><input type="radio" id="Volunteerno" name="challengesVolunteer" value="no">No</label>
+						<label class="control-label col-sm-2">Key Challenges</label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control" name="challengesDetailMentorText" id="challengesDetailMentorText" placeholder="">
+						</div>
+					</div>
 
-	</div>
+					<div class="form-group">
+						<label class=" control-label col-sm-2" for="name">Any Challenges for Volunteer</label>
+						<div class="col-sm-2">
+							<label class="radio-inline"><input type="radio" id="Volunteeryes" name="challengesVolunteer" value="yes">Yes</label>
+							<label class="radio-inline"><input type="radio" id="Volunteerno" name="challengesVolunteer" value="no">No</label>
 
-</div>
-<div class="form-group" id="challengesDetailVolunteer" name="challengesDetailVolunteer" style="display: none;">
+						</div>
 
-<label class="control-label col-sm-2">Key Challenges</label>
-<div class="col-sm-8">
-	<input type="text" class="form-control" name="challengesDetailVolunteerText" id="challengesDetailVolunteerText" placeholder="">
-</div>
-</div>
-</div>
+					</div>
+					<div class="form-group" id="challengesDetailVolunteer" name="challengesDetailVolunteer" style="display: none;">
 
-<div class="tab-pane" id="review">
-	<h3 class="text-center">Mark your ratings of how you feel about your child</h3>
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
-				Educational performance at the school </div>
-			<div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
-				<input id="education" name="education" type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1" data-slider-value="0"
-					style="width: 95%; margin: 20px">
-</div>
-</div>
-<div class="row">
-	<div class="col-sm-6  col-sm-offset-5 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
-		<input type="text" class="form-control" id="reviewcom1" placeholder="Comments, If any">
-	</div>
-</div>
-<div class="row">
-	<div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
-		Health condition of the child
-	</div>
-	<div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
-		<input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="health" type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1"
-			data-slider-value="0" style="width: 95%; margin: 20px" /></div>
-</div>
-<div class="row">
-	<div class="col-sm-6  col-sm-offset-5 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
-		<input type="text" class="form-control" id="reviewcom2" placeholder="Comments, If any">
-	</div>
-</div>
-<div class="row">
-	<div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
-		Child relationship with family members
-	</div>
-	<div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
-		<input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="familyRelationship" type="text" data-slider-min="0" data-slider-max="10"
-			data-slider-step="1" data-slider-value="0" style="width: 95%; margin: 20px" /></div>
-</div>
-<div class="row">
-	<div class="col-sm-6  col-sm-offset-5 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
-		<input type="text" class="form-control" id="reviewcom3" placeholder="Comments, If any">
-	</div>
-</div>
-<div class="row">
-	<div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
-		Child relationship with friends
-	</div>
-	<div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
-		<input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="friendRelationship" type="text" data-slider-min="0" data-slider-max="10"
-			data-slider-step="1" data-slider-value="0" style="width: 95%; margin: 20px" /></div>
-</div>
-<div class="row">
-	<div class="col-sm-6  col-sm-offset-5 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
-		<input type="text" class="form-control" id="reviewcom4" placeholder="Comments, If any">
-	</div>
-</div>
-<div class="row">
-	<div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
-		Positive behaviour and attitude of the child
-	</div>
-	<div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
-		<input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="positiveAttitude" type="text" data-slider-min="0" data-slider-max="10"
-			data-slider-step="1" data-slider-value="0" style="width: 95%; margin: 20px" /></div>
-</div>
-<div class="row">
-	<div class="col-sm-6  col-sm-offset-5 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
-		<input type="text" class="form-control" id="reviewcom5" placeholder="Comments, If any">
-	</div>
-</div>
-<div class="row">
-	<div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
-		Participation in co-curricular activities
-	</div>
-	<div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
-		<input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="coCurricular" type="text" data-slider-min="0" data-slider-max="10"
-			data-slider-step="1" data-slider-value="0" style="width: 95%; margin: 20px" /></div>
-</div>
-<div class="row">
-	<div class="col-sm-6  col-sm-offset-5 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
-		<input type="text" class="form-control" id="reviewcom6" placeholder="Comments, If any">
-	</div>
-</div>
-<div class="row">
-	<div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
-		Participation in social/community events
-	</div>
-	<div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
-		<input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="socialCommunity" type="text" data-slider-min="0" data-slider-max="10"
-			data-slider-step="1" data-slider-value="0" style="width: 95%; margin: 20px" /></div>
-</div>
-<div class="row">
-	<div class="col-sm-6  col-sm-offset-5 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
-		<input type="text" class="form-control" id="reviewcom7" placeholder="Comments, If any">
-	</div>
-</div>
-<div class="row">
-	<div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
-		Feeling safe at Home, community and School
-	</div>
-	<div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
-		<input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="safeFeel" type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1"
-			data-slider-value="0" style="width: 95%; margin: 20px" /></div>
-</div>
-<div class="row">
-	<div class="col-sm-6  col-sm-offset-5 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
-		<input type="text" class="form-control" id="reviewcom8" placeholder="Comments, If any">
-	</div>
-</div>
-<div class="row">
-	<div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
-		Social interaction with peers
-	</div>
-	<div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
-		<input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="socialInteraction" type="text" data-slider-min="0" data-slider-max="10"
-			data-slider-step="1" data-slider-value="0" style="width: 95%; margin: 20px" /></div>
-</div>
-<div class="row">
-	<div class="col-sm-6  col-sm-offset-5 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
-		<input type="text" class="form-control" id="reviewcom9" placeholder="Comments, If any">
-	</div>
-</div>
-<div class="row">
-	<div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
-		Personal hygiene of the child
-	</div>
-	<div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
-		<input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="hygiene" type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1"
-			data-slider-value="0" style="width: 95%; margin: 20px" />
-</div>
-</div>
-<div class="row">
-	<div class="col-sm-6  col-sm-offset-5 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
-		<input type="text" class="form-control" id="reviewcom10" placeholder="Comments, If any">
-	</div>
-</div>
-</div>
-</div>
+						<label class="control-label col-sm-2">Key Challenges</label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control" name="challengesDetailVolunteerText" id="challengesDetailVolunteerText" placeholder="">
+						</div>
+					</div>
+				</div>
 
-<ul class="pager wizard">
-	<li class="previous"><a href="javascript: void(0);">Previous</a></li>
-	<li class="next" id="submit"><a href="javascript: void(0);">Next</a></li>
-</ul>
-</div>
-</form>
+				<div class="tab-pane" id="review">
+					<h3 class="text-center">Mark your ratings of how you feel about your child</h3>
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
+								Educational performance at the school </div>
+							<div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
+								<input id="education" class="education" name="education" type="text" onchange="Call(this.value,'.com1')" data-slider-min="0" data-slider-max="10"
+								 data-slider-step="1" data-slider-value="0" style="width: 95%; margin: 20px">
+							</div>
+						</div>
+						<div class="row com1 hide">
+							<div class="col-sm-6  col-sm-offset-5 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
+								<input type="text" class="form-control" id="reviewcom1" required placeholder="Comments, If any">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
+								Health condition of the child
+							</div>
+							<div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
+								<input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="health" onchange="Call(this.value,'.com2')" type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1"
+								 data-slider-value="0" style="width: 95%; margin: 20px" /></div>
+						</div>
+						<div class="row com2 hide">
+							<div class="col-sm-6  col-sm-offset-5 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
+								<input type="text" class="form-control" id="reviewcom2" required placeholder="Comments, If any">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
+								Child relationship with family members
+							</div>
+							<div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
+								<input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="familyRelationship" type="text"  onchange="Call(this.value,'.com3')" data-slider-min="0" data-slider-max="10"
+								 data-slider-step="1" data-slider-value="0" style="width: 95%; margin: 20px" /></div>
+						</div>
+						<div class="row com3 hide">
+							<div class="col-sm-6  col-sm-offset-5 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
+								<input type="text" class="form-control" id="reviewcom3" required placeholder="Comments, If any">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
+								Child relationship with friends
+							</div>
+							<div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
+								<input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="friendRelationship" type="text"  onchange="Call(this.value,'.com4')" data-slider-min="0" data-slider-max="10"
+								 data-slider-step="1" data-slider-value="0" style="width: 95%; margin: 20px" /></div>
+						</div>
+						<div class="row com4 hide">
+							<div class="col-sm-6  col-sm-offset-5 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
+								<input type="text" class="form-control" id="reviewcom4" required placeholder="Comments, If any">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
+								Positive behaviour and attitude of the child
+							</div>
+							<div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
+								<input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="positiveAttitude" type="text"  onchange="Call(this.value,'.com5')" data-slider-min="0" data-slider-max="10"
+								 data-slider-step="1" data-slider-value="0" style="width: 95%; margin: 20px" /></div>
+						</div>
+						<div class="row com5 hide">
+							<div class="col-sm-6  col-sm-offset-5 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
+								<input type="text" class="form-control" id="reviewcom5" required placeholder="Comments, If any">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
+								Participation in co-curricular activities
+							</div>
+							<div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
+								<input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="coCurricular" type="text"  onchange="Call(this.value,'.com6')" data-slider-min="0" data-slider-max="10"
+								 data-slider-step="1" data-slider-value="0" style="width: 95%; margin: 20px" /></div>
+						</div>
+						<div class="row com6 hide">
+							<div class="col-sm-6  col-sm-offset-5 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
+								<input type="text" class="form-control" id="reviewcom6" required placeholder="Comments, If any">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
+								Participation in social/community events
+							</div>
+							<div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
+								<input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="socialCommunity" type="text"  onchange="Call(this.value,'.com7')" data-slider-min="0" data-slider-max="10"
+								 data-slider-step="1" data-slider-value="0" style="width: 95%; margin: 20px" /></div>
+						</div>
+						<div class="row com7 hide">
+							<div class="col-sm-6  col-sm-offset-5 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
+								<input type="text" class="form-control" id="reviewcom7" required placeholder="Comments, If any">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
+								Feeling safe at Home, community and School
+							</div>
+							<div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
+								<input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="safeFeel" type="text"  onchange="Call(this.value,'.com8')" data-slider-min="0" data-slider-max="10" data-slider-step="1"
+								 data-slider-value="0" style="width: 95%; margin: 20px" /></div>
+						</div>
+						<div class="row com8 hide">
+							<div class="col-sm-6  col-sm-offset-5 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
+								<input type="text" class="form-control" id="reviewcom8" required placeholder="Comments, If any">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
+								Social interaction with peers
+							</div>
+							<div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
+								<input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="socialInteraction" type="text"  onchange="Call(this.value,'.com9')" data-slider-min="0" data-slider-max="10"
+								 data-slider-step="1" data-slider-value="0" style="width: 95%; margin: 20px" /></div>
+						</div>
+						<div class="row com9 hide">
+							<div class="col-sm-6  col-sm-offset-5 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
+								<input type="text" class="form-control" id="reviewcom9" required placeholder="Comments, If any">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-5 col-md-5 col-xs-12 col-lg-5">
+								Personal hygiene of the child
+							</div>
+							<div class="col-sm-7 col-md-7 col-xs-12 col-lg-7">
+								<input class="col-sm-7 col-md-7 col-xs-7 col-lg-7" id="hygiene" type="text"  onchange="Call(this.value,'.com10')" data-slider-min="0" data-slider-max="10" data-slider-step="1"
+								 data-slider-value="0" style="width: 95%; margin: 20px" />
+							</div>
+						</div>
+						<div class="row com10 hide">
+							<div class="col-sm-6  col-sm-offset-5 col-md-offset-5 col-md-6 col-xs-12 col-lg-6">
+								<input type="text" class="form-control" id="reviewcom10" required placeholder="Comments, If any">
+							</div>
+						</div>
+					</div>
+				</div>
 
-</div>
-<div class="modal fade" id="trackerModal" role="dialog">
-	<div class="modal-dialog modal-sm">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h4 class="modal-title">N'KaNa</h4>
+				<ul class="pager wizard">
+					<li class="previous"><a href="javascript: void(0);">Previous</a></li>
+					<li class="next" id="submit"><a href="javascript: void(0);">Next</a></li>
+				</ul>
 			</div>
-			<div class="modal-body">
-				<p id="modalbody"></p>
-				<!--<p >Your Tracker details has been submitted</p>-->
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-success" data-dismiss="modal" onclick="window.location = '../../volunteerhome/en/volunteerhome.html'">Close</button>
-</div>
-</div>
+		</form>
 
-</div>
-</div>
+	</div>
+	<div class="modal fade" id="trackerModal" role="dialog">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">N'KaNa</h4>
+				</div>
+				<div class="modal-body">
+					<p id="modalbody"></p>
+					<!--<p >Your Tracker details has been submitted</p>-->
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-success" data-dismiss="modal" onclick="window.location = '../../volunteerhome/en/volunteerhome.html'">Close</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<script>
+		function Call(value, id) {
+			var sliderinputid = id;
+			if (value < 3 || value > 9) {
+				$(sliderinputid).removeClass("hide");
+			}
+			else {
+				$(sliderinputid).addClass("hide");
+			}
+		}
+	</script>
 </body>
 
 </html>

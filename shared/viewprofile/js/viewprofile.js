@@ -13,16 +13,13 @@ $(document).ready(function () {
     
         httpPost("/viewvolunteer", data, function (response) {
             var dateObj = new Date(response[0].dob);
-            var day = dateObj.getUTCDate();
-            var year = dateObj.getUTCFullYear();
+            var day = dateObj.getDate();
+            var year = dateObj.getFullYear();
             var monthNames = ["January", "February", "March", "April", "May", "June",
                 "July", "August", "September", "October", "November", "December"
             ];
             var monthna = new Date(response[0].dob);
             var month = monthNames[monthna.getMonth()];
-
-
-
             $("#blockreg2").removeClass("hide");
             $(".loading").addClass("hide");
             if (role == "volunteer") {

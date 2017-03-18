@@ -58,6 +58,7 @@ $(document).ready(function () {
                 }
             })
         httpPost("/volunteerhomeviewmentor", data, function (response) {
+            console.log(response);
             $(".loading_icon").addClass("hide");
             if (response == 0) {
                 $('#view_mentor').removeClass('hide');

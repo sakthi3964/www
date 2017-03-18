@@ -1,6 +1,10 @@
 var localization = {
+    
+    checkcv: {
+        en: "Confirm that you have both CV and photo"
+    },
     username: {
-        en: "Enter your mail-id",
+        en: "Enter Your mail-id",
         ta: "உங்கள் மின்னஞ்சல் ஐடி"
     },
     role: {
@@ -13,13 +17,13 @@ var localization = {
         en: "The name can consist of alphabetical characters and spaces only"
     },
     dob: {
-        en: "Enter your DOB"
+        en: "Enter Your DOB"
     },
     validdob: {
         en: "The date is not valid"
     },
     age: {
-        en: "Enter your age"
+        en: "Enter Your age"
     },
     greaterage: {
         en: "Enter proper age"
@@ -31,83 +35,83 @@ var localization = {
         en: "Enter valid number"
     },
     gender: {
-        en: "select your gender"
+        en: "Select Your Gender"
     },
     mobile_no: {
-        en: "Enter your mobile number"
+        en: "Enter Your Mobile Number"
     },
     address_line1: {
-        en: "enter your door NO"
+        en: "Enter Your Door NO"
     },
     address_line2: {
-        en: "Enter street name"
+        en: "Enter Street Name"
     },
     city: {
-        en: "enter your city"
+        en: "Enter Your City"
     },
     state: {
-        en: "enter your state"
+        en: "Enter Your State"
     },
     postal_code: {
-        en: "enter your postal_code"
+        en: "Enter Your Postal_code"
     },
     reference: {
-        en: "select your Point of Contact"
+        en: "Select Your Point of Contact"
     },
     password: {
-        en: "Enter you password"
+        en: "Enter you Password"
     },
     psstr: {
-        en: "It must be more than 8 characters long"
+        en: "It must be more than 8 Characters long"
     },
     psupper: {
-        en: "It must contain at least one upper case character"
+        en: "It must contain at least one Upper Case Character"
     },
     pslower: {
-        en: "It must contain at least one upper case character"
+        en: "It must contain at least one Lower Case Character"
     },
     psdigit: {
-        en: "It must contain at least one digit"
+        en: "It must contain at least one Digit"
     },
     commitment: {
-        en: "Enter your commitment"
+        en: "Enter Your Commitment"
     },
     cv: {
-        en: "Upload your cv"
+        en: "Upload Your CV"
     },
     photo: {
-        en: "Upload your photo"
+        en: "Upload Your Photo"
     },
     work_type: {
-        en: "Enter you work type"
+        en: "Enter Your Work Type"
     },
     designation: {
-        en: "Enter your designation"
+        en: "Enter Your Designation"
     },
     organization: {
-        en: "Enter your organization"
+        en: "Enter Your Organization"
     },
     area_of_expertise: {
-        en: "Enter your expertise"
+        en: "Enter Your Expertise"
     },
     course: {
-        en: "Enter your course"
+        en: "Enter Your Course"
     },
     experience: {
-        en: "Enter your experience"
+        en: "Enter Your Experience"
     },
 
     department: {
-        en: "Enter your department"
+        en: "Enter Your Department"
     },
     institution: {
-        en: "Enter your institution"
+        en: "Enter Your Institution"
     },
     childlesserage: {
-        en: "Your age should be greater than 18"
+        en: "Your Age Should be Greater than 18"
     },
     childgreaterage: {
-        en: "Sorry, The age should be 12 to 18"
+        en: "Sorry, The Age should be 12 to 18"
     }
     
 }

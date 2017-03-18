@@ -4,6 +4,12 @@ $(document).ready(function () {
         window.location.href = "../../../../index.html";
     }
     else {
+       
+        $("#date").datepicker({
+            dateFormat: 'dd-mm-yy',
+            maxDate: new Date, minDate: new Date(1960, 1, 12)
+        });
+
         $('#placeOfMeeting').change(function () {
             if ($('#placeOfMeeting').val() == 'Others') {
                 $('#others').show();
@@ -212,26 +218,27 @@ $(document).ready(function () {
                     var data = {};
                     var data1 = {};
                     data1.connectedToJsonArray = [];
-                
+
                     var connectedTo1;
                     var purpose1;
                     // alert(memberscount);
                     for (var i = 0; i <= memberscount; i++) {
                         connectedTo1 = "connectedTo-[" + i + "]";
                         purpose1 = "purpose-[" + i + "]";
+                        var connectedToName=document.getElementsByName(connectedTo1)[0].value;
+                         var connectedToPurpose=document.getElementsByName(purpose1)[0].value;
+
                         var connection = {
-                            "connectedTo": document.getElementsByName(connectedTo1)[0].value,
-                            "purpose": document.getElementsByName(purpose1)[0].value
-                           
+                            "connectedTo":connectedToName,
+                            "purpose": connectedToPurpose
                         };
-                        data1.connectedToJsonArray.push(connection);
-
-
-                        // data1.connectedTo[i] = document.getElementsByName(connectedTo1)[0].value;
-                        // data1.purpose[i] = document.getElementsByName(purpose1)[0].value;
-                        // console.log("name " + document.getElementsByName(connectedTo1)[0].value);
-                        //   console.log("relation " + document.getElementsByName(purpose1)[0].value);
+                        if(connectedToName != "" && connectedToPurpose != "")
+                        {
+                             data1.connectedToJsonArray.push(connection);
+                        }
+                       
                     }
+                    
                     var sample = JSON.stringify(data1);
                     data.newcon = sample;
                     data.date = ($('#date').val());
@@ -250,18 +257,18 @@ $(document).ready(function () {
                     data.keyAccomplishment = ($('#accomplishment').val());
                     //data.keyLearning=($("input[name='connection']:checked").val());
                     var connect = $("input[name='connection']:checked").val();
-                    var connection = {};
-                    if (connect == 'yes') {
-                        connection.connectedTo = $('#connectedTo').val();
-                        connection.purpose = $('#purpose').val();
+                    // var connection = {};
+                    // if (connect == 'yes') {
+                    //     connection.connectedTo = $('#connectedTo').val();
+                    //     connection.purpose = $('#purpose').val();
 
-                    }
+                    // }
 
-                    else {
-                        connection.connectedTo = "nil";
-                        connection.purpose = "nil";
-                    }
-                    data.newConnection = JSON.stringify(connection);
+                    // else {
+                    //     connection.connectedTo = "nil";
+                    //     connection.purpose = "nil";
+                    // }
+                    // data.newConnection = JSON.stringify(connection);
 
                     data.keyLearning = ($('#learnings').val());
 
@@ -272,7 +279,7 @@ $(document).ready(function () {
 
                     }
                     else {
-                        data.menteeChallenges = "nil";
+                        data.menteeChallenges = "No";
 
                     }
 
@@ -283,7 +290,7 @@ $(document).ready(function () {
 
                     }
                     else {
-                        data.mentorChallenges = "nil";
+                        data.mentorChallenges = "No";
 
                     }
 
@@ -294,7 +301,7 @@ $(document).ready(function () {
 
                     }
                     else {
-                        data.volunteerChallenges = "nil";
+                        data.volunteerChallenges = "No";
 
                     }
                     if ((education.value > 8) || (education.value < 3)) {
@@ -302,6 +309,14 @@ $(document).ready(function () {
                     }
                     var id = localStorage.getItem("user");
                     var review = {};
+                    
+                    $('.education').slider().on('slideStart', function (ev) {
+                        console.log("hello");
+                        var newVal = $('.education').data('slider').getValue();
+                        if (newVal>9 || newVal<3) {
+                            $(".com1").removeClass("hide");
+                        }
+                    });
                     review.education = education.value;
                     review.educationText = ($('#reviewcom1').val()).trim();
                     review.health = health.value;

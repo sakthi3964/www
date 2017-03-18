@@ -16,8 +16,8 @@ $(document).ready(function () {
             else {
                 console.log(response[0].profile.profileinfo.photo);
                 var dateObj = new Date(response[0].profile.dob);
-                var day = dateObj.getUTCDate();
-                var year = dateObj.getUTCFullYear();
+                var day = dateObj.getDate();
+                var year = dateObj.getFullYear();
                 var monthNames = ["January", "February", "March", "April", "May", "June",
                     "July", "August", "September", "October", "November", "December"
                 ];

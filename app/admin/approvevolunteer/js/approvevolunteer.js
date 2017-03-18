@@ -59,7 +59,7 @@ function connectionDisplay() {
                 $(id1).click(function () {
                     window.location.href = "../../viewadminvolunteerprofile/en/viewadminvolunteerprofile.html?id:" + element.profile.id;
                 });
-                i++;
+                j++;
             }, this);
         }
     });

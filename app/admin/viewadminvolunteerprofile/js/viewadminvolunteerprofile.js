@@ -12,8 +12,8 @@ $(document).ready(function () {
             //date display code
             console.log(response);
             var dateObj = new Date(response[0].dob);
-            var day = dateObj.getUTCDate();
-            var year = dateObj.getUTCFullYear();
+            var day = dateObj.getDate();
+            var year = dateObj.getFullYear();
             var monthNames = ["January", "February", "March", "April", "May", "June",
                 "July", "August", "September", "October", "November", "December"
             ];

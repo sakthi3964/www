@@ -6,14 +6,13 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 	<link rel="stylesheet" href="../../../../assert/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="../../../../assert/css/font-awesome.min.css">
-	<link rel="stylesheet" href="../../../../assert/css/jquery-ui.css">
 	<script src="../../../../assert/js/jquery.min.js"></script>
 	<script src="../../../../assert/js/bootstrap.min.js"></script>
+	<!--<link rel="stylesheet" type="text/css" href="../../../../assert/css/font-awesome.min.css">-->
+	<link rel="stylesheet" href="../../../../assert/css/jquery-ui.css">
 	<link rel="stylesheet" href="../../../../assert/css/common.css">
-	<link href="../../../../shared/registration/css/register.css" rel="stylesheet">
-	<link href="../../../../assert/css/formValidation.css" rel="stylesheet" />
 	<link href="../css/childregistration.css" rel="stylesheet" />
+	<link href="../../../../assert/css/formValidation.css" rel="stylesheet" />
 	<script src="../../../../assert/js/jquery-ui.js"></script>
 	<script src="../../../../assert/js/formValidation.js"></script>
 	<script src="../../../../assert/js/framework/bootstrap.min.js"></script>
@@ -47,7 +46,7 @@
 		<div class="loading_img">
 			<img src="../../../../helperfiles/img/loading.gif" alt="loading">
 		</div>
-	</div>
+	</div>	
 
 	<div class="container" id="blockreg2">
 		<form id="childForm" class="form-horizontal" method="POST">
@@ -68,7 +67,7 @@
 				<div class="form-group">
 					<label class="control-label col-sm-2">Age</label>
 					<div class="col-sm-5">
-						<input type="text" id="age" name="age" class="form-control disabled_field" placeholder="Enter child Age" disabled>
+						<input type="text" id="age" name="age" class="form-control disabled_field" placeholder="Enter child Age" readonly>
 					</div>
 				</div>
 				<div class="form-group">
@@ -121,7 +120,7 @@
 						<input type="file" id="file" name="photo" class="form-control" size="11">
 					</div>
 				</div>
-				<center> <button class="btn child_submit_btn" id="submit">SUBMIT</button></center>
+				<center> <button class="btn child_submit_btn" disabled="disabled" id="submit">SUBMIT</button></center>
 			</div>
 		</form>
 	</div>
@@ -143,7 +142,7 @@
 					<p class="text-center">Child has Been added Successfully</p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-success" data-dismiss="modal" onclick="window.location = '../../adminhome/en/adminhome.html '">Close</button>
+					<button type="button" class="btn btn-success"  data-dismiss="modal" onclick="window.location = '../../adminhome/en/adminhome.html '">Close</button>
 				</div>
 			</div>
 

@@ -4,6 +4,12 @@ $(document).ready(function () {
         window.location.href = "../../../../index.html";
     }
     else {
+        var role = localStorage.getItem("role");
+        console.log(role);
+        if(role == "children"){
+            console.log("hiiii");
+          $(".cumlative").addClass("hide");  
+        }
         var data = {};
         var url = window.location.href;
         if (url.substring(url.lastIndexOf('html') + 1) == "tml") {

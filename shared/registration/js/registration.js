@@ -68,311 +68,317 @@ $(document).ready(function () {
                 // This option will not ignore invisible fields which belong to inactive panels
                 // excluded: ':disabled',
                 fields: {
-                    checkcv, checkphoto : {
-                        validators: {
-                            notEmpty: {
-                                message: localization.checkcv[lang()]
+                    // rules: {
+                    //     name: {
+                    //         minlength: 2,
+                    //         required: true
+                    //     },
+                        checkcv, checkphoto: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.checkcv[lang()]
+                                }
                             }
-                        }
-                    },
-                    // checkphoto: {
-                    //     validators: {
-                    //         notEmpty: {
-                    //             message: localization.name[lang()]
-                    //         }
-                    //     }
-                    // },
-                    role: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.role[lang()]
+                        },
+                        // checkphoto: {
+                        //     validators: {
+                        //         notEmpty: {
+                        //             message: localization.name[lang()]
+                        //         }
+                        //     }
+                        // },
+                        role: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.role[lang()]
+                                }
                             }
-                        }
-                    },
-                    name: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.name[lang()]
-                            },
-                            regexp: {
-                                regexp: /^[a-z\s]+$/i,
-                                message: localization.validname[lang()]
+                        },
+                        name: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.name[lang()]
+                                },
+                                regexp: {
+                                    regexp: /^[a-z\s]+$/i,
+                                    message: localization.validname[lang()]
+                                }
                             }
-                        }
 
-                    },
+                        },
 
-                    // dob: {
-                    //     validators: {
-                    //         notEmpty: {
-                    //             message: localization.dob[lang()]
-                    //         }
-                    //         // date: {
-                    //         //     message: localization.validdob[lang()],
-                    //         //    // format: 'YYYY/MM/DD',
-                    //         //     min: '2000/01/01',
-                    //         //     max: '2020/12/30'
-                    //         // }
-                    //     }
-                    // },
-                    age: {
-                        validators: {
-                            greaterThan: {
-                                value: 18,
-                                message: localization.lesserage[lang()]
-                            },
-                            lessThan: {
-                                value: 100,
-                                message: localization.greaterage[lang()]
-                            },
-                            notEmpty: {
-                                message: localization.age[lang()]
-                            },
-                            integer: {
-                                message: localization.validno[lang()]
+                        // dob: {
+                        //     validators: {
+                        //         notEmpty: {
+                        //             message: localization.dob[lang()]
+                        //         }
+                        //         // date: {
+                        //         //     message: localization.validdob[lang()],
+                        //         //    // format: 'YYYY/MM/DD',
+                        //         //     min: '2000/01/01',
+                        //         //     max: '2020/12/30'
+                        //         // }
+                        //     }
+                        // },
+                        age: {
+                            trigger: 'change keyup',
+                            validators: {
+                                greaterThan: {
+                                    value: 18,
+                                    message: localization.lesserage[lang()]
+                                },
+                                lessThan: {
+                                    value: 100,
+                                    message: localization.greaterage[lang()]
+                                },
+                                notEmpty: {
+                                    message: localization.age[lang()]
+                                },
+                                integer: {
+                                    message: localization.validno[lang()]
+                                }
                             }
-                        }
-                    },
-                    gender: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.gender[lang()]
+                        },
+                        gender: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.gender[lang()]
+                                }
                             }
-                        }
-                    },
-                    mobile_no: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.mobile_no[lang()]
-                            },
-                            integer: {
-                                message: localization.validno[lang()]
+                        },
+                        mobile_no: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.mobile_no[lang()]
+                                },
+                                integer: {
+                                    message: localization.validno[lang()]
+                                }
                             }
-                        }
-                    },
-                    phone: {
-                        validators: {
-                            numeric: {
-                                message: localization.validno[lang()]
+                        },
+                        phone: {
+                            validators: {
+                                numeric: {
+                                    message: localization.validno[lang()]
+                                }
                             }
-                        }
-                    },
-                    code: {
-                        validators: {
-                            numeric: {
-                                message: 'Invalid number'
+                        },
+                        code: {
+                            validators: {
+                                numeric: {
+                                    message: 'Invalid number'
+                                }
                             }
-                        }
-                    },
-                    email_id: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.username[lang()]
+                        },
+                        email_id: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.username[lang()]
+                                }
                             }
-                        }
-                    },
-                    address_line1: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.address_line1[lang()]
+                        },
+                        address_line1: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.address_line1[lang()]
+                                }
                             }
-                        }
-                    },
-                    address_line2: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.address_line2[lang()]
+                        },
+                        address_line2: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.address_line2[lang()]
+                                }
                             }
-                        }
-                    },
-                    city: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.city[lang()]
-                            },
-                            regexp: {
-                                regexp: /^[a-z\s]+$/i,
-                                message: localization.validname[lang()]
+                        },
+                        city: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.city[lang()]
+                                },
+                                regexp: {
+                                    regexp: /^[a-z\s]+$/i,
+                                    message: localization.validname[lang()]
+                                }
                             }
-                        }
-                    },
-                    state: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.state[lang()]
+                        },
+                        state: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.state[lang()]
+                                }
                             }
-                        }
-                    },
-                    postal_code: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.postal_code[lang()]
-                            },
-                            integer: {
-                                message: localization.validno[lang()]
+                        },
+                        postal_code: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.postal_code[lang()]
+                                },
+                                integer: {
+                                    message: localization.validno[lang()]
+                                }
                             }
-                        }
-                    },
+                        },
 
-                    reference: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.reference[lang()]
+                        reference: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.reference[lang()]
+                                }
                             }
-                        }
-                    },
-                    password: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.password[lang()]
-                            },
-                            callback: {
-                                message: 'The password is not valid',
-                                callback: function (value, validator, $field) {
-                                    if (value === '') {
+                        },
+                        password: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.password[lang()]
+                                },
+                                callback: {
+                                    message: 'The password is not valid',
+                                    callback: function (value, validator, $field) {
+                                        if (value === '') {
+                                            return true;
+                                        }
+
+                                        // Check the password strength
+                                        if (value.length < 8) {
+                                            return {
+                                                valid: false,
+                                                message: localization.psstr[lang()]
+                                            };
+                                        }
+
+                                        // The password doesn't contain any uppercase character
+                                        if (value === value.toLowerCase()) {
+                                            return {
+                                                valid: false,
+                                                message: localization.psupper[lang()]
+                                            }
+                                        }
+
+                                        // The password doesn't contain any uppercase character
+                                        if (value === value.toUpperCase()) {
+                                            return {
+                                                valid: false,
+                                                message: localization.pslower[lang()]
+                                            }
+                                        }
+
+                                        // The password doesn't contain any digit
+                                        if (value.search(/[0-9]/) < 0) {
+                                            return {
+                                                valid: false,
+                                                message: localization.psdigit[lang()]
+                                            }
+                                        }
+
                                         return true;
                                     }
+                                }
+                            }
+                        },
+                        cpassword: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'Enter your password again'
+                                },
+                                identical: {
+                                    field: 'password',
+                                    message: 'The password and its confirm are not the same'
+                                }
+                            }
+                        },
+                        commitment: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.commitment[lang()]
+                                }
+                            }
+                        },
+                        cv: {
+                            selector: '.cv',
+                            validators: {
+                                notEmpty: {
+                                    message: localization.cv[lang()]
+                                },
+                                file: {
+                                    extension: 'doc,pdf',
+                                    type: 'application/msword,application/pdf',
+                                    maxSize: 5 * 1024 * 1024,   // 5 MB
+                                    message: 'The selected file is not valid'
+                                }
+                            }
+                        },
+                        photo: {
+                            selector: '.photo',
+                            validators: {
+                                notEmpty: {
+                                    message: localization.photo[lang()]
+                                },
+                                file: {
+                                    extension: 'jpeg,png,jpg',
+                                    type: 'image/jpeg,image/jpg,image/png',
+                                    maxSize: 2048 * 1024,   // 2 MB
+                                    message: 'The selected file is not valid'
+                                }
+                            }
+                        },
+                        work_type: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.work_type[lang()]
+                                }
+                            }
+                        }, designation: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.designation[lang()]
+                                }
+                            }
+                        },
+                        organization: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.organization[lang()]
+                                }
+                            }
+                        },
+                        area_of_expertise: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.area_of_expertise[lang()]
+                                }
+                            }
+                        },
+                        experience: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.experience[lang()]
+                                }
+                            }
+                        },
 
-                                    // Check the password strength
-                                    if (value.length < 8) {
-                                        return {
-                                            valid: false,
-                                            message: localization.psstr[lang()]
-                                        };
-                                    }
-
-                                    // The password doesn't contain any uppercase character
-                                    if (value === value.toLowerCase()) {
-                                        return {
-                                            valid: false,
-                                            message: localization.psupper[lang()]
-                                        }
-                                    }
-
-                                    // The password doesn't contain any uppercase character
-                                    if (value === value.toUpperCase()) {
-                                        return {
-                                            valid: false,
-                                            message: localization.pslower[lang()]
-                                        }
-                                    }
-
-                                    // The password doesn't contain any digit
-                                    if (value.search(/[0-9]/) < 0) {
-                                        return {
-                                            valid: false,
-                                            message: localization.psdigit[lang()]
-                                        }
-                                    }
-
-                                    return true;
+                        course: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.course[lang()]
+                                }
+                            }
+                        },
+                        department: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.department[lang()]
+                                }
+                            }
+                        },
+                        institution: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.institution[lang()]
                                 }
                             }
                         }
-                    },
-                    cpassword: {
-                        validators: {
-                            notEmpty: {
-                                message: 'Enter your password again'
-                            },
-                            identical: {
-                                field: 'password',
-                                message: 'The password and its confirm are not the same'
-                            }
-                        }
-                    },
-                    commitment: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.commitment[lang()]
-                            }
-                        }
-                    },
-                    cv: {
-                        selector: '.cv',
-                        validators: {
-                            notEmpty: {
-                                message: localization.cv[lang()]
-                            },
-                            file: {
-                                extension: 'doc,pdf',
-                                type: 'application/msword,application/pdf',
-                                maxSize: 5 * 1024 * 1024,   // 5 MB
-                                message: 'The selected file is not valid'
-                            }
-                        }
-                    },
-                    photo: {
-                        selector: '.photo',
-                        validators: {
-                            notEmpty: {
-                                message: localization.photo[lang()]
-                            },
-                            file: {
-                                extension: 'jpeg,png,jpg',
-                                type: 'image/jpeg,image/jpg,image/png',
-                                maxSize: 2048 * 1024,   // 2 MB
-                                message: 'The selected file is not valid'
-                            }
-                        }
-                    },
-                    work_type: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.work_type[lang()]
-                            }
-                        }
-                    }, designation: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.designation[lang()]
-                            }
-                        }
-                    },
-                    organization: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.organization[lang()]
-                            }
-                        }
-                    },
-                    area_of_expertise: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.area_of_expertise[lang()]
-                            }
-                        }
-                    },
-                    experience: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.experience[lang()]
-                            }
-                        }
-                    },
-
-                    course: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.course[lang()]
-                            }
-                        }
-                    },
-                    department: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.department[lang()]
-                            }
-                        }
-                    },
-                    institution: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.institution[lang()]
-                            }
-                        }
                     }
-                }
             })
             .bootstrapWizard({
                 tabClass: 'nav nav-pills',
@@ -397,7 +403,7 @@ $(document).ready(function () {
 
                         $(".loading").removeClass("hide");
                         $("#blockreg2").addClass("hide");
-                        fileUpload("/addfiles", formData, function (response) {
+                        fileUpload("addfiles", formData, function (response) {
                             var res = JSON.parse(response);
                             var data = {};
                             data.role = ($('#role').val()).trim();
@@ -414,9 +420,9 @@ $(document).ready(function () {
                             data.state = ($('#state').val()).trim();
                             data.country = ($('#country').val()).trim();
                             data.postal_code = ($('#postal_code').val()).trim();
-                            data.code = ($('#code').val()).trim();
+                            // data.code = ($('#code').val()).trim();
                             data.mobile_no = ($('#mobile_no').val()).trim();
-                            data.phone = ($('#phone').val()).trim();
+                            // data.phone = ($('#phone').val()).trim();
                             data.email_id = ($('#email_id').val()).trim();
                             data.work_type = ($('#work_type').val()).trim();
                             data.designation = ($('#designation').val()).trim();
@@ -597,274 +603,281 @@ $(document).ready(function () {
                 // This option will not ignore invisible fields which belong to inactive panels
                 // excluded: ':disabled',
                 fields: {
-                    // role: {
-                    //     validators: {
-                    //         notEmpty: {
-                    //             message: localization.name[lang()]
-                    //         }
-                    //     }
-                    // },
-                    name: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.name[lang()]
-                            },
-                            regexp: {
-                                regexp: /^[a-z\s]+$/i,
-                                message: localization.validname[lang()]
-                            }
-                        }
-
-                    },
-                    dob: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.dob[lang()]
-                            }
-                            // date: {
-                            //     message: localization.validdob[lang()],
-                            //    // format: 'YYYY/MM/DD',
-                            //     min: '2000/01/01',
-                            //     max: '2020/12/30'
-                            // }
-                        }
-                    },
-                    age: {
-                        validators: {
-                            greaterThan: {
-                                value: 18,
-                                message: localization.lesserage[lang()]
-                            },
-                            lessThan: {
-                                value: 100,
-                                message: localization.greaterage[lang()]
-                            },
-                            notEmpty: {
-                                message: localization.age[lang()]
-                            },
-                            integer: {
-                                message: localization.validno[lang()]
-                            }
-                        }
-                    },
-                    gender: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.gender[lang()]
-                            }
-                        }
-                    },
-                    mobile_no: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.mobile_no[lang()]
-                            },
-                            integer: {
-                                message: localization.validno[lang()]
-                            }
-                        }
-                    },
-                    phone: {
-                        validators: {
-                            integer: {
-                                message: localization.validno[lang()]
-                            }
-                        }
-                    },
-                    code: {
-                        validators: {
-                            numeric: {
-                                message: localization.validno[lang()]
-                            }
-                        }
-                    },
-                    email_id: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.username[lang()]
-                            }
-                        }
-                    },
-                    address_line1: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.address_line1[lang()]
-                            }
-                        }
-                    },
-                    address_line2: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.address_line2[lang()]
-                            }
-                        }
-                    },
-                    city: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.city[lang()]
-                            }
-                        }
-                    },
-                    state: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.state[lang()]
-                            }
-                        }
-                    },
-                    postal_code: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.postal_code[lang()]
-                            },
-                            integer: {
-                                message: localization.validno[lang()]
-                            }
-                        }
-                    },
-
-                    reference: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.reference[lang()]
-                            }
-                        }
-                    },
-                    password: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.password[lang()]
-                            },
-                            callback: {
-                                message: 'The password is not valid',
-                                callback: function (value, validator, $field) {
-                                    if (value === '') {
-                                        return true;
-                                    }
-
-                                    // Check the password strength
-                                    if (value.length < 8) {
-                                        return {
-                                            valid: false,
-                                            message: localization.psstr[lang()]
-                                        };
-                                    }
-
-                                    // The password doesn't contain any uppercase character
-                                    if (value === value.toLowerCase()) {
-                                        return {
-                                            valid: false,
-                                            message: localization.psupper[lang()]
-                                        }
-                                    }
-
-                                    // The password doesn't contain any uppercase character
-                                    if (value === value.toUpperCase()) {
-                                        return {
-                                            valid: false,
-                                            message: localization.pslower[lang()]
-                                        }
-                                    }
-
-                                    // The password doesn't contain any digit
-                                    if (value.search(/[0-9]/) < 0) {
-                                        return {
-                                            valid: false,
-                                            message: localization.psdigit[lang()]
-                                        }
-                                    }
-
-                                    return true;
+                    rules: {
+                        name: {
+                            minlength: 2,
+                            required: true
+                        },
+                        // role: {
+                        //     validators: {
+                        //         notEmpty: {
+                        //             message: localization.name[lang()]
+                        //         }
+                        //     }
+                        // },
+                        name: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.name[lang()]
+                                },
+                                regexp: {
+                                    regexp: /^[a-z\s]+$/i,
+                                    message: localization.validname[lang()]
                                 }
                             }
-                        }
-                    },
-                    cpassword: {
-                        validators: {
-                            notEmpty: {
-                                message: 'Enter your password again'
-                            },
-                            identical: {
-                                field: 'password',
-                                message: 'The password and its confirm are not the same'
-                            }
-                        }
-                    },
-                    commitment: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.commitment[lang()]
-                            }
-                        }
-                    },
-                    cv: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.cv[lang()]
-                            }
-                        }
-                    },
-                    photo: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.photo[lang()]
-                            }
-                        }
-                    },
-                    work_type: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.work_type[lang()]
-                            }
-                        }
-                    }, designation: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.designation[lang()]
-                            }
-                        }
-                    },
-                    organization: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.organization[lang()]
-                            }
-                        }
-                    },
-                    area_of_expertise: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.area_of_expertise[lang()]
-                            }
-                        }
-                    },
-                    experience: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.experience[lang()]
-                            }
-                        }
-                    },
 
-                    course: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.course[lang()]
+                        },
+                        dob: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.dob[lang()]
+                                }
+                                // date: {
+                                //     message: localization.validdob[lang()],
+                                //    // format: 'YYYY/MM/DD',
+                                //     min: '2000/01/01',
+                                //     max: '2020/12/30'
+                                // }
                             }
-                        }
-                    },
-                    department: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.department[lang()]
+                        },
+                        age: {
+                            trigger: 'change keyup',
+                            validators: {
+                                greaterThan: {
+                                    value: 18,
+                                    message: localization.lesserage[lang()]
+                                },
+                                lessThan: {
+                                    value: 100,
+                                    message: localization.greaterage[lang()]
+                                },
+                                notEmpty: {
+                                    message: localization.age[lang()]
+                                },
+                                integer: {
+                                    message: localization.validno[lang()]
+                                }
                             }
-                        }
-                    },
-                    institution: {
-                        validators: {
-                            notEmpty: {
-                                message: localization.institution[lang()]
+                        },
+                        gender: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.gender[lang()]
+                                }
+                            }
+                        },
+                        mobile_no: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.mobile_no[lang()]
+                                },
+                                integer: {
+                                    message: localization.validno[lang()]
+                                }
+                            }
+                        },
+                        phone: {
+                            validators: {
+                                integer: {
+                                    message: localization.validno[lang()]
+                                }
+                            }
+                        },
+                        code: {
+                            validators: {
+                                numeric: {
+                                    message: localization.validno[lang()]
+                                }
+                            }
+                        },
+                        email_id: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.username[lang()]
+                                }
+                            }
+                        },
+                        address_line1: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.address_line1[lang()]
+                                }
+                            }
+                        },
+                        address_line2: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.address_line2[lang()]
+                                }
+                            }
+                        },
+                        city: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.city[lang()]
+                                }
+                            }
+                        },
+                        state: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.state[lang()]
+                                }
+                            }
+                        },
+                        postal_code: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.postal_code[lang()]
+                                },
+                                integer: {
+                                    message: localization.validno[lang()]
+                                }
+                            }
+                        },
+
+                        reference: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.reference[lang()]
+                                }
+                            }
+                        },
+                        password: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.password[lang()]
+                                },
+                                callback: {
+                                    message: 'The password is not valid',
+                                    callback: function (value, validator, $field) {
+                                        if (value === '') {
+                                            return true;
+                                        }
+
+                                        // Check the password strength
+                                        if (value.length < 8) {
+                                            return {
+                                                valid: false,
+                                                message: localization.psstr[lang()]
+                                            };
+                                        }
+
+                                        // The password doesn't contain any uppercase character
+                                        if (value === value.toLowerCase()) {
+                                            return {
+                                                valid: false,
+                                                message: localization.psupper[lang()]
+                                            }
+                                        }
+
+                                        // The password doesn't contain any uppercase character
+                                        if (value === value.toUpperCase()) {
+                                            return {
+                                                valid: false,
+                                                message: localization.pslower[lang()]
+                                            }
+                                        }
+
+                                        // The password doesn't contain any digit
+                                        if (value.search(/[0-9]/) < 0) {
+                                            return {
+                                                valid: false,
+                                                message: localization.psdigit[lang()]
+                                            }
+                                        }
+
+                                        return true;
+                                    }
+                                }
+                            }
+                        },
+                        cpassword: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'Enter your password again'
+                                },
+                                identical: {
+                                    field: 'password',
+                                    message: 'The password and its confirm are not the same'
+                                }
+                            }
+                        },
+                        commitment: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.commitment[lang()]
+                                }
+                            }
+                        },
+                        cv: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.cv[lang()]
+                                }
+                            }
+                        },
+                        photo: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.photo[lang()]
+                                }
+                            }
+                        },
+                        work_type: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.work_type[lang()]
+                                }
+                            }
+                        }, designation: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.designation[lang()]
+                                }
+                            }
+                        },
+                        organization: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.organization[lang()]
+                                }
+                            }
+                        },
+                        area_of_expertise: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.area_of_expertise[lang()]
+                                }
+                            }
+                        },
+                        experience: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.experience[lang()]
+                                }
+                            }
+                        },
+
+                        course: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.course[lang()]
+                                }
+                            }
+                        },
+                        department: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.department[lang()]
+                                }
+                            }
+                        },
+                        institution: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.institution[lang()]
+                                }
                             }
                         }
                     }
@@ -912,9 +925,9 @@ $(document).ready(function () {
                         data.state = ($('#state').val()).trim();
                         data.country = ($('#country').val()).trim();
                         data.postal_code = ($('#postal_code').val()).trim();
-                        data.code = ($('#code').val()).trim();
+                        // data.code = ($('#code').val()).trim();
                         data.mobile_no = ($('#mobile_no').val()).trim();
-                        data.phone = ($('#phone').val()).trim();
+                        // data.phone = ($('#phone').val()).trim();
                         data.email_id = ($('#email_id').val()).trim();
                         data.work_type = ($('#work_type').val()).trim();
                         data.designation = ($('#designation').val()).trim();

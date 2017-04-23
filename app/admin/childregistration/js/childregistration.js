@@ -5,24 +5,7 @@ $(document).ready(function () {
         window.location.href = "../../../../index.html";
     }
     else {
-        $("#dob").datepicker({
-
-            dateFormat: 'dd-mm-yy',
-            maxDate: new Date, minDate: new Date(1960, 1, 12)
-        });
-
-        $("#dob").change(function () {
-            var str = $('#dob').val();
-            var dateObj = new Date(str);
-            var cur = new Date();
-            var diff = cur - dateObj;
-            var age = Math.floor(diff / 31536000000);
-            $('#age').val(age);
-        });
-
-
-
-        $('#childForm')
+          var isValid=$('#childForm')
             .formValidation({
                 framework: 'bootstrap',
                 // icon: {
@@ -31,7 +14,7 @@ $(document).ready(function () {
                 //     validating: 'glyphicon glyphicon-refresh'
                 // },
                 // This option will not ignore invisible fields which belong to inactive panels
-                excluded: ':disabled',
+                //excluded: ':disabled',
                 fields: {
                     name: {
                         validators: {
@@ -155,11 +138,39 @@ $(document).ready(function () {
                     }
 
                 }
-            });
+            }).on('success.field.fv', function(e, data) {
+            console.log(data.fv.getInvalidFields().length);
+            if (data.fv.getInvalidFields().length > 0) {    // There is invalid field
+                $('#submit').prop("disabled",true);
+            }
+            else{
+                $('#submit').prop("disabled",false);
+            }
+        });
+            
+        $("#dob").datepicker({
+
+            dateFormat: 'dd-mm-yy',
+            maxDate: new Date, minDate: new Date(1960, 1, 12)
+        });
+
+        $("#dob").change(function () {
+            var str = $('#dob').val();
+            var dateObj = new Date(str);
+            var cur = new Date();
+            var diff = cur - dateObj;
+            var age = Math.floor(diff / 31536000000);
+            $('#age').val(age);
+        });
         $("#childForm").submit(function (e) {
             e.preventDefault();
         });
         $("#submit").click(function () {
+            
+            var isValidForm = $('#childForm').data('formValidation').isValid();
+            if(!isValidForm){
+                return;
+            }
             var formData = new FormData();
             formData.append('file', $('#file')[0].files[0]);
 
@@ -167,6 +178,7 @@ $(document).ready(function () {
             $("#blockreg2").addClass("hide");
 
             fileUpload("/childphoto", formData, function (response) {
+                
                 var data = {};
                 var role = 3;
                 var str = ($('#user_id').val()).trim();
@@ -176,15 +188,18 @@ $(document).ready(function () {
                 data.name = ($('#name').val()).trim();
                 data.dob = ($('#dob').val()).trim();
                 data.age = ($('#age').val()).trim();
-                data.gender = ($("input[name='gender']:checked").val()).trim();
+                data.gender = $("input[name='gender']:checked").val();
                 data.user_id = user_id;
                 data.password = ($('#password').val()).trim();
                 data.center = ($('#center').val()).trim();
                 data.photos = response;
+
                 httpPost("/childrenregistration", data, function (response) {
+                    
                     $('#registerModal').modal({ backdrop: 'static', keyboard: false });
+                    
                 });
             });
         });
-    }
+     }
 });

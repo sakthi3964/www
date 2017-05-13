@@ -18,9 +18,12 @@
             border:2px solid grey;
         }
         .profile-card{
-            background-color:white;
+            background-color: white;
             border: solid 0.1px #c9d1c8;
-
+            padding: 3px;
+            width: 48%;
+            float: left;
+            margin: 3px calc( 2% - 5px );
         }
         #panel1{
             margin-top: 15px;
@@ -36,5 +39,6 @@
         }
         .profile-card-btn {
             padding: 7px 0;
+            margin-bottom: 1px;
     }
 }

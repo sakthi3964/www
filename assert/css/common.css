@@ -6,6 +6,30 @@ body{
     font-size: 16px;
     color: white;
     height: 50px;
+    position: fixed;
+    width: 100%;
+}
+.row .box {
+    padding: 0px 6px;
+}
+.row{
+    margin-right: -10px;
+    margin-left: -10px;
+}
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    position: fixed;
+    margin-left: auto;
+    padding-bottom: 25px;
+    height: calc( 100% - 55px );
+    top: 55px;
+    width: 100%;
+    overflow: scroll;
+}
+.container::-webkit-scrollbar { 
+    display: none; 
 }
 #commonblock p{
     padding: 10px;
@@ -117,4 +141,18 @@ body{
 }
 .disabled_field{
     background-color: white !important;
+}
+@media screen and (max-width: 599px){
+    .marginB10-mob{
+        margin-bottom: 10px;
+    }
+    .container {
+        padding: 0 10px;
+    }
+    #childheading h3{
+        padding: 5px 0px;   
+    }
+}
+.homeicons{
+    padding: 0px;
 }

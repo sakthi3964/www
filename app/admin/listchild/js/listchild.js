@@ -29,7 +29,7 @@ $(document).ready(function () {
                     // console.log("hashed id" + hashedid);
                     // console.log(temp);
                     $("#listofmembers").removeClass("hide");
-                    $('#listofmembers').append('<div class="cards-view"> <div class="profile-card col-xs-6 col-sm-3 col-md-3 col-lg-3"> <div>  <img id = "img' + j + '" src="' + BASEURL + '/uploads/children/photos/' + element.photos + '" class="profile-card-img">  <h4 class="profile-card-title">' + element.full_name + '</h4> <h5 class="profile-card-title">' + element.center + '</h5>  </div>  <button class="profile-card-btn submit" name="submit" type="submit" id="submit' + i + '">ViewProfile</button> </div></div>');
+                    $('#listofmembers').append('<div class="profile-card"> <div>  <img id = "img' + j + '" src="' + BASEURL + '/uploads/children/photos/' + element.photos + '" class="profile-card-img">  <h4 class="profile-card-title">' + element.full_name + '</h4> <h5 class="profile-card-title">' + element.center + '</h5>  </div>  <button class="profile-card-btn submit" name="submit" type="submit" id="submit' + i + '">ViewProfile</button></div>');
                     var id = "#submit" + i;
                     $(id).click(function () {
                         window.location.href = "../../viewadminchildprofile/en/viewadminchildprofile.html?id:" + enc;

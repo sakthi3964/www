@@ -100,7 +100,9 @@ var localization = {
     experience: {
         en: "Enter Your Experience"
     },
-
+    off_address: {
+        en: "Enter Your Office Address"
+    },
     department: {
         en: "Enter Your Department"
     },

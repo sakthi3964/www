@@ -20,10 +20,26 @@
 .tracker-content{
     text-align: center;
     border-bottom: solid 2px #0f000f;
+
 }
-@media screen and (max-width: 480px) {
+#tableViewMobile>table>tbody>tr>th, #tableViewMobile>table>tbody>tr>td{
+    vertical-align: middle;
+    padding: 8px 7px;
+    background: rgba(255, 255, 255, 0.71);
+    border: 1px solid #ece6e6;
+
+}
+#tableViewMobile>table{
+    border: 8px solid rgba(255, 255, 255, 0.35);
+    margin-bottom: 7px;
+}
+@media screen and (max-width: 599px) {
 .tracker-content h5{
     text-align: center;
     font-size: 13px;
     }
+
+.tracker-button button{
+    width: 100%;
+}
 }

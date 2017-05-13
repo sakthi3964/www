@@ -26,21 +26,21 @@ $(document).ready(function () {
             $('#dob').html(day + "-" + month + "-" + year);
             $('#age').html(response[0].age);
             $('#gender').html(response[0].gender);
-            $('#address_line1').html(response[0].address_line1);
-            $('#address_line2').html(response[0].address_line2);
-            $('#city').html(response[0].city);
-            $('#email_id').html(response[0].email_id);
-            $('#state').html(response[0].state);
-            $('#country').html(response[0].country);
-            $('#postal_code').html(response[0].postal_code);
-            $('#mobile_no').html(response[0].mobile_no);
-            $('#phone').html(response[0].phone);
+            // $('#address_line1').html(response[0].address_line1);
+            // $('#address_line2').html(response[0].address_line2);
+            // $('#city').html(response[0].city);
+            // $('#email_id').html(response[0].email_id);
+            // $('#state').html(response[0].state);
+            // $('#country').html(response[0].country);
+            // $('#postal_code').html(response[0].postal_code);
+            // $('#mobile_no').html(response[0].mobile_no);
             $('#work_type').html(response[0].profileinfo.work_type);
             $('#course').html(response[0].profileinfo.course);
             $('#department').html(response[0].profileinfo.department);
             $('#institution').html(response[0].profileinfo.institution);
             $('#reference').html(response[0].profileinfo.reference);
-            $('#commitment').html(response[0].profileinfo.commitment);
+            var commitment = response[0].profileinfo.commitment + "&nbsphours / month"
+            $('#commitment').html(commitment);
             if (response[0].profileinfo.designation == "") {
                 $('#designationrow').hide();
             }
@@ -74,13 +74,13 @@ $(document).ready(function () {
                 var url = window.location.href;
                 dataForRequest.profile_id = url.substring(url.lastIndexOf(':') + 1);
                 dataForRequest.volunteerid = localStorage.getItem("user");
-                dataForRequest.time=new Date();
+                dataForRequest.time = new Date();
                 httpPost("/insertmentorConnectionRequest", dataForRequest, function (response) {
                     if (response == "1") {
-                        $('#multiplerequest').modal();
+                        $('#multiplerequest').modal({ backdrop: 'static', keyboard: false});
                     }
                     else {
-                        $('#childrequest').modal();
+                        $('#childrequest').modal({ backdrop: 'static', keyboard: false});
                     }
 
                 });

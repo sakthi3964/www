@@ -10,6 +10,7 @@ $(document).ready(function () {
         var date2 = date1.substring(date1.indexOf('&') + 1, date1.length);
         var date3 = date2.substring(date2.indexOf('&') + 1, date2.length);
         data.date = date3;
+        data.profileId=localStorage.getItem("user");
         console.log(data.date);
         httpPost("/viewReviewDetail", data, function (response) {
             $("#blockreg2").removeClass("hide");

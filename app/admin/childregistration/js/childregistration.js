@@ -5,7 +5,7 @@ $(document).ready(function () {
         window.location.href = "../../../../index.html";
     }
     else {
-          var isValid=$('#childForm')
+        var isValid = $('#childForm')
             .formValidation({
                 framework: 'bootstrap',
                 // icon: {
@@ -138,16 +138,16 @@ $(document).ready(function () {
                     }
 
                 }
-            }).on('success.field.fv', function(e, data) {
-            console.log(data.fv.getInvalidFields().length);
-            if (data.fv.getInvalidFields().length > 0) {    // There is invalid field
-                $('#submit').prop("disabled",true);
-            }
-            else{
-                $('#submit').prop("disabled",false);
-            }
-        });
-            
+            }).on('success.field.fv', function (e, data) {
+                console.log(data.fv.getInvalidFields().length);
+                if (data.fv.getInvalidFields().length > 0) {    // There is invalid field
+                    $('#submit').prop("disabled", true);
+                }
+                else {
+                    $('#submit').prop("disabled", false);
+                }
+            });
+
         $("#dob").datepicker({
 
             dateFormat: 'dd-mm-yy',
@@ -165,12 +165,71 @@ $(document).ready(function () {
         $("#childForm").submit(function (e) {
             e.preventDefault();
         });
+
+
+
+        // document.addEventListener("deviceready", onDeviceReady, false);
+        // function onDeviceReady() {
+        //     pictureSource = navigator.camera.PictureSourceType;
+        //     destinationType = navigator.camera.DestinationType;
+        // }
+
+        // function getImage() {
+        //     navigator.camera.getPicture(uploadPhoto, function (message) {
+        //         alert('get picture failed');
+        //     }, {
+        //             quality: 100,
+        //             destinationType: navigator.camera.DestinationType.FILE_URI,
+        //             sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+        //         });
+        // }
+
+        // function uploadPhoto(imageURI) {
+        //     var options = new FileUploadOptions();
+        //     options.fileKey = "file";
+        //     options.fileName = imageURI.substr(imageURI.lastIndexOf('/') + 1);
+        //     options.mimeType = "image/jpeg";
+        //     console.log(options.fileName);
+        //     var params = new Object();
+        //     params.value1 = "test";
+        //     params.value2 = "param";
+        //     options.params = params;
+        //     options.chunkedMode = false;
+
+        //     var ft = new FileTransfer();
+        //     ft.fileUpload(imageURI, "/childphoto", function (result) {
+        //         console.log(JSON.stringify(result));
+        //     }, function (error) {
+        //         console.log(JSON.stringify(error));
+        //     }, options);
+        // }
+
         $("#submit").click(function () {
-            
             var isValidForm = $('#childForm').data('formValidation').isValid();
-            if(!isValidForm){
+            if (!isValidForm) {
                 return;
             }
+            // getImage();
+            // function uploadPhoto(imageURI) {
+            //     var options = new FileUploadOptions();
+            //     options.fileKey = "file";
+            //     options.fileName = imageURI.substr(imageURI.lastIndexOf('/') + 1);
+            //     options.mimeType = "image/jpeg";
+            //     console.log(options.fileName);
+            //     var params = new Object();
+            //     params.value1 = "test";
+            //     params.value2 = "param";
+            //     options.params = params;
+            //     options.chunkedMode = false;
+
+            //     var ft = new FileTransfer();
+            //     ft.fileUpload(imageURI, "/childphoto", function (result) {
+            //         console.log(JSON.stringify(result));
+            //     }, function (error) {
+            //         console.log(JSON.stringify(error));
+            //     }, options);
+            // }
+
             var formData = new FormData();
             formData.append('file', $('#file')[0].files[0]);
 
@@ -178,7 +237,7 @@ $(document).ready(function () {
             $("#blockreg2").addClass("hide");
 
             fileUpload("/childphoto", formData, function (response) {
-                
+
                 var data = {};
                 var role = 3;
                 var str = ($('#user_id').val()).trim();
@@ -195,11 +254,12 @@ $(document).ready(function () {
                 data.photos = response;
 
                 httpPost("/childrenregistration", data, function (response) {
-                    
+
                     $('#registerModal').modal({ backdrop: 'static', keyboard: false });
-                    
+
                 });
             });
         });
-     }
+
+    }
 });

@@ -37,6 +37,7 @@ $(document).ready(function () {
         var data = {};
         data.fromdate = $('#fromdate').val();
         data.todate = $('#todate').val();
+        data.profileId=localStorage.getItem("user");
         httpPost("/cumulativegraphwithdate", data, function (response) {
             $("#chartContainer").removeClass("hide");
             $(".loading").addClass("hide");

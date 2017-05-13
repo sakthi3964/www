@@ -377,6 +377,13 @@ $(document).ready(function () {
                                     message: localization.institution[lang()]
                                 }
                             }
+                        },
+                         off_address: {
+                            validators: {
+                                notEmpty: {
+                                    message: localization.off_address[lang()]
+                                }
+                            }
                         }
                     }
             })
@@ -429,6 +436,7 @@ $(document).ready(function () {
                             data.organization = ($('#organization').val()).trim();
                             data.area_of_expertise = ($('#area_of_expertise').val()).trim();
                             data.experience = ($('#experience').val()).trim();
+                            data.off_address = ($('#off_address').val()).trim();
                             data.password = ($('#password').val()).trim();
                             data.reference = ($('#reference').val()).trim();
                             data.commitment = ($('#commitment').val()).trim();

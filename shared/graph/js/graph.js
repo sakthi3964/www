@@ -35,9 +35,9 @@ $(document).ready(function () {
                         text: "Holistic Indicators"
                     },
                     animationEnabled: true,
-                    axisY: {
-                        title: "Points"
-                    },
+                    // axisY: {
+                    //     title: "Points"
+                    // },
                     axisX: {
                         labelAngle: 90
                     },

@@ -19,7 +19,7 @@ $(document).ready(function () {
 
                 $(".loading").addClass("hide");
                 if (response[0] == null || response[1] == null) {
-                    $('#mentor_record').modal();
+                    $('#mentor_record').modal({ backdrop: 'static', keyboard: false});
                 }
 
                 // if ((response[0] && response[1]) == null) {
@@ -106,13 +106,13 @@ $(document).ready(function () {
                         $('#country').html(response[1].profile.country);
                         $('#postal_code').html(response[1].profile.postal_code);
                         $('#mobile_no').html(response[1].profile.mobile_no);
-                        $('#phone').html(response[1].profile.phone);
                         $('#work_type').html(response[1].profile.profileinfo.work_type);
                         $('#course').html(response[1].profile.profileinfo.course);
                         $('#department').html(response[1].profile.profileinfo.department);
                         $('#institution').html(response[1].profile.profileinfo.institution);
                         $('#reference').html(response[1].profile.profileinfo.reference);
-                        $('#commitment').html(response[1].profile.profileinfo.commitment);
+                        var commitment = response[1].profile.profileinfo.commitment + "&nbsphours / month"
+                        $('#commitment').html(commitment);
                         if (response[1].profile.profileinfo.designation == "") {
                             $('#designationrow').hide();
                         }

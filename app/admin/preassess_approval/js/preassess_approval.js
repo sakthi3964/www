@@ -53,7 +53,7 @@ function connectionDisplay() {
         else {
             response.forEach(function (element) {
                 $("#listofmemberss").removeClass("hide");
-                $('#listofmemberss').append('<div class="cards-view"> <div class="profile-card col-xs-6 col-sm-3 col-md-3 col-lg-3"> <div>  <img src="' + BASEURL + '/uploads/children/photos/' + element.photos + '" class="profile-card-img" id="img' + j + '" name= "img">  <h4 class="profile-card-title">' + element.full_name + '</h4>   </div> <div><button onclick="accept(' + element.id + ')" class="profile-card-btn" type="submit" id="submit' + i + '">Approve</button></div><div><button onclick="deny(' + element.id + ')" class="profile-card-btn" type="submit">Decline</button></div></div></div>');
+                $('#listofmemberss').append('<div class="profile-card"> <div>  <img src="' + BASEURL + '/uploads/children/photos/' + element.photos + '" class="profile-card-img" id="img' + j + '" name= "img">  <h4 class="profile-card-title">' + element.full_name + '</h4>   </div> <div><button onclick="accept(' + element.id + ')" class="profile-card-btn" type="submit" id="submit' + i + '">Approve</button></div><div><button onclick="deny(' + element.id + ')" class="profile-card-btn" type="submit">Decline</button></div></div>');
                 // $("#listofmemberss").load(childReviewForm.html);
                 var id = "#submit" + i;
                 var id1 = "#img" + j;

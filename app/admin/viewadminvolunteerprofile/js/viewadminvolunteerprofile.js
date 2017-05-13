@@ -19,7 +19,7 @@ $(document).ready(function () {
             ];
             var monthna = new Date(response[0].dob);
             var month = monthNames[monthna.getMonth()];
-
+            var commitment = response[0].profileinfo.commitment + "&nbsphours / month"
             $("#blockreg2").removeClass("hide");
             $(".loading").addClass("hide");
             $('#profileimage').append('<img src="' + BASEURL + '/uploads/volunteer/photo/' + response[0].profileinfo.photo + '" width="150" height="150">');
@@ -36,7 +36,6 @@ $(document).ready(function () {
             $('#country').html(response[0].country);
             $('#postal_code').html(response[0].postal_code);
             $('#mobile_no').html(response[0].mobile_no);
-            $('#phone').html(response[0].phone);
             $('#work_type').html(response[0].profileinfo.work_type);
             $('#course').html(response[0].profileinfo.course);
             $('#department').html(response[0].profileinfo.department);
@@ -46,7 +45,8 @@ $(document).ready(function () {
             $('#email_id').html(response[0].email_id);
             $('#work_type').html(response[0].profileinfo.work_type);
             $('#reference').html(response[0].profileinfo.reference);
-            $('#commitment').html(response[0].profileinfo.commitment);
+            var commitment = response[0].profileinfo.commitment + "&nbsphours / month"
+            $('#commitment').html(commitment) + 'hours in a month';
             $('#designation').html(response[0].profileinfo.designation);
             $('#organization').html(response[0].profileinfo.organization);
         });

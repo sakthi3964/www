@@ -5,7 +5,7 @@ $(document).ready(function () {
     }
     else {
         var data = {};
-
+        var role = localStorage.getItem("role");
         var id = localStorage.getItem("user");
         data.id = id;
         var child_id;
@@ -13,7 +13,12 @@ $(document).ready(function () {
 
             console.log(response);
             if (response[0] == null) {
-                $('#children_record').modal();
+                if (role == "volunteer") {
+                    $('#childrenvolunteer_record').modal({ backdrop: 'static', keyboard: false});
+                }
+                else if (role == "mentor") {
+                    $('#childrenmentor_record').modal({ backdrop: 'static', keyboard: false});
+                }
 
             }
             //date display code

@@ -24,7 +24,9 @@ body{
 #aboutuscollapse{
     float: none;
     font-size: 15px;
+    margin: 0px;
     color: white;
+    padding: 10px 0;
 }
 #block1 {
     background-color: white;
@@ -33,6 +35,8 @@ body{
 
 .loginbutton {
     background-color: #F9571A;
+    color: white;
+    font-size: 14px;
 }
 
 #link1 {
@@ -49,15 +53,47 @@ body{
     
 }
 #panel1 {
-    margin-top:60px; 
+    margin-top:25px; 
 }
 #panel2 {
     margin-top:20px; 
 
+}
+#aboutuscollapse{
+
+}
+#heading{
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    padding-bottom: 0px;
+    line-height: 35px; 
 }
 #footer{
     color: black;
 }
 #indeximage{
     margin: 0 auto;
+}
+
+@media screen and (max-width: 599px){
+    #block1 {
+        padding: 20px 20px 77px 20px;
+    }
+}
+.videowrapper {
+    float: none;
+    clear: both;
+    width: 100%;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+}
+.videowrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }

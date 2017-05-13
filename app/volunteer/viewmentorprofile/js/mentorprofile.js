@@ -41,13 +41,13 @@ $(document).ready(function () {
                 $('#country').html(response[0].profile.country);
                 $('#postal_code').html(response[0].profile.postal_code);
                 $('#mobile_no').html(response[0].profile.mobile_no);
-                $('#phone').html(response[0].profile.phone);
                 $('#work_type').html(response[0].profile.profileinfo.work_type);
                 $('#course').html(response[0].profile.profileinfo.course);
                 $('#department').html(response[0].profile.profileinfo.department);
                 $('#institution').html(response[0].profile.profileinfo.institution);
                 $('#reference').html(response[0].profile.profileinfo.reference);
-                $('#commitment').html(response[0].profile.profileinfo.commitment);
+                var commitment = response[0].profile.profileinfo.commitment + "&nbsphours / month"
+                $('#commitment').html(commitment);
                 if (response[0].profile.profileinfo.designation == "") {
                     $('#designationrow').hide();
                 }

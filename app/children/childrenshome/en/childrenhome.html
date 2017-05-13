@@ -48,7 +48,7 @@
 			</a>
 			<a href="../../training/en/training.html">
 				<div class="col-sm-4 col-xs-4 col-md-4 card">
-					<p>Training
+					<p>Help - Menu
 						<img src="../../../../helperfiles/img/training.png" class="img-responsive " alt="TRAINING" width="120" height="236">
 					</p>
 				</div>
@@ -85,7 +85,10 @@
 					</p>
 				</div>
 			</a>
-			<a href="../../about_volunteer_reviewform/en/childReviewForm.html">
+			<div class="col-sm-4 col-xs-4 hide" id="viewreviewcheck">
+				<p>Review Form<img src="../../../../helperfiles/img/form.png" class="img-responsive " alt="REVIEW FORM" width="120" height="236"></p>
+			</div>
+			<a href="../../about_volunteer_reviewform/en/childReviewForm.html"  class="hide " id="reviewcheck">
 				<div class="col-sm-4 col-xs-4 card">
 					<p>Review Form
 						<img src="../../../../helperfiles/img/form.png" class="img-responsive " alt="REVIEW FORM" width="120" height="236">
@@ -117,7 +120,23 @@
 			</a>
 		</div>
 	</div>
-	
+	<div class="modal fade" id="childreview" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">N'KaNa</h4>
+				</div>
+
+				<div class="modal-body">
+					<p class="text-center">Kindly fill your review form</p>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-success" data-dismiss="modal" onclick="window.location = '../../about_volunteer_reviewform/en/childReviewForm.html '">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!--<div class="container-fluid" id="commonfooter">
 		<footer id="footer">
 			<center>

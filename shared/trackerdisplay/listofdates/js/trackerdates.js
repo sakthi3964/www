@@ -38,7 +38,7 @@ $(document).ready(function () {
                     ];
                     var monthna = new Date(element.date);
                     var month = monthNames[monthna.getMonth()];
-                    $('#listOfDates').append('<a href="../../viewtracker/en/viewtracker.html?date&' + element.date + '" id=' + element.id + '><div class="calendor"><div class="month"><p>' + month + '</p></div><div class="date"><p>' + day + '</p></div><div class="year"><p>' + year + '</p></div></div></a>');
+                    $('#listOfDates').append('<a href="../../viewtracker/en/viewtracker.html?date&' + element.created_at + '" id=' + element.id + '><div class="calendor"><div class="month"><p>' + month + '</p></div><div class="date"><p>' + day + '</p></div><div class="year"><p>' + year + '</p></div></div></a>');
                 }, this);
             }
         });

@@ -10,7 +10,7 @@ $(document).ready(function () {
         data.id = id;
         var role = localStorage.getItem("role");
 
-    
+
         httpPost("/viewvolunteer", data, function (response) {
             var dateObj = new Date(response[0].dob);
             var day = dateObj.getDate();
@@ -41,13 +41,14 @@ $(document).ready(function () {
             $('#country').html(response[0].country);
             $('#postal_code').html(response[0].postal_code);
             $('#mobile_no').html(response[0].mobile_no);
-            $('#phone').html(response[0].phone);
             $('#work_type').html(response[0].profileinfo.work_type);
             $('#course').html(response[0].profileinfo.course);
             $('#department').html(response[0].profileinfo.department);
             $('#institution').html(response[0].profileinfo.institution);
             $('#reference').html(response[0].profileinfo.reference);
-            $('#commitment').html(response[0].profileinfo.commitment);
+            var commitment = response[0].profileinfo.commitment + "&nbsphours / month"
+            $('#commitment').html(commitment);
+        
             if (response[0].profileinfo.designation == "") {
                 $('#designationrow').hide();
             }

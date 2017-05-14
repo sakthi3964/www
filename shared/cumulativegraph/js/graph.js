@@ -90,15 +90,15 @@ $(document).ready(function () {
                             indexLabelFontSize:25,
                             dataPoints: [
                                 { y: education, label: "Education", indexLabel:(decimalPlaces(education)>1?education.toFixed(1):education).toString(),indexLabelPlacement:"inside"},
-                                { y: health, label: "health" },
-                                { y: familyRelationship, label: "familyRelationship" },
-                                { y: friendRelationship, label: "friendRelationship" },
-                                { y: positiveAttitude, label: "positiveAttitude" },
-                                { y: coCurricular, label: "coCurricular" },
-                                { y: socialCommunity, label: "socialCommunity" },
-                                { y: safeFeel, label: "safeFeel" },
-                                { y: socialInteraction, label: "socialInteraction" },
-                                { y: hygiene, label: "hygiene" }
+                                { y: health, label: "health", indexLabel:(decimalPlaces(health)>1?health.toFixed(1):health).toString(),indexLabelPlacement:"inside"},
+                                { y: familyRelationship, label: "familyRelationship",indexLabel:(decimalPlaces(familyRelationship)>1?familyRelationship.toFixed(1):familyRelationship).toString(),indexLabelPlacement:"inside"},
+                                { y: friendRelationship, label: "friendRelationship",indexLabel:(decimalPlaces(friendRelationship)>1?friendRelationship.toFixed(1):friendRelationship).toString(),indexLabelPlacement:"inside" },
+                                { y: positiveAttitude, label: "positiveAttitude",indexLabel:(decimalPlaces(positiveAttitude)>1?positiveAttitude.toFixed(1):positiveAttitude).toString(),indexLabelPlacement:"inside" },
+                                { y: coCurricular, label: "coCurricular",indexLabel:(decimalPlaces(coCurricular)>1?coCurricular.toFixed(1):coCurricular).toString(),indexLabelPlacement:"inside" },
+                                { y: socialCommunity, label: "socialCommunity",indexLabel:(decimalPlaces(socialCommunity)>1?socialCommunity.toFixed(1):socialCommunity).toString(),indexLabelPlacement:"inside" },
+                                { y: safeFeel, label: "safeFeel",indexLabel:(decimalPlaces(safeFeel)>1?safeFeel.toFixed(1):safeFeel).toString(),indexLabelPlacement:"inside" },
+                                { y: socialInteraction, label: "socialInteraction",indexLabel:(decimalPlaces(socialInteraction)>1?socialInteraction.toFixed(1):socialInteraction).toString(),indexLabelPlacement:"inside" },
+                                { y: hygiene, label: "hygiene",indexLabel:(decimalPlaces(hygiene)>1?hygiene.toFixed(1):hygiene).toString(),indexLabelPlacement:"inside" }
                             ]
                         }
                     ]

@@ -14,7 +14,7 @@ $(document).ready(function () {
                 console.log("hi",response);
                 if (response.childrenResult.mentor_approval != null && response.childrenResult.mentor_approval == 0) {
                     $('#mentor-approval').modal({ backdrop: 'static', keyboard: false });
-
+                    $('#childname').append("You got request for the child "+response.childrenResult.full_name);
                 }
 
             })

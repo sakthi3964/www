@@ -6,18 +6,20 @@ $(document).ready(function () {
     else {
         var data = {};
         var url = window.location.href;
-        var date1 = url.substring(url.indexOf(':') + 1, url.length);
-        var date2 = date1.substring(date1.indexOf(':') + 1, date1.length);
+        var date1 = url.substring(url.indexOf('&') + 1, url.length);
+        var date2 = date1.substring(date1.indexOf('&') + 1, date1.length);
 
-        var date3 = date2.substring(date2.indexOf(':') + 1, date2.length);
+        var date3 = date2.substring(date2.indexOf('&') + 1, date2.length);
         data.date = date3;
+        data.profileId=localStorage.getItem("user");
 
 
 
         httpPost("/viewReviewDetail", data, function (response) {
+        console.log("response",  response);
             $("#chartContainer").removeClass("hide");
             $(".loading").addClass("hide");
-
+ 
             var res2 = JSON.parse(response.review);
             var education = parseInt(res2.education);
             var health = parseInt(res2.health);

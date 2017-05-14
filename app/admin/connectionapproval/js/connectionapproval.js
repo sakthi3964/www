@@ -44,12 +44,38 @@ $(document).ready(function () {
     }
     else {
 
-        connectionDisplay();
+        // connectionDisplay();
 
     }
 });
-function connectionDisplay() {
-    httpGet("/connectionapproval", function (response) {
+function volunteerTab() {
+    $('#firsttab').empty();
+    var role = "volunteer";
+    connectionDisplay(role);
+}
+function mentorTab() {
+    $('#secondtab').empty();
+    var role = "mentor";
+    connectionDisplay(role);
+}
+function connectionDisplay(role) {
+    //    $('#secondtab').empty();
+    var data = {};
+    if (role == "volunteer") {
+        console.log("volunteer role");
+
+        data.connectionOperation = "volunteer";
+    }
+    if (role == "mentor") {
+        console.log("mentor role");
+
+        data.connectionOperation = "mentor";
+    }
+
+
+
+    httpPost("/connectionapproval", data, function (response) {
+        console.log("dadfddaffdfdfa" + response[0]);
         $(".loading").addClass("hide");
         var i = 0;
         var j = 0;
@@ -58,49 +84,106 @@ function connectionDisplay() {
             $(".no_record").removeClass("hide");
         }
         else {
+            // if (data.connectionOperation = "volunteer") {
+
             response.forEach(function (element) {
-                $("#listofmemberss").removeClass("hide");
+                console.log("checking of element", element.childrenprofile.id);
                 console.log(element.childrenprofile.full_name);
                 console.log(element.role);
-                $('#listofmemberss').append('<div class="cards-view"><div class="profile-card  col-xs-6 col-sm-3 col-md-3 col-lg-3"><div><table class="table"><tr><td>' + element.childrenprofile.full_name + '</td><td>' + element.profile.name + '</td></tr><tr><td>children</td><td>' + element.role + '</td></tr></table></div><div class="col-xs-6 col-sm-6"><button onclick="accept(' + element.id + "," + element.profile_id + "," + true + ')"class="profile-card-btn accept-button " type="submit" id="submit' + i + '">Accept</button></div><div class="col-sm-6 col-xs-6"><button onclick="deny(' + element.id + "," + element.profile_id + "," + true + "," + element.childrenprofile.id+')" class="profile-card-btn" type="submit" id="submit1' + i + '">Deny</button></div></div></div>');
+                console.log("childrenprofile id", element.childrenprofile.id);
+                $('#firsttab').append('<div class="cards-view"><div class="profile-card  col-xs-6 col-sm-3 col-md-3 col-lg-3"><div><table class="table"><tr><td>' + element.childrenprofile.full_name + '</td><td>' + element.profile.name + '</td></tr><tr><td>children</td><td>' + element.role + '</td></tr></table></div><div class="col-xs-6 col-sm-6"><button onclick="accept(' + element.id + "," + element.profile_id + "," + true + "," + element.role + ')"class="profile-card-btn accept-button " type="submit" id="submit' + i + '">Accept</button></div><div class="col-sm-6 col-xs-6"><button onclick="deny(' + element.id + "," + element.profile_id + "," + true + "," + element.childrenprofile.id + "," + element.role + ')" class="profile-card-btn" type="submit" id="submit1' + i + '">Deny</button></div></div></div>');
 
             }, this);
+            // } else {
+
+            // }
         }
     });
 
 }
 
+
+// function connectionDisplay() {
+//     $('#firsttab').empty();
+//     var data = {};
+//    data.connectionOperation = "mentor";
+//    httpPost("/connectionapproval", data, function (response) {
+//        console.log("dadfddaffdfdfa"+response[0]);
+//        $(".loading").addClass("hide");
+//        var i = 0;
+//        var j = 0;
+//        var res_length = response.length;
+//        if (res_length == 0) {
+//            $(".no_record").removeClass("hide");
+//        }
+//        else {
+//            response.forEach(function (element) {
+//                console.log("checking of element",element.childrenprofile.id);
+//                console.log(element.childrenprofile.full_name);
+//                console.log(element.role);
+//                console.log("childrenprofile id",element.childrenprofile.id);
+//                $('#secondtab').append('<div class="cards-view"><div class="profile-card  col-xs-6 col-sm-3 col-md-3 col-lg-3"><div><table class="table"><tr><td>' + element.childrenprofile.full_name + '</td><td>' + element.profile.name + '</td></tr><tr><td>children</td><td>' + element.role + '</td></tr></table></div><div class="col-xs-6 col-sm-6"><button onclick="accept(' + element.id + "," + element.profile_id + "," + true + ')"class="profile-card-btn accept-button " type="submit" id="submit' + i + '">Accept</button></div><div class="col-sm-6 col-xs-6"><button onclick="deny(' + element.id + "," + element.profile_id + "," + true +","+ element.childrenprofile.id +')" class="profile-card-btn" type="submit" id="submit1' + i + '">Deny</button></div></div></div>');
+//                // console.log(" chekfljddddljkfddjlfdjfdjkfjkdjkfkjdkjfdkl;f"+JSON.stringify(temp));
+//            }, this);
+//        }
+//    });
+
+// }
+// function connectionDisplay() {
+//     httpGet("/connectionapproval", function (response) {
+//         $(".loading").addClass("hide");
+//         var i = 0;
+//         var j = 0;
+//         var res_length = response.length;
+//         if (res_length == 0) {
+//             $(".no_record").removeClass("hide");
+//         }
+//         else {
+//             response.forEach(function (element) {
+//                 $("#listofmemberss").removeClass("hide");
+//                 console.log(element.childrenprofile.full_name);
+//                 console.log(element.role);
+//                 $('#listofmemberss').append('<div class="cards-view"><div class="profile-card  col-xs-6 col-sm-3 col-md-3 col-lg-3"><div><table class="table"><tr><td>' + element.childrenprofile.full_name + '</td><td>' + element.profile.name + '</td></tr><tr><td>children</td><td>' + element.role + '</td></tr></table></div><div class="col-xs-6 col-sm-6"><button onclick="accept(' + element.id + "," + element.profile_id + "," + true + ')"class="profile-card-btn accept-button " type="submit" id="submit' + i + '">Accept</button></div><div class="col-sm-6 col-xs-6"><button onclick="deny(' + element.id + "," + element.profile_id + "," + true + "," + element.childrenprofile.id+')" class="profile-card-btn" type="submit" id="submit1' + i + '">Deny</button></div></div></div>');
+
+//             }, this);
+//         }
+//     });
+
+// }
+
 // window.location.href = "../../../../shared/viewvolunteerprofile/en/viewvolunteerprofile.html?id:" + element.id;
-function accept(elementId, elementPrfileId, elementStatus) {
+function accept(elementId, elementPrfileId, elementStatus, elementRole) {
+    console.log("aiee");
     var data = {};
     data.status = elementStatus;
+    var role = elementRole;
 
-
+    console.log("inside accept", role);
     data.id = elementId;
     data.profile_id = elementPrfileId;
-    data.time=new Date();
+    data.time = new Date();
     httpPost("/changeapproval", data, function (response) {
         console.log(response);
         if (response != null) {
             $('#listofmemberss').empty();
-            connectionDisplay();
+            connectionDisplay(elementRole);
         }
     });
 }
 
-function deny(elementId, elementPrfileId, elementStatus,elementchildrenprofileid) {
-    var data = {};
-    data.status = elementStatus;
-    data.id = elementId;
-    data.profile_id = elementPrfileId;
-    data.time=new Date();
-    data.childrenprofileid=elementchildrenprofileid;
-    httpPost("/denyapprovalconnection", data, function (response) {
-        console.log(response);
-        if (response != null) {
-            $('#listofmemberss').empty();
-            connectionDisplay();
-        }
-    });
+// function deny(elementId, elementPrfileId, elementStatus, elementchildrenprofileid) {
+//     var data = {};
+//     data.status = elementStatus;
+//     data.id = elementId;
+//     data.profile_id = elementPrfileId;
+//     data.time = new Date();
+//     data.childrenprofileid = elementchildrenprofileid;
+//     httpPost("/denyapprovalconnection", data, function (response) {
+//         console.log(response);
+//         if (response != null) {
+//             $('#listofmemberss').empty();
+//             connectionDisplay();
+//         }
+//     });
 
-}
+// }

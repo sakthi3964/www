@@ -73,7 +73,7 @@ $(document).ready(function () {
                     //         minlength: 2,
                     //         required: true
                     //     },
-                        checkcv, checkphoto: {
+                        checkcv: {
                             validators: {
                                 notEmpty: {
                                     message: localization.checkcv[lang()]

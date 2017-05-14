@@ -64,6 +64,7 @@ li{
     border-radius: 4px;
     background-color: #f7f7f6; 
     border-radius: 20px;
+    margin-left: 5px;
 }
 .nav-pills>li.active>a {
     background-color: #06BBB5;
@@ -82,3 +83,13 @@ a {
 /*.cumulativeGraph{
     display: inline;
 }*/
+#demos ul li{
+    margin-top: 55px;
+    padding: 0px;
+}
+#demos ul {
+    margin-bottom: 5px;
+}
+#listOfMentorDates{
+    margin-top: 50%;
+}

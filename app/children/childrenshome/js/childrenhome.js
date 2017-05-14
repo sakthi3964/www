@@ -4,7 +4,6 @@ $(document).ready(function () {
         window.location.href = "../../../../index.html";
     }
     else {
-
         var id = localStorage.getItem("user");
         var datas = {};
         // datas.id = id;
@@ -47,7 +46,11 @@ $(document).ready(function () {
         });
 
         httpPost("/childvolunteermentorid", data, function (response) {
-            // console.log(response[0].updated_at);
+            if (response == 0) {
+                $('#viewreviewcheck').removeClass('hide');
+            }
+            else{
+                 // console.log(response[0].updated_at);
             $(".loading_icon").addClass("hide");
             if ((response[0].approve_status == 1) && (response[0].role == "volunteer")) {
                 var updated_at = response[0].updated_at;
@@ -57,10 +60,17 @@ $(document).ready(function () {
                 var diff1 = Math.abs(Math.floor(diff));
                 var days = Math.floor(diff1 / (24 * 60 * 60));
                 console.log('' + days);
-
+                if (days < 90) {
+                    $('#viewreviewcheck').removeClass('hide');
+                }
+                else {
+                    $('#reviewcheck').removeClass('hide');
+                }
                 // $('#reviewcheck').removeClass('hide');
                 // $('#selectchild').append('<a href="../../../../shared/viewchildprofile/en/viewchildprofile.html"><div class="col-sm-4 col-xs-4"><p>Child Profile<img src="../../../../helperfiles/img/childrenprofile.png" class="img-responsive " alt="View Children Profile" width="120"height="236"> </p></div></a>');
             }
+            }
+           
 
         }),
 

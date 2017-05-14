@@ -11,7 +11,7 @@ $(document).ready(function () {
         var date3 = date2.substring(date2.indexOf('&') + 1, date2.length);
         data.date = date3;
         data.profileId=localStorage.getItem("user");
-        console.log(data.date);
+        console.log(data);
         httpPost("/viewReviewDetail", data, function (response) {
             $("#blockreg2").removeClass("hide");
             $(".loading").addClass("hide");

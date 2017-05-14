@@ -16,6 +16,9 @@
 	<script src="../../../../helperfiles/js/logout.js" type="text/javascript"></script>
 	<link rel="stylesheet" type="text/css" href="../../../../helperfiles/css/homepage.css">
 	<link rel="stylesheet" type="text/css" href="../../../../assert/css/common.css">
+	<script src="../js/mentorhome.js" type="text/javascript"></script>
+	<script src="../../../../helperfiles/helper.js" type="text/javascript"></script>
+	<script src="../../../../config/config.js" type="text/javascript"></script>
 
 </head>
 
@@ -59,12 +62,12 @@
 
 		</div>
 		<div class="row">
-			
+
 			<a href="../../../../shared/viewchildprofile/en/viewchildprofile.html">
 				<div class="col-sm-4 col-xs-4">
 					<p>Child Profile
 						<img src="../../../../helperfiles/img/childrenprofile.png" class="img-responsive " alt="View Children Profile" width="120"
-							height="236">
+						 height="236">
 					</p>
 				</div>
 			</a>
@@ -91,7 +94,7 @@
 					</p>
 				</div>
 			</a>
-			
+
 			<a href="../../review/en/mentorreview.html">
 				<div class="col-sm-4 col-xs-4">
 					<p>Review Form
@@ -116,6 +119,26 @@
 			</center>
 		</footer>
 	</div>-->
+	<div class="modal fade" id="mentor-approval" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">N'KaNa</h4>
+				</div>
+
+				<div class="modal-body">
+					<p class="text-center">UserName or Password is Wrong</p>
+				</div>
+
+				<div class="modal-footer">
+					<button id="mentorapproval" class="btn btn-success" data-dismiss="modal">accept</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
 </body>
 
 </html>

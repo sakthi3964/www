@@ -44,7 +44,7 @@ $(document).ready(function () {
     }
     else {
 
-        // connectionDisplay();
+        connectionDisplay("volunteer");
 
     }
 });
@@ -62,21 +62,15 @@ function connectionDisplay(role) {
     //    $('#secondtab').empty();
     var data = {};
     if (role == "volunteer") {
-        console.log("volunteer role");
-
         data.connectionOperation = "volunteer";
     }
     if (role == "mentor") {
-        console.log("mentor role");
-
         data.connectionOperation = "mentor";
     }
-
-
-
+    console.log(data.connectionOperation);
     httpPost("/connectionapproval", data, function (response) {
-        console.log("dadfddaffdfdfa" + response[0]);
         $(".loading").addClass("hide");
+        
         var i = 0;
         var j = 0;
         var res_length = response.length;
@@ -87,18 +81,14 @@ function connectionDisplay(role) {
             // if (data.connectionOperation = "volunteer") {
 
             response.forEach(function (element) {
-                console.log("checking of element", element.childrenprofile.id);
-                console.log(element.childrenprofile.full_name);
-                console.log(element.role);
-                console.log("childrenprofile id", element.childrenprofile.id);
-                if(element.role=='volunteer')
-                {
-                $('#firsttab').append('<div class="cards-view"><div class="profile-card  col-xs-6 col-sm-3 col-md-3 col-lg-3"><div><table class="table"><tr><td>' + element.childrenprofile.full_name + '</td><td>' + element.profile.name + '</td></tr><tr><td>children</td><td>' + element.role + '</td></tr></table></div><div class="col-xs-6 col-sm-6"><button onclick="accept(' + element.id + "," + element.profile_id + "," + true + ",'" + element.role + '\')"class="profile-card-btn accept-button " type="submit" id="submit' + i + '">Accept</button></div><div class="col-sm-6 col-xs-6"><button onclick="deny(' + element.id + "," + element.profile_id + "," + true + "," + element.childrenprofile.id + "," + element.role + ')" class="profile-card-btn" type="submit" id="submit1' + i + '">Deny</button></div></div></div>');
-            }
-            else{
-                 $('#secondtab').append('<div class="cards-view"><div class="profile-card  col-xs-6 col-sm-3 col-md-3 col-lg-3"><div><table class="table"><tr><td>' + element.childrenprofile.full_name + '</td><td>' + element.profile.name + '</td></tr><tr><td>children</td><td>' + element.role + '</td></tr></table></div><div class="col-xs-6 col-sm-6"><button onclick="accept(' + element.id + "," + element.profile_id + "," + true + ",'" + element.role + '\')"class="profile-card-btn accept-button " type="submit" id="submit' + i + '">Accept</button></div><div class="col-sm-6 col-xs-6"><button onclick="deny(' + element.id + "," + element.profile_id + "," + true + "," + element.childrenprofile.id + "," + element.role + ')" class="profile-card-btn" type="submit" id="submit1' + i + '">Deny</button></div></div></div>');
+                $(".loading").addClass("hide");
+                if (element.role == 'volunteer') {
+                    $('#firsttab').append('<div class="cards-view"><div class="profile-card  col-xs-6 col-sm-3 col-md-3 col-lg-3"><div><table class="table"><tr><td>' + element.childrenprofile.full_name + '</td><td>' + element.profile.name + '</td></tr><tr><td>children</td><td>' + element.role + '</td></tr></table></div><div class="col-xs-6 col-sm-6"><button onclick="accept(' + element.id + "," + element.profile_id + "," + true + ",'" + element.role + '\')"class="profile-card-btn accept-button " type="submit" id="submit' + i + '">Accept</button></div><div class="col-sm-6 col-xs-6"><button onclick="deny(' + element.id + "," + element.profile_id + "," + true + "," + element.childrenprofile.id + "," + element.role + ')" class="profile-card-btn" type="submit" id="submit1' + i + '">Deny</button></div></div></div>');
+                }
+                else {
+                    $('#secondtab').append('<div class="cards-view"><div class="profile-card  col-xs-6 col-sm-3 col-md-3 col-lg-3"><div><table class="table"><tr><td>' + element.childrenprofile.full_name + '</td><td>' + element.profile.name + '</td></tr><tr><td>children</td><td>' + element.role + '</td></tr></table></div><div class="col-xs-6 col-sm-6"><button onclick="accept(' + element.id + "," + element.profile_id + "," + true + ",'" + element.role + '\')"class="profile-card-btn accept-button " type="submit" id="submit' + i + '">Accept</button></div><div class="col-sm-6 col-xs-6"><button onclick="deny(' + element.id + "," + element.profile_id + "," + true + "," + element.childrenprofile.id + "," + element.role + ')" class="profile-card-btn" type="submit" id="submit1' + i + '">Deny</button></div></div></div>');
 
-            }
+                }
             }, this);
             // } else {
 
@@ -171,14 +161,12 @@ function accept(elementId, elementPrfileId, elementStatus, elementRole) {
     httpPost("/changeapproval", data, function (response) {
         console.log(response);
         if (response != null) {
-            if(elementRole=='volunteer')
-            {
+            if (elementRole == 'volunteer') {
                 $('#firsttab').empty();
 
             }
-            else
-            {
-                  $('#secondtab').empty();
+            else {
+                $('#secondtab').empty();
 
             }
 

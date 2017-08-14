@@ -31,7 +31,7 @@ $(document).ready(function () {
             else {
                 response.forEach(function (element) {
                     var dateObj = new Date(element.date);
-                    var day = dateObj.getUTCDate();
+                    var day = dateObj.getUTCDate()+1;
                     var year = dateObj.getUTCFullYear();
                     var monthNames = ["January", "February", "March", "April", "May", "June",
                         "July", "August", "September", "October", "November", "December"

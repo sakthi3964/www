@@ -47,6 +47,17 @@ $(document).ready(function () {
 
         httpPost("/childvolunteermentorid", data, function (response) {
             if (response == 0) {
+                $('#vgraph').removeClass('hide');
+            }
+            else{
+                if(response[0].approve_status == 1) {
+                    $('#viewgraph').removeClass('hide');
+                }
+            }
+        });
+
+        httpPost("/childvolunteermentorid", data, function (response) {
+            if (response == 0) {
                 $('#viewreviewcheck').removeClass('hide');
             }
             else{

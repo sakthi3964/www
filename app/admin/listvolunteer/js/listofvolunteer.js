@@ -17,7 +17,7 @@ $(document).ready(function () {
             else {
                 response.forEach(function (element) {
                     $("#listofmembers").removeClass("hide");
-                    $('#listofmembers').append('<div class="profile-card"> <div>  <img id="img' + j + '" src="' + BASEURL + '/uploads/volunteer/photo/' + element.profileinfo.photo + '" class="profile-card-img">  <h4 class="profile-card-title">' + element.name + '</h4> <h5 class="profile-card-title">' + element.age + '</h5>  </div>  <button class="profile-card-btn submit" name="submit" type="submit" id="submit' + i + '">ViewProfile</button></div>');
+                    $('#listofmembers').append('<div class="profile-card"> <div>  <img id="img' + j + '" src="' + BASEURL + '/uploads/volunteer/photo/' + element.profileinfo.photo + '" class="profile-card-img">  <h4 class="profile-card-title">' + element.name + '</h4>  </div>  <button class="profile-card-btn submit" name="submit" type="submit" id="submit' + i + '">ViewProfile</button></div>');
                     var id = "#submit" + i;
                     $(id).click(function () {
                         window.location.href = "../../viewadminvolunteerprofile/en/viewadminvolunteerprofile.html?id:" + element.id;

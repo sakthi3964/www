@@ -57,10 +57,10 @@ function connectionDisplay() {
                 // $("#listofmemberss").load(childReviewForm.html);
                 var id = "#submit" + i;
                 var id1 = "#img" + j;
-                $(id).click(function () {
-                    window.location.href = "../../../../shared/viewpreassessment/en/viewpreassessment.html?id:" + element.id;
-                });
-                i++;
+                // $(id).click(function () {
+                //     window.location.href = "../../../../shared/viewpreassessment/en/viewpreassessment.html?id:" + element.id;
+                // });
+                // i++;
                 $(id1).click(function () {
                     window.location.href = "../../../../shared/viewpreassessment/en/viewpreassessment.html?id:" + element.id;
                 });

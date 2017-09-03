@@ -522,6 +522,7 @@ $(document).ready(function () {
         var time = new Date();
         data.id = id;
         httpPost("/editreturn", data, function (response) {
+            console.log("Response for edit"+JSON.stringify(response));
             radiobtn = response[0].gender;
             if (radiobtn == 'male') {
                 document.forms["registrationForm"]["male"].checked = true;
@@ -560,8 +561,8 @@ $(document).ready(function () {
             console.log(newDate);
             document.getElementById("dob").value = newDate;
             document.getElementById("mobile_no").value = response[0].mobile_no;
-            document.getElementById("code").value = response[0].code;
-            document.getElementById("phone").value = response[0].phone;
+            // document.getElementById("code").value = response[0].code;
+            // document.getElementById("phone").value = response[0].phone;
             document.getElementById("address_line1").value = response[0].address_line1;
             document.getElementById("address_line2").value = response[0].address_line2;
             document.getElementById("city").value = response[0].city;

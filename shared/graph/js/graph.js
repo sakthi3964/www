@@ -11,15 +11,21 @@ $(document).ready(function () {
 
         var date3 = date2.substring(date2.indexOf('&') + 1, date2.length);
         data.date = date3;
-        data.profileId=localStorage.getItem("user");
-
-
-
+        data.profileId = localStorage.getItem("user");
+        data.role = localStorage.getItem("role");
+        if (data.role == "admin") {
+            var dec = url.substring(url.lastIndexOf('#') + 1);
+            data.childId = window.atob(dec);
+        }
+        if (data.role == "children") {
+            data.childId = localStorage.getItem("user");
+            console.log(data.childId);
+        }    
         httpPost("/viewReviewDetail", data, function (response) {
-        console.log("response",  response);
+            console.log("response", response);
             $("#chartContainer").removeClass("hide");
             $(".loading").addClass("hide");
- 
+
             var res2 = JSON.parse(response.review);
             var education = parseInt(res2.education);
             var health = parseInt(res2.health);

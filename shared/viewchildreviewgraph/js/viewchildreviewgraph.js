@@ -17,7 +17,7 @@ $(document).ready(function () {
         data.id = id;
         console.log(data.id);
         httpPost("/childReviewDates", data, function (response) {
-          console.log(response);
+          console.log("hiii"+response);
             $(".loading").addClass("hide");
             $("#details").removeClass("hide");
             var res_length = response.length;

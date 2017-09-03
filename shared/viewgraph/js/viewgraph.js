@@ -18,6 +18,7 @@ $(document).ready(function () {
         else {
             var dec = url.substring(url.lastIndexOf(':') + 1);
             id = window.atob(dec);
+            console.log(id);
         }
         data.id = id;
         httpPost("/trackerDates", data, function (response) {
@@ -41,7 +42,7 @@ $(document).ready(function () {
                     var elementid = window.btoa(element.id);
 
 
-                    $('#listOfDates').append('<a href="../../graph/en/graph.html?date&' + element.created_at + '" id=' + elementid + '><div class="calendor"><div class="month"><p>' + month + '</p></div><div class="date"><p>' + day + '</p></div><div class="year"><p>' + year + '</p></div></div></a>');
+                    $('#listOfDates').append('<a href="../../graph/en/graph.html?date&' + element.created_at + ' id# ' +dec+'" id=' + elementid + '><div class="calendor"><div class="month"><p>' + month + '</p></div><div class="date"><p>' + day + '</p></div><div class="year"><p>' + year + '</p></div></div></a>');
                 }, this);
             }
         })

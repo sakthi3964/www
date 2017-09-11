@@ -17,6 +17,13 @@ $(document).ready(function () {
         httpPost("/cumulativegraph", data, function (response) {
             $("#getdate").removeClass("hide");
             $(".loading").addClass("hide");
+            var res_length = response.length;
+            if (res_length == 0) {
+                $(".no_record").removeClass("hide");
+            }
+            else{
+                $(".getdate").removeClass("hide");
+            }
             response.forEach(function (element) {
                 $('#fromdate').append(' <option value=' + element.date + '>' + element.date + '</option>')
                 $('#todate').append(' <option value=' + element.date + '>' + element.date + '</option>')

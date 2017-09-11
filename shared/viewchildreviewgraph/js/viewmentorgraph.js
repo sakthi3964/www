@@ -26,10 +26,12 @@ $(document).ready(function () {
                 console.log("fjdsa;ja;lsf");
                 var res_length = response.length;
                 if (res_length == 0) {
+                    console.log("no");
                     // $(".no_record").removeClass("hide");
-                     $('#listOfMentorDates').append('<div class="no_record"> <h3>No Record Found</h3></div>');
+                     $('#listOfMentorDates').append('<No Record Found');
                 }
                 else {
+                    console.log("no2");
                     $("#details").removeClass("hide");
                     response.forEach(function (element) {
                         var dateObj = new Date(element.created_at);
@@ -54,7 +56,7 @@ $(document).ready(function () {
                 $(".loading").addClass("hide");
                 if (res_length == 0) {
                     // $(".no_record").removeClass("hide");
-                     $('#listOfMentorDates').append('<div class="no_record"> <h3>No Record Found</h3></div>');
+                     $('#listOfMentorDates').append('No Record Found');
                 }
                 else {
                     

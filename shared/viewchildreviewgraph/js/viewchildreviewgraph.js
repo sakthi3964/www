@@ -23,8 +23,9 @@ $(document).ready(function () {
             var res_length = response.length;
             console.log(res_length);
             if (res_length == 0) {
+                console.log("no");
                 // $(".no_record").removeClass("hide");
-                  $('#listOfDates').append('<div class="no_record"> <h3>No Record Found</h3></div>');
+                  $('#listOfDates').append('No Record Found');
             }
             else {
                   

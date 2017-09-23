@@ -16,6 +16,7 @@ $(document).ready(function () {
         data.profileId = localStorage.getItem("user");
         httpPost("/cumulativegraph", data, function (response) {
             $("#getdate").removeClass("hide");
+<<<<<<< HEAD
              $(".loading").addClass("hide");
              if(response.length<1){
                 $(".no_record").removeClass("hide");
@@ -27,6 +28,16 @@ $(document).ready(function () {
                 $("#chartContainer").addClass("hide");
    
               }
+=======
+            $(".loading").addClass("hide");
+            var res_length = response.length;
+            if (res_length == 0) {
+                $(".no_record").removeClass("hide");
+            }
+            else{
+                $(".getdate").removeClass("hide");
+            }
+>>>>>>> refs/remotes/origin/Sakthi_development
             response.forEach(function (element) {
                 $('#fromdate').append(' <option value=' + element.date + '>' + element.date + '</option>')
                 $('#todate').append(' <option value=' + element.date + '>' + element.date + '</option>')

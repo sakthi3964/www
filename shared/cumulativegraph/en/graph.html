@@ -40,21 +40,26 @@
 				</div>
 			</div>
 		</nav>
-		<form id="getdate">
-			<div class="row">
-				<div class="col-xs-4 col-sm-4">
-					<select class="form-control" id="fromdate">
+		<div class="no_record hide">
+			<h3>No Record</h3>
+		</div>
+		<div class ="getdate hide">
+			<form>
+				<div class="row">
+					<div class="col-xs-4 col-sm-4">
+						<select class="form-control" id="fromdate">
                             <option value="">Start Date</option>                                 
                 </select>
-				</div>
-				<div class="col-xs-4 col-sm-4">
-					<select class="form-control" id="todate">
+					</div>
+					<div class="col-xs-4 col-sm-4">
+						<select class="form-control" id="todate">
                             <option value="">End Date</option>                                 
                 </select>
+					</div>
+					<a class="btn btn-default" id="submitcumulative">Get Graph</a>
 				</div>
-				<a class="btn btn-default" id="submitcumulative">Get Graph</a>
-			</div>
-		</form>
+			</form>
+		</div>
 	</div>
 	<div class="loading hide">
 		<div class="loading_img">

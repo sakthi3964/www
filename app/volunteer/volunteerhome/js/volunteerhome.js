@@ -52,11 +52,13 @@ $(document).ready(function () {
                     // $('#tracker').append('<div class="col-sm-4 col-xs-4"><p>Tracker<img src="../../../../helperfiles/img/tracker.png" class="img-responsive " alt="CHILD SELECTION" width="120" height="236"></p></div>');
                     $('#view_tracker').removeClass('hide');
                     $('#viewtracker').removeClass('hide');
+                    $('#viewgraph').removeClass('hide');
                 }
                 else {
                     // $('#tracker').append('<a href="../../tracker/en/tracker.html"><div class="col-sm-4 col-xs-4"><p>Tracker<img src="../../../../helperfiles/img/tracker.png" class="img-responsive " alt="CHILD SELECTION" width="120" height="236"></p></div></a>');
                     $('#tracker').removeClass('hide');
                     $('#viewtrack').removeClass('hide');
+                    $('#graph').removeClass('hide');
                 }
             })
         httpPost("/volunteerhomeviewmentor", data, function (response) {

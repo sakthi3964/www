@@ -48,6 +48,15 @@ $(document).ready(function () {
         httpPost("/cumulativegraphwithdate", data, function (response) {
             $("#chartContainer").removeClass("hide");
             $(".loading").addClass("hide");
+            if(response.length<1){
+                $(".no_record").removeClass("hide");
+                $("#chartContainer").removeClass("hide");
+                $("#chartContainer").addClass("hide");
+              }else{
+                $(".no_record").removeClass("hide");
+                $(".no_record").addClass("hide");
+                $("#chartContainer").removeClass("hide");
+              }
             for (var i = 0; i < response.length; i++) {
                 res[i] = JSON.parse(response[i].review);
                 educationCummulative = educationCummulative + parseInt(res[i].education);

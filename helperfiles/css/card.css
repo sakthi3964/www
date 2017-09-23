@@ -28,17 +28,29 @@
         #panel1{
             margin-top: 15px;
         }
-@media only screen and (max-width: 500px) {
-    .profile-card-img {
-            margin-top: 10px;
-            width: 123px;
-            height: 115px;
-            border-radius: 50%;
-            margin-left: calc(50% - 60px);
-            border:2px solid grey;
+        @media only screen and (max-width: 500px) {
+            .profile-card-img {
+                    margin-top: 10px;
+                    width: 123px;
+                    height: 115px;
+                    border-radius: 50%;
+                    margin-left: calc(50% - 60px);
+                    border:2px solid grey;
+                }
+                .profile-card-btn {
+                    padding: 7px 0;
+                    margin-bottom: 1px;
+            }
+            .btn-section{
+              padding: 1px;
+            }
+            .profile-card  table{
+              margin-bottom: 0px;
+            }
+            .profile-card table>tbody>tr>td,.profile-card table>tbody>tr>th{
+              border-top: none;
+            }
+            .profile-card table>tbody>tr:not(:last-child)>td,.profile-card table>tbody>tr:not(:last-child)>th{
+              border-bottom: 1px solid #ddd;
+            }
         }
-        .profile-card-btn {
-            padding: 7px 0;
-            margin-bottom: 1px;
-    }
-}

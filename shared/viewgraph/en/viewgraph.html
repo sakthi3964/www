@@ -43,13 +43,13 @@
 			<img src="../../../helperfiles/img/loading.gif" alt="loading">
 		</div>
 	</div>
-	<!--<div class="no_record hide">
+	<div class="no_record hide">
         <h3>No Record Found</h3>
-    </div>-->
+    </div>
 	<div id="demos">
 		<ul class="nav nav-pills">
-			<li class="active"><a href="#firsttab" data-toggle="tab">Volunteer</a></li>
-			<li><a href="#secondtab" data-toggle="tab">Mentor</a></li>
+			<li class="active"><a href="#firsttab" id="firsttabSelect" data-toggle="tab">Volunteer</a></li>
+			<li><a href="#secondtab" id="secondtabSelect" data-toggle="tab">Mentor</a></li>
 			<li><a class="getCumulativeGraph" data-toggle="tab">Cumulative</a></li>
 		</ul>
 		<div class="cumlative hide">
@@ -86,7 +86,20 @@
 	$(".getCumulativeGraph").click(function () {
 		window.location="../../cumulativegraph/en/graph.html";
 	});
+	$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+		$(".no_record").removeClass("hide");
+		var target = $(e.target).attr("href") // activated tab
+		$(".no_record").removeClass("hide");
+		$('#listOfDates').html('');
+		$('#listOfMentorDates').html('');
 
+		if(target=="#firsttab"){
+			viewGraphFn();
+		}
+		if(target=="#secondtab"){
+			viewmentorgraph();
+		}
+	});
 </script>
 
 </html>

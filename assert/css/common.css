@@ -8,6 +8,7 @@ body{
     height: 50px;
     position: fixed;
     width: 100%;
+    top:0px;
 }
 .row .box {
     padding: 0px 6px;
@@ -109,12 +110,9 @@ body{
 }
 .no_record{
     position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -50px;
-    margin-left: -75px;
-    width: auto;
-    /*text-align: center;*/
+    width: 100%;
+    text-align: center;
+    top: calc( 50% - 28px);
 }
 #header_role{
     text-transform: capitalize;

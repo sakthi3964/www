@@ -6,12 +6,23 @@ $(document).ready(function () {
     else {
         var data = {};
         data.id = localStorage.getItem("user");
+        role1 = localStorage.getItem("role");
         console.log(data.id);
+        
         httpPost("/viewvolunteermentorprofile", data, function (response) {
+            console.log(response[0].approve_status);
             console.log(response);
-            if (response == "Data Not Found") {
-
-                $('#nodata').modal({ backdrop: 'static', keyboard: false });
+            // Mentor page will be displayed after mentor connection
+            if (response == "Data Not Found" || response[0].approve_status == 0) {
+                if(role1 == "volunteer")
+                {
+                    $('#nodatav').modal({ backdrop: 'static', keyboard: false });
+                }
+                else if (role1 = "mentor")
+                {
+                    $('#nodatam').modal({ backdrop: 'static', keyboard: false });
+                }
+                
             }
             else {
                 console.log(response[0].profile.profileinfo.photo);

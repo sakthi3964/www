@@ -20,7 +20,14 @@ $(document).ready(function () {
             console.log(month);
             $("#blockreg2").removeClass("hide");
             $(".loading").addClass("hide");
-            $('#profileimage').append('<img src="' + BASEURL + '/uploads/mentor/photo/' + response[0].profileinfo.photo + '" width="150" height="150">');
+            // response[0].profileinfo.photo="";
+            var profileImageUrl = "";
+            if(response[0].profileinfo.photo){
+              profileImageUrl = BASEURL + '/uploads/mentor/photo/' + response[0].profileinfo.photo;
+            }else{
+              profileImageUrl= 'https://www.bsn.eu/wp-content/uploads/2016/12/user-icon-image-placeholder-300-grey.jpg';
+            }
+            $('#profileimage').append('<div class="view-profile-image"><img src="' + profileImageUrl + '" width="150" height="150"></div>');
             $('#name').html(response[0].name);
             $('#role').html(response[0].role);
             $('#dob').html(day + "-" + month + "-" + year);

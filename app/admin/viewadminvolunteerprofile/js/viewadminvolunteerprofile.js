@@ -17,12 +17,20 @@ $(document).ready(function () {
             var monthNames = ["January", "February", "March", "April", "May", "June",
                 "July", "August", "September", "October", "November", "December"
             ];
+            var currole = response[0].role;
             var monthna = new Date(response[0].dob);
             var month = monthNames[monthna.getMonth()];
             var commitment = response[0].profileinfo.commitment + "&nbsphours / month"
             $("#blockreg2").removeClass("hide");
             $(".loading").addClass("hide");
-            $('#profileimage').append('<img src="' + BASEURL + '/uploads/volunteer/photo/' + response[0].profileinfo.photo + '" width="150" height="150">');
+            if(currole == "volunteer") {
+                $('#title').append("volunteer details")
+                $('#profileimage').append('<img src="' + BASEURL + '/uploads/volunteer/photo/' + response[0].profileinfo.photo + '" width="150" height="150">');
+            }
+            else if(currole == "mentor") {
+                $('#title').append("Mentor details");
+                $('#profileimage').append('<img src="' + BASEURL + '/uploads/mentor/photo/' + response[0].profileinfo.photo + '" width="150" height="150">');
+            }
             $('#name').html(response[0].name);
             $('#role').html(response[0].role);
             $('#dob').html(day + "-" + month + "-" + year);

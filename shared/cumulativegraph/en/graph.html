@@ -21,11 +21,20 @@
 	<!--<script src="../js/graphreview.js" type="text/javascript"></script>-->
 	<!--Importing Custom CSS and JS file-->
 	<link rel="stylesheet" type="text/css" href="../../../assert/css/common.css">
-
+	<style>
+		.graph-date-section{
+			padding: 0 3px;
+		}
+		.graph-date-section .form-control{
+			padding: 0 3px;
+		}
+	</style>
 </head>
 
 <body>
-
+	<div class="no_record hide">
+		<h3>No Record Found</h3>
+	</div>
 	<div class="container-fluid" id="commonblock">
 		<nav class="navbar navbar-custom">
 			<div class="row">
@@ -38,21 +47,24 @@
 				</div>
 			</div>
 		</nav>
-		<form id="getdate">
-			<div class="row">
-				<div class="col-xs-4 col-sm-4">
-					<select class="form-control" id="fromdate">
+
+		<div class ="getdate hide">
+			<form>
+				<div class="row">
+					<div class="col-xs-4 col-sm-4 graph-date-section">
+						<select class="form-control" id="fromdate" tabindex="1">
                             <option value="">Start Date</option>                                 
-                </select>
-				</div>
-				<div class="col-xs-4 col-sm-4">
-					<select class="form-control" id="todate">
+                	</select>
+					</div>
+					<div class="col-xs-4 col-sm-4 graph-date-section" tabindex="2">
+						<select class="form-control" id="todate">
                             <option value="">End Date</option>                                 
                 </select>
+					</div>
+					<button class="btn btn-default" id="submitcumulative" tabindex="3">Get Graph</button>
 				</div>
-				<a class="btn btn-default" id="submitcumulative">Get Graph</a>
-			</div>
-		</form>
+			</form>
+		</div>
 	</div>
 	<div class="loading hide">
 		<div class="loading_img">

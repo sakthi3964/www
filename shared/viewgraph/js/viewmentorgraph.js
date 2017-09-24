@@ -1,4 +1,4 @@
-$(document).ready(function () {
+function viewmentorgraph(){
     var session = localStorage.getItem("user");
     if (session == null) {
         window.location.href = "../../../../index.html";
@@ -25,10 +25,13 @@ $(document).ready(function () {
                 $("#details").removeClass("hide");
                 var res_length = response.length;
                 if (res_length == 0) {
-                    // $(".no_record").removeClass("hide");
-                    $('#listOfMentorDates').append('<div class="no_record"> <h3>No Record Found</h3></div>');
+                    $(".no_record").removeClass("hide");
+                    //$('#listOfMentorDates').append('<div class="no_record"> <h3>No Record Found</h3></div>');
                 }
                 else {
+                    $(".no_record").removeClass("hide");
+                    $(".no_record").addClass("hide");
+
                     response.forEach(function (element) {
                         var dateObj = new Date(element.date);
                         var day = dateObj.getUTCDate();
@@ -50,10 +53,13 @@ $(document).ready(function () {
                 $(".loading").addClass("hide");
                 var res_length = response.length;
                 if (res_length == 0) {
-                    // $(".no_record").removeClass("hide");
-                    $('#listOfMentorDates').append('<div class="no_record"> <h3>No Record Found</h3></div>');
+                     $(".no_record").removeClass("hide");
+                    //$('#listOfMentorDates').append('<div class="no_record"> <h3>No Record Found</h3></div>');
                 }
                 else {
+                    $(".no_record").removeClass("hide");
+                    $(".no_record").addClass("hide");
+
                     response.forEach(function (element) {
                         var elementid = window.btoa(element.id);
                         var dateObj = new Date(element.date);
@@ -70,4 +76,4 @@ $(document).ready(function () {
             })
         }
     }
-});
+  }

@@ -78,21 +78,17 @@ function connectionDisplay(role) {
             $(".no_record").removeClass("hide");
         }
         else {
-            // if (data.connectionOperation = "volunteer") {
-
+            $(".no_record").addClass("hide");
             response.forEach(function (element) {
                 $(".loading").addClass("hide");
                 if (element.role == 'volunteer') {
-                    $('#firsttab').append('<div class="cards-view"><div class="profile-card  col-xs-6 col-sm-3 col-md-3 col-lg-3"><div><table class="table"><tr><td>' + element.childrenprofile.full_name + '</td><td>' + element.profile.name + '</td></tr><tr><td>children</td><td>' + element.role + '</td></tr></table></div><div class="col-xs-6 col-sm-6"><button onclick="accept(' + element.id + "," + element.profile_id + "," + true + ",'" + element.role + '\')"class="profile-card-btn accept-button " type="submit" id="submit' + i + '">Accept</button></div><div class="col-sm-6 col-xs-6"><button onclick="deny(' + element.id + "," + element.profile_id + "," + true + "," + element.childrenprofile.id + "," + element.role + ')" class="profile-card-btn" type="submit" id="submit1' + i + '">Deny</button></div></div></div>');
+                    $('#firsttab').append('<div class="cards-view"><div class="profile-card  col-xs-6 col-sm-3 col-md-3 col-lg-3"><div><table class="table"><tr><th>' + 'Children' + '</th><td>' + element.childrenprofile.full_name + '</td></tr><tr><th>'+element.role+'</th><td>' +element.profile.name + '</td></tr></table></div><div class="col-xs-6 col-sm-6 btn-section"><button onclick="accept(' + element.id + "," + element.profile_id + "," + true + ",'" + element.role + '\')"class="profile-card-btn accept-button " type="submit" id="submit' + i + '">Accept</button></div><div class="btn-section col-sm-6 col-xs-6"><button onclick="deny(' + element.id + "," + element.profile_id + "," + true + "," + element.childrenprofile.id + "," + element.role + ')" class="profile-card-btn" type="submit" id="submit1' + i + '">Deny</button></div></div></div>');
                 }
                 else {
-                    $('#secondtab').append('<div class="cards-view"><div class="profile-card  col-xs-6 col-sm-3 col-md-3 col-lg-3"><div><table class="table"><tr><td>' + element.childrenprofile.full_name + '</td><td>' + element.profile.name + '</td></tr><tr><td>children</td><td>' + element.role + '</td></tr></table></div><div class="col-xs-6 col-sm-6"><button onclick="accept(' + element.id + "," + element.profile_id + "," + true + ",'" + element.role + '\')"class="profile-card-btn accept-button " type="submit" id="submit' + i + '">Accept</button></div><div class="col-sm-6 col-xs-6"><button onclick="deny(' + element.id + "," + element.profile_id + "," + true + "," + element.childrenprofile.id + "," + element.role + ')" class="profile-card-btn" type="submit" id="submit1' + i + '">Deny</button></div></div></div>');
+                    $('#secondtab').append('<div class="cards-view"><div class="profile-card  col-xs-6 col-sm-3 col-md-3 col-lg-3"><div><table class="table"><tr><th>' + 'Children' + '</th><td>' + element.childrenprofile.full_name + '</td></tr><tr><th>'+element.role+'</th><td>' + element.profile.name + '</td></tr></table></div><div class="col-xs-6 col-sm-6 btn-section"><button onclick="accept(' + element.id + "," + element.profile_id + "," + true + ",'" + element.role + '\')"class="profile-card-btn accept-button " type="submit" id="submit' + i + '">Accept</button></div><div class="btn-section col-sm-6 col-xs-6"><button onclick="deny(' + element.id + "," + element.profile_id + "," + true + "," + element.childrenprofile.id + "," + element.role + ')" class="profile-card-btn" type="submit" id="submit1' + i + '">Deny</button></div></div></div>');
 
                 }
             }, this);
-            // } else {
-
-            // }
         }
     });
 

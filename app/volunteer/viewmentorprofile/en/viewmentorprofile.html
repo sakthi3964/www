@@ -19,6 +19,27 @@
 	<script src="../../../../assert/resources/localization.js"></script>
 	<script src="../../../../helperfiles/js/logout.js" type="text/javascript"></script>
 	<script src="../js/viewmentorprofile.js"></script>
+	<style>
+	.view-mentor-profile-btn{
+		text-align: center;
+	}
+	.view-mentor-profile-btn .btn{
+		border-radius: 0px;
+		width: 100%;
+		-webkit-border-radius:0px;
+		padding: 8px;
+		font-size: 16px;
+	}
+	.view-profile-image img {
+    padding: 10px;
+	}
+	.view-mentor-profile{
+		text-transform: capitalize;
+	}
+	.view-mentor-profile table>tbody>tr>td:first-child{
+		font-weight: bold;
+	}
+	</style>
 </head>
 
 <body>
@@ -40,15 +61,16 @@
 			<img src="../../../../helperfiles/img/loading.gif" alt="loading">
 		</div>
 	</div>
-	<div class="container hide" id="blockreg2">
-		<div class="col-sm-12 col-md-12 col-xs-12 profileimg" id="profileimage">
-			<h3>
-				<center> Mentor Detail</center>
-			</h3>
-			<!--<center><img src="img/sakthi.jpg" width="150" height="150"></center>-->
-		</div>
+	<div class="container hide view-mentor-profile" id="blockreg2">
+
 		<div class=" col-sm-8 col-md-8 col-md-offset-2 col-sm-offset-2">
 			<div class="table-responsive">
+				<div class="col-sm-12 col-md-12 col-xs-12 profileimg view-mentor-profile-img" id="profileimage">
+					<h3>
+						<center> Mentor Detail</center>
+					</h3>
+					<!--<center><img src="img/sakthi.jpg" width="150" height="150"></center>-->
+				</div>
 				<table class="table table-striped">
 					<tbody>
 						<tr>
@@ -57,26 +79,22 @@
 						</tr>
 						<tr>
 							<td>Role:</td>
-							<td>
-								<p id="role"></p>
+							<td id="role">
 							</td>
 						</tr>
 						<tr>
 							<td>Date of Birth:</td>
-							<td>
-								<p id="dob"></p>
+							<td id="dob">
 							</td>
 						</tr>
 						<tr>
 							<td>Age:</td>
-							<td>
-								<p id="age"></p>
+							<td id="age">
 							</td>
 						</tr>
 						<tr>
 							<td>Gender:</td>
-							<td>
-								<p id="gender"></p>
+							<td id="gender">
 							</td>
 						</tr>
 						<!--<tr>
@@ -130,38 +148,32 @@
 						</tr>-->
 						<tr>
 							<td>Work Type:</td>
-							<td>
-								<p id="work_type"></p>
+							<td id="work_type"
 							</td>
 						</tr>
 						<tr>
 							<td>Course:</td>
-							<td>
-								<p id="course"></p>
+							<td id="course">
 							</td>
 						</tr>
 						<tr>
 							<td>Department:</td>
-							<td>
-								<p id="department"></p>
+							<td id="department">
 							</td>
 						</tr>
 						<tr>
 							<td>Institution:</td>
-							<td>
-								<p id="institution"></p>
+							<td id="institution">
 							</td>
 						</tr>
 						<tr>
 							<td>Reference:</td>
-							<td>
-								<p id="reference"></p>
+							<td id="reference">
 							</td>
 						</tr>
 						<tr>
 							<td>Commitment:</td>
-							<td>
-								<p id="commitment"></p>
+							<td id="commitment">
 							</td>
 						</tr>
 						<tr id="designationrow" style="display: none;">
@@ -191,7 +203,7 @@
 </tbody>
 </table>
 
-<center><button id="request" class="btn-primary">Request</button></center>
+<div class="view-mentor-profile-btn"><button id="request" class="btn btn-primary">Request</button></div>
 
 </div>
 </div>

@@ -18,9 +18,9 @@ function getPhoto(source) {
     });
 }
 function onPhotoURISuccess(imageURI) {
-    alert(imageURI);
+    $(".loading").removeClass("hide");
+    $("#blockreg2").addClass("hide");
     var ft = new FileTransfer();
-    alert("fileupload is working" + JSON.stringify(ft));
     var options = {
         fileKey: "file",
         fileName: "image.png",
@@ -32,9 +32,9 @@ function onPhotoURISuccess(imageURI) {
         processData: false,
     };
     var success = function (r) {
+        $(".loading").addClass("hide");
+        $("#blockreg2").removeClass("hide")
         image_path = r.response;
-        alert("Successful upload..." + JSON.stringify(r.response));
-        console.log("Successful upload = " + JSON.stringify(r));
         // displayFileData(fileEntry.fullPath + " (content uploaded to server)");
     }
 
@@ -45,6 +45,8 @@ function onPhotoURISuccess(imageURI) {
 
 }
 function onFail(message) {
+    $(".loading").addClass("hide");
+    $("#blockreg2").removeClass("hide");
     alert('Failed because: ' + message);
 }
 $(document).ready(function () {
@@ -449,18 +451,17 @@ $(document).ready(function () {
                     }
                     if (index === numTabs) {
                         var role = ($('#role').val()).trim();
-                        var formData = new FormData();
-                        formData.append("role", role);
-                        $.each($("input[type=file]"), function (i, obj) {
-                            $.each(obj.files, function (j, file) {
-                                formData.append('photo', file, file.name);
-                            })
-                        });
+                        // var formData = new FormData();
+                        // formData.append("role", role);
+                        // $.each($("input[type=file]"), function (i, obj) {
+                        //     $.each(obj.files, function (j, file) {
+                        //         formData.append('photo', file, file.name);
+                        //     })
+                        // });
 
                         $(".loading").removeClass("hide");
                         $("#blockreg2").addClass("hide");
-                        fileUpload("addfiles", formData, function (response) {
-                            var res = JSON.parse(response);
+                        // fileUpload("addfiles", formData, function (response) {
                             var data = {};
                             data.role = ($('#role').val()).trim();
                             data.name = ($('#name').val()).trim();
@@ -521,7 +522,7 @@ $(document).ready(function () {
                             });
 
 
-                        });
+                        // });
 
 
                     }
@@ -954,8 +955,8 @@ $(document).ready(function () {
                     }
                     if (index === numTabs) {
                         var role = $('#role').val();
-                        var formData = new FormData();
-                        formData.append("role", role);
+                        // var formData = new FormData();
+                        // formData.append("role", role);
                         // $.each($("input[type=file]"), function (i, obj) {
                         //     $.each(obj.files, function (j, file) {
                         //         formData.append('photo', file, file.name);

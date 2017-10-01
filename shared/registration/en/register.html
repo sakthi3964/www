@@ -23,6 +23,8 @@
 	<script src="../js/registration.js"></script>
 	<script type="text/javascript" src="../../../assert/js/bootstrap-datepicker.js"></script>
 	<link rel="stylesheet" href="../../../assert/css/bootstrap-datepicker.css" />
+	<script type="text/javascript" src="../../../cordova.js"></script>
+	<script type="text/javascript" src="../../../cordova_plugins.js"></script>
 
 </head>
 
@@ -53,7 +55,7 @@
 						<h5> <b> Check List to be Ready for Registering</b> </h5>
 						<input type="checkbox" id="checkcv" class="checkcv" name="checkcv" value="checkcv"> Make Sure You have CV and Photo
 						in maximum of 500 kb<br>
-						 <!--<input type="checkbox" id = "checkphoto" class="checkphoto" name="checkphoto" value="checkphoto"> Photo in JPG/PNG format with maximum of 2 MB<br>-->
+						<!--<input type="checkbox" id = "checkphoto" class="checkphoto" name="checkphoto" value="checkphoto"> Photo in JPG/PNG format with maximum of 2 MB<br>-->
 					</div>
 					<div class="form-group col-xs-12 col-md-12" id="roles">
 						<label>Register As</label>
@@ -152,46 +154,46 @@
 					</div>
 				</div>
 				<div class="tab-pane" id="secondtab">
-                    <center>
-                        <h4>REGISTRATION FORM </h4>
-                    </center>
-                    <div class="form-group">
-                        <label class="control-label col-sm-4 col-xs-12" for="name">Name</label>
-                        <div class="col-sm-8 col-xs-12">
-                            <input type="text" id="name" name="name" class="form-control" placeholder="Name">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-4 col-xs-12">DOB</label>
-                        <div class="col-sm-8 col-xs-12">
-                            <input type="text" id="dob" name="dob" class="form-control" placeholder="Date of birth" data-provide="datepicker" data-date-end-date="0d">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-4 col-xs-12">Age</label>
-                        <div class="col-sm-8 col-xs-12">
-                            <input type="text" id="age" name="age" class="form-control" data-bv-trigger="change keyup" placeholder="Age" size="3">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="gender" class="control-label col-sm-4 col-xs-12">Gender</label>
-                        <div class="col-sm-8 col-xs-12">
-                            <label class="radio-inline">
+					<center>
+						<h4>REGISTRATION FORM </h4>
+					</center>
+					<div class="form-group">
+						<label class="control-label col-sm-4 col-xs-12" for="name">Name</label>
+						<div class="col-sm-8 col-xs-12">
+							<input type="text" id="name" name="name" class="form-control" placeholder="Name">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-4 col-xs-12">DOB</label>
+						<div class="col-sm-8 col-xs-12">
+							<input type="text" id="dob" name="dob" class="form-control" placeholder="Date of birth" data-provide="datepicker" data-date-end-date="0d">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-4 col-xs-12">Age</label>
+						<div class="col-sm-8 col-xs-12">
+							<input type="text" id="age" name="age" class="form-control" data-bv-trigger="change keyup" placeholder="Age" size="3">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="gender" class="control-label col-sm-4 col-xs-12">Gender</label>
+						<div class="col-sm-8 col-xs-12">
+							<label class="radio-inline">
                             <input type="radio" id="male" name="gender" value="male">Male
                         </label>
-                            <label class="radio-inline">
+							<label class="radio-inline">
                             <input type="radio" id= "female" name="gender" value="Female">Female
                         </label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-4 col-xs-12">Mobile Number</label>
-                        <div class="col-sm-8 col-xs-12">
-                            <input type="text" id="mobile_no" name="mobile_no" class="form-control" minlength="10" maxlength="10" placeholder="Mobile Number">
-                            <p class="has-error" id="mobilepresent"></p>
-                        </div>
-                    </div>
-                    <!--<div class="form-group">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-4 col-xs-12">Mobile Number</label>
+						<div class="col-sm-8 col-xs-12">
+							<input type="text" id="mobile_no" name="mobile_no" class="form-control" minlength="10" maxlength="10" placeholder="Mobile Number">
+							<p class="has-error" id="mobilepresent"></p>
+						</div>
+					</div>
+					<!--<div class="form-group">
                         <label class="control-label col-sm-4 col-xs-3">Land-Line</label>
 
                         <div class="col-sm-1 col-xs-2">
@@ -201,33 +203,33 @@
                             <input type="text" id="phone" name="phone" class="form-control" minlength="7" maxlength="7" placeholder="Land line" size="11">
                         </div>
                     </div>-->
-                    <div class="form-group">
-                        <label class="control-label col-sm-4 col-xs-12" for="addressline1">Address Line 1</label>
-                        <div class="col-sm-8 col-xs-12">
-                            <input id="address_line1" name="address_line1" class="form-control" type="text" placeholder="Address line 1">
-                            <p class="help-block">Street address, P.O. box, company name, c/o </p>
-                        </div>
-                    </div>
-                    <!-- address-line2 input-->
-                    <div class="form-group">
-                        <label class="control-label  col-sm-4 col-xs-12">Address Line 2</label>
-                        <div class="col-sm-8 col-xs-12">
-                            <input id="address_line2" name="address_line2" type="text" placeholder="Address line 2" class="form-control">
-                            <h6>Apartment, suite , unit, building, floor, etc.</h6>
-                        </div>
-                    </div>
-                    <!-- city input-->
-                    <div class="form-group">
-                        <label class="control-label  col-sm-4 col-xs-12">City/Town</label>
-                        <div class="col-sm-8 col-xs-12">
-                            <input id="city" name="city" type="text" placeholder="city" class="form-control">
-                        </div>
-                    </div>
-                    <!-- region input-->
-                    <div class="form-group">
-                        <label class="control-label  col-sm-4 col-xs-12">State</label>
-                        <div class="col-sm-8 col-xs-12">
-                            <select id="state" name="state" class="form-control">
+					<div class="form-group">
+						<label class="control-label col-sm-4 col-xs-12" for="addressline1">Address Line 1</label>
+						<div class="col-sm-8 col-xs-12">
+							<input id="address_line1" name="address_line1" class="form-control" type="text" placeholder="Address line 1">
+							<p class="help-block">Street address, P.O. box, company name, c/o </p>
+						</div>
+					</div>
+					<!-- address-line2 input-->
+					<div class="form-group">
+						<label class="control-label  col-sm-4 col-xs-12">Address Line 2</label>
+						<div class="col-sm-8 col-xs-12">
+							<input id="address_line2" name="address_line2" type="text" placeholder="Address line 2" class="form-control">
+							<h6>Apartment, suite , unit, building, floor, etc.</h6>
+						</div>
+					</div>
+					<!-- city input-->
+					<div class="form-group">
+						<label class="control-label  col-sm-4 col-xs-12">City/Town</label>
+						<div class="col-sm-8 col-xs-12">
+							<input id="city" name="city" type="text" placeholder="city" class="form-control">
+						</div>
+					</div>
+					<!-- region input-->
+					<div class="form-group">
+						<label class="control-label  col-sm-4 col-xs-12">State</label>
+						<div class="col-sm-8 col-xs-12">
+							<select id="state" name="state" class="form-control">
                             <option value="">Select</option>
                             <option value="Andhra Pradesh">Andhra Pradesh</option>
                             <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -266,47 +268,47 @@
                             <option value="Lakshadweep">Lakshadweep</option>
                             <option value="Puducherry">Puducherry</option>
                         </select>
-                        </div>
-                    </div>
-                    <!-- postal-code input-->
-                    <div class="form-group">
-                        <label class="control-label  col-sm-4 col-xs-12">Pin Code</label>
-                        <div class="col-sm-8 col-xs-12">
-                            <input id="postal_code" name="postal_code" type="text" placeholder="Pin Code" minlength="6" maxlength="6" class="form-control"
-                             size="10">
-                            <p class="help-block"></p>
-                        </div>
-                    </div>
-                    <!-- country select -->
-                    <div class="form-group">
-                        <label class="control-label  col-sm-4 col-xs-12">Country</label>
-                        <div class="col-sm-8 col-xs-12">
-                            <select id="country" name="country" class="form-control">
+						</div>
+					</div>
+					<!-- postal-code input-->
+					<div class="form-group">
+						<label class="control-label  col-sm-4 col-xs-12">Pin Code</label>
+						<div class="col-sm-8 col-xs-12">
+							<input id="postal_code" name="postal_code" type="text" placeholder="Pin Code" minlength="6" maxlength="6" class="form-control"
+							 size="10">
+							<p class="help-block"></p>
+						</div>
+					</div>
+					<!-- country select -->
+					<div class="form-group">
+						<label class="control-label  col-sm-4 col-xs-12">Country</label>
+						<div class="col-sm-8 col-xs-12">
+							<select id="country" name="country" class="form-control">
                             <option value="India">India</option>
                         </select>
-                        </div>
-                    </div>
+						</div>
+					</div>
 
-                    <div class="form-group">
-                        <label class="control-label col-sm-4 col-xs-12" for="email">Email:</label>
-                        <div class="col-sm-8 col-xs-12">
-                            <input type="email" class="form-control" id="email_id" name="email_id" placeholder="Email ID">
-                            <p class="has-error" id="emailidpresent"></p>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-4 col-xs-12">Password</label>
-                        <div class="col-sm-4 col-xs-12">
-                            <input type="password" id="password" name="password" class="form-control" placeholder="Password">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-4 col-xs-12">Confirm Password</label>
-                        <div class="col-sm-8 col-xs-12">
-                            <input type="password" id="cpassword" name="cpassword" class="form-control" placeholder="Confirm Password">
-                        </div>
-                    </div>
-                </div>
+					<div class="form-group">
+						<label class="control-label col-sm-4 col-xs-12" for="email">Email:</label>
+						<div class="col-sm-8 col-xs-12">
+							<input type="email" class="form-control" id="email_id" name="email_id" placeholder="Email ID">
+							<p class="has-error" id="emailidpresent"></p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-4 col-xs-12">Password</label>
+						<div class="col-sm-4 col-xs-12">
+							<input type="password" id="password" name="password" class="form-control" placeholder="Password">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-4 col-xs-12">Confirm Password</label>
+						<div class="col-sm-8 col-xs-12">
+							<input type="password" id="cpassword" name="cpassword" class="form-control" placeholder="Confirm Password">
+						</div>
+					</div>
+				</div>
 				<div class="tab-pane" id="thirdtab">
 					<center>
 						<h4> EDUCATIONAL/WORK DETAILS </h4>
@@ -394,7 +396,7 @@
 							<input type="text" id="reference" name="reference" class="form-control" placeholder="reference to N'KaNa">
 						</div>
 					</div>
-					<div class="form-group" id="cv1">
+					<!-- <div class="form-group" id="cv1">
 						<label class="control-label col-sm-4 col-xs-12" for="name">Upload your CV</label>
 						<div class="col-sm-8 col-xs-12">
 							<input type="file" id="cv" name="photo[]" class="cv form-control upfile" size="15">
@@ -405,7 +407,7 @@
 						<div class="col-sm-8 col-xs-12">
 							<input type="file" id="file" name="photo[]" class="photo form-control upfile" size="11">
 						</div>
-					</div>
+					</div> -->
 				</div>
 
 				<ul class="pager wizard">
@@ -414,6 +416,10 @@
 				</ul>
 			</div>
 		</form>
+		<div class="col-sm-5 col-xs-12">
+			<!-- <input type="file" id="file" name="photo" class="form-control" size="11"> -->
+			<button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button>
+		</div>
 	</div>
 	<!--<div class="container-fluid" id="commonfooter">
 		<footer id="footer">
@@ -475,4 +481,5 @@
 		</div>
 	</div>
 </body>
+
 </html>

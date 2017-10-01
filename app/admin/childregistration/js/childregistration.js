@@ -18,9 +18,11 @@ function getPhoto(source) {
     });
 }
 function onPhotoURISuccess(imageURI) {
-    alert(imageURI);
+    $(".loading").removeClass("hide");
+    $("#blockreg2").addClass("hide");
+    // alert(imageURI);
     var ft = new FileTransfer();
-    alert("fileupload is working" + JSON.stringify(ft));
+    // alert("fileupload is working" + JSON.stringify(ft));
     var options = {
         fileKey: "file",
         fileName: "image.png",
@@ -33,12 +35,16 @@ function onPhotoURISuccess(imageURI) {
     };
     var success = function (r) {
         image_path = r.response;
-        alert("Successful upload..." + JSON.stringify(r.response));
-        console.log("Successful upload = " + JSON.stringify(r));
+        $(".loading").addClass("hide");
+        $("#blockreg2").removeClass("hide");
+        // alert("Successful upload..." + JSON.stringify(r.response));
+        // console.log("Successful upload = " + JSON.stringify(r));
         // displayFileData(fileEntry.fullPath + " (content uploaded to server)");
     }
 
     var fail = function (error) {
+        $(".loading").addClass("hide");
+        $("#blockreg2").removeClass("hide");
         alert("An error has occurred: Code = " + error.code);
     }
     ft.upload(imageURI, encodeURI("https://nkanaapi.herokuapp.com/childphoto"), success, fail, options)
@@ -47,6 +53,8 @@ function onPhotoURISuccess(imageURI) {
 // Called if something bad happens.
 //
 function onFail(message) {
+    $(".loading").addClass("hide");
+    $("#blockreg2").removeClass("hide");
     alert('Failed because: ' + message);
 }
 $(document).ready(function () {

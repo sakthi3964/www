@@ -8,7 +8,6 @@
 	<link rel="stylesheet" href="../../../../assert/css/bootstrap.min.css">
 	<script src="../../../../assert/js/jquery.min.js"></script>
 	<script src="../../../../assert/js/bootstrap.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 	<!--<link rel="stylesheet" type="text/css" href="../../../../assert/css/font-awesome.min.css">-->
 	<link rel="stylesheet" href="../../../../assert/css/jquery-ui.css">
 	<link rel="stylesheet" href="../../../../assert/css/common.css">
@@ -18,11 +17,10 @@
 	<script src="../../../../assert/js/formValidation.js"></script>
 	<script src="../../../../assert/js/framework/bootstrap.min.js"></script>
 	<script src="../../../../assert/js/jquery.bootstrap.wizard.min.js"></script>
-	<script src="../../../../assert/js/ng-cordova.min.js"></script>
 	<script src="../../../../assert/resources/localization.js"></script>
 	<script src="../../../../config/config.js"></script>
 	<script src="../../../../helperfiles/helper.js"></script>
-	<script src="../../../../helperfiles/js/logout.js" type="text/javascript"></script>
+	<!-- <script src="../../../../helperfiles/js/logout.js" type="text/javascript"></script> -->
 	<script src="../js/childregistration.js"></script>
 	<script type="text/javascript" src="../../../../assert/js/bootstrap-datepicker.js"></script>
 	<link rel="stylesheet" href="../../../../assert/css/bootstrap-datepicker.css" />
@@ -31,7 +29,7 @@
 
 </head>
 
-<body ng-app="myApp" ng-controller="myCtrl">
+<body>
 	<div class="container-fluid" id="commonblock">
 		<nav class="navbar navbar-custom">
 			<div class="row">
@@ -119,14 +117,18 @@
 				</div>
 				<div class="form-group">
 					<label class="control-label col-sm-2">Upload your Photo</label>
-					<div class="col-sm-5 col-xs-12">
-						<!-- <input type="file" id="file" name="photo" class="form-control" size="11"> -->
-						<button ng-click="getPictures()">Choose</button>
-					</div>
+					<!-- <div class="col-sm-5 col-xs-12">
+						
+						<button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button>
+					</div> -->
 				</div>
 				<center> <button class="btn child_submit_btn" disabled="disabled" id="submit">SUBMIT</button></center>
 			</div>
 		</form>
+		<div class="col-sm-5 col-xs-12">
+			<!-- <input type="file" id="file" name="photo" class="form-control" size="11"> -->
+			<button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button>
+		</div>
 	</div>
 	<!--<div class="container-fluid" id="commonfooter">
 		<footer id="footer">
@@ -152,6 +154,58 @@
 
 		</div>
 	</div>
+	<!-- <script type="text/javascript">
+		var pictureSource;   // picture source
+		var destinationType; // sets the format of returned value
+		var image_path;
+		// Wait for device API libraries to load
+		//
+		document.addEventListener("deviceready", onDeviceReady, false);
+		function onDeviceReady() {
+			pictureSource = navigator.camera.PictureSourceType;
+			destinationType = navigator.camera.DestinationType;
+		}
+
+		function getPhoto(source) {
+			// Retrieve image file location from specified source
+			navigator.camera.getPicture(onPhotoURISuccess, onFail, {
+				quality: 50,
+				destinationType: destinationType.FILE_URI,
+				sourceType: source
+			});
+		}
+		function onPhotoURISuccess(imageURI) {
+			alert(imageURI);
+			var ft = new FileTransfer();
+			alert("fileupload is working" + JSON.stringify(ft));
+			var options = {
+				fileKey: "file",
+				fileName: "image.png",
+				chunkedMode: false,
+				contentType: false,
+				mimeType: "multipart/form-data",
+				mimeType: true,
+				async: true,
+				processData: false,
+			};
+			var success = function (r) {
+				alert("Successful upload..." + JSON.stringify(r.response));
+				console.log("Successful upload = " + JSON.stringify(r));
+				// displayFileData(fileEntry.fullPath + " (content uploaded to server)");
+			}
+
+			var fail = function (error) {
+				alert("An error has occurred: Code = " + error.code);
+			}
+			ft.upload(imageURI, encodeURI("https://nkanaapi.herokuapp.com/childphoto"), success, fail, options)
+
+		}
+		// Called if something bad happens.
+		//
+		function onFail(message) {
+			alert('Failed because: ' + message);
+		}
+	</script> -->
 </body>
 
 </html>

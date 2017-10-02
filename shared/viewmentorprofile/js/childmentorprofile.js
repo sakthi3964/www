@@ -4,12 +4,17 @@ $(document).ready(function () {
         window.location.href = "../../../../index.html";
     }
     else {
+        var check1;
         var data = {};
         data.id = localStorage.getItem("user");
         var url = window.location.href;
         var lastIndex = url.substring(url.lastIndexOf('/') + 1);
         var check = lastIndex.toString();
-        var check1 = check.includes("id");
+        // var check1 = check.includes("id");
+        var str2 = "id";
+        if (check.indexOf(str2) != -1) {
+            check1 = true;
+        }
         if (check1 == true) {
             return;
         }
@@ -19,7 +24,7 @@ $(document).ready(function () {
 
                 $(".loading").addClass("hide");
                 if (response[0] == null || response[1] == null) {
-                    $('#mentor_record').modal({ backdrop: 'static', keyboard: false});
+                    $('#mentor_record').modal({ backdrop: 'static', keyboard: false });
                 }
 
                 // if ((response[0] && response[1]) == null) {

@@ -10,10 +10,10 @@ $(document).ready(function () {
         console.log(data.id);
         
         httpPost("/viewvolunteermentorprofile", data, function (response) {
-            console.log(response[0].approve_status);
-            console.log(response);
+            console.log("result"+JSON.stringify(response));
+            
             // Mentor page will be displayed after mentor connection
-            if (response == "Data Not Found" || response[0].approve_status == 0) {
+            if (response == "Data Not Found") {
                 if(role1 == "volunteer")
                 {
                     $('#nodatav').modal({ backdrop: 'static', keyboard: false });
@@ -25,7 +25,7 @@ $(document).ready(function () {
                 
             }
             else {
-                console.log(response[0].profile.profileinfo.photo);
+                console.log("inside else"+response[0].profile.id);
                 var dateObj = new Date(response[0].profile.dob);
                 var day = dateObj.getDate();
                 var year = dateObj.getFullYear();

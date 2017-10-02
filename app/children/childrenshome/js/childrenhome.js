@@ -6,35 +6,19 @@ $(document).ready(function () {
     else {
         var id = localStorage.getItem("user");
         var datas = {};
-        // datas.id = id;
-        // httpPost("/viewChildrenReview", datas, function (response) {
-        //     // console.log();
-        //     var resdate = new Date(response.updated_at);
-        //     var resdate1 = resdate.toLocaleDateString();
-        //     console.log("hiiiiiiiii" + resdate1);
-        //     // alert(d);
-        //     // var n = d.toUTCString();
-        //     // var n = d.toUTCString();
-        //     var date = new Date();
-        //     // var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
-        //     var updated_date = date.toLocaleDateString();
-        //     console.log("hiiiiiiiii" + updated_date);
-        //     function parseDate(str) {
-        //         var mdy = str.split('/');
-        //         return new Date(mdy[2], mdy[0] - 1, mdy[1]);
-        //     }
-
-        //     function daydiff(resdate1, updated_date) {
-        //         return Math.round((updated_date - resdate1) / (1000 * 60 * 60 * 24));
-        //     }
-
-        //     alert(daydiff(parseDate($(resdate1).val()), parseDate($(updated_date).val())));
-        //     // var diffDays = Math.round(Math.abs((updated_date.getTime() - resdate1.getTime()) / (oneDay)));
-        //     alert(diffDays);
-        //     console.log(diffDays);
-        // });
         var data = {}
         data.id = id;
+        data.role=localStorage.getItem("role");
+        httpPost("/screenstatus", data, function (response) {
+            console.log(response.workflowstatus_volunteer);
+            console.log(response.workflowstatus_mentor);
+            if("ADM_APP_VOL"==response.workflowstatus_volunteer)
+                {
+                    $('#viewgraph').removeClass('hide');
+                    $('#vgraph').addClass('hide');
+                }
+           
+        });
         httpPost("/childreviewcheck", data, function (response) {
             console.log("hfsdlkf;");
             console.log(response);
@@ -42,20 +26,9 @@ $(document).ready(function () {
                 $('#childreview').modal({ backdrop: 'static', keyboard: false });
 
             }
-
         });
 
-        httpPost("/childvolunteermentorid", data, function (response) {
-            if (response == 0) {
-                $('#vgraph').removeClass('hide');
-            }
-            else{
-                if(response[0].approve_status == 1) {
-                    $('#viewgraph').removeClass('hide');
-                }
-            }
-        });
-
+       
         httpPost("/childvolunteermentorid", data, function (response) {
             if (response == 0) {
                 $('#viewreviewcheck').removeClass('hide');

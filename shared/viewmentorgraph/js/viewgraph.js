@@ -15,13 +15,16 @@ $(document).ready(function () {
         data.id = id;
         httpPost("/trackerDatesMentor", data, function (response) {
             $(".loading").addClass("hide");
+            $("#details").removeClass("hide");
             var res_length = response.length;
+
             if (res_length == 0) {
                 // $(".no_record").removeClass("hide");
-                 $('#listOfDates').append('<div class="no_record"> <h3>No Record Found</h3></div>');
+                $('#listOfDates').html('');
+                 $('#listOfDates').append('<div class="no_record_found"> <h3>No Record Found</h3></div>');
             }
             else {
-            $("#details").removeClass("hide");
+            $('#listOfDates').html('');
                 response.forEach(function (element) {
                     var dateObj = new Date(element.date);
                     var day = dateObj.getUTCDate();

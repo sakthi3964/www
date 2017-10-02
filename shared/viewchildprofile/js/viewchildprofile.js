@@ -11,11 +11,11 @@ $(document).ready(function () {
         var child_id;
         httpPost("/viewchild", data, function (response) {
 
-            console.log(response);
-            if (response[0] == null) {
+            console.log("my viewchild result"+response);
+            if (response == '') {
                 if (role == "volunteer") {
                     $('#childrenvolunteer_record').modal({ backdrop: 'static', keyboard: false});
-                }
+                    }
                 else if (role == "mentor") {
                     $('#childrenmentor_record').modal({ backdrop: 'static', keyboard: false});
                 }
@@ -23,27 +23,27 @@ $(document).ready(function () {
             }
             //date display code
             else {
-                var dateObj = new Date(response[0].childrenprofile.dob);
+                var dateObj = new Date(response.childrenprofile.dob);
                 var day = dateObj.getDate();
                 var year = dateObj.getFullYear();
                 var monthNames = ["January", "February", "March", "April", "May", "June",
                     "July", "August", "September", "October", "November", "December"
                 ];
-                var monthna = new Date(response[0].childrenprofile.dob);
+                var monthna = new Date(response.childrenprofile.dob);
                 var month = monthNames[monthna.getMonth()];
 
 
 
                 console.log(response);
-                $('#profileimage').append('<img src = "' + BASEURL + '/uploads/children/photos/' + response[0].childrenprofile.photos + '" width="150" height="150">');
+                $('#profileimage').append('<img src = "' + BASEURL + '/uploads/children/photos/' + response.childrenprofile.photos + '" width="150" height="150">');
                 $("#blockreg2").removeClass("hide");
                 $(".loading").addClass("hide");
-                child_id = response[0].childrenprofile.id;
-                $('#name').html(response[0].childrenprofile.full_name);
+                child_id = response.childrenprofile.id;
+                $('#name').html(response.childrenprofile.full_name);
                 $('#dob').html(day + "-" + month + "-" + year);
                 //  $('#dob').html(response[0].childrenprofile.dob);
-                $('#Gender').html(response[0].childrenprofile.gender);
-                $('#Center').html(response[0].childrenprofile.center);
+                $('#Gender').html(response.childrenprofile.gender);
+                $('#Center').html(response.childrenprofile.center);
             }
         });
         $("#view_preassessment").click(function () {

@@ -80,9 +80,12 @@ $(document).ready(function () {
                 var dataForRequest = {};
                 var url = window.location.href;
                 dataForRequest.profile_id = url.substring(url.lastIndexOf(':') + 1);
-                dataForRequest.volunteerid = localStorage.getItem("user");
+                dataForRequest.volunteer_id = localStorage.getItem("user");
                 dataForRequest.time = new Date();
-                httpPost("/insertmentorConnectionRequest", dataForRequest, function (response) {
+                dataForRequest.role = 'mentor';
+                dataForRequest.process='vcm';
+                dataForRequest.action='request';
+                httpPost("/insertConnectionRequest", dataForRequest, function (response) {
                     if (response == "1") {
                         $('#multiplerequest').modal({ backdrop: 'static', keyboard: false});
                     }

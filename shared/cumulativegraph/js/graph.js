@@ -18,7 +18,7 @@ $(document).ready(function () {
             $(".getdate").removeClass("hide");
             $(".loading").addClass("hide");
             var res_length = response.length;
-            response.length = 0;
+            
             if(response.length<1){
                 $(".no_record").removeClass("hide");
             }else{

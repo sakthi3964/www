@@ -1,19 +1,15 @@
-#container3{
-    background-color:white;
-    
-    
-}
+
 #demos{
     background-color:white;
     clear: both;
-    
+
 }
 .container4{
     background-color:white;
 }
 .calendor{
     margin-top: 10px;
-    margin-bottom:10px; 
+    margin-bottom:10px;
     width: 150px;
     background-color: #F4F4F4 ;
     margin-left: 10px;
@@ -61,7 +57,7 @@ li{
 }
 .nav-pills > li > a {
     border-radius: 4px;
-    background-color: #f7f7f6; 
+    background-color: #f7f7f6;
     border-radius: 20px;
 }
 .nav-pills>li.active>a {
@@ -77,4 +73,14 @@ li{
 a {
     color: #06bbb5;
     text-decoration: none;
+}
+.tab-content>.tab-pane{
+  padding-bottom:20px;
+}
+.no_record_found{
+  text-align: center;
+  width: 100%;
+}
+.loading{
+  z-index: 1;
 }

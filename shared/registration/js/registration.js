@@ -462,64 +462,65 @@ $(document).ready(function () {
                         $(".loading").removeClass("hide");
                         $("#blockreg2").addClass("hide");
                         // fileUpload("addfiles", formData, function (response) {
-                            var data = {};
-                            data.role = ($('#role').val()).trim();
-                            data.name = ($('#name').val()).trim();
-                            data.dob = ($('#dob').val()).trim();
-                            data.age = ($('#age').val()).trim();
-                            data.gender = ($("input[name='gender']:checked").val()).trim();
-                            data.course = ($('#course').val()).trim();
-                            data.department = ($('#department').val()).trim();
-                            data.institution = ($('#institution').val()).trim();
-                            data.address_line1 = ($('#address_line1').val()).trim();
-                            data.address_line2 = ($('#address_line2').val()).trim();
-                            data.city = ($('#city').val()).trim();
-                            data.state = ($('#state').val()).trim();
-                            data.country = ($('#country').val()).trim();
-                            data.postal_code = ($('#postal_code').val()).trim();
-                            // data.code = ($('#code').val()).trim();
-                            data.mobile_no = ($('#mobile_no').val()).trim();
-                            // data.phone = ($('#phone').val()).trim();
-                            data.email_id = ($('#email_id').val()).trim();
-                            data.work_type = ($('#work_type').val()).trim();
-                            data.designation = ($('#designation').val()).trim();
-                            data.organization = ($('#organization').val()).trim();
-                            data.area_of_expertise = ($('#area_of_expertise').val()).trim();
-                            data.experience = ($('#experience').val()).trim();
-                            data.off_address = ($('#off_address').val()).trim();
-                            data.password = ($('#password').val()).trim();
-                            data.reference = ($('#reference').val()).trim();
-                            data.commitment = ($('#commitment').val()).trim();
-                            // data.cv = res.cv;
-                            data.photo = image_path;
-                            $("#emailidpresent").hide();
-                            $("#mobilepresent").hide();
-                            httpPost("/registration", data, function (response) {
-                                console.log("responsewithzero" + response[0]);
-                                console.log("kdhfskdhf" + response.emailidpresent);
-                                if (response.emailidpresent == 1 && response.mobileidpresent == 1) {
-                                    $("#emailidpresent").show();
-                                    $("#mobilepresent").show();
-                                    $("#emailidpresent").html("email id already exit");
-                                    $("#mobilepresent").html("mobile no already exit");
-                                    return $('#myTab a[href="#secondtab"]').tab('show');
-                                }
-                                else if (response.emailidpresent == 1) {
-                                    $("#emailidpresent").show();
-                                    $("#mobilepresent").hide();
-                                    $("#emailidpresent").html("email id already exit");
-                                    return $('#myTab a[href="#secondtab"]').tab('show');
-                                }
-                                else if (response.mobilenopresent == 1) {
-                                    $("#emailidpresent").hide();
-                                    $("#mobilepresent").show();
-                                    $("#mobilepresent").html("mobile no already exit");
-                                    return $('#myTab a[href="#secondtab"]').tab('show');
-                                }
-                                else
-                                    // $('#registerModal').modal();
-                                    $('#registerModal').modal({ backdrop: 'static', keyboard: false });
-                            });
+                        var data = {};
+                        data.role = ($('#role').val()).trim();
+                        data.name = ($('#name').val()).trim();
+                        data.dob = ($('#dob').val()).trim();
+                        data.age = ($('#age').val()).trim();
+                        data.gender = ($("input[name='gender']:checked").val()).trim();
+                        data.course = ($('#course').val()).trim();
+                        data.department = ($('#department').val()).trim();
+                        data.institution = ($('#institution').val()).trim();
+                        data.address_line1 = ($('#address_line1').val()).trim();
+                        data.address_line2 = ($('#address_line2').val()).trim();
+                        data.city = ($('#city').val()).trim();
+                        data.state = ($('#state').val()).trim();
+                        data.country = ($('#country').val()).trim();
+                        data.postal_code = ($('#postal_code').val()).trim();
+                        // data.code = ($('#code').val()).trim();
+                        data.mobile_no = ($('#mobile_no').val()).trim();
+                        // data.phone = ($('#phone').val()).trim();
+                        data.email_id = ($('#email_id').val()).trim();
+                        data.work_type = ($('#work_type').val()).trim();
+                        data.designation = ($('#designation').val()).trim();
+                        data.organization = ($('#organization').val()).trim();
+                        data.area_of_expertise = ($('#area_of_expertise').val()).trim();
+                        data.experience = ($('#experience').val()).trim();
+                        data.off_address = ($('#off_address').val()).trim();
+                        data.password = ($('#password').val()).trim();
+                        data.reference = ($('#reference').val()).trim();
+                        data.commitment = ($('#commitment').val()).trim();
+                        // data.cv = res.cv;
+                        data.photo = image_path;
+                        data.BASEURL = BASEURL
+                        $("#emailidpresent").hide();
+                        $("#mobilepresent").hide();
+                        httpPost("/registration", data, function (response) {
+                            console.log("responsewithzero" + response[0]);
+                            console.log("kdhfskdhf" + response.emailidpresent);
+                            if (response.emailidpresent == 1 && response.mobileidpresent == 1) {
+                                $("#emailidpresent").show();
+                                $("#mobilepresent").show();
+                                $("#emailidpresent").html("email id already exit");
+                                $("#mobilepresent").html("mobile no already exit");
+                                return $('#myTab a[href="#secondtab"]').tab('show');
+                            }
+                            else if (response.emailidpresent == 1) {
+                                $("#emailidpresent").show();
+                                $("#mobilepresent").hide();
+                                $("#emailidpresent").html("email id already exit");
+                                return $('#myTab a[href="#secondtab"]').tab('show');
+                            }
+                            else if (response.mobilenopresent == 1) {
+                                $("#emailidpresent").hide();
+                                $("#mobilepresent").show();
+                                $("#mobilepresent").html("mobile no already exit");
+                                return $('#myTab a[href="#secondtab"]').tab('show');
+                            }
+                            else
+                                // $('#registerModal').modal();
+                                $('#registerModal').modal({ backdrop: 'static', keyboard: false });
+                        });
 
 
                         // });

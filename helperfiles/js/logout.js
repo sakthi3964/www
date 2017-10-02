@@ -18,10 +18,20 @@ $(document).ready(function () {
     // // else {
     // //     alert("not present url");
     // // }
+    var key, key2;
     var url = window.location.href;
     var urlstring = url.toString();
-    var key = urlstring.includes("shared");
-    var key2 = urlstring.includes("trackerdisplay");
+    var str1 = urlstring;
+    var str2 = "shared";
+    var str3 = "trackerdisplay";
+    if (str1.indexOf(str2) != -1) {
+        key = true;
+    }
+    if (str1.indexOf(str3) != -1) {
+        key2 = true;
+    }
+    // var key = urlstring.includes("shared");
+    // var key2 = urlstring.includes("trackerdisplay");
     $("#home_button").click(function () {
         if (role == "children") {
             if (key2) {

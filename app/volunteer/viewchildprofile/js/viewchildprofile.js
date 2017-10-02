@@ -34,11 +34,14 @@ $(document).ready(function () {
                 var datass = {};
                 datas.id = localStorage.getItem("user");
                 var dataForRequest = {};
-                dataForRequest.volunteer_id = localStorage.getItem("user");
-                dataForRequest.role = localStorage.getItem("role");
+                dataForRequest.profile_id = localStorage.getItem("user");
+                dataForRequest.role = 'volunteer';
                 var url = window.location.href;
                 dataForRequest.children_id = url.substring(url.lastIndexOf(':') + 1);
                 dataForRequest.time = new Date();
+                dataForRequest.process = 'vc';
+                dataForRequest.action = 'request';
+               // alert(dataForRequest.time);
                 httpPost("/insertConnectionRequest", dataForRequest, function (response) {
                     if (response == "1") {
                         httpPost("/viewchild", datas, function (response) {
@@ -49,7 +52,7 @@ $(document).ready(function () {
                             }
                             else {
                                 console.log("insertConnectionRequest");
-                                datass.approve_status = 1
+                                datass.approve_status = 1;
                                 datass.volunteer_id = localStorage.getItem("user");
                                 datass.role = localStorage.getItem("role");
                                 var url = window.location.href;

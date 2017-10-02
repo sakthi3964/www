@@ -1,6 +1,6 @@
 $(document).ready(function () {
+    
     var session = localStorage.getItem("user");
-
     if (session == null) {
         window.location.href = "../../../../index.html";
     }
@@ -15,14 +15,15 @@ $(document).ready(function () {
         data.date = date3;
         data.profileId = localStorage.getItem("user");
         httpPost("/cumulativegraph", data, function (response) {
-            $("#getdate").removeClass("hide");
+            $(".getdate").removeClass("hide");
             $(".loading").addClass("hide");
             var res_length = response.length;
-            if (res_length == 0) {
+            
+            if(response.length<1){
                 $(".no_record").removeClass("hide");
-            }
-            else{
-                $(".getdate").removeClass("hide");
+            }else{
+                $(".no_record").removeClass("hide");
+                $(".no_record").addClass("hide");
             }
             response.forEach(function (element) {
                 $('#fromdate').append(' <option value=' + element.date + '>' + element.date + '</option>')
@@ -44,9 +45,13 @@ $(document).ready(function () {
         var data = {};
         data.fromdate = $('#fromdate').val();
         data.todate = $('#todate').val();
+        if(!data.fromdate || !data.todate){
+            $(".no_record").html('<h4>Please Select Start Date<br/>and End Date</h4>').css('color','red');
+        }else{
+            $(".no_record").html('<h3>No Record Found</h3>').css('color','#333');
+        }
         data.profileId=localStorage.getItem("user");
         httpPost("/cumulativegraphwithdate", data, function (response) {
-            $("#chartContainer").removeClass("hide");
             $(".loading").addClass("hide");
             if(response.length<1){
                 $(".no_record").removeClass("hide");

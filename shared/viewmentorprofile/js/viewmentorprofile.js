@@ -4,11 +4,16 @@ $(document).ready(function () {
         window.location.href = "../../../../index.html";
     }
     else {
+        var check1;
         var url = window.location.href;
         var id = url.substring(url.lastIndexOf(':') + 1);
         var lastIndex = url.substring(url.lastIndexOf('/') + 1);
         var check = lastIndex.toString();
-        var check1 = check.includes("id");
+        // var check1 = check.includes("id");
+        var str2 = "id";
+        if (check.indexOf(str2) != -1) {
+            check1 = true;
+        }
         var data = {};
         data.id = id;
         console.log(data.id);

@@ -1,3 +1,54 @@
+var pictureSource;   // picture source
+var destinationType; // sets the format of returned value
+var image_path;
+// Wait for device API libraries to load
+//
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+    pictureSource = navigator.camera.PictureSourceType;
+    destinationType = navigator.camera.DestinationType;
+}
+
+function getPhoto(source) {
+    // Retrieve image file location from specified source
+    navigator.camera.getPicture(onPhotoURISuccess, onFail, {
+        quality: 50,
+        destinationType: destinationType.FILE_URI,
+        sourceType: source
+    });
+}
+function onPhotoURISuccess(imageURI) {
+    $(".loading").removeClass("hide");
+    $("#blockreg2").addClass("hide");
+    var ft = new FileTransfer();
+    var options = {
+        fileKey: "file",
+        fileName: "image.png",
+        chunkedMode: false,
+        contentType: false,
+        mimeType: "multipart/form-data",
+        mimeType: true,
+        async: true,
+        processData: false,
+    };
+    var success = function (r) {
+        $(".loading").addClass("hide");
+        $("#blockreg2").removeClass("hide")
+        image_path = r.response;
+        // displayFileData(fileEntry.fullPath + " (content uploaded to server)");
+    }
+
+    var fail = function (error) {
+        alert("An error has occurred: Code = " + error.code);
+    }
+    ft.upload(imageURI, encodeURI("https://nkanaapi.herokuapp.com/photoUpload"), success, fail, options)
+
+}
+function onFail(message) {
+    $(".loading").addClass("hide");
+    $("#blockreg2").removeClass("hide");
+    alert('Failed because: ' + message);
+}
 $(document).ready(function () {
     $("#dob").datepicker({
 
@@ -73,319 +124,319 @@ $(document).ready(function () {
                     //         minlength: 2,
                     //         required: true
                     //     },
-                        checkcv: {
-                            validators: {
-                                notEmpty: {
-                                    message: localization.checkcv[lang()]
-                                }
+                    // checkcv: {
+                    //     validators: {
+                    //         notEmpty: {
+                    //             message: localization.checkcv[lang()]
+                    //         }
+                    //     }
+                    // },
+                    // checkphoto: {
+                    //     validators: {
+                    //         notEmpty: {
+                    //             message: localization.name[lang()]
+                    //         }
+                    //     }
+                    // },
+                    role: {
+                        validators: {
+                            notEmpty: {
+                                message: localization.role[lang()]
                             }
-                        },
-                        // checkphoto: {
-                        //     validators: {
-                        //         notEmpty: {
-                        //             message: localization.name[lang()]
-                        //         }
-                        //     }
-                        // },
-                        role: {
-                            validators: {
-                                notEmpty: {
-                                    message: localization.role[lang()]
-                                }
+                        }
+                    },
+                    name: {
+                        validators: {
+                            notEmpty: {
+                                message: localization.name[lang()]
+                            },
+                            regexp: {
+                                regexp: /^[a-z\s]+$/i,
+                                message: localization.validname[lang()]
                             }
-                        },
-                        name: {
-                            validators: {
-                                notEmpty: {
-                                    message: localization.name[lang()]
-                                },
-                                regexp: {
-                                    regexp: /^[a-z\s]+$/i,
-                                    message: localization.validname[lang()]
-                                }
-                            }
+                        }
 
-                        },
+                    },
 
-                        // dob: {
-                        //     validators: {
-                        //         notEmpty: {
-                        //             message: localization.dob[lang()]
-                        //         }
-                        //         // date: {
-                        //         //     message: localization.validdob[lang()],
-                        //         //    // format: 'YYYY/MM/DD',
-                        //         //     min: '2000/01/01',
-                        //         //     max: '2020/12/30'
-                        //         // }
-                        //     }
-                        // },
-                        age: {
-                            trigger: 'change keyup',
-                            validators: {
-                                greaterThan: {
-                                    value: 18,
-                                    message: localization.lesserage[lang()]
-                                },
-                                lessThan: {
-                                    value: 100,
-                                    message: localization.greaterage[lang()]
-                                },
-                                notEmpty: {
-                                    message: localization.age[lang()]
-                                },
-                                integer: {
-                                    message: localization.validno[lang()]
-                                }
+                    // dob: {
+                    //     validators: {
+                    //         notEmpty: {
+                    //             message: localization.dob[lang()]
+                    //         }
+                    //         // date: {
+                    //         //     message: localization.validdob[lang()],
+                    //         //    // format: 'YYYY/MM/DD',
+                    //         //     min: '2000/01/01',
+                    //         //     max: '2020/12/30'
+                    //         // }
+                    //     }
+                    // },
+                    age: {
+                        trigger: 'change keyup',
+                        validators: {
+                            greaterThan: {
+                                value: 18,
+                                message: localization.lesserage[lang()]
+                            },
+                            lessThan: {
+                                value: 100,
+                                message: localization.greaterage[lang()]
+                            },
+                            notEmpty: {
+                                message: localization.age[lang()]
+                            },
+                            integer: {
+                                message: localization.validno[lang()]
                             }
-                        },
-                        gender: {
-                            validators: {
-                                notEmpty: {
-                                    message: localization.gender[lang()]
-                                }
+                        }
+                    },
+                    gender: {
+                        validators: {
+                            notEmpty: {
+                                message: localization.gender[lang()]
                             }
-                        },
-                        mobile_no: {
-                            validators: {
-                                notEmpty: {
-                                    message: localization.mobile_no[lang()]
-                                },
-                                integer: {
-                                    message: localization.validno[lang()]
-                                }
+                        }
+                    },
+                    mobile_no: {
+                        validators: {
+                            notEmpty: {
+                                message: localization.mobile_no[lang()]
+                            },
+                            integer: {
+                                message: localization.validno[lang()]
                             }
-                        },
-                        phone: {
-                            validators: {
-                                numeric: {
-                                    message: localization.validno[lang()]
-                                }
+                        }
+                    },
+                    phone: {
+                        validators: {
+                            numeric: {
+                                message: localization.validno[lang()]
                             }
-                        },
-                        code: {
-                            validators: {
-                                numeric: {
-                                    message: 'Invalid number'
-                                }
+                        }
+                    },
+                    code: {
+                        validators: {
+                            numeric: {
+                                message: 'Invalid number'
                             }
-                        },
-                        email_id: {
-                            validators: {
-                                notEmpty: {
-                                    message: localization.username[lang()]
-                                }
+                        }
+                    },
+                    email_id: {
+                        validators: {
+                            notEmpty: {
+                                message: localization.username[lang()]
                             }
-                        },
-                        address_line1: {
-                            validators: {
-                                notEmpty: {
-                                    message: localization.address_line1[lang()]
-                                }
+                        }
+                    },
+                    address_line1: {
+                        validators: {
+                            notEmpty: {
+                                message: localization.address_line1[lang()]
                             }
-                        },
-                        address_line2: {
-                            validators: {
-                                notEmpty: {
-                                    message: localization.address_line2[lang()]
-                                }
+                        }
+                    },
+                    address_line2: {
+                        validators: {
+                            notEmpty: {
+                                message: localization.address_line2[lang()]
                             }
-                        },
-                        city: {
-                            validators: {
-                                notEmpty: {
-                                    message: localization.city[lang()]
-                                },
-                                regexp: {
-                                    regexp: /^[a-z\s]+$/i,
-                                    message: localization.validname[lang()]
-                                }
+                        }
+                    },
+                    city: {
+                        validators: {
+                            notEmpty: {
+                                message: localization.city[lang()]
+                            },
+                            regexp: {
+                                regexp: /^[a-z\s]+$/i,
+                                message: localization.validname[lang()]
                             }
-                        },
-                        state: {
-                            validators: {
-                                notEmpty: {
-                                    message: localization.state[lang()]
-                                }
+                        }
+                    },
+                    state: {
+                        validators: {
+                            notEmpty: {
+                                message: localization.state[lang()]
                             }
-                        },
-                        postal_code: {
-                            validators: {
-                                notEmpty: {
-                                    message: localization.postal_code[lang()]
-                                },
-                                integer: {
-                                    message: localization.validno[lang()]
-                                }
+                        }
+                    },
+                    postal_code: {
+                        validators: {
+                            notEmpty: {
+                                message: localization.postal_code[lang()]
+                            },
+                            integer: {
+                                message: localization.validno[lang()]
                             }
-                        },
+                        }
+                    },
 
-                        reference: {
-                            validators: {
-                                notEmpty: {
-                                    message: localization.reference[lang()]
-                                }
+                    reference: {
+                        validators: {
+                            notEmpty: {
+                                message: localization.reference[lang()]
                             }
-                        },
-                        password: {
-                            validators: {
-                                notEmpty: {
-                                    message: localization.password[lang()]
-                                },
-                                callback: {
-                                    message: 'The password is not valid',
-                                    callback: function (value, validator, $field) {
-                                        if (value === '') {
-                                            return true;
-                                        }
-
-                                        // Check the password strength
-                                        if (value.length < 8) {
-                                            return {
-                                                valid: false,
-                                                message: localization.psstr[lang()]
-                                            };
-                                        }
-
-                                        // The password doesn't contain any uppercase character
-                                        if (value === value.toLowerCase()) {
-                                            return {
-                                                valid: false,
-                                                message: localization.psupper[lang()]
-                                            }
-                                        }
-
-                                        // The password doesn't contain any uppercase character
-                                        if (value === value.toUpperCase()) {
-                                            return {
-                                                valid: false,
-                                                message: localization.pslower[lang()]
-                                            }
-                                        }
-
-                                        // The password doesn't contain any digit
-                                        if (value.search(/[0-9]/) < 0) {
-                                            return {
-                                                valid: false,
-                                                message: localization.psdigit[lang()]
-                                            }
-                                        }
-
+                        }
+                    },
+                    password: {
+                        validators: {
+                            notEmpty: {
+                                message: localization.password[lang()]
+                            },
+                            callback: {
+                                message: 'The password is not valid',
+                                callback: function (value, validator, $field) {
+                                    if (value === '') {
                                         return true;
                                     }
-                                }
-                            }
-                        },
-                        cpassword: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'Enter your password again'
-                                },
-                                identical: {
-                                    field: 'password',
-                                    message: 'The password and its confirm are not the same'
-                                }
-                            }
-                        },
-                        commitment: {
-                            validators: {
-                                notEmpty: {
-                                    message: localization.commitment[lang()]
-                                }
-                            }
-                        },
-                        cv: {
-                            selector: '.cv',
-                            validators: {
-                                notEmpty: {
-                                    message: localization.cv[lang()]
-                                },
-                                file: {
-                                    extension: 'doc,pdf',
-                                    type: 'application/msword,application/pdf',
-                                    maxSize: 5 * 1024 * 1024,   // 5 MB
-                                    message: 'The selected file is not valid'
-                                }
-                            }
-                        },
-                        photo: {
-                            selector: '.photo',
-                            validators: {
-                                notEmpty: {
-                                    message: localization.photo[lang()]
-                                },
-                                file: {
-                                    extension: 'jpeg,png,jpg',
-                                    type: 'image/jpeg,image/jpg,image/png',
-                                    maxSize: 2048 * 1024,   // 2 MB
-                                    message: 'The selected file is not valid'
-                                }
-                            }
-                        },
-                        work_type: {
-                            validators: {
-                                notEmpty: {
-                                    message: localization.work_type[lang()]
-                                }
-                            }
-                        }, designation: {
-                            validators: {
-                                notEmpty: {
-                                    message: localization.designation[lang()]
-                                }
-                            }
-                        },
-                        organization: {
-                            validators: {
-                                notEmpty: {
-                                    message: localization.organization[lang()]
-                                }
-                            }
-                        },
-                        area_of_expertise: {
-                            validators: {
-                                notEmpty: {
-                                    message: localization.area_of_expertise[lang()]
-                                }
-                            }
-                        },
-                        experience: {
-                            validators: {
-                                notEmpty: {
-                                    message: localization.experience[lang()]
-                                }
-                            }
-                        },
 
-                        course: {
-                            validators: {
-                                notEmpty: {
-                                    message: localization.course[lang()]
-                                }
-                            }
-                        },
-                        department: {
-                            validators: {
-                                notEmpty: {
-                                    message: localization.department[lang()]
-                                }
-                            }
-                        },
-                        institution: {
-                            validators: {
-                                notEmpty: {
-                                    message: localization.institution[lang()]
-                                }
-                            }
-                        },
-                         off_address: {
-                            validators: {
-                                notEmpty: {
-                                    message: localization.off_address[lang()]
+                                    // Check the password strength
+                                    if (value.length < 8) {
+                                        return {
+                                            valid: false,
+                                            message: localization.psstr[lang()]
+                                        };
+                                    }
+
+                                    // The password doesn't contain any uppercase character
+                                    if (value === value.toLowerCase()) {
+                                        return {
+                                            valid: false,
+                                            message: localization.psupper[lang()]
+                                        }
+                                    }
+
+                                    // The password doesn't contain any uppercase character
+                                    if (value === value.toUpperCase()) {
+                                        return {
+                                            valid: false,
+                                            message: localization.pslower[lang()]
+                                        }
+                                    }
+
+                                    // The password doesn't contain any digit
+                                    if (value.search(/[0-9]/) < 0) {
+                                        return {
+                                            valid: false,
+                                            message: localization.psdigit[lang()]
+                                        }
+                                    }
+
+                                    return true;
                                 }
                             }
                         }
+                    },
+                    cpassword: {
+                        validators: {
+                            notEmpty: {
+                                message: 'Enter your password again'
+                            },
+                            identical: {
+                                field: 'password',
+                                message: 'The password and its confirm are not the same'
+                            }
+                        }
+                    },
+                    commitment: {
+                        validators: {
+                            notEmpty: {
+                                message: localization.commitment[lang()]
+                            }
+                        }
+                    },
+                    // cv: {
+                    //     selector: '.cv',
+                    //     validators: {
+                    //         notEmpty: {
+                    //             message: localization.cv[lang()]
+                    //         },
+                    //         file: {
+                    //             extension: 'doc,pdf',
+                    //             type: 'application/msword,application/pdf',
+                    //             maxSize: 5 * 1024 * 1024,   // 5 MB
+                    //             message: 'The selected file is not valid'
+                    //         }
+                    //     }
+                    // },
+                    photo: {
+                        selector: '.photo',
+                        validators: {
+                            notEmpty: {
+                                message: localization.photo[lang()]
+                            },
+                            file: {
+                                extension: 'jpeg,png,jpg',
+                                type: 'image/jpeg,image/jpg,image/png',
+                                maxSize: 2048 * 1024,   // 2 MB
+                                message: 'The selected file is not valid'
+                            }
+                        }
+                    },
+                    work_type: {
+                        validators: {
+                            notEmpty: {
+                                message: localization.work_type[lang()]
+                            }
+                        }
+                    }, designation: {
+                        validators: {
+                            notEmpty: {
+                                message: localization.designation[lang()]
+                            }
+                        }
+                    },
+                    organization: {
+                        validators: {
+                            notEmpty: {
+                                message: localization.organization[lang()]
+                            }
+                        }
+                    },
+                    area_of_expertise: {
+                        validators: {
+                            notEmpty: {
+                                message: localization.area_of_expertise[lang()]
+                            }
+                        }
+                    },
+                    experience: {
+                        validators: {
+                            notEmpty: {
+                                message: localization.experience[lang()]
+                            }
+                        }
+                    },
+
+                    course: {
+                        validators: {
+                            notEmpty: {
+                                message: localization.course[lang()]
+                            }
+                        }
+                    },
+                    department: {
+                        validators: {
+                            notEmpty: {
+                                message: localization.department[lang()]
+                            }
+                        }
+                    },
+                    institution: {
+                        validators: {
+                            notEmpty: {
+                                message: localization.institution[lang()]
+                            }
+                        }
+                    },
+                    off_address: {
+                        validators: {
+                            notEmpty: {
+                                message: localization.off_address[lang()]
+                            }
+                        }
                     }
+                }
             })
             .bootstrapWizard({
                 tabClass: 'nav nav-pills',
@@ -400,79 +451,79 @@ $(document).ready(function () {
                     }
                     if (index === numTabs) {
                         var role = ($('#role').val()).trim();
-                        var formData = new FormData();
-                        formData.append("role", role);
-                        $.each($("input[type=file]"), function (i, obj) {
-                            $.each(obj.files, function (j, file) {
-                                formData.append('photo', file, file.name);
-                            })
-                        });
+                        // var formData = new FormData();
+                        // formData.append("role", role);
+                        // $.each($("input[type=file]"), function (i, obj) {
+                        //     $.each(obj.files, function (j, file) {
+                        //         formData.append('photo', file, file.name);
+                        //     })
+                        // });
 
                         $(".loading").removeClass("hide");
                         $("#blockreg2").addClass("hide");
-                        fileUpload("addfiles", formData, function (response) {
-                            var res = JSON.parse(response);
-                            var data = {};
-                            data.role = ($('#role').val()).trim();
-                            data.name = ($('#name').val()).trim();
-                            data.dob = ($('#dob').val()).trim();
-                            data.age = ($('#age').val()).trim();
-                            data.gender = ($("input[name='gender']:checked").val()).trim();
-                            data.course = ($('#course').val()).trim();
-                            data.department = ($('#department').val()).trim();
-                            data.institution = ($('#institution').val()).trim();
-                            data.address_line1 = ($('#address_line1').val()).trim();
-                            data.address_line2 = ($('#address_line2').val()).trim();
-                            data.city = ($('#city').val()).trim();
-                            data.state = ($('#state').val()).trim();
-                            data.country = ($('#country').val()).trim();
-                            data.postal_code = ($('#postal_code').val()).trim();
-                            // data.code = ($('#code').val()).trim();
-                            data.mobile_no = ($('#mobile_no').val()).trim();
-                            // data.phone = ($('#phone').val()).trim();
-                            data.email_id = ($('#email_id').val()).trim();
-                            data.work_type = ($('#work_type').val()).trim();
-                            data.designation = ($('#designation').val()).trim();
-                            data.organization = ($('#organization').val()).trim();
-                            data.area_of_expertise = ($('#area_of_expertise').val()).trim();
-                            data.experience = ($('#experience').val()).trim();
-                            data.off_address = ($('#off_address').val()).trim();
-                            data.password = ($('#password').val()).trim();
-                            data.reference = ($('#reference').val()).trim();
-                            data.commitment = ($('#commitment').val()).trim();
-                            data.cv = res.cv;
-                            data.photo = res.photo;
-                            $("#emailidpresent").hide();
-                            $("#mobilepresent").hide();
-                            httpPost("/registration", data, function (response) {
-                                console.log("responsewithzero" + response[0]);
-                                console.log("kdhfskdhf" + response.emailidpresent);
-                                if (response.emailidpresent == 1 && response.mobileidpresent == 1) {
-                                    $("#emailidpresent").show();
-                                    $("#mobilepresent").show();
-                                    $("#emailidpresent").html("email id already exit");
-                                    $("#mobilepresent").html("mobile no already exit");
-                                    return $('#myTab a[href="#secondtab"]').tab('show');
-                                }
-                                else if (response.emailidpresent == 1) {
-                                    $("#emailidpresent").show();
-                                    $("#mobilepresent").hide();
-                                    $("#emailidpresent").html("email id already exit");
-                                    return $('#myTab a[href="#secondtab"]').tab('show');
-                                }
-                                else if (response.mobilenopresent == 1) {
-                                    $("#emailidpresent").hide();
-                                    $("#mobilepresent").show();
-                                    $("#mobilepresent").html("mobile no already exit");
-                                    return $('#myTab a[href="#secondtab"]').tab('show');
-                                }
-                                else
-                                    // $('#registerModal').modal();
-                                    $('#registerModal').modal({ backdrop: 'static', keyboard: false });
-                            });
-
-
+                        // fileUpload("addfiles", formData, function (response) {
+                        var data = {};
+                        data.role = ($('#role').val()).trim();
+                        data.name = ($('#name').val()).trim();
+                        data.dob = ($('#dob').val()).trim();
+                        data.age = ($('#age').val()).trim();
+                        data.gender = ($("input[name='gender']:checked").val()).trim();
+                        data.course = ($('#course').val()).trim();
+                        data.department = ($('#department').val()).trim();
+                        data.institution = ($('#institution').val()).trim();
+                        data.address_line1 = ($('#address_line1').val()).trim();
+                        data.address_line2 = ($('#address_line2').val()).trim();
+                        data.city = ($('#city').val()).trim();
+                        data.state = ($('#state').val()).trim();
+                        data.country = ($('#country').val()).trim();
+                        data.postal_code = ($('#postal_code').val()).trim();
+                        // data.code = ($('#code').val()).trim();
+                        data.mobile_no = ($('#mobile_no').val()).trim();
+                        // data.phone = ($('#phone').val()).trim();
+                        data.email_id = ($('#email_id').val()).trim();
+                        data.work_type = ($('#work_type').val()).trim();
+                        data.designation = ($('#designation').val()).trim();
+                        data.organization = ($('#organization').val()).trim();
+                        data.area_of_expertise = ($('#area_of_expertise').val()).trim();
+                        data.experience = ($('#experience').val()).trim();
+                        data.off_address = ($('#off_address').val()).trim();
+                        data.password = ($('#password').val()).trim();
+                        data.reference = ($('#reference').val()).trim();
+                        data.commitment = ($('#commitment').val()).trim();
+                        // data.cv = res.cv;
+                        data.photo = image_path;
+                        data.BASEURL = BASEURL
+                        $("#emailidpresent").hide();
+                        $("#mobilepresent").hide();
+                        httpPost("/registration", data, function (response) {
+                            console.log("responsewithzero" + response[0]);
+                            console.log("kdhfskdhf" + response.emailidpresent);
+                            if (response.emailidpresent == 1 && response.mobileidpresent == 1) {
+                                $("#emailidpresent").show();
+                                $("#mobilepresent").show();
+                                $("#emailidpresent").html("email id already exit");
+                                $("#mobilepresent").html("mobile no already exit");
+                                return $('#myTab a[href="#secondtab"]').tab('show');
+                            }
+                            else if (response.emailidpresent == 1) {
+                                $("#emailidpresent").show();
+                                $("#mobilepresent").hide();
+                                $("#emailidpresent").html("email id already exit");
+                                return $('#myTab a[href="#secondtab"]').tab('show');
+                            }
+                            else if (response.mobilenopresent == 1) {
+                                $("#emailidpresent").hide();
+                                $("#mobilepresent").show();
+                                $("#mobilepresent").html("mobile no already exit");
+                                return $('#myTab a[href="#secondtab"]').tab('show');
+                            }
+                            else
+                                // $('#registerModal').modal();
+                                $('#registerModal').modal({ backdrop: 'static', keyboard: false });
                         });
+
+
+                        // });
 
 
                     }
@@ -522,7 +573,7 @@ $(document).ready(function () {
         var time = new Date();
         data.id = id;
         httpPost("/editreturn", data, function (response) {
-            console.log("Response for edit"+JSON.stringify(response));
+            console.log("Response for edit" + JSON.stringify(response));
             radiobtn = response[0].gender;
             if (radiobtn == 'male') {
                 document.forms["registrationForm"]["male"].checked = true;
@@ -905,8 +956,8 @@ $(document).ready(function () {
                     }
                     if (index === numTabs) {
                         var role = $('#role').val();
-                        var formData = new FormData();
-                        formData.append("role", role);
+                        // var formData = new FormData();
+                        // formData.append("role", role);
                         // $.each($("input[type=file]"), function (i, obj) {
                         //     $.each(obj.files, function (j, file) {
                         //         formData.append('photo', file, file.name);

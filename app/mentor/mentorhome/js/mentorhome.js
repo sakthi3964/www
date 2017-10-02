@@ -4,7 +4,6 @@ $(document).ready(function () {
         window.location.href = "../../../../index.html";
     }
     else {
-
         var home = {};
         home.id = localStorage.getItem("user");
         console.log(home.id);
@@ -56,12 +55,13 @@ $(document).ready(function () {
 
     $("#mentorapproval").click(function () {
         var data = {};
-        data.operation = "accept";
-        data.profileId = localStorage.getItem("user");
+      
+        data.profile_id = localStorage.getItem("user");
+        data.process='vcm';
+        data.action='approve';
+        data.role='mentor';
         console.log("inside ");
-        httpPost("/mentorapproval", data, function (response) {
-
-
+        httpPost("/changeapproval", data, function (response) {
 
         })
 

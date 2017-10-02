@@ -12,27 +12,20 @@ $(document).ready(function () {
         else {
             var dec = url.substring(url.lastIndexOf(':') + 1);
             id = window.atob(dec);
-            console.log(id);
         }
         data.id = id;
-        console.log(data.id);
         httpPost("/childReviewDates", data, function (response) {
-          console.log("hiii"+response);
             $(".loading").addClass("hide");
             $("#details").removeClass("hide");
             var res_length = response.length;
-            console.log(res_length);
             if (res_length == 0) {
-                console.log("no");
-                // $(".no_record").removeClass("hide");
-                  $('#listOfDates').append('No Record Found');
+              $('#listOfDates').html('');
+               $('#listOfDates').append('<div class="no_record_found"> <h3>No Record Found</h3></div>');
             }
             else {
-                  
+                $('#listOfDates').html('');
                 response.forEach(function (element) {
-                    console.log(element.children_id);
                     var dateObj = new Date(element.created_at);
-                    console.log(dateObj);
                     var day = dateObj.getUTCDate();
                     var monthna = dateObj.getUTCMonth();
                     var year = dateObj.getUTCFullYear();

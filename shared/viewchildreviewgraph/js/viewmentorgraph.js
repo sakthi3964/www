@@ -19,20 +19,16 @@ $(document).ready(function () {
         data.id = id;
 
         if (role != "admin") {
-            console.log("fjdsa;ja;lsf");
             httpPost("/childReviewDatesMentor", data, function (response) {
                 $(".loading").addClass("hide");
-                console.log(response);
-                console.log("fjdsa;ja;lsf");
+
                 var res_length = response.length;
                 if (res_length == 0) {
-                    console.log("no");
-                    // $(".no_record").removeClass("hide");
-                     $('#listOfMentorDates').append('<No Record Found');
+                     $('#listOfMentorDates').html('');
+                     $('#listOfMentorDates').append('<div class="no_record_found"> <h3>No Record Found</h3></div>');
                 }
                 else {
-                    console.log("no2");
-                    $("#details").removeClass("hide");
+                    $('#listOfMentorDates').html('');
                     response.forEach(function (element) {
                         var dateObj = new Date(element.created_at);
                         console.log(dateObj);
@@ -55,12 +51,11 @@ $(document).ready(function () {
                 var res_length = response.length;
                 $(".loading").addClass("hide");
                 if (res_length == 0) {
-                    // $(".no_record").removeClass("hide");
-                     $('#listOfMentorDates').append('No Record Found');
+                  $('#listOfMentorDates').html('');
+                  $('#listOfMentorDates').append('<div class="no_record_found"> <h3>No Record Found</h3></div>');
                 }
                 else {
-                    
-                $("#details").removeClass("hide");
+                  $('#listOfMentorDates').html('');
                     response.forEach(function (element) {
                         var dateObj = new Date(element.created_at);
                         console.log(dateObj);

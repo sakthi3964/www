@@ -6,7 +6,7 @@ $(document).ready(function () {
     else {
         var data = {};
         data.id = localStorage.getItem("user");
-        role1 = localStorage.getItem("role");
+        data.role = localStorage.getItem("role");
         console.log(data.id);
         
         httpPost("/viewvolunteermentorprofile", data, function (response) {
@@ -14,11 +14,11 @@ $(document).ready(function () {
             
             // Mentor page will be displayed after mentor connection
             if (response == "Data Not Found") {
-                if(role1 == "volunteer")
+                if(role == "volunteer")
                 {
                     $('#nodatav').modal({ backdrop: 'static', keyboard: false });
                 }
-                else if (role1 = "mentor")
+                else if (role = "mentor")
                 {
                     $('#nodatam').modal({ backdrop: 'static', keyboard: false });
                 }

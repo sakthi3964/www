@@ -67,6 +67,22 @@ $(document).ready(function () {
 
     })
 
+   
+    $("#mentorDeny").click(function () {
+        var data = {};
+      
+        data.profile_id = localStorage.getItem("user");
+        data.process='vcm';
+        data.action='decline';
+        data.role='mentor';
+        console.log("inside ");
+        httpPost("/changeapproval", data, function (response) {
+
+        })
+
+    })
+
+
 
 
 });

@@ -4,7 +4,9 @@ $(document).ready(function () {
         window.location.href = "../../../../index.html";
     }
     else {
-        httpGet("/listofmentor", function (response) {
+        var data={};
+        data.role=localStorage.getItem("role");
+        httpPost("/listofmentor",data, function (response) {
             $("#listofmembers").removeClass("hide");
             $(".loading").addClass("hide");
             var res_length = response.length;

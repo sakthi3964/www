@@ -14,8 +14,10 @@ $(document).ready(function () {
         data.profileId = localStorage.getItem("user");
         data.role = localStorage.getItem("role");
         if (data.role == "admin") {
+            console.log(url.substring(url.lastIndexOf('#') + 1));
             var dec = url.substring(url.lastIndexOf('#') + 1);
-            data.childId = window.atob(dec);
+            data.childId = dec;
+            console.log(data.childId);
         }
         if (data.role == "children") {
             data.childId = localStorage.getItem("user");

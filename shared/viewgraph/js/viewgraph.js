@@ -21,6 +21,7 @@ function viewGraphFn(){
           id = window.atob(dec);
       }
       data.id = id;
+      var dec= id;
       httpPost("/trackerDates", data, function (response) {
           $("#details").removeClass("hide");
           $(".loading").addClass("hide");
@@ -46,9 +47,7 @@ function viewGraphFn(){
                   var monthna = new Date(element.date);
                   var month = monthNames[monthna.getMonth()];
                   var elementid = window.btoa(element.id);
-
-
-                  $('#listOfDates').append('<a href="../../graph/en/graph.html?date&' + element.created_at + '" id=' + elementid + '><div class="calendor"><div class="month"><p>' + month + '</p></div><div class="date"><p>' + day + '</p></div><div class="year"><p>' + year + '</p></div></div></a>');
+                  $('#listOfDates').append('<a href="../../graph/en/graph.html?date&' + element.created_at + 'id#' + dec + '"><div class="calendor"><div class="month"><p>' + month + '</p></div><div class="date"><p>' + day + '</p></div><div class="year"><p>' + year + '</p></div></div></a>');
               }, this);
           }
       })

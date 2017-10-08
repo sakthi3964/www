@@ -23,7 +23,7 @@ $(document).ready(function () {
             // response[0].profileinfo.photo="";
             var profileImageUrl = "";
             if(response[0].profileinfo.photo){
-              profileImageUrl = BASEURL + '/uploads/mentor/photo/' + response[0].profileinfo.photo;
+              profileImageUrl = profile_photo + response[0].profileinfo.photo;
             }else{
               profileImageUrl= 'https://www.bsn.eu/wp-content/uploads/2016/12/user-icon-image-placeholder-300-grey.jpg';
             }

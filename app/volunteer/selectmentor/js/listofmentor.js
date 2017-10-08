@@ -17,7 +17,7 @@ $(document).ready(function () {
                 var i = 0;
                 var j = 0;
                 response.forEach(function (element) {
-                    $('#listofmembers').append('<div class="profile-card"> <div>  <img id="img' + j + '" src= "' + BASEURL + '/uploads/mentor/photo/' + element.profileinfo.photo + '"  class="profile-card-img">  <h4 class="profile-card-title">' + element.name + '</h4> <h5 class="profile-card-title">' + element.profileinfo.designation + '</h5>  </div>  <button class="profile-card-btn submit" name="submit" type="submit" id="submit' + i + '">ViewProfile</button> </div>');
+                    $('#listofmembers').append('<div class="profile-card"> <div>  <img id="img' + j + '" src="' + profile_photo + element.profileinfo.photo + '"  class="profile-card-img">  <h4 class="profile-card-title">' + element.name + '</h4> <h5 class="profile-card-title">' + element.profileinfo.designation + '</h5>  </div>  <button class="profile-card-btn submit" name="submit" type="submit" id="submit' + i + '">ViewProfile</button> </div>');
                     var id = "#submit" + i;
                     $(id).click(function () {
                         window.location.href = "../../viewmentorprofile/en/viewmentorprofile.html?id:" + element.id;

@@ -23,13 +23,13 @@ $(document).ready(function () {
             var commitment = response[0].profileinfo.commitment + "&nbsphours / month"
             $("#blockreg2").removeClass("hide");
             $(".loading").addClass("hide");
-            if(currole == "volunteer") {
+            if (currole == "volunteer") {
                 $('#title').append("volunteer details")
-                $('#profileimage').append('<img src="' + BASEURL + '/uploads/volunteer/photo/' + response[0].profileinfo.photo + '" width="150" height="150">');
+                $('#profileimage').append('<img src="' + profile_photo + response[0].profileinfo.photo + '" width="150" height="150">');
             }
-            else if(currole == "mentor") {
+            else if (currole == "mentor") {
                 $('#title').append("Mentor details");
-                $('#profileimage').append('<img src="' + BASEURL + '/uploads/mentor/photo/' + response[0].profileinfo.photo + '" width="150" height="150">');
+                $('#profileimage').append('<img src="' + profile_photo + response[0].profileinfo.photo + '" width="150" height="150">');
             }
             $('#name').html(response[0].name);
             $('#role').html(response[0].role);

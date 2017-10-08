@@ -11,9 +11,7 @@ $(document).ready(function () {
         //    console.log(crypto.createHash('md5').update(data).digest("hex"));
         var url = window.location.href;
         var id1 = url.substring(url.lastIndexOf(':') + 1);
-        console.log(data.id);
         data.id = atob(id1);
-        console.log(data.id);
         // var settings = {
         //     "async": true,
         //     "crossDomain": true,

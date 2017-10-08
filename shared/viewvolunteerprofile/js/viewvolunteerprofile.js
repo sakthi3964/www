@@ -28,7 +28,7 @@ $(document).ready(function () {
                 if (response[0].profile.role == "volunteer") {
                     $("#blockreg2").removeClass("hide");
                     $(".loading").addClass("hide");
-                    $('#profileimage').append('<img src="' + BASEURL + '/uploads/volunteer/photo/' + response[0].profile.profileinfo.photo + '" width="150" height="150">');
+                    $('#profileimage').append('<img src="' + profile_photo + response[0].profileinfo.photo + '" width="150" height="150">');
                     $('#name').html(response[0].profile.name);
                     $('#role').html(response[0].profile.role);
                     $('#dob').html(day + "-" + month + "-" + year);
@@ -81,7 +81,7 @@ $(document).ready(function () {
                 else {
                     $("#blockreg2").removeClass("hide");
                     $(".loading").addClass("hide");
-                    $('#profileimage').append('<img src="' + BASEURL + '/uploads/volunteer/photo/' + response[1].profile.profileinfo.photo + '" width="150" height="150">');
+                    $('#profileimage').append('<img src="' + profile_photo + element.profileinfo.photo + '" width="150" height="150">');
                     $('#name').html(response[1].profile.name);
                     $('#role').html(response[1].profile.role);
                     $('#dob').html(response[1].profile.dob);

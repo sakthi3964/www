@@ -17,13 +17,12 @@ $(document).ready(function () {
             ];
             var monthna = new Date(response[0].dob);
             var month = monthNames[monthna.getMonth()];
-            console.log(month);
             $("#blockreg2").removeClass("hide");
             $(".loading").addClass("hide");
             // response[0].profileinfo.photo="";
             var profileImageUrl = "";
             if(response[0].profileinfo.photo){
-              profileImageUrl = BASEURL + '/uploads/mentor/photo/' + response[0].profileinfo.photo;
+              profileImageUrl = profile_photo + response[0].profileinfo.photo;
             }else{
               profileImageUrl= 'https://www.bsn.eu/wp-content/uploads/2016/12/user-icon-image-placeholder-300-grey.jpg';
             }

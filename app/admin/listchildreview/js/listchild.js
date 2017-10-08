@@ -22,8 +22,6 @@ $(document).ready(function () {
                     // var temp =md5decrypt(hashedid);
                     // var hashedid = $.md5(element.id);
                     var enc = window.btoa(element.id);
-                    console.log(enc);
-                    console.log(window.atob(enc));
                     // var dec = window.atob(dec);
                     // console.log(dec);
                     // console.log("hashed id" + hashedid);

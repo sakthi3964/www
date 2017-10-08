@@ -26,7 +26,6 @@ $(document).ready(function () {
 
 		$("#care").slider();
 		$("#care").on("slide", function (care) {
-			console.log("care:" + care.value);
 			$("#ex6SliderVal").text(care.value);
 		});
 		// Without JQuery
@@ -40,7 +39,6 @@ $(document).ready(function () {
 
 		$("#behaviour").slider();
 		$("#behaviour").on("slide", function (behaviour) {
-			console.log("behaviour:" + behaviour.value);
 			$("#ex6SliderVal").text(behaviour.value);
 		});
 		// Without JQuery
@@ -54,7 +52,6 @@ $(document).ready(function () {
 
 		$("#confidentiality").slider();
 		$("#confidentiality").on("slide", function (confidentiality) {
-			console.log("confidentiality:" + confidentiality.value);
 			$("#ex6SliderVal").text(confidentiality.value);
 		});
 		// Without JQuery
@@ -68,7 +65,6 @@ $(document).ready(function () {
 
 		$("#mentorship").slider();
 		$("#mentorship").on("slide", function (mentorship) {
-			console.log("mentorship" + mentorship.value);
 			$("#ex6SliderVal").text(mentorship.value);
 		});
 		// Without JQuery
@@ -82,7 +78,6 @@ $(document).ready(function () {
 
 		$("#environment").slider();
 		$("#environment").on("slide", function (environment) {
-			console.log("environment:" + environment.value);
 			$("#ex6SliderVal").text(environment.value);
 		});
 		// Without JQuery
@@ -96,7 +91,6 @@ $(document).ready(function () {
 
 		$("#feelings").slider();
 		$("#feelings").on("slide", function (feelings) {
-			console.log("feelings:" + feelings.value);
 			$("#ex6SliderVal").text(feelings.value);
 		});
 		// Without JQuery
@@ -110,7 +104,6 @@ $(document).ready(function () {
 
 		$("#willingness").slider();
 		$("#willingness").on("slide", function (willingness) {
-			console.log("willingness:" + willingness.value);
 			$("#ex6SliderVal").text(willingness.value);
 		});
 		// Without JQuery
@@ -124,7 +117,6 @@ $(document).ready(function () {
 
 		$("#learning").slider();
 		$("#learning").on("slide", function (learning) {
-			console.log("learning:" + learning.value);
 			$("#ex6SliderVal").text(learning.value);
 		});
 		// Without JQuery
@@ -138,7 +130,6 @@ $(document).ready(function () {
 
 		$("#feedback").slider();
 		$("#feedback").on("slide", function (feedback) {
-			console.log("feedback:" + feedback.value);
 			$("#ex6SliderVal").text(feedback.value);
 		});
 		// Without JQuery
@@ -151,8 +142,6 @@ $(document).ready(function () {
 		var id = localStorage.getItem("user");
 		localvalue.id = id;
 		httpPost("/childreviewcheck", localvalue, function (response) {
-			console.log("hfsdlkf;");
-			console.log(response);
 			if (response < 90) {
 				$('#childreview').modal({ backdrop: 'static', keyboard: false });
 

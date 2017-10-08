@@ -42,7 +42,6 @@ $(document).ready(function () {
 function connectionDisplay() {
 
     httpGet("/approve_preassess", function (response) {
-        console.log(response);
         $(".loading").addClass("hide");
         var i = 0;
         var j = 0;
@@ -74,12 +73,9 @@ function connectionDisplay() {
 
 
 function accept(elementId) {
-
-    console.log("skjdhfskjfs");
     var data = {};
     data.id = elementId;
     httpPost("/accept_preassess", data, function (response) {
-        console.log("response");
         $('#listofmemberss').empty();
         connectionDisplay();
 
@@ -89,9 +85,6 @@ function deny(elementId) {
     var data = {};
     data.id = elementId;
     httpPost("/deny_preassess", data, function (response) {
-
-        //window.location = "#listofmemberss";
-        console.log(response);
         //   if (response!=null) {
         $('#listofmemberss').empty();
         connectionDisplay();

@@ -6,12 +6,9 @@ $(document).ready(function () {
     else {
         var home = {};
         home.id = localStorage.getItem("user");
-        console.log(home.id);
         httpPost("/viewchild", home, function (response) {
             if (response == "") {
-                console.log("response[1].approve_status");
             }
-            console.log(response);
             $(".loading_icon").addClass("hide");
             if ((response == "") || (response[0].approve_status == 0)) {
                 // $('#tracker').append('<div class="col-sm-4 col-xs-4"><p>Tracker<img src="../../../../helperfiles/img/tracker.png" class="img-responsive " alt="CHILD SELECTION" width="120" height="236"></p></div>');
@@ -31,9 +28,7 @@ $(document).ready(function () {
             var data = {};
             data.profileId = user;
             data.operation = "details";
-            console.log("my details", data);
             httpPost("/mentorapproval", data, function (response) {
-                console.log("hi", response.childrenId);
                 var childrenId = response.childrenId;
                 var enc = window.btoa(childrenId);
                 document.getElementById("modalviewprofile").onclick = function () { 
@@ -60,7 +55,6 @@ $(document).ready(function () {
         data.process='vcm';
         data.action='approve';
         data.role='mentor';
-        console.log("inside ");
         httpPost("/changeapproval", data, function (response) {
 
         })
@@ -75,7 +69,6 @@ $(document).ready(function () {
         data.process='vcm';
         data.action='decline';
         data.role='mentor';
-        console.log("inside ");
         httpPost("/changeapproval", data, function (response) {
 
         })

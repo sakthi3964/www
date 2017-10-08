@@ -198,7 +198,6 @@ $(document).ready(function () {
 
                 }
             }).on('success.field.fv', function (e, data) {
-                console.log(data.fv.getInvalidFields().length);
                 if (data.fv.getInvalidFields().length > 0) {    // There is invalid field
                     $('#submit').prop("disabled", true);
                 }

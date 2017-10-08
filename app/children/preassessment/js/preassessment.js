@@ -435,13 +435,9 @@ $(document).ready(function () {
                         var id = localStorage.getItem("user");
                         data.id = id;
                         data.standard = ($('#standard').val());
-                        console.log(data.standard);
                         data.schooltype = ($('#schooltype').val());
-                        console.log(data.schooltype);
                         data.schoolname = ($('#schoolname').val());
-                        console.log("hellllloooooooo    " + data.schoolname);
                         data.housetype = ($('#housetype').val());
-                        console.log(data.housetype);
                         data.goal1 = ($('#goal1').val());
                         data.goal2 = ($('#goal2').val());
                         data.goal3 = ($('#goal3').val());
@@ -564,7 +560,6 @@ $(document).ready(function () {
 
                         var safe = ($("input[name='safe']:checked").val());
                         //var effortobj = {};
-                        console.log("safe value" + safe);
                         if (safe == 'no') {
                             data.notfeelsafe = $('#notfeelsafe').val();
 
@@ -637,11 +632,6 @@ $(document).ready(function () {
                         });
                         insert = insert.toString();
                         data.checkbox1 = insert;
-                        console.log("hi");
-                        console.log(data.checkbox1);
-
-
-
                         data.details = [];
                         var name1;
                         var relation1;
@@ -649,11 +639,9 @@ $(document).ready(function () {
                         var occupation1;
                         var monthlyincome1;
                         var supporttochild1;
-                        console.log(memberscount);
                         for (var i = 0; i <= memberscount; i++) {
                             name1 = "name-[" + i + "]";
                             relation1 = "relation-[" + i + "]";
-                            console.log(name1);
                             age1 = "age-[" + i + "]";
                             monthlyincome1 = "monthlyincome-[" + i + "]";
                             occupation1 = "occupation-[" + i + "]";
@@ -687,8 +675,6 @@ $(document).ready(function () {
                                   data.details.push(temp);
                             }
                         }
-
-                        console.log(data.details);
                         data.familyRelation = [];
                         // data.smoking = [];
                         // data.liquor = [];
@@ -737,9 +723,6 @@ $(document).ready(function () {
                         data1.pre = sample;
                         data1.time = new Date();
                         data1.id = localStorage.getItem("user");
-                        console.log("timeeeeeeeeeeeeeeeeee     " + data1.time);
-                        console.log(sample);
-                       
                         httpPost("/preassess", data1, function (response) {
                             if (response == 1) {
                                 $('#preassessment_Modal').modal({ backdrop: 'static', keyboard: false });

@@ -10,15 +10,15 @@ $(document).ready(function () {
         console.log(data.id);
         
         httpPost("/viewvolunteermentorprofile", data, function (response) {
-            console.log("result"+JSON.stringify(response));
+            console.log("result353453"+JSON.stringify(response));
             
             // Mentor page will be displayed after mentor connection
-            if (response == "Data Not Found") {
-                if(role == "volunteer")
+            if (response == "") {
+                if(data.role == "volunteer")
                 {
                     $('#nodatav').modal({ backdrop: 'static', keyboard: false });
                 }
-                else if (role = "mentor")
+                else if (data.role == "mentor")
                 {
                     $('#nodatam').modal({ backdrop: 'static', keyboard: false });
                 }

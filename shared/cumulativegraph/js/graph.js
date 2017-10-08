@@ -1,6 +1,7 @@
 $(document).ready(function () {
     
     var session = localStorage.getItem("user");
+    var role = localStorage.getItem("role");
     if (session == null) {
         window.location.href = "../../../../index.html";
     }
@@ -8,12 +9,18 @@ $(document).ready(function () {
          $(".loading").removeClass("hide");
         var data = {};
         data.common = 1;
-        var url = window.location.href;
-        var date1 = url.substring(url.indexOf(':') + 1, url.length);
-        var date2 = date1.substring(date1.indexOf(':') + 1, date1.length);
-        var date3 = date2.substring(date2.indexOf(':') + 1, date2.length);
-        data.date = date3;
-        data.profileId = localStorage.getItem("user");
+        if(role == "admin"){
+            data.profileId = localStorage.getItem("profile_id");
+        }
+        else{
+            var url = window.location.href;
+            var date1 = url.substring(url.indexOf(':') + 1, url.length);
+            var date2 = date1.substring(date1.indexOf(':') + 1, date1.length);
+            var date3 = date2.substring(date2.indexOf(':') + 1, date2.length);
+            data.date = date3;
+            data.profileId = localStorage.getItem("user");
+        }
+        
         httpPost("/cumulativegraph", data, function (response) {
             $(".getdate").removeClass("hide");
             $(".loading").addClass("hide");
@@ -50,7 +57,12 @@ $(document).ready(function () {
         }else{
             $(".no_record").html('<h3>No Record Found</h3>').css('color','#333');
         }
-        data.profileId=localStorage.getItem("user");
+        if(role == "admin"){
+            data.profileId = localStorage.getItem("profile_id");
+        }
+        else{
+            data.profileId=localStorage.getItem("user");
+        }
         httpPost("/cumulativegraphwithdate", data, function (response) {
             $(".loading").addClass("hide");
             if(response.length<1){

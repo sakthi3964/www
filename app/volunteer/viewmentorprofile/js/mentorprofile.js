@@ -9,6 +9,18 @@ $(document).ready(function () {
         data.role = localStorage.getItem("role");
 
         httpPost("/viewvolunteermentorprofile", data, function (response) {
+<<<<<<< HEAD
+            console.log("result353453"+JSON.stringify(response));
+            
+            // Mentor page will be displayed after mentor connection
+            if (response == "") {
+                if(data.role == "volunteer")
+                {
+                    $('#nodatav').modal({ backdrop: 'static', keyboard: false });
+                }
+                else if (data.role == "mentor")
+                {
+=======
 
             // Mentor page will be displayed after mentor connection
             if (response == "Data Not Found") {
@@ -16,6 +28,7 @@ $(document).ready(function () {
                     $('#nodatav').modal({ backdrop: 'static', keyboard: false });
                 }
                 else if (role = "mentor") {
+>>>>>>> refs/remotes/origin/Sakthi_development
                     $('#nodatam').modal({ backdrop: 'static', keyboard: false });
                 }
 

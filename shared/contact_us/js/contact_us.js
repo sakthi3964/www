@@ -16,6 +16,11 @@ $(document).ready(function () {
             data.subject = $('#subject').val();
             data.userId = localStorage.getItem("user");
             console.log(data);
+            if($('#issues').val() ||$('#other_comments').val()||$('#subject').val() == "null" ){
+                console.log("helloiiiss");
+                $('#contactempty').modal({ backdrop: 'static', keyboard: false });
+                return false;
+            }
             httpPost("/contactUs", data, function (response) {
                 if(response == "success"){
                     if(role =="volunteer"){

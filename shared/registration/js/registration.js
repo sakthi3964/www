@@ -663,7 +663,7 @@ $(document).ready(function () {
                 // This option will not ignore invisible fields which belong to inactive panels
                 // excluded: ':disabled',
                 fields: {
-                    rules: {
+                    // rules: {
                         name: {
                             minlength: 2,
                             required: true
@@ -940,7 +940,7 @@ $(document).ready(function () {
                                 }
                             }
                         }
-                    }
+                    // }
                 }
             })
             .bootstrapWizard({

@@ -7,10 +7,8 @@ $(document).ready(function () {
         var data = {};
         data.id = localStorage.getItem("user");
         data.role = localStorage.getItem("role");
-        console.log(data.id);
 
         httpPost("/viewvolunteermentorprofile", data, function (response) {
-            console.log("result" + JSON.stringify(response));
 
             // Mentor page will be displayed after mentor connection
             if (response == "Data Not Found") {
@@ -23,7 +21,6 @@ $(document).ready(function () {
 
             }
             else {
-                console.log("inside else" + response[0].profile.id);
                 var dateObj = new Date(response[0].profile.dob);
                 var day = dateObj.getDate();
                 var year = dateObj.getFullYear();
@@ -32,7 +29,6 @@ $(document).ready(function () {
                 ];
                 var monthna = new Date(response[0].profile.dob);
                 var month = monthNames[monthna.getMonth()];
-                console.log(month);
                 $("#blockreg2").removeClass("hide");
                 $(".loading").addClass("hide");
                 $('#roles').append('<center> ' + response[0].profile.role + ' Detial</center>')

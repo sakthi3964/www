@@ -45,13 +45,10 @@ $(document).ready(function () {
                 httpPost("/insertConnectionRequest", dataForRequest, function (response) {
                     if (response == "1") {
                         httpPost("/viewchild", datas, function (response) {
-                            console.log(response);
-                            console.log(response[0].approve_status);
                             if (response[0].approve_status == 1) {
                                 $('#multiplerequest').modal({ backdrop: 'static', keyboard: false });
                             }
                             else {
-                                console.log("insertConnectionRequest");
                                 datass.approve_status = 1;
                                 datass.volunteer_id = localStorage.getItem("user");
                                 datass.role = localStorage.getItem("role");

@@ -10,8 +10,6 @@ $(document).ready(function () {
         data.id = id;
         data.role=localStorage.getItem("role");
         httpPost("/screenstatus", data, function (response) {
-            console.log(response.workflowstatus_volunteer);
-            console.log(response.workflowstatus_mentor);
             if("ADM_APP_VOL"==response.workflowstatus_volunteer)
                 {
                     $('#viewgraph').removeClass('hide');
@@ -20,8 +18,6 @@ $(document).ready(function () {
            
         });
         httpPost("/childreviewcheck", data, function (response) {
-            console.log("hfsdlkf;");
-            console.log(response);
             if (response > 90) {
                 $('#childreview').modal({ backdrop: 'static', keyboard: false });
 
@@ -43,7 +39,6 @@ $(document).ready(function () {
                 var diff = (cur - dateObj) / 1000;
                 var diff1 = Math.abs(Math.floor(diff));
                 var days = Math.floor(diff1 / (24 * 60 * 60));
-                console.log('' + days);
                 if (days < 90) {
                     $('#viewreviewcheck').removeClass('hide');
                 }
@@ -60,7 +55,6 @@ $(document).ready(function () {
 
 
             httpPost("/childrenhome", data, function (response) {
-                console.log(response);
                 if (response == 1) {
                     // $('#preassessmenticon').append('<a href="../../../../shared/viewpreassessment/en/viewpreassessment.html"><div class="col-sm-4 col-xs-4 col-md-4 card"></div><p> View Pre Assessment form<img src="../../../../helperfiles/img/viewpreassessmentform.png" class="img-responsive " alt="PRE ASSESSMENT FORM" width="120" height="236"></p></div></a>');
                     $('#viewpreassessmenticon').removeClass('hide');

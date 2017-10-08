@@ -17,7 +17,6 @@ $(document).ready(function () {
             ];
             var monthna = new Date(response[0].dob);
             var month = monthNames[monthna.getMonth()];
-            console.log(month);
             $("#blockreg2").removeClass("hide");
             $(".loading").addClass("hide");
             // response[0].profileinfo.photo="";

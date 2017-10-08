@@ -10,7 +10,6 @@ $(document).ready(function () {
         data.id = id;
         httpPost("/viewvolunteer", data, function (response) {
             //date display code
-            console.log(response);
             var dateObj = new Date(response[0].dob);
             var day = dateObj.getDate();
             var year = dateObj.getFullYear();

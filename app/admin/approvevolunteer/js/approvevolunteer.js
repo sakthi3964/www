@@ -96,11 +96,9 @@ function accept(elementId, profileId) {
     data.id = elementId;
     data.profileId = profileId;
     data.time = new Date();
-    console.log(data.profileId);
     httpPost("/changestatus", data, function (response) {
 
         //window.location = "#listofmemberss";
-        console.log(response);
         //   if (response!=null) {
         $('#listofmemberss').empty();
         connectionDisplay();
@@ -113,11 +111,9 @@ function deny(elementId, profileId) {
     data.id = elementId;
     data.profileId = profileId;
     data.time = new Date();
-    console.log(data.profileId);
     httpPost("/denyloginstatus", data, function (response) {
 
         //window.location = "#listofmemberss";
-        console.log(response);
         //   if (response!=null) {
         $('#listofmemberss').empty();
         connectionDisplay();

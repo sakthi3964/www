@@ -18,6 +18,10 @@ function getPhoto(source) {
     });
 }
 function onPhotoURISuccess(imageURI) {
+    if(imageURI == ""){
+        alert("File not yet uploaded");
+        return;
+    }
     $(".loading").removeClass("hide");
     $("#blockreg2").addClass("hide");
     var ft = new FileTransfer();
@@ -35,6 +39,7 @@ function onPhotoURISuccess(imageURI) {
         $(".loading").addClass("hide");
         $("#blockreg2").removeClass("hide")
         image_path = r.response;
+        alert("File uploaded successfully")
         // displayFileData(fileEntry.fullPath + " (content uploaded to server)");
     }
 

@@ -21,7 +21,7 @@ $(document).ready(function () {
 
             $("#blockreg2").removeClass("hide");
             $(".loading").addClass("hide");
-            $('#profileimage').append('<img src = "' + BASEURL + 'uploads/children/photos/' + response.photos + '" width="150" height="150">');
+            $('#profileimage').append('<img src = "' + BASEURL + '/uploads/children/photos/' + response.photos + '" width="150" height="150">');
             $('#name').html(response.full_name);
             $('#dob').html(day + "-" + month + "-" + year);
             $('#Gender').html(response.gender);

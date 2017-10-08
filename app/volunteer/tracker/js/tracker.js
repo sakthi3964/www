@@ -244,11 +244,9 @@ $(document).ready(function () {
                     data.date = ($('#date').val());
                     var location = ($('#placeOfMeeting').val());
                     if (location == "Others") {
-                        console.log("others");
                         data.location = ($('#others').val());
                     }
                     else {
-                        console.log("else others");
                         data.location = ($('#placeOfMeeting').val());
                     }
                     //  data.location=($('#placeOfMeeting').val());
@@ -311,7 +309,6 @@ $(document).ready(function () {
                     var review = {};
                     
                     $('.education').slider().on('slideStart', function (ev) {
-                        console.log("hello");
                         var newVal = $('.education').data('slider').getValue();
                         if (newVal>9 || newVal<3) {
                             $(".com1").removeClass("hide");
@@ -341,7 +338,6 @@ $(document).ready(function () {
                     data.id = id;
                     httpPost("/tracker", data, function (response) {
                         $(".loading").addClass("hide");
-                        console.log($('#date').val());
                         $('#modalbody').append("Your Tracker details has been submitted for " + $('#date').val())
                         $('#trackerModal').modal({ backdrop: 'static', keyboard: false });
 
@@ -390,59 +386,49 @@ $(document).ready(function () {
 
     $("#education").slider();
     $("#education").on("slide", function (education) {
-        console.log("education:" + education.value);
 
     });
     $("#health").slider();
     $("#health").on("slide", function (health) {
-        console.log("health:" + health.value);
 
     });
     $("#familyRelationship").slider();
     $("#familyRelationship").on("slide", function (familyRelationship) {
-        console.log("familyRelationship:" + familyRelationship.value);
 
     });
 
     $("#friendRelationship").slider();
     $("#friendRelationship").on("slide", function (friendRelationship) {
-        console.log("friendRelationship:" + friendRelationship.value);
 
     });
 
     $("#positiveAttitude").slider();
     $("#positiveAttitude").on("slide", function (positiveAttitude) {
-        console.log("positiveAttitude:" + positiveAttitude.value);
 
     });
 
     $("#coCurricular").slider();
     $("#coCurricular").on("slide", function (coCurricular) {
-        console.log("coCurricular:" + coCurricular.value);
 
     });
 
     $("#socialCommunity").slider();
     $("#socialCommunity").on("slide", function (socialCommunity) {
-        console.log("socialCommunity:" + socialCommunity.value);
 
     });
 
     $("#safeFeel").slider();
     $("#safeFeel").on("slide", function (safeFeel) {
-        console.log("safeFeel:" + safeFeel.value);
 
     });
 
     $("#socialInteraction").slider();
     $("#socialInteraction").on("slide", function (socialInteraction) {
-        console.log("socialInteraction:" + socialInteraction.value);
 
     });
 
     $("#hygiene").slider();
     $("#hygiene").on("slide", function (hygiene) {
-        console.log("hygiene:" + hygiene.value);
 
     });
 

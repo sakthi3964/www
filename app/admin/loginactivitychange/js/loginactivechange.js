@@ -9,7 +9,6 @@ $(document).ready(function () {
         httpGet("/loginactivechange", function (response) {
             $(".loading").addClass("hide");
             var i = 0;
-            console.log(response);
             var res_length = response.length;
             if (res_length == 0) {
                 $(".no_record").removeClass("hide");
@@ -41,7 +40,6 @@ $(document).ready(function () {
                         data.id = id;
                         data.active = 1;
                         data.time = new Date();
-                        console.log(data.time);
                         httpPost("/activechange", data, function (response) {
                         });
                     }

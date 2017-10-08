@@ -50,10 +50,8 @@ $(document).ready(function () {
             var data = {};
             data.profileId = user;
             data.operation = "details";
-           
-            httpPost("/mentorapproval", data, function (response) { 
-                
-                var childrenId = response.children_id;
+            httpPost("/mentorapproval", data, function (response) {
+                var childrenId = response.childrenId;
                 var enc = window.btoa(childrenId);
                 console.log("response siva"+JSON.stringify(response));
                 document.getElementById("modalviewprofile").onclick = function () { 
@@ -80,7 +78,6 @@ $(document).ready(function () {
         data.process='vcm';
         data.action='approve';
         data.role='mentor';
-        console.log("inside ");
         httpPost("/changeapproval", data, function (response) {
 
         })
@@ -95,7 +92,6 @@ $(document).ready(function () {
         data.process='vcm';
         data.action='decline';
         data.role='mentor';
-        console.log("inside ");
         httpPost("/changeapproval", data, function (response) {
 
         })

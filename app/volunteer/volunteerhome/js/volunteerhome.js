@@ -9,8 +9,6 @@ $(document).ready(function () {
         data.id = id;
         data.role = localStorage.getItem("role");
         httpPost("/screenstatus", data, function (response) {
-            console.log(response.workflowstatus_volunteer);
-            console.log(response.workflowstatus_mentor);
             if ("ADM_APP_VOL" == response.workflowstatus) {
                 $('#tracker').removeClass('hide');
                 $('#viewtrack').removeClass('hide');
@@ -24,7 +22,6 @@ $(document).ready(function () {
         });
 
         httpPost("/volunteerhome", data, function (response) {
-            console.log(response);
             $(".loading_icon").addClass("hide");
             if (response == 0) {
                 $('#child_profile').removeClass('hide');
@@ -37,9 +34,6 @@ $(document).ready(function () {
         }),
 
             httpPost("/denydetails", data, function (response) {
-                console.log(response);
-                console.log(response.role);
-                console.log(response.approve_status);
                 $(".loading_icon").addClass("hide");
                 if (response.approve_status == 2) {
                     if (response.role == "volunteer") {
@@ -52,8 +46,6 @@ $(document).ready(function () {
             }),
 
             httpPost("/viewlogindetails", data, function (response) {
-                console.log(response);
-                console.log(response[0].status)
                 $(".loading_icon").addClass("hide");
                 if (response[0].status == 2) {
                     $('#approvaldenyModal').modal({ backdrop: 'static', keyboard: false });
@@ -79,7 +71,6 @@ $(document).ready(function () {
 
 
             httpPost("/volunteerhomeviewmentor", data, function (response) {
-                console.log("volunteer home view mentor data" + response);
                 $(".loading_icon").addClass("hide");
                 if (response == 0) {
                     $('#view_mentor').removeClass('hide');

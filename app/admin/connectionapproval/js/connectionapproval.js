@@ -30,7 +30,6 @@ function connectionDisplay(role) {
     if (role == "mentor") {
         data.connectionOperation = "mentor";
     }
-    console.log(data.connectionOperation);
     httpPost("/connectionapproval", data, function (response) {
         $(".loading").addClass("hide");
 
@@ -59,10 +58,8 @@ function connectionDisplay(role) {
 }
 
 function accept(elementId, elementPrfileId, elementStatus, elementRole) {
-    console.log("aiee");
     var data = {};
     var role = elementRole;
-    console.log("role"+elementRole);
     if ('volunteer' == elementRole) {
         data.process='vca';
         data.action='approve'
@@ -71,14 +68,11 @@ function accept(elementId, elementPrfileId, elementStatus, elementRole) {
         data.process='vcma';
         data.action='approve';
     }
-    console.log("inside accept", role);
     data.children_id = elementId;
     data.profile_id = elementPrfileId;
     data.role=elementRole;
     data.time = new Date();
     httpPost("/changeapproval", data, function (response) {
-    
-        console.log(response);
         if (response != null) {
             if (elementRole == 'volunteer') {
                 $('#firsttab').empty();
@@ -96,10 +90,8 @@ function accept(elementId, elementPrfileId, elementStatus, elementRole) {
 
 
 function deny(elementId, elementProfileId,status, elementchildrenId, elementRole) {
-    console.log("deny");
     var data = {};
     var role = elementRole;
-    console.log("role"+elementRole);
     if ('volunteer' == elementRole) {
         data.process='vca';
         data.action='decline'
@@ -108,14 +100,11 @@ function deny(elementId, elementProfileId,status, elementchildrenId, elementRole
         data.process='vcma';
         data.action='decline';
     }
-    console.log("inside accept"+ role);
     data.children_id = elementchildrenId;
     data.profile_id = elementProfileId;
     data.role=elementRole;
     data.time = new Date();
     httpPost("/changeapproval", data, function (response) {
-    
-        console.log(response);
         if (response != null) {
             if (elementRole == 'volunteer') {
                 $('#firsttab').empty();

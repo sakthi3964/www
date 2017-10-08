@@ -18,7 +18,6 @@ $(document).ready(function () {
                 $('#tableViewPC').hide();
                 $('#tableViewMobile').show();
                 response.forEach(function (element) {
-                    console.log(element);
                     $("#listofmembers").removeClass("hide");;
                     var length = Object.keys(element.children_connections).length;
                     var volunteer;
@@ -53,7 +52,6 @@ $(document).ready(function () {
                      //$('#bodycontent').append('<tr><td>' + element.full_name + '</td><td>' + volunteer + '</td><td>' + mentor + '</td><td><button class="btn" id="submittracker' + i + '">Tracker</button></td><td><button class="btn" id="submitgraph' + j + '">Graph</button></td></tr>');
                     // $("#listofmemberss").load(childReviewForm.html);
                     var elementid = window.btoa(element.id);
-                    console.log("gr",element.id)
                     var id = "#submittracker" + i;
                     $(id).click(function () {
                         window.location.href = "../../../../shared/trackerdisplay/listofdates/en/trackerdates.html?id:" + elementid;

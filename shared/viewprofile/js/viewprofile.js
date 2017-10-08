@@ -23,10 +23,10 @@ $(document).ready(function () {
             $("#blockreg2").removeClass("hide");
             $(".loading").addClass("hide");
             if (role == "volunteer") {
-                $('#profileimage').append('<img src="' + BASEURL + '/uploads/volunteer/photo/' + response[0].profileinfo.photo + '" width="150" height="150">');
+                $('#profileimage').append('<img src="' + profile_photo + response[0].profileinfo.photo + '" width="150" height="150">');
             }
             else {
-                $('#profileimage').append('<img src="' + BASEURL + '/uploads/mentor/photo/' + response[0].profileinfo.photo + '" width="150" height="150">');
+                $('#profileimage').append('<img src="' + profile_photo + response[0].profileinfo.photo + '" width="150" height="150">');
             }
             $('#name').html(response[0].name);
             $('#role').html(response[0].role);
@@ -48,7 +48,7 @@ $(document).ready(function () {
             $('#reference').html(response[0].profileinfo.reference);
             var commitment = response[0].profileinfo.commitment + "&nbsphours / month"
             $('#commitment').html(commitment);
-        
+
             if (response[0].profileinfo.designation == "") {
                 $('#designationrow').hide();
             }

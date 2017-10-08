@@ -45,7 +45,7 @@ $(document).ready(function () {
                     console.log(month);
                     $("#blockreg2").removeClass("hide");
                     if (response[0].profile.role == "mentor") {
-                        $('#profileimage').append('<img src="' + BASEURL + '/uploads/mentor/photo/' + response[0].profile.profileinfo.photo + '" width="150" height="150">');
+                        $('#profileimage').append('<img src="' + profile_photo + response[0].profile.profileinfo.photo + '" width="150" height="150">');
                         $('#name').html(response[0].profile.name);
                         $('#role').html(response[0].profile.role);
                         $('#dob').html(day + "-" + month + "-" + year);
@@ -97,7 +97,7 @@ $(document).ready(function () {
                     }
                     else {
                         $("#blockreg2").removeClass("hide");
-                        $('#profileimage').append('<img src="' + BASEURL + '/uploads/mentor/photo/' + response[1].profile.profileinfo.photo + '" width="150" height="150">');
+                        $('#profileimage').append('<img src="' + profile_photo + element.profileinfo.photo + '" width="150" height="150">');
                         $('#name').html(response[1].profile.name);
                         $('#role').html(response[1].profile.role);
                         $('#dob').html(day + "-" + month + "-" + year);

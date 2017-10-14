@@ -34,7 +34,7 @@ $(document).ready(function () {
                 $("#blockreg2").removeClass("hide");
                 $(".loading").addClass("hide");
                 $('#roles').append('<center> ' + response[0].profile.role + ' Detial</center>')
-                $('#profileimage').append('<img src="' + profile_photo + response[0].profile.profileinfo.photo + '" width="150" height="150">');
+                $('#profileimage').append('<img src="' +response[0].profile_photo + response[0].profile.profileinfo.photo + '" width="150" height="150">');
                 $('#name').html(response[0].profile.name);
                 $('#role').html(response[0].profile.role);
                 $('#dob').html(day + "-" + month + "-" + year);

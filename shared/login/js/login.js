@@ -22,8 +22,12 @@ $(document).ready(function () {
             data.email_id = $('#username').val();
             data.password = $('#password').val();
 
+            if(data.email_id== "" || data.password== ""){
+                return;
+            }
+            $(".loading_container").removeClass("hide");
             httpPost("/validateuser", data, function (response) {
-                console.log(response);
+                $(".loading_container").addClass("hide");
                 if ((response == 1) || (response == 2) || (response == 3)) {
                     $('#errormodal').modal({ backdrop: 'static', keyboard: false });
                     return false;

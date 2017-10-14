@@ -16,18 +16,18 @@ $(document).ready(function () {
             data.subject = $('#subject').val();
             data.userId = localStorage.getItem("user");
             console.log(data);
-            if($('#issues').val() ||$('#other_comments').val()||$('#subject').val() == "null" ){
+            if ($('#issues').val() == "" || $('#other_comments').val() == "" || $('#subject').val() == "") {
                 console.log("helloiiiss");
                 $('#contactempty').modal({ backdrop: 'static', keyboard: false });
                 return false;
             }
             httpPost("/contactUs", data, function (response) {
-                if(response == "success"){
-                    if(role =="volunteer"){
-                        window.location.href= "../../../app/volunteer/volunteerhome/en/volunteerhome.html";
+                if (response == "success") {
+                    if (role == "volunteer") {
+                        window.location.href = "../../../app/volunteer/volunteerhome/en/volunteerhome.html";
                     }
-                    else{
-                        window.location.href= "../../../app/mentor/mentorhome/en/mentorhome.html";
+                    else {
+                        window.location.href = "../../../app/mentor/mentorhome/en/mentorhome.html";
                     }
                 }
             });

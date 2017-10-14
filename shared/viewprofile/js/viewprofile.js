@@ -23,10 +23,10 @@ $(document).ready(function () {
             $("#blockreg2").removeClass("hide");
             $(".loading").addClass("hide");
             if (role == "volunteer") {
-                $('#profileimage').append('<img src="' + profile_photo + response[0].profileinfo.photo + '" width="150" height="150">');
+                $('#profileimage').append('<img src="' + response[0].profile_photo + response[0].profileinfo.photo + '" width="150" height="150">');
             }
             else {
-                $('#profileimage').append('<img src="' + profile_photo + response[0].profileinfo.photo + '" width="150" height="150">');
+                $('#profileimage').append('<img src="' + response[0].profile_photo + response[0].profileinfo.photo + '" width="150" height="150">');
             }
             $('#name').html(response[0].name);
             $('#role').html(response[0].role);

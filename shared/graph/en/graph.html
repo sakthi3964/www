@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-
+		
 <head>
 	<!-- Essential styles and JS -->
 	<meta charset="utf-8">
@@ -12,12 +12,14 @@
 	<script src="../../../assert/js/jquery-1.11.1.js" type="text/javascript"></script>
 	<script src="../../../assert/js/jquery.min.js" type="text/javascript"></script>
 	<script src="../../../assert/js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="../js/canvasjs.min.js" type="text/javascript"></script>
 	<script src="../../../config/config.js" type="text/javascript"></script>
 	<script src="../../../helperfiles/helper.js" type="text/javascript"></script>
 	<script src="../../../assert/resources/localization.js"></script>
 	<script src="../../../helperfiles/js/logout.js" type="text/javascript"></script>
 	<script src="../js/graph.js" type="text/javascript"></script>
+	<!-- <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> -->
+	<script src="../js/canvasjs.min.js" type="text/javascript"></script>
+	
 	<!--Importing Custom CSS and JS file-->
 	<link rel="stylesheet" type="text/css" href="../../../assert/css/common.css">
 
@@ -41,6 +43,9 @@
 		<div class="loading_img">
 			<img src="../../../helperfiles/img/loading.gif" alt="loading">
 		</div>
+	</div>
+	<div class="containe  hide" id="export">
+		<button class="btn default_button" id="exportChart">Export</button>
 	</div>
 	<div class="row">
 		<div class="container-fluid center hide" id="chartContainer" style="margin-top:44%;margin-right:10px;"></div>

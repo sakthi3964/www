@@ -22,7 +22,7 @@ $(document).ready(function () {
         if (data.role == "children") {
             data.childId = localStorage.getItem("user");
             console.log(data.childId);
-        }    
+        }
         httpPost("/viewReviewDetail", data, function (response) {
             console.log("response", response);
             $("#chartContainer").removeClass("hide");
@@ -77,6 +77,13 @@ $(document).ready(function () {
                     ]
                 });
             chart.render();
+            if (data.role == "admin") {
+                $("#export").removeClass("hide");
+                document.getElementById("exportChart").addEventListener("click", function () {
+                    chart.exportChart({ format: "jpg" });
+                });
+            }
+
         });
     }
 });

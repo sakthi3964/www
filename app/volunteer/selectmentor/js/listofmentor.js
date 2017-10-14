@@ -23,7 +23,7 @@ $(document).ready(function () {
                     else{
                         var designation = element.profileinfo.designation;
                     }
-                    $('#listofmembers').append('<div class="profile-card"> <div>  <img id="img' + j + '" src="' + element.profile_photo + element.profileinfo.photo + '"  class="profile-card-img">  <h4 class="profile-card-title">' + element.name + '</h4> <h5 class="profile-card-title">' + designation + '</h5>  </div>  <button class="profile-card-btn submit" name="submit" type="submit" id="submit' + i + '">ViewProfile</button> </div>');
+                    $('#listofmembers').append('<div class="profile-card"> <div>  <img id="img' + j + '" src="' + profile_photo + element.profileinfo.photo + '"  class="profile-card-img">  <h4 class="profile-card-title">' + element.name + '</h4> <h5 class="profile-card-title">' + designation + '</h5>  </div>  <button class="profile-card-btn submit" name="submit" type="submit" id="submit' + i + '">ViewProfile</button> </div>');
                     var id = "#submit" + i;
                     $(id).click(function () {
                         window.location.href = "../../viewmentorprofile/en/viewmentorprofile.html?id:" + element.id;

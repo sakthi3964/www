@@ -75,3 +75,13 @@ h5{
 .preassessmentdata span p{
     margin-left: 10px;
 }
+.family_details_lineheight {
+    padding-top: 5px !important;
+    
+}
+.preassessmentdata h5{
+    line-height: 20px;
+}
+.financialy_support{
+    padding-top: 10px
+}

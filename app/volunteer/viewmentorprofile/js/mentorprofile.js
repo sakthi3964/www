@@ -9,13 +9,15 @@ $(document).ready(function () {
         data.role = localStorage.getItem("role");
 
         httpPost("/viewvolunteermentorprofile", data, function (response) {
-
+            
             // Mentor page will be displayed after mentor connection
-            if (response == "Data Not Found") {
-                if (role == "volunteer") {
+            if (response == "") {
+                if(data.role == "volunteer")
+                {
                     $('#nodatav').modal({ backdrop: 'static', keyboard: false });
                 }
-                else if (role = "mentor") {
+                else if (data.role == "mentor")
+                {
                     $('#nodatam').modal({ backdrop: 'static', keyboard: false });
                 }
 

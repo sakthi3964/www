@@ -163,3 +163,7 @@ body{
 .homeicons{
     padding: 0px;
 }
+.default_button{
+    background-color: #06BBB5;
+    color: white;
+}

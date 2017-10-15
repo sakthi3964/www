@@ -11,20 +11,34 @@ $(document).ready(function () {
 
         var date3 = date2.substring(date2.indexOf('&') + 1, date2.length);
         data.date = date3;
+        console.log(data.date);
         data.profileId = localStorage.getItem("user");
-        data.role = localStorage.getItem("role");
-        if (data.role == "admin") {
+        var role = localStorage.getItem("role");
+        if(role == "volunteer"){
+
+            var rol = url.slice(url.indexOf('role') + 5,url.indexOf('date'));
+            if(rol == 'm'){
+                data.role = "mentor";
+            }
+            else {
+                data.role = "volunteer";
+            }
+        }
+        
+        if (role == "admin") {
+            data.role = role;
             console.log(url.substring(url.lastIndexOf('#') + 1));
             var dec = url.substring(url.lastIndexOf('#') + 1);
             data.childId = dec;
             console.log(data.childId);
         }
-        if (data.role == "children") {
+        if (role == "children") {
+            data.role = role;
             data.childId = localStorage.getItem("user");
             console.log(data.childId);
         }
         httpPost("/viewReviewDetail", data, function (response) {
-            console.log("response", response);
+            console.log("response", response.review);
             $("#chartContainer").removeClass("hide");
             $(".loading").addClass("hide");
 

@@ -30,17 +30,18 @@ $(document).ready(function () {
         var data = {}
         data.id = id;
         data.role = localStorage.getItem("role");
+        $(".loading_container").removeClass("hide");
         httpPost("/screenstatus", data, function (response) {
-          
+            $(".loading_container").addClass("hide");
             if ("ADM_APP_MEN" == response.workflowstatus) {
-       
 
-           $('#viewtrack').removeClass('hide');
-              $('#reviewform').removeClass('hide');
-             $('#graph').removeClass('hide');
 
-             $('#view_tracker').addClass('hide');
-             $('#vreviewform').addClass('hide');
+                $('#viewtrack').removeClass('hide');
+                $('#reviewform').removeClass('hide');
+                $('#graph').removeClass('hide');
+
+                $('#view_tracker').addClass('hide');
+                $('#vreviewform').addClass('hide');
                 $('#viewgraph').addClass('hide');
             }
 
@@ -53,15 +54,15 @@ $(document).ready(function () {
             httpPost("/mentorapproval", data, function (response) {
                 var childrenId = response.childrenId;
                 var enc = window.btoa(childrenId);
-                console.log("response siva"+JSON.stringify(response));
-                document.getElementById("modalviewprofile").onclick = function () { 
+                console.log("response siva" + JSON.stringify(response));
+                document.getElementById("modalviewprofile").onclick = function () {
                     window.location.href = "../../../admin/viewadminchildprofile/en/viewadminchildprofile.html?id:" + enc;
                 }
-                if (response!="") {
+                if (response != "") {
                     $('#mentor-approval').modal({ backdrop: 'static', keyboard: false });
                     $('#childname').append("You got request for the child :: " + response.childrenprofile.full_name);
                 }
-                
+
 
             })
         }
@@ -73,25 +74,25 @@ $(document).ready(function () {
 
     $("#mentorapproval").click(function () {
         var data = {};
-      
+
         data.profile_id = localStorage.getItem("user");
-        data.process='vcm';
-        data.action='approve';
-        data.role='mentor';
+        data.process = 'vcm';
+        data.action = 'approve';
+        data.role = 'mentor';
         httpPost("/changeapproval", data, function (response) {
 
         })
 
     })
 
-   
+
     $("#mentorDeny").click(function () {
         var data = {};
-      console.log("inside my deny");
+        console.log("inside my deny");
         data.profile_id = localStorage.getItem("user");
-        data.process='vcm';
-        data.action='decline';
-        data.role='mentor';
+        data.process = 'vcm';
+        data.action = 'decline';
+        data.role = 'mentor';
         httpPost("/changeapproval", data, function (response) {
 
         })

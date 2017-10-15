@@ -4,12 +4,14 @@ $(document).ready(function () {
         window.location.href = "../../../../index.html";
     }
     else {
+        $(".loading_container").removeClass("hide");        
         var id = localStorage.getItem("user");
         var datas = {};
         var data = {}
         data.id = id;
         data.role=localStorage.getItem("role");
         httpPost("/screenstatus", data, function (response) {
+            $(".loading_container").addClass("hide");            
             if("ADM_APP_VOL"==response.workflowstatus_volunteer)
                 {
                     $('#viewgraph').removeClass('hide');
@@ -31,7 +33,7 @@ $(document).ready(function () {
             }
             else{
                  // console.log(response[0].updated_at);
-            $(".loading_icon").addClass("hide");
+            // $(".loading_icon").addClass("hide");
             if ((response[0].approve_status == 1) && (response[0].role == "volunteer")) {
                 var updated_at = response[0].updated_at;
                 var dateObj = new Date(updated_at);
@@ -55,6 +57,7 @@ $(document).ready(function () {
 
 
             httpPost("/childrenhome", data, function (response) {
+                $(".child_preassessment").addClass("hide");
                 if (response == 1) {
                     // $('#preassessmenticon').append('<a href="../../../../shared/viewpreassessment/en/viewpreassessment.html"><div class="col-sm-4 col-xs-4 col-md-4 card"></div><p> View Pre Assessment form<img src="../../../../helperfiles/img/viewpreassessmentform.png" class="img-responsive " alt="PRE ASSESSMENT FORM" width="120" height="236"></p></div></a>');
                     $('#viewpreassessmenticon').removeClass('hide');

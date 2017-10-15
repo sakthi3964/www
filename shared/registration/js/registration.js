@@ -506,6 +506,7 @@ $(document).ready(function () {
                             if (response.emailidpresent == 1 && response.mobileidpresent == 1) {
                                 $("#emailidpresent").show();
                                 $("#mobilepresent").show();
+                         
                                 $("#emailidpresent").html("email id already exit");
                                 $("#mobilepresent").html("mobile no already exit");
                                 return $('#myTab a[href="#secondtab"]').tab('show');

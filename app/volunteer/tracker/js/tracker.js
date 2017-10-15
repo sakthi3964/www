@@ -183,13 +183,21 @@ $(document).ready(function () {
                         }
                     }
                 },
-                education: {
-                    validators: {
-                        notEmpty: {
-                            message: 'Rank for Mentee education'
+                // commentsForRating: {
+                //     validators: {
+                //         notEmpty: {
+                //             message: 'please enter your comments'
+                //         }
+                //     }
+                // }
+                commentsForRating: {
+                        selector: '.commentsForRating',
+                        validators: {
+                            notEmpty: {
+                                message: 'comments needed'
+                            }
                         }
                     }
-                }
             }
         })
         .bootstrapWizard({
@@ -308,12 +316,12 @@ $(document).ready(function () {
                     var id = localStorage.getItem("user");
                     var review = {};
                     
-                    $('.education').slider().on('slideStart', function (ev) {
-                        var newVal = $('.education').data('slider').getValue();
-                        if (newVal>9 || newVal<3) {
-                            $(".com1").removeClass("hide");
-                        }
-                    });
+                    // $('.education').slider().on('slideStart', function (ev) {
+                    //     var newVal = $('.education').data('slider').getValue();
+                    //     if (newVal>9 || newVal<3) {
+                    //         $(".com1").removeClass("hide");
+                    //     }
+                    // });
                     review.education = education.value;
                     review.educationText = ($('#reviewcom1').val()).trim();
                     review.health = health.value;

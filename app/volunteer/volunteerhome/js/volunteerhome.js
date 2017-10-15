@@ -4,11 +4,13 @@ $(document).ready(function () {
         window.location.href = "../../../../index.html";
     }
     else {
+        $(".loading_container").removeClass("hide");
         var id = localStorage.getItem("user");
         var data = {}
         data.id = id;
         data.role = localStorage.getItem("role");
         httpPost("/screenstatus", data, function (response) {
+            $(".loading_container").addClass("hide");
             if ("ADM_APP_VOL" == response.workflowstatus) {
                 $('#tracker').removeClass('hide');
                 $('#viewtrack').removeClass('hide');
@@ -22,7 +24,7 @@ $(document).ready(function () {
         });
 
         httpPost("/volunteerhome", data, function (response) {
-            $(".loading_icon").addClass("hide");
+            $(".child_profile").addClass("hide");
             if (response == 0) {
                 $('#child_profile').removeClass('hide');
                 // $('#selectchild').append('<a href="../../../../shared/viewchildprofile/en/viewchildprofile.html"><div class="col-sm-4 col-xs-4"><p>Child Profile<img src="../../../../helperfiles/img/childrenprofile.png" class="img-responsive " alt="View Children Profile" width="120"height="236"> </p></div></a>');
@@ -46,7 +48,7 @@ $(document).ready(function () {
             }),
 
             httpPost("/viewlogindetails", data, function (response) {
-                $(".loading_icon").addClass("hide");
+                // $(".loading_icon").addClass("hide");
                 if (response[0].status == 2) {
                     $('#approvaldenyModal').modal({ backdrop: 'static', keyboard: false });
                 }
@@ -71,7 +73,7 @@ $(document).ready(function () {
 
 
             httpPost("/volunteerhomeviewmentor", data, function (response) {
-                $(".loading_icon").addClass("hide");
+                $(".mentor_profile").addClass("hide");
                 if (response == 0) {
                     $('#view_mentor').removeClass('hide');
                     // $('#selectmentor').append('<a href="../../viewmentorprofile/en/mentorprofile.html"><div class="col-sm-4 col-xs-4"><p>Mentor Profile	<img src="../../../../helperfiles/img/professional.png" class="img-responsive" alt="View Mentor Profile" width="120" height="236"></p></div>	</a>');

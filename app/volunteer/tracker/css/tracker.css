@@ -1,6 +1,6 @@
 
 #trackerbody{
-    margin-top: 10px;
+    /* margin-top: 10px; */
     background-color:white;
 	/*line-height: 30px;*/
 	/*font-size: 15px;*/
@@ -12,3 +12,6 @@
     border-radius: 20px;
     color: white;
 	}
+.alternative_tab a{
+    color: #06BBB5;
+}

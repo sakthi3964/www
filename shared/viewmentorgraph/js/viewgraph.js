@@ -11,6 +11,7 @@ $(document).ready(function () {
         }
         else {
             var id = url.substring(url.lastIndexOf(':') + 1);
+            console.log(id);
         }
         data.id = id;
         httpPost("/trackerDatesMentor", data, function (response) {
@@ -36,6 +37,7 @@ $(document).ready(function () {
                     ];
                     var monthna = new Date(element.date);
                     var month = monthNames[monthna.getMonth()];
+                    var profile_id = localStorage.setItem("profile_id", element.profile_id);
                     $('#listOfDates').append('<a href="../../graph/en/graph.html?date&' + element.created_at + '" id=' + element.id + '><div class="calendor"><div class="month"><p>' + month + '</p></div><div class="date"><p>' + day + '</p></div><div class="year"><p>' + year + '</p></div></div></a>');
                 }, this);
             }

@@ -52,8 +52,11 @@ $(document).ready(function () {
             data.profileId = user;
             data.operation = "details";
             httpPost("/mentorapproval", data, function (response) {
-                var childrenId = response.childrenId;
+                console.log(response);
+                var childrenId = response.children_id;
+                console.log(childrenId);
                 var enc = window.btoa(childrenId);
+                console.log(enc);
                 console.log("response siva" + JSON.stringify(response));
                 document.getElementById("modalviewprofile").onclick = function () {
                     window.location.href = "../../../admin/viewadminchildprofile/en/viewadminchildprofile.html?id:" + enc;

@@ -9,7 +9,7 @@ $(document).ready(function () {
          $(".loading").removeClass("hide");
         var data = {};
         data.common = 1;
-        if(role == "admin"){
+        if((role == "admin")||(role == "children")||(role == "mentor")){
             data.profileId = localStorage.getItem("profile_id");
         }
         else{
@@ -58,7 +58,7 @@ $(document).ready(function () {
         }else{
             $(".no_record").html('<h3>No Record Found</h3>').css('color','#333');
         }
-        if(role == "admin"){
+        if((role == "admin") ||(role == "children")|| (role == "mentor")){
             data.profileId = localStorage.getItem("profile_id");
         }
         else{

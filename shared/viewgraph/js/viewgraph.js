@@ -17,8 +17,9 @@ function viewGraphFn(){
           var id = localStorage.getItem("user");
       }
       else {
-          var dec = url.substring(url.lastIndexOf(':') + 1);
+          var dec = url.substring(url.lastIndexOf('&') + 1);
           id = window.atob(dec);
+          console.log(id);
       }
       data.id = id;
       var dec= id;

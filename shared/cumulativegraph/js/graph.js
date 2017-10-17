@@ -17,6 +17,7 @@ $(document).ready(function () {
             var date1 = url.substring(url.indexOf(':') + 1, url.length);
             var date2 = date1.substring(date1.indexOf(':') + 1, date1.length);
             var date3 = date2.substring(date2.indexOf(':') + 1, date2.length);
+            
             data.date = date3;
             data.profileId = localStorage.getItem("user");
         }

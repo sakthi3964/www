@@ -48,7 +48,7 @@ function viewGraphFn(){
                   var month = monthNames[monthna.getMonth()];
                   var elementid = window.btoa(element.id);
                   var profile_id = localStorage.setItem("profile_id", element.profile_id);
-                  $('#listOfDates').append('<a href="../../graph/en/graph.html?date&' + element.created_at + 'id#' + dec + '"><div class="calendor"><div class="month"><p>' + month + '</p></div><div class="date"><p>' + day + '</p></div><div class="year"><p>' + year + '</p></div></div></a>');
+                  $('#listOfDates').append('<a class="calender-block" href="../../graph/en/graph.html?date&' + element.created_at + 'id#' + dec + '"><div class="calendor"><div class="month"><p>' + month + '</p></div><div class="date"><p>' + day + '</p></div><div class="year"><p>' + year + '</p></div></div></a>');
               }, this);
           }
       })

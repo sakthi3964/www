@@ -90,6 +90,20 @@ a {
 #demos ul {
     margin-bottom: 5px;
 }
-#listOfMentorDates{
+/* #listOfMentorDates{
     margin-top: 50%;
-}
+} */
+
+.fullwidth{
+    float: left;
+    width: 100%;
+    padding: 0px;
+   }
+   .calender-block{
+    width: 50%;
+    float: left;
+   }
+   .calender-block .calendor{
+    margin-left: 5%;
+    width: 90%;
+   }

@@ -52,19 +52,23 @@
 		<ul class="nav nav-pills">
 			<li class="active"><a href="#firsttab" data-toggle="tab">Volunteer</a></li>
 			<li><a href="#secondtab" data-toggle="tab">Mentor</a></li>
+			<li><a class="getCumulativeGraph" data-toggle="tab">Cumulative</a></li>
 		</ul>
+		<div class="cumlative hide">
+			<a class="getCumulativeGraph">Cumulative Graph</a>
+		</div>
 		<div class="tab-content hide" id="details">
 			<div class="tab-pane active" id="firsttab">
 
-					<div class="col-sm-12" id="listOfDates">
+				<div class="col-sm-12" id="listOfDates">
 
-					</div>
-
+				</div>
+				
 			</div>
 			<div class="tab-pane" id="secondtab">
-					<div class="col-sm-12" id="listOfMentorDates">
+				<div class="col-sm-12" id="listOfMentorDates">
 
-					</div>
+				</div>
 
 			</div>
 		</div>
@@ -78,5 +82,9 @@
 		</footer>
 	</div>-->
 </body>
-
+<script>
+	$(".getCumulativeGraph").click(function () {
+		window.location="../../cumulativegraph/en/graph.html";
+	});
+</script>
 </html>

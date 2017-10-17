@@ -70,7 +70,7 @@ function viewmentorgraph(){
                         ];
                         var monthna = new Date(element.date);
                         var month = monthNames[monthna.getMonth()];
-                        $('#listOfMentorDates').append('<a href="../../graph/en/graph.html?date:' + element.date + '" id=' + elementid + '><div class="calendor"><div class="month"><p>' + month + '</p></div><div class="date"><p>' + day + '</p></div><div class="year"><p>' + year + '</p></div></div></a>');
+                        $('#listOfMentorDates').append('<a class="calender-block" href="../../graph/en/graph.html?date&' + element.created_at + 'id#' + dec + '"><div class="calendor"><div class="month"><p>' + month + '</p></div><div class="date"><p>' + day + '</p></div><div class="year"><p>' + year + '</p></div></div></a>');
                     }, this);
                 }
             })

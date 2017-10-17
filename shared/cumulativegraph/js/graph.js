@@ -9,7 +9,7 @@ $(document).ready(function () {
          $(".loading").removeClass("hide");
         var data = {};
         data.common = 1;
-        if(role == "admin"){
+        if((role == "admin")||(role == "children")||(role == "mentor")){
             data.profileId = localStorage.getItem("profile_id");
         }
         else{
@@ -17,6 +17,7 @@ $(document).ready(function () {
             var date1 = url.substring(url.indexOf(':') + 1, url.length);
             var date2 = date1.substring(date1.indexOf(':') + 1, date1.length);
             var date3 = date2.substring(date2.indexOf(':') + 1, date2.length);
+            
             data.date = date3;
             data.profileId = localStorage.getItem("user");
         }
@@ -57,7 +58,7 @@ $(document).ready(function () {
         }else{
             $(".no_record").html('<h3>No Record Found</h3>').css('color','#333');
         }
-        if(role == "admin"){
+        if((role == "admin") ||(role == "children")|| (role == "mentor")){
             data.profileId = localStorage.getItem("profile_id");
         }
         else{

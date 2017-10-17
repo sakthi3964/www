@@ -24,10 +24,16 @@ $(document).ready(function () {
             httpPost("/contactUs", data, function (response) {
                 if (response == "success") {
                     if (role == "volunteer") {
-                        window.location.href = "../../../app/volunteer/volunteerhome/en/volunteerhome.html";
+                        $('#volunteercontact').modal({ backdrop: 'static', keyboard: false });
+                        // window.location.href = "../../../app/volunteer/volunteerhome/en/volunteerhome.html";
                     }
-                    else {
-                        window.location.href = "../../../app/mentor/mentorhome/en/mentorhome.html";
+                    else if(role == "mentor"){
+                        $('#mentorcontact').modal({ backdrop: 'static', keyboard: false });
+                        // window.location.href = "../../../app/mentor/mentorhome/en/mentorhome.html";
+                    }
+                    else if(role == "children"){
+                        $('#childrencontact').modal({ backdrop: 'static', keyboard: false });
+                        // window.location.href = "../../../app/mentor/mentorhome/en/mentorhome.html";
                     }
                 }
             });

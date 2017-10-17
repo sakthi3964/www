@@ -501,11 +501,10 @@ $(document).ready(function () {
                         $("#emailidpresent").hide();
                         $("#mobilepresent").hide();
                         httpPost("/registration", data, function (response) {
-                            console.log("responsewithzero" + response[0]);
-                            console.log("kdhfskdhf" + response.emailidpresent);
                             if (response.emailidpresent == 1 && response.mobileidpresent == 1) {
                                 $("#emailidpresent").show();
                                 $("#mobilepresent").show();
+                         
                                 $("#emailidpresent").html("email id already exit");
                                 $("#mobilepresent").html("mobile no already exit");
                                 return $('#myTab a[href="#secondtab"]').tab('show');

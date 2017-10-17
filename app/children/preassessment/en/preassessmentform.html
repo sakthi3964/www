@@ -35,10 +35,11 @@
             </div>
         </nav>
     </div>
-    <div class="container paticular-header">
-        <h4>Preassessment Form</h4>
-    </div>
+
     <div class="container" id="body-tag">
+      <div class=" particular-header">
+          <h4>Preassessment Form</h4>
+      </div>
         <form id="PreassessmentForm" class="form-horizontal" method="POST">
             <ul class="nav nav-pills" id="header">
                 <li class="active"><a href="#firsttab" data-toggle="tab">Step1</a></li>
@@ -48,7 +49,7 @@
             </ul>
             <div class="tab-content content">
                 <div class="tab-pane active" id="firsttab">
-                    <h4>Educational Details</h4>
+                    <h4 class="edu-details">Educational Details</h4>
                     <!--<div class="form-group">
                         <label class="control-label col-sm-1 col-xs-1 preassessment" for="userid">ID</label>
                         <div class="col-sm-7 col-xs-9">
@@ -56,8 +57,8 @@
                         </div>
                     </div>-->
                     <div class="form-group">
-                        <label class="control-label col-sm-5 col-xs-3" for="standard">Standard:</label>
-                        <div class="col-sm-7 col-xs-9">
+                        <label class="control-label col-sm-5 col-xs-4" for="standard">Standard:</label>
+                        <div class="col-sm-7 col-xs-8">
                             <select class="form-control " id="standard" name="Dropdown">
                                 <option value="">-select-</option>
                                 <option value="VI">VI</option>
@@ -71,15 +72,15 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-5 col-xs-3" for="schoolname">School Name:</label>
-                        <div class="col-sm-7 col-xs-9">
+                        <label class="control-label col-sm-5 col-xs-4" for="schoolname">School Name:</label>
+                        <div class="col-sm-7 col-xs-8">
                             <input type="text" id="schoolname" class="form-control Text_Only" placeholder="Enter your school name">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="schooltype" class="control-label col-sm-5 col-xs-3">school Type</label>
-                        <div class="col-sm-7 col-xs-9">
+                        <label for="schooltype" class="control-label col-sm-5 col-xs-4">School Type</label>
+                        <div class="col-sm-7 col-xs-8">
                             <select class="form-control " id="schooltype" name="Dropdown">
                                 <option value="">-select-</option>
                                 <option value="private">Private</option>
@@ -90,8 +91,8 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="housetype" class="control-label col-sm-5 col-xs-3">House Type</label>
-                        <div class="col-sm-7 col-xs-9">
+                        <label for="housetype" class="control-label col-sm-5 col-xs-4">House Type</label>
+                        <div class="col-sm-7 col-xs-8">
                             <select class="form-control " id="housetype" name="Dropdown">
                                 <option value="">-select-</option>
                                 <option>Concrete</option>
@@ -102,29 +103,29 @@
                         </div>
                     </div>
                     <div class=" addone form-group col-xs-12 col-md-4 col-sm-4 col-lg-4">
-                        <div class="col-sm-10">
-                            Family Details <button type="button" class="btn btn-default addButton"><i class="fa fa-plus"></i></button>
+                        <div class="col-sm-10 form-group">
+                            <span class="family-detail-head">Family Details</span> <button type="button" class="btn btn-default addButton"><i class="fa fa-plus"></i></button>
                         </div>
-                        <div class="col-sm-10">
-                            Name: <input type="text" class="form-control name Text_Only " id="name" name="name-[0]" />
+                        <div class="col-sm-10 form-group">
+                            <label class="control-label" >Name:</label> <input type="text" class="form-control name Text_Only " id="name" name="name-[0]" />
                         </div>
-                        <div class="col-sm-10">
-                            Relation: <input type="text" class="form-control relation Text_Only" name="relation-[0]" />
+                        <div class="col-sm-10 form-group">
+                            <label class="control-label" >Relation:</label> <input type="text" class="form-control relation Text_Only" name="relation-[0]" />
                         </div>
-                        <div class="col-sm-10">
-                            Age: <input type="text" class="form-control age1" name="age-[0]" />
+                        <div class="col-sm-10 form-group">
+                            <label class="control-label" >Age:</label> <input type="text" class="form-control age1" name="age-[0]" />
                         </div>
-                        <div class="col-sm-10">
-                            Occupation: <input type="text" class="form-control occupation Text_Only" name="occupation-[0]"
+                        <div class="col-sm-10 form-group">
+                            <label class="control-label" >Occupation:</label> <input type="text" class="form-control occupation Text_Only" name="occupation-[0]"
                             />
                         </div>
-                        <div class="col-sm-10">
-                            Monthly Income <input type="text" class="form-control monthlyincome1" name="monthlyincome-[0]"
+                        <div class="col-sm-10 form-group">
+                            <label class="control-label" >Monthly Income:</label> <input type="text" class="form-control monthlyincome1" name="monthlyincome-[0]"
                             />
                         </div>
 
 
-                        <label for="support" class="control-label col-sm-6 ">Support to Child</label>
+                        <label for="support" class="control-label col-sm-6 ">Support to Child:</label>
                         <div class="col-sm-6 ">
                             <label class="radio-inline ">
                             <input type="radio" class="childsupport"  name="supporttochild-[0]" value="yes">Yes
@@ -137,26 +138,26 @@
                     </div>
                     <div class=" removeone  form-group col-xs-12 col-md-4 col-sm-4 col-lg-4 hide " id="family">
                         <div class="col-xs-10">
-                            Family Details<button type="button" class="btn btn-default removeButton"><i class="fa fa-minus"></i></button>
+                            <span class="family-detail-head">Family Details</span> <button type="button" class="btn btn-default removeButton"><i class="fa fa-minus"></i></button>
                         </div>
-                        <div class="col-xs-10">
-                            Name: <input type="text" class="form-control" name="name" />
+                        <div class="col-xs-10 form-group">
+                            <label class="control-label" >Name:</label> <input type="text" class="form-control" name="name" />
                         </div>
-                        <div class="col-xs-10">
-                            Relation: <input type="text" class="form-control" name="relation" />
+                        <div class="col-xs-10 form-group">
+                            <label class="control-label" >Relation:</label> <input type="text" class="form-control" name="relation" />
                         </div>
-                        <div class="col-xs-10">
-                            Age: <input type="text" class="form-control" name="age" />
+                        <div class="col-xs-10 form-group">
+                            <label class="control-label" >Age:</label> <input type="text" class="form-control" name="age" />
                         </div>
-                        <div class="col-xs-10">
-                            Occupation: <input type="text" class="form-control" name="occupation" />
+                        <div class="col-xs-10 form-group">
+                            <label class="control-label" >Occupation:</label> <input type="text" class="form-control" name="occupation" />
                         </div>
-                        <div class="col-xs-10">
-                            Monthly Income: <input type="text" class="form-control" name="monthlyincome" />
+                        <div class="col-xs-10 form-group">
+                            <label class="control-label" >Monthly Income:</label> <input type="text" class="form-control" name="monthlyincome" />
                         </div>
 
                         <label for="support" class="control-label col-sm-6">Support to Child</label>
-                        <div class="col-xs-6">
+                        <div class="col-sm-6">
                             <label class="radio-inline">
                             <input type="radio"   name="supporttochild" value="yes">Yes
                         </label>
@@ -170,7 +171,7 @@
                 <div class="tab-pane" id="secondtab">
 
 
-                    <label class="control-label ">Enter your career goals</label>
+                    <h4 class="edu-details ">Enter your career goals</h4>
                     <div class="form-group col-xs-12">
 
                         <label class="control-label ">Goal1</label>
@@ -199,7 +200,7 @@
                         <input id="goal5" type="text" class="form-control Text_Only" placeholder="Goal 5" />
                     </div>
                     <div class="form-group col-xs-12">
-                        <label class="control-label ">what your Parents wish you to Become?</label>
+                        <label class="control-label ">What your Parents wish you to Become?</label>
                         <input type="text" id="parentswish" class="form-control Text_Only" placeholder="Enter your parents wish" />
                     </div>
 
@@ -226,7 +227,7 @@
 
                     </div>
                     <div class="form-group">
-                        <div class="col-xs-6">
+                        <div class="col-xs-12">
                             <label class="control-label">Are you taking any effort to achieve your goal?</label><br>
 
                             <div class="radio-inline">
@@ -236,18 +237,18 @@
                             <div class="radio-inline">
                                 <label><input type="radio"  id="effort2" name="effort" value="no" >No</label>
                             </div>
-                            <input type="text" id="effortinp" class=".form-inline moveleft Text_Only" placeholder="what kind of effort?" style="display: none"
+                            <input type="text" id="effortinp" class="form-control moveleft Text_Only" placeholder="what kind of effort?" style="display: none"
                             />
                         </div>
 
                     </div>
-                    <div class="form-group col-xs-12">
+                    <div class="form-group col-xs-12 ">
                         <label class="control-label">Is there anyone to support/encourage to achieve your goal?</label><br>
-                        <label> <input type="checkbox" id = "supportencouragefamily" class="supportencourage" name="supportencourage[]" value="family"> Family</label><br>
+                        <label > <input type="checkbox" id = "supportencouragefamily" class="supportencourage" name="supportencourage[]" value="family"> Family</label><br>
                         <label> <input type="checkbox" id = "supportencouragefriends" class="supportencourage" name="supportencourage[]" value="friends"> Friends</label><br>
                         <label> <input type="checkbox" id = "supportencourageneighbour" class="supportencourage" name="supportencourage[]" value="neighbours"> Neighbours</label><br>
-                        <label> <input type="checkbox" id = "supportencourageteachers" class="supportencourage" name="supportencourage[]" value="teachers"> Teachers</label>
-                        <label> <input type="checkbox" id = "supportencouragenil" class="supportencourage" name="supportencourage[]" value="nil">Nil</label>
+                        <label> <input type="checkbox" id = "supportencourageteachers" class="supportencourage" name="supportencourage[]" value="teachers"> Teachers</label><br>
+                        <label> <input type="checkbox" id = "supportencouragenil" class="supportencourage" name="supportencourage[]" value="nil"> Nil</label>
                     </div>
 
                     <!--
@@ -259,10 +260,10 @@
                         <label> <input type="checkbox" name="financial[]" value="teachers"> Teachers</label>
                     </div>
 -->
-                    <div class="form-group">
-                        <div class="col-xs-6">
+                    <div class="form-group checkbox-section">
+                        <div class="col-xs-12">
                             <label class="control-label">Is there anyone financialy support you to achieve your goal?</label><br>
-                            <label>Family</label>
+                            <label class="label-text">Family</label>
 
                             <div class="radio-inline">
                                 <label><input type="radio"   id="familyfin1" name="familyfin" value="yes" >Yes</label>
@@ -271,9 +272,9 @@
                             <div class="radio-inline">
                                 <label><input type="radio"   name="familyfin" value="no" >No</label>
                             </div>
-                            <input type="text" id="familyfininp" class=".form-inline moveleft Text_All" placeholder="Enter Person Relationship?" style="display: none"
+                            <input type="text" id="familyfininp" class="form-control moveleft Text_All" placeholder="Enter Person Relationship?" style="display: none"
                             /><br>
-                            <label>Organisation</label>
+                            <label class="label-text">Organisation</label>
 
                             <div class="radio-inline">
                                 <label><input type="radio"   id="orgfin1" name="orgfin" value="yes" >Yes</label>
@@ -282,10 +283,10 @@
                             <div class="radio-inline">
                                 <label><input type="radio"   name="orgfin" value="no" >No</label>
                             </div>
-                            <input type="text" id="orgfininp" class=".form-inline moveleft Text_All" placeholder="Enter Name of Organization?" style="display: none"
+                            <input type="text" id="orgfininp" class="form-control moveleft Text_All" placeholder="Enter Name of Organization?" style="display: none"
                             />
                             <br>
-                            <label>Neighbours</label>
+                            <label class="label-text">Neighbours</label>
 
                             <div class="radio-inline">
                                 <label><input type="radio"   id="neighbourfin1" name="neighbourfin" value="yes" >Yes</label>
@@ -294,10 +295,10 @@
                             <div class="radio-inline">
                                 <label><input type="radio"   name="neighbourfin" value="no" >No</label>
                             </div>
-                            <input type="text" id="neighbourfininp" class=".form-inline moveleft Text_All" placeholder="Enter Name of Neighbour?" style="display: none"
+                            <input type="text" id="neighbourfininp" class="form-control moveleft Text_All" placeholder="Enter Name of Neighbour?" style="display: none"
                             />
                             <br>
-                            <label>Teachers</label>
+                            <label class="label-text">Teachers</label>
 
                             <div class="radio-inline">
                                 <label><input type="radio"   id="teacherfin1" name="teacherfin" value="yes" >Yes</label>
@@ -306,7 +307,7 @@
                             <div class="radio-inline">
                                 <label><input type="radio"   name="teacherfin" value="no" >No</label>
                             </div>
-                            <input type="text" id="teacherfininp" class=".form-inline moveleft Text_All" placeholder="Enter Name of Teacher?" style="display: none"
+                            <input type="text" id="teacherfininp" class="form-control moveleft Text_All" placeholder="Enter Name of Teacher?" style="display: none"
                             />
                         </div>
                     </div>
@@ -332,15 +333,15 @@
                                 <option value="">-select-</option>
                                 <option>Parents compulsion</option>
                                 <option>Yourself to support family</option>
-                               
+
                             </select>
                         </div>
-                        <div class="col-xs-6 form-group jobq" style="display: none">
-                            <label class="control-label"> What kind of work? 
+                        <div class="= form-group jobq" style="display: none">
+                            <label class="control-label"> What kind of work?
                             </label>
                             <input type="text" id="kindofjob" class="form-control Text_Only" placeholder="Enter your job details" />
                         </div>
-                        <div class="col-xs-6 form-group jobq" style="display: none">
+                        <div class=" form-group jobq" style="display: none">
                             <label class="control-label"> How much do you earn?
                             </label>
                             <input type="text" id="howmuchincome" class="form-control monthlyincome" placeholder="Enter your job details" />
@@ -364,7 +365,7 @@
                             <div class="radio-inline">
                                 <label><input type="radio" id="safeworkno"  name="safework" value="no" >No</label>
                             </div>
-                            <input type="text" class=".form-inline moveleft Text_All" id="safeworkinp" placeholder="why?" style="display: none" />
+                            <input type="text" class="form-control moveleft Text_All" id="safeworkinp" placeholder="why?" style="display: none" />
                         </div>
 
 
@@ -409,12 +410,11 @@
                             <div class="radio-inline">
                                 <label><input type="radio"  id="houseworkyes" name="housework" value="yes" >Yes</label>
                             </div>
-                            <input type="text" class=".form-inline moveleft Text_Only" id="houseworkinp" placeholder="what kind of work" style="display: none"
-                            />
+
                             <div class="radio-inline">
                                 <label><input type="radio"  id="houseworkno" name="housework" value="no" >No</label>
                             </div>
-
+                            <input type="text" class="form-control moveleft Text_Only" id="houseworkinp" placeholder="what kind of work" style="display: none"/>
                         </div>
 
                     </div>
@@ -434,17 +434,17 @@
 
                     </div>
 
-                    <div class=" addone1 container form-group col-xs-12 col-md-4 col-sm-4 col-lg-4" id="addictedinp" style="display: none">
+                    <div class=" addone1  form-group col-xs-12 col-md-4 col-sm-4 col-lg-4" id="addictedinp" style="display: none">
 
-                        <div class="col-sm-10">
-                            Addiction Details <button type="button" class="btn btn-default addButton"><i class="fa fa-plus"></i></button>
+                        <div class="form-group">
+                          <span class="family-detail-head">Addiction Details</span> <button type="button" class="btn btn-default addButton"><i class="fa fa-plus"></i></button>
                         </div>
 
-                        <div class="col-xs-10 ">
+                        <div class=" form-group">
                             <input type="text" class="form-control addictionrelation Text_Only" name="familyRelation-[0]" placeholder="Relation" />
                         </div>
 
-                        <div class="form-group col-xs-12">
+                        <div class=" col-xs-12 addone1-body">
 
                             <!--<label> <input type="checkbox" name="addictedto-[0]" value="Smoking"> Smoking</label><br>
                             <label> <input type="checkbox" name="addictedto-[0]" value="liquor"> liquor</label><br>
@@ -452,7 +452,7 @@
 
 
                             <label for="support" class="control-label col-sm-4">Smoking</label>
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                 <label class="radio-inline">
                             <input type="radio" class="addictionsmoke"  name="smoking-[0]" value="yes">Yes
                         </label>
@@ -462,7 +462,7 @@
                             </div><br>
 
                             <label for="support" class="control-label col-sm-4">liquor</label>
-                            <div class="col-xs-6">
+                            <div class="form-group col-xs-12">
                                 <label class="radio-inline">
                             <input type="radio" class="addictionliquor"  name="liquor-[0]" value="yes">Yes
                         </label>
@@ -472,7 +472,7 @@
                             </div><br>
 
                             <label for="support" class="control-label col-sm-4">drug</label>
-                            <div class="col-xs-6">
+                            <div class="form-group col-xs-12">
                                 <label class="radio-inline">
                             <input type="radio"  class="addictiondrug" name="drug-[0]" value="yes">Yes
                         </label>
@@ -488,24 +488,24 @@
                     </div>
 
 
-                    <div class=" removeone1 container form-group col-xs-12 col-md-4 col-sm-4 col-lg-4 hide" id="addiction">
+                    <div class=" removeone1  form-group col-xs-12 col-md-4 col-sm-4 col-lg-4 hide" id="addiction">
 
-                        <div class="col-xs-10">
-                            Addiction Details<button type="button" class="btn btn-default removeButton"><i class="fa fa-minus"></i></button>
+                        <div class=" form-group">
+                            <span class="family-detail-head">Addiction Details</span><button type="button" class="btn btn-default removeButton"><i class="fa fa-minus"></i></button>
                         </div>
 
-                        <div class="col-xs-10">
+                        <div class="form-group">
                             <input type="text" class="form-control" name="familyRelation" placeholder="Relation" />
                         </div>
 
-                        <div class="form-group col-xs-12">
+                        <div class=" col-xs-12 removeone1-body">
 
                             <!--<label> <input type="checkbox" name="addictedto" value="Smoking"> Smoking</label><br>
                             <label> <input type="checkbox" name="addictedto" value="liquor"> liquor</label><br>
                             <label> <input type="checkbox" name="addictedto" value="drug"> drug</label><br>-->
 
                             <label for="support" class="control-label col-sm-4">Smoking</label>
-                            <div class="col-xs-6 col-sm-6 col-md-6">
+                            <div class="form-group col-xs-12 col-sm-6 col-md-6">
                                 <label class="radio-inline">
                             <input type="radio"   name="smoking" value="yes">Yes
                         </label>
@@ -515,7 +515,7 @@
                             </div><br>
 
                             <label for="support" class="control-label col-sm-4">liquor</label>
-                            <div class="col-xs-6">
+                            <div class="form-group col-xs-12">
                                 <label class="radio-inline">
                             <input type="radio"   name="liquor" value="yes">Yes
                         </label>
@@ -525,7 +525,7 @@
                             </div><br>
 
                             <label for="support" class="control-label col-sm-4">drug</label>
-                            <div class="col-xs-6">
+                            <div class="form-group col-xs-12">
                                 <label class="radio-inline">
                             <input type="radio"   name="drug" value="yes">Yes
                         </label>
@@ -553,7 +553,7 @@
                         <div class="radio-inline">
                             <label><input type="radio" id="safeno"  name="safe" value="no" >No</label>
                         </div>
-                        <input type="text" class=".form-inline moveleft Text_All" id="notfeelsafe" placeholder="why?" style="display: none" />
+                        <input type="text" class="form-control moveleft Text_All" id="notfeelsafe" placeholder="why?" style="display: none" />
                     </div>
                 </div>
                 <div class="tab-pane" id="fourthtab">
@@ -588,11 +588,10 @@
                         <div class="radio-inline">
                             <label><input type="radio"  id="clubmemberyes" name="clubmember" value="yes" >Yes</label>
                         </div>
-                        <input type="text" class=".form-inline moveleft Text_Only" id="clubnameinp" placeholder="Name of the club" style="display: none"
-                        />
                         <div class="radio-inline">
                             <label><input type="radio"  id="clubmemberno" name="clubmember" value="no" >No</label>
                         </div>
+                        <input type="text" class="form-control moveleft Text_Only" id="clubnameinp" placeholder="Name of the club" style="display: none"/>
 
 
                     </div>
@@ -619,7 +618,7 @@
                     </div>
 
                     <div class="form-group col-xs-12">
-                        <div class="col-xs-6">
+                        <div class="">
                             <label class="control-label">Do you like to continue your studies?</label><br>
 
                             <div class="radio-inline">
@@ -628,7 +627,7 @@
                             <div class="radio-inline">
                                 <label><input type="radio"  id="continueno" name="continuestudies" value="no" >No</label>
                             </div>
-                            <input type="text" class=".form-inline moveleft Text_All" id="continueinp" placeholder="Why?" style="display: none" />
+                            <input type="text" class="form-control moveleft Text_All" id="continueinp" placeholder="Why?" style="display: none" />
                         </div>
 
                     </div>
@@ -656,7 +655,7 @@
 
 
             </div>
-            <div class="col-xs-12">
+            <div class="col-xs-12 no-padding">
                 <ul class="pager wizard">
                     <li class="previous"><a href="javascript: void(0);">Previous</a></li>
                     <li class="next" id="submit"><a href="javascript: void(0);">Next</a></li>

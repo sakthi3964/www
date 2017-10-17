@@ -85,6 +85,7 @@ $(document).ready(function () {
                 dataForRequest.process='vcm';
                 dataForRequest.action='request';
                 httpPost("/insertConnectionRequest", dataForRequest, function (response) {
+                    console.log("response"+response);
                     if (response == "1") {
                         $('#multiplerequest').modal({ backdrop: 'static', keyboard: false});
                     }

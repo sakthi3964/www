@@ -35,13 +35,16 @@ $(document).ready(function () {
             $(".loading_container").addClass("hide");
             if ("ADM_APP_MEN" == response.workflowstatus) {
 
-
+                console.log("connected");
                 $('#viewtrack').removeClass('hide');
-                $('#reviewform').removeClass('hide');
+                $('#tracker').removeClass('hide');
+                //  $('#reviewform').removeClass('hide');
+              $('#trackerlink').removeClass('hide');
                 $('#graph').removeClass('hide');
 
                 $('#view_tracker').addClass('hide');
-                $('#vreviewform').addClass('hide');
+                // $('#vreviewform').addClass('hide');
+                 $('#trackericon').addClass('hide');
                 $('#viewgraph').addClass('hide');
             }
 

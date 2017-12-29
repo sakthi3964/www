@@ -1,28 +1,56 @@
-viewGraphFn();
-function viewGraphFn(){
+viewGraphFn("volunteer");
+function viewGraphFn(roleToGetdata){
   var session = localStorage.getItem("user");
   if (session == null) {
       window.location.href = "../../../../index.html";
   }
   else {
+    var data = {};
+    
       var role = localStorage.getItem("role");
-      console.log(role);
-      if(role == "children"){
-          console.log("hiiii");
-        $(".cumlative").addClass("hide");
-      }
-      var data = {};
+      var type='';
+      data.profile_id='';
+      data.child_id='';
+      data.role=role;
+     // console.log(role);
+    //   if(role == "children"){
+    //       console.log("hiiii");
+    //     $(".cumlative").addClass("hide");
+    //   }
+    if (window.location.href.indexOf("typegraph") > -1) {
+      var type="typegraph";
+   }
+   if (window.location.href.indexOf("typetracker") > -1) {
+    var type="typetracker";
+ }
+
       var url = window.location.href;
-      if (url.substring(url.lastIndexOf('html') + 1) == "tml") {
-          var id = localStorage.getItem("user");
+    if(role=="volunteer" || role=="mentor")
+    {
+      data.profile_id = localStorage.getItem("user");
+     
+    }
+      //if (url.substring(url.lastIndexOf('html') + 1) == "tml") {
+       //   var profile_id = localStorage.getItem("user");
+        //  data.profile_id=profile_id;
+      //}
+      if(role=="admin")
+      {
+        var dec = url.substring(url.lastIndexOf('&') + 1);
+        var  child_id = window.atob(dec);
+        data.child_id= child_id;
       }
-      else {
-          var dec = url.substring(url.lastIndexOf('&') + 1);
-          id = window.atob(dec);
-          console.log(id);
+      // else {
+      //     var dec = url.substring(url.lastIndexOf('&') + 1);
+      //   var  child_id = window.atob(dec);
+      //   data.child_id= child_id;
+         
+      // }
+      if(role=='children')
+      {
+          data.child_id=localStorage.getItem("user");
       }
-      data.id = id;
-      var dec= id;
+    //  var dec= id;
       httpPost("/trackerDates", data, function (response) {
           $("#details").removeClass("hide");
           $(".loading").addClass("hide");
@@ -49,7 +77,32 @@ function viewGraphFn(){
                   var month = monthNames[monthna.getMonth()];
                   var elementid = window.btoa(element.id);
                   var profile_id = localStorage.setItem("profile_id", element.profile_id);
-                  $('#listOfDates').append('<a class="calender-block" href="../../graph/en/graph.html?date&' + element.created_at + 'id#' + dec + '"><div class="calendor"><div class="month"><p>' + month + '</p></div><div class="date"><p>' + day + '</p></div><div class="year"><p>' + year + '</p></div></div></a>');
+                  if(type=="typegraph")
+                  {
+                  
+                    if(element.role==roleToGetdata && roleToGetdata=="volunteer")
+                    {
+                      $('#listOfDates').append('<a class="calender-block" href="../../graph/en/graph.html?date&' + element.created_at + 'id#' + dec + '"><div class="calendor"><div class="month"><p>' + month + '</p></div><div class="date"><p>' + day + '</p></div><div class="year"><p>' + year + '</p></div></div></a>');
+                    }
+                    if(element.role==roleToGetdata && roleToGetdata=="mentor")
+                    {
+                      $('#listOfMentorDates').append('<a class="calender-block" href="../../graph/en/graph.html?date&' + element.created_at + 'id#' + dec + '"><div class="calendor"><div class="month"><p>' + month + '</p></div><div class="date"><p>' + day + '</p></div><div class="year"><p>' + year + '</p></div></div></a>');
+                    }
+                  }
+                  if(type=="typetracker")
+                  {
+                    $(".getCumulativeGraph").addClass("hide");
+                    if(element.role==roleToGetdata && roleToGetdata=="volunteer")
+                    {
+                      $('#listOfDates').append('<a class="calender-block" href="../../trackerdisplay/viewtracker/en/viewtracker.html?date&' + element.created_at + 'id#' + dec + '"><div class="calendor"><div class="month"><p>' + month + '</p></div><div class="date"><p>' + day + '</p></div><div class="year"><p>' + year + '</p></div></div></a>');
+                    }
+                    if(element.role==roleToGetdata && roleToGetdata=="mentor")
+                    {
+                      $('#listOfMentorDates').append('<a class="calender-block" href="../../trackerdisplay/viewtracker/en/viewtracker.html?date&' + element.created_at + 'id#' + dec + '"><div class="calendor"><div class="month"><p>' + month + '</p></div><div class="date"><p>' + day + '</p></div><div class="year"><p>' + year + '</p></div></div></a>');
+                    }
+                  }
+                 
+                 
               }, this);
           }
       })

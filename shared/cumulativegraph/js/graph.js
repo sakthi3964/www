@@ -8,21 +8,46 @@ $(document).ready(function () {
     else {
          $(".loading").removeClass("hide");
         var data = {};
-        data.common = 1;
-        if((role == "admin")||(role == "children")||(role == "mentor")){
-            data.profileId = localStorage.getItem("profile_id");
-        }
-        else{
-            var url = window.location.href;
-            var date1 = url.substring(url.indexOf(':') + 1, url.length);
-            var date2 = date1.substring(date1.indexOf(':') + 1, date1.length);
-            var date3 = date2.substring(date2.indexOf(':') + 1, date2.length);
+        var role = localStorage.getItem("role");
+        data.profile_id='';
+        data.child_id='';
+        data.role=role;
+        // if((role == "admin")||(role == "children")||(role == "mentor")){
+        //     data.profileId = localStorage.getItem("profile_id");
+        // }
+        // else{
+        //     var url = window.location.href;
+        //     var date1 = url.substring(url.indexOf(':') + 1, url.length);
+        //     var date2 = date1.substring(date1.indexOf(':') + 1, date1.length);
+        //     var date3 = date2.substring(date2.indexOf(':') + 1, date2.length);
             
-            data.date = date3;
-            data.profileId = localStorage.getItem("user");
+        //     data.date = date3;
+        //     data.profileId = localStorage.getItem("user");
+        // }
+        var url = window.location.href;
+        if(role=="volunteer" || role=="mentor")
+        {
+          data.profile_id = localStorage.getItem("user");
+         
         }
-        
-        httpPost("/cumulativegraph", data, function (response) {
+        if(role=="admin")
+        {
+          var dec = url.substring(url.lastIndexOf('&') + 1);
+          var  child_id = window.atob(dec);
+          data.child_id= child_id;
+        }
+        // else {
+        //     var dec = url.substring(url.lastIndexOf('&') + 1);
+        //   var  child_id = window.atob(dec);
+        //   data.child_id= child_id;
+           
+        // }
+        if(role=='children')
+        {
+            data.child_id=localStorage.getItem("user");
+        }
+
+        httpPost("/trackerDates", data, function (response) {
             $(".getdate").removeClass("hide");
             $(".loading").addClass("hide");
             var res_length = response.length;

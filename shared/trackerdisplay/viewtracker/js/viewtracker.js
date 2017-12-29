@@ -5,23 +5,44 @@ $(document).ready(function () {
     }
     else {
         var data = {};
+        data.profile_id='';
+        data.child_id='';
         var url = window.location.href;
-
+       // data.role = localStorage.getItem("role");
         //console.log("sdfdsfdsfdsfdsfdsfdsfdsfdsf"+child_id);
         var date1 = url.substring(url.indexOf('&') + 1, url.length);
         var date2 = date1.substring(date1.indexOf('&') + 1, date1.length);
         var date3 = date2.substring(date2.indexOf('&') + 1, date2.length);
         data.date = date3;
-        data.profileId = localStorage.getItem("user");
-        data.role = localStorage.getItem("role");
-        if (data.role == 'admin') {
-            data.childId = url.substring(url.indexOf('@') + 1, url.length);
+        var role = localStorage.getItem("role");
+        data.role=role;
+        if(role=="volunteer" || role=="mentor")
+        {
+            data.profile_id = localStorage.getItem("user");
+        }
+        if (role == "admin") {
+            //data.role = role;
+           // console.log(url.substring(url.lastIndexOf('#') + 1));
+            var dec = url.substring(url.lastIndexOf('#') + 1);
 
+            data.child_id = window.atob(dec);
+           // console.log(data.childId);
         }
-        else {
-            data.childId = 0;
+        if (role == "children") {
+            data.role = role;
+            data.child_id = localStorage.getItem("user");
+           // console.log(data.childId);
         }
-        console.log("childid", data);
+       // data.profileId = localStorage.getItem("user");
+        
+        // if (data.role == 'admin') {
+        //     data.childId = url.substring(url.indexOf('@') + 1, url.length);
+
+        // }
+        // else {
+        //     data.childId = 0;
+        // }
+        //console.log("childid", data);
         httpPost("/viewReviewDetail", data, function (response) {
             console.log("ffrffd", response);
             $("#blockreg2").removeClass("hide");
@@ -31,7 +52,7 @@ $(document).ready(function () {
             var year = date.getFullYear();
             var monthNames = ["January", "February", "March", "April", "May", "June",
                 "July", "August", "September", "October", "November", "December"
-            ];
+            ];  
             var monthna = new Date(response.date);
             var month = monthNames[monthna.getMonth()];
 

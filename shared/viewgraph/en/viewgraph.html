@@ -52,9 +52,9 @@
 			<li><a href="#secondtab" id="secondtabSelect" data-toggle="tab">Mentor</a></li>
 			<li><a class="getCumulativeGraph" data-toggle="tab">Cumulative</a></li>
 		</ul>
-		<div class="cumlative hide">
+		<!-- <div class="cumlative hide">
 		<a class="getCumulativeGraph">Cumulative Graph</a>
-		</div>
+		</div> -->
 	</div>
 
 	<div class="tab-content hide" id="details">
@@ -84,7 +84,9 @@
 </body>
 <script>
 	$(".getCumulativeGraph").click(function () {
-		window.location="../../cumulativegraph/en/graph.html";
+		var url = window.location.href;
+		var dec = url.substring(url.lastIndexOf('&') + 1);
+		window.location="../../cumulativegraph/en/graph.html?id&"+dec+"";
 	});
 	$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 		$(".no_record").removeClass("hide");
@@ -94,10 +96,11 @@
 		$('#listOfMentorDates').html('');
 
 		if(target=="#firsttab"){
-			viewGraphFn();
+			viewGraphFn("volunteer");
 		}
 		if(target=="#secondtab"){
-			viewmentorgraph();
+			//viewmentorgraph();
+			viewGraphFn("mentor");
 		}
 	});
 </script>

@@ -34,8 +34,8 @@ function viewmentorgraph(){
 
                     response.forEach(function (element) {
                         var dateObj = new Date(element.date);
-                        var day = dateObj.getUTCDate();
-                        var year = dateObj.getUTCFullYear();
+                        var day = dateObj.getDate();
+                        var year = dateObj.getFullYear();
                         var monthNames = ["January", "February", "March", "April", "May", "June",
                             "July", "August", "September", "October", "November", "December"
                         ];

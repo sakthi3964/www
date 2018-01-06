@@ -16,13 +16,13 @@ $(document).ready(function () {
             id = localStorage.getItem("user");
         }
         else {
-            decid = url.substring(url.lastIndexOf(':') + 1);
+            decid = url.substring(url.lastIndexOf('&') + 1);
             id = window.atob(decid);
-            console.log(id);
+            console.log("sivasankari"+id);
         }
 
         data.id = id;
-        httpPost("/trackerDates", data, function (response) {
+        httpPost("/trackerDatesMentor", data, function (response) {
             $("#container3").removeClass("hide");
             $(".loading").addClass("hide");
             // console.log(response);
@@ -41,8 +41,9 @@ $(document).ready(function () {
                     var monthna = new Date(element.date);
                     var month = monthNames[monthna.getMonth()];
                     $('#listOfDates').append('<a class="calender-block" href="../../viewtracker/en/viewtracker.html?date&' + element.created_at + '@'+element.mentee_id+'" id=' + element.id + '><div class="calendor"><div class="month"><p>' + month + '</p></div><div class="date"><p>' + day + '</p></div><div class="year"><p>' + year + '</p></div></div></a>');
+                   //$('#listOfDates').append('<a class="calender-block" href="../../viewtracker/en/viewtracker.html?date&' + element.created_at + '" id=' + element.id + '><div class="calendor"><div class="month"><p>' + month + '</p></div><div class="date"><p>' + day + '</p></div><div class="year"><p>' + year + '</p></div></div></a>');
                 }, this);
             }
         });
     }
-})
+})  

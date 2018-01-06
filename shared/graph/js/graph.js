@@ -5,40 +5,48 @@ $(document).ready(function () {
     }
     else {
         var data = {};
+        data.profile_id='';
+        data.child_id='';
         var url = window.location.href;
         var date1 = url.substring(url.indexOf('&') + 1, url.length);
         var date2 = date1.substring(date1.indexOf('&') + 1, date1.length);
 
         var date3 = date2.substring(date2.indexOf('&') + 1, date2.length);
         data.date = date3;
-        console.log(data.date);
-        data.profileId = localStorage.getItem("user");
+      //  console.log(data.date);
+      //  data.profileId = localStorage.getItem("user");
         var role = localStorage.getItem("role");
-        if(role == "volunteer"){
-
-            var rol = url.slice(url.indexOf('role') + 5,url.indexOf('date'));
-            if(rol == 'm'){
-                data.role = "mentor";
-            }
-            else {
-                data.role = "volunteer";
-            }
+        data.role=role;
+        if(role=="volunteer" || role=="mentor")
+        {
+            data.profile_id = localStorage.getItem("user");
         }
+        // if(role == "volunteer"){
+
+        //     var rol = url.slice(url.indexOf('role') + 5,url.indexOf('date'));
+        //     if(rol == 'm'){
+        //         data.role = "mentor";
+        //     }
+        //     else {
+        //         data.role = "volunteer";
+        //     }
+        // }
         
         if (role == "admin") {
-            data.role = role;
-            console.log(url.substring(url.lastIndexOf('#') + 1));
+            //data.role = role;
+           // console.log(url.substring(url.lastIndexOf('#') + 1));
             var dec = url.substring(url.lastIndexOf('#') + 1);
-            data.childId = dec;
-            console.log(data.childId);
+
+            data.child_id = window.atob(dec);
+           // console.log(data.childId);
         }
         if (role == "children") {
             data.role = role;
-            data.childId = localStorage.getItem("user");
-            console.log(data.childId);
+            data.child_id = localStorage.getItem("user");
+           // console.log(data.childId);
         }
         httpPost("/viewReviewDetail", data, function (response) {
-            console.log("response", response.review);
+            console.log("response", response);
             $("#chartContainer").removeClass("hide");
             $(".loading").addClass("hide");
 

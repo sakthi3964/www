@@ -54,12 +54,13 @@ $(document).ready(function () {
                     var elementid = window.btoa(element.id);
                     var id = "#submittracker" + i;
                     $(id).click(function () {
-                        window.location.href = "../../../../shared/trackerdisplay/listofdates/en/trackerdates.html?id&" + elementid;
+                       // window.location.href = "../../../../shared/trackerdisplay/listofdates/en/trackerdates.html?typetracker#id&" + elementid;
+                       window.location.href = "../../../../shared/viewgraph/en/viewgraph.html?typetracker#id&" + elementid;
                     });
                     i++;
                     var id1 = "#submitgraph" + j;
                     $(id1).click(function () {
-                        window.location.href = "../../../../shared/viewgraph/en/viewgraph.html?id&" + elementid;
+                        window.location.href = "../../../../shared/viewgraph/en/viewgraph.html?typegraph#id&" + elementid;
                     });
                     j++;
 
